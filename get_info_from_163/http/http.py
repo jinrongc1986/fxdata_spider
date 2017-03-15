@@ -64,4 +64,4 @@ def get_mobile_cache_top(category='0', limit='10', filepath='./cache/mobilecache
 if __name__ == '__main__':
     get_mobile_cache_top('0', '5')
     get_video_cache_top('2', '10')
-    get_http_cache_top()
+    get_http_cache_top('3','20')

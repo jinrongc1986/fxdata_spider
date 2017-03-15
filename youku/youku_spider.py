@@ -36,20 +36,23 @@ def get_youku_href(channel_list_addr):
     获取优酷的剧集的信息
     :return:
     """
+
     length = len(channel_list_addr)
-    i = 0
-    while i < length:
-        url = channel_list_addr[i]
-        # print url
-        page = urllib2.urlopen(url)
-        soup = BeautifulSoup(page, "html5lib")
-        for info in soup.find_all("a", attrs={'target': "video"}):
+    i = 1
+
+    url = channel_list_addr[0]
+    # print url
+    page = urllib2.urlopen(url)
+    soup = BeautifulSoup(page, "lxml")
+    # print soup
+    for link in soup.find_all('div', 'p-thumb'):
+        for info in link.find_all("a", attrs={'target': "video"}):
             title = info.get('title')
             if title is None:
                 pass
             else:
                 href = info.get('href')
-                # print title + "   " + href
+                print title + "   " + href
                 data = {
                     u'标题': title,
                     u"网址": href,
@@ -57,6 +60,27 @@ def get_youku_href(channel_list_addr):
                 with open('youku.txt', "a+") as f:
                     f.write('\n')
                     json.dump([data], f, ensure_ascii=False)
+    while i < length:
+        url = channel_list_addr[i]
+        # print url
+        page = urllib2.urlopen(url)
+        soup = BeautifulSoup(page, "lxml")
+        # print soup
+        for link in soup.find_all('div', 'v-link'):
+            for info in link.find_all("a", attrs={'target': "video"}):
+                title = info.get('title')
+                if title is None:
+                    pass
+                else:
+                    href = info.get('href')
+                    print title + "   " + href
+                    data = {
+                        u'标题': title,
+                        u"网址": href,
+                    }
+                    with open('youku.txt', "a+") as f:
+                        f.write('\n')
+                        json.dump([data], f, ensure_ascii=False)
         i += 1
 
 
