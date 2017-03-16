@@ -2,14 +2,13 @@
 # -*- coding: utf-8 -*-
 
 # 加载模块
-import getopt
-import sys
-import time
-
+import sys, time
 import MySQLdb
-
+import getopt
+import subprocess
+# import socket, fcntl, struct
+import ssh_cds
 import ssh
-from old import ssh_cds
 
 # def get_ip(ifname):
 #     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -23,7 +22,7 @@ cachetype = "video"
 times = 2
 round_time = 0
 seconds = 1
-ipaddr = '192.168.1.33'
+ipaddr = '192.168.1.106'
 video_list=['http://183.134.64.20/videos/other/20170216/a2/bb/76e370a609dd1fa29e7c82f43f546e79.f4v?src=iqiyi.com',
             'http://v.stu.126.net/mooc-video/nos/mp4/2015/03/27/1322039_sd.mp4?ak=99ed7479ee303d1b1361b0ee5a4abcee95d6c4cf77bd7eeac1e8a89641d43dcd06ee968bcec1b2f450fde9b3fc79068cd9f4d31d7ce98d2c12bc713355b1f8c840a6759a00e64c107587394a0b73bfaa90b601143824cf18b58a69ea00438816e2c4caba0e116581c14e4824cb46dc107feb6d0bf73a0d052df948b3525aefb09eed6bb2ffe8530b0f8655d97b53dc6197cbdc8f6a5d1563323094d2340ba3cf2919f5e4aded4ea11a82dd96c04efc1a',
             'http://112.17.4.15/youku/6571926CC6C3474A5940A623F/030002060058B6C060FD7C011BA6A92E5DFA92-ACD8-9369-6470-2394B4ED27B2.flv?sid=04885294912141063e541_00&sign=be6cf588cc4a8f15ca53181ced4de934&ctype=10',
@@ -97,7 +96,7 @@ for i in range(times):
         uri=video_list[count]
         cmd = "curl -o /dev/null -L '" + uri + "' --user-agent 'iphone'" + ' --limit-rate 5M'
         print 'cmd_command:     ' + cmd
-        # p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         time.sleep(seconds)
         percent = 1.0 * count / url_num * 100
         sys.stdout.write('\rcomplete percent:%10.4s%s' % (str(percent), '%'))
@@ -146,3 +145,4 @@ conn.close()
 
 print 'finished'
 print time.strftime(ISOTIMEFORMAT, time.localtime())
+

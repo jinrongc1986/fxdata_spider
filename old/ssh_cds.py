@@ -22,8 +22,6 @@ def cds_init(querycmd, execmd, ip, local_ip):
     port = 22
     username = 'root'
     password = 'FxData!Cds@2016_'
-    if ip == '30.30.33.3':
-        password = '123'
     query_result = sshclient_execmd(hostname, port, username, password, querycmd)
     iptable_restart = 'service iptables restart'
     if ('-A INPUT -s %s -p tcp -m state --state NEW -m tcp --dport 3306 -j ACCEPT') % local_ip not in query_result:

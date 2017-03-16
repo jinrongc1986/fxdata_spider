@@ -46,6 +46,13 @@ def get_http_cache_top(category="1", limit='10', filepath='./cache/httpcache'):
 
 
 def get_video_cache_top(category='1', limit='10', filepath='./cache/videocache'):
+    """
+    在videocache这个表里根据category和limit选择uri
+    :param category:
+    :param limit:
+    :param filepath:
+    :return:
+    """
     str1 = "SELECT uri FROM video_cache WHERE category="
     str2 = " ORDER BY create_time DESC LIMIT "
     execute = str1 + category + str2 + limit
@@ -54,6 +61,13 @@ def get_video_cache_top(category='1', limit='10', filepath='./cache/videocache')
 
 
 def get_mobile_cache_top(category='0', limit='10', filepath='./cache/mobilecache'):
+    """
+    在mobilecache这个表里根据category和limit选择uri
+    :param category:
+    :param limit:
+    :param filepath:
+    :return:
+    """
     str1 = "SELECT uri FROM mobile_cache WHERE category="
     str2 = " ORDER BY create_time DESC LIMIT "
     execute = str1 + category + str2 + limit
@@ -61,7 +75,27 @@ def get_mobile_cache_top(category='0', limit='10', filepath='./cache/mobilecache
     return execute_mysql_fetchall(execute, filepath, category)
 
 
+def get_all_cache(limit=10):
+    """
+    获取全部种类的资源
+    class=0 时 category有0--4
+    class=1 时 category有0--2
+    class=2 时 category有0--19
+    :return:
+    """
+    kind = 0
+    while kind < 5:
+        get_http_cache_top(str(kind), str(limit))
+        kind += 1
+    kind = 0
+    while kind < 3:
+        get_mobile_cache_top(str(kind), str(limit))
+        kind += 1
+    kind = 0
+    while kind < 20:
+        get_video_cache_top(str(kind), str(limit))
+        kind += 1
+
+
 if __name__ == '__main__':
-    get_mobile_cache_top('0', '5')
-    get_video_cache_top('2', '10')
-    get_http_cache_top('3','20')
+    get_all_cache()
