@@ -24,6 +24,7 @@ I love animals. They taste delicious.
 """
 import sys
 
+from get_info_from_163.http.connect_Linux import connect_linux
 from get_info_from_163.mysql_db import execute_mysql_fetchall
 
 reload(sys)
@@ -83,6 +84,7 @@ def get_all_cache(limit=10):
     class=2 时 category有0--19
     :return:
     """
+    connect_linux()  # 初始化 免得数据库无法连上
     kind = 0
     while kind < 5:
         get_http_cache_top(str(kind), str(limit))

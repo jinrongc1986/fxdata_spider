@@ -56,10 +56,10 @@ def do_curl(command, system="windows"):
     else:  # 此处编写linux下的命令
         x = open("linux_curl_log", "a")
         x.write(current_time + '\n' + command + '\n')
-        info = connect_linux()
-        with open("cds_log", "a") as f:
+        info = connect_linux(command)
+        with open("linux_curl_log", "a") as f:
             # line = info.strip('\n')
-            json.dump(info, f, ensure_ascii=False)
+            f.write(info)
             f.write('\n')
         x.write("-----------------------------------------------" + '\n')
 
@@ -95,5 +95,7 @@ def curl(kind=0, category=1, limit=5, system='windows'):
 
 
 if __name__ == '__main__':
-    # do_curl('curl -o test -L "http://officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be/Office/Data/16.0.7870.2013/i640.cab"')
-    curl(0, 1, 5, 'windows')
+    # do_curl(
+    #     'curl -o test -L "http://officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be/Office/Data/16.0.7870.2013/i640.cab"',
+    #     'linux')
+    curl(0, 1, 5, 'linux')

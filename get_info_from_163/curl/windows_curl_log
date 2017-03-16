@@ -13,3 +13,6 @@ curl -o test -L "http://cdn2.qq.ime.sogou.com/QQPinyin_Setup_5.5.3804.400_update
 2017-03-16 17:21:37
 curl -o test -L "http://xz.15111223344.com/qqxzb/%e5%b7%a8%e5%a9%b4%e5%9b%bd_102@164573.exe"
 -----------------------------------------------
+2017-03-16 17:31:14
+curl -o test -L "http://officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be/Office/Data/16.0.7870.2013/i640.cab"
+-----------------------------------------------

@@ -23,7 +23,6 @@ I love animals. They taste delicious.
 ┗┻┛  ┗┻┛
 """
 import sys
-import json
 import paramiko
 from datetime import datetime
 
@@ -41,17 +40,16 @@ def connect_linux(command='service iptables stop', ip='192.168.0.59', user='root
     stdin.write("Y")  # Generally speaking, the first connection, need a simple interaction.
     info = stdout.read()
     print info
-    x = open("cds_log", "a")
-    x.write(current_time + '\t \n' + command + '\t \n')
-    with open("cds_log", "a") as f:
-        f.write(info)
-        f.write('\n')
-
-    ssh.close()
-    x.write("-----------------------------------------------" + '\n')
+    # x = open("cds_log", "a")
+    # x.write(current_time + '\t \n' + command + '\t \n')
+    # with open("cds_log", "a") as f:
+    #     f.write(info)
+    #     f.write('\n')
+    # ssh.close()
+    # x.write("-----------------------------------------------" + '\n')
     return info
 
 
 if __name__ == '__main__':
     connect_linux(
-        'curl -O -L "http://officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be/Office/Data/16.0.7870.2013/i640.cab"')
+        'curl -o test -L "http://officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be/Office/Data/16.0.7870.2013/i640.cab"')
