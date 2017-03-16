@@ -99,3 +99,4 @@ if __name__ == '__main__':
     #     'curl -o test -L "http://officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be/Office/Data/16.0.7870.2013/i640.cab"',
     #     'linux')
     curl(0, 1, 5, 'linux')
+    os.remove('test')# 删除curl下来的文件 免得占用太大的空间

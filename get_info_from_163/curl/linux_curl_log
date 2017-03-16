@@ -18,3 +18,23 @@ curl -o test -L "http://cdn2.qq.ime.sogou.com/QQPinyin_Setup_5.5.3804.400_update
 2017-03-16 17:37:20
 curl -o test -L "http://xz.15111223344.com/qqxzb/%e5%b7%a8%e5%a9%b4%e5%9b%bd_102@164573.exe"
 -----------------------------------------------
+
+2017-03-16 17:54:04
+curl -o test -L "http://officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be/Office/Data/16.0.7870.2020/s640.cab"
+-----------------------------------------------
+
+2017-03-16 17:54:04
+curl -o test -L "http://officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be/Office/Data/16.0.7870.2020/s642052.cab"
+-----------------------------------------------
+
+2017-03-16 17:54:05
+curl -o test -L "http://issuecdn.baidupcs.com/issue/netdisk/pc-guanjia-update/5.5.4.1/upgrade_5534_5541.cab"
+-----------------------------------------------
+
+2017-03-16 17:54:05
+curl -o test -L "http://cdn2.qq.ime.sogou.com/QQPinyin_Setup_5.5.3804.400_update.exe"
+-----------------------------------------------
+
+2017-03-16 17:54:09
+curl -o test -L "http://xz.15111223344.com/qqxzb/%e5%b7%a8%e5%a9%b4%e5%9b%bd_102@164573.exe"
+-----------------------------------------------
