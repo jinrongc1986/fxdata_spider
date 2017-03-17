@@ -64,7 +64,7 @@ def do_curl(command, system="windows"):
         x.write("-----------------------------------------------" + '\n')
 
 
-def curl(kind=0, category=1, limit=5, system='windows'):
+def curl_resource(kind=0, category=0, limit=1, system='windows'):
     """
     根据class（就是上面的kind，因为class是自带的关键字，故换成kind）和category，还有limit来执行curl动作
     :param system:
@@ -79,8 +79,9 @@ def curl(kind=0, category=1, limit=5, system='windows'):
         kind = 'mobilecache'
     else:
         kind = 'videocache'
-    filepath = '../http/cache/' + kind + str(category)  # 找到存放资源地址的文件 随后遍历
+    filepath = './http/cache/' + kind + str(category)  # 找到存放资源地址的文件 随后遍历
     cache_url_list = []
+    # print filepath
     for line in open(filepath):
         line = line.replace('["', '')
         line = line.replace('"]', '')
@@ -97,5 +98,49 @@ def curl(kind=0, category=1, limit=5, system='windows'):
         os.remove('test666')
 
 
+def curl_resource_class(kind=0):
+    """
+    根据class的种类来curl所有的这个class下的cache资源（存放于文件中）
+    :param kind:
+    :return:
+    """
+    if kind == 0:
+        category = 0
+        while category < 5:
+            filepath1 = './http/cache/httpcache' + str(category)
+            f = open(filepath1)
+            is_unempty = any(f)
+            # print is_unempty
+            if is_unempty:  # 如果不为空 则执行读取和curl操作
+                curl_resource(int(kind), category)
+            else:  # 如果为空则跳过
+                pass
+            category += 1
+    elif kind == 1:
+        category = 0
+        while category < 3:
+            filepath1 = './http/cache/mobilecache' + str(category)
+            f = open(filepath1)
+            is_unempty = any(f)
+            # print is_unempty
+            if is_unempty:  # 如果不为空 则执行读取和curl操作
+                curl_resource(int(kind), category)
+            else:  # 如果为空则跳过
+                pass
+            category += 1
+    elif kind == 2:
+        category = 0
+        while category < 20:
+            filepath1 = './http/cache/videocache' + str(category)
+            f = open(filepath1)
+            is_unempty = any(f)
+            # print is_unempty
+            if is_unempty:  # 如果不为空 则执行读取和curl操作
+                curl_resource(int(kind), category)
+            else:  # 如果为空则跳过
+                pass
+            category += 1
+
 if __name__ == '__main__':
-    curl(0, 1, 5)
+    # curl_resource(0, 1, 5)
+    curl_resource_class()

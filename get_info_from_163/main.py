@@ -25,10 +25,15 @@ I love animals. They taste delicious.
 import os
 import sys
 
-from get_info_from_163.curl.curl import curl
+from get_info_from_163.curl.curl import curl_resource, curl_resource_class
 from get_info_from_163.http.http import get_all_cache, get_http_cache_top
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
 if __name__ == '__main__':
-    get_all_cache()
+    """
+    所有的curl指令，因为涉及到相对路径，请都在main这个页面下执行
+    """
+    # get_all_cache()
+    # curl_resource(0, 1, 5)
+    curl_resource_class(2)

@@ -51,7 +51,7 @@ def get_http_cache_top(category="1", limit='10', host='192.168.1.106', user='roo
 
 
 def get_video_cache_top(category='1', limit='10', host='192.168.1.106', user='root',
-                        passwd='0rd1230ac', filepath='./http/cache/httpcache'):
+                        passwd='0rd1230ac', filepath='./http/cache/videocache'):
     """
     在videocache这个表里根据category和limit选择uri
     :param passwd:
@@ -70,7 +70,7 @@ def get_video_cache_top(category='1', limit='10', host='192.168.1.106', user='ro
 
 
 def get_mobile_cache_top(category='0', limit='10', host='192.168.1.106', user='root',
-                         passwd='0rd1230ac', filepath='./http/cache/httpcache'):
+                         passwd='0rd1230ac', filepath='./http/cache/mobilecache'):
     """
     在mobilecache这个表里根据category和limit选择uri
     :param passwd:
