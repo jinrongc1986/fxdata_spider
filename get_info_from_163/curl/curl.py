@@ -22,13 +22,13 @@ I love animals. They taste delicious.
 ┃┫┫  ┃┫┫
 ┗┻┛  ┗┻┛
 """
-import sys
-import os
-import json
 import datetime
+import json
+import os
+import sys
 from datetime import datetime
 
-from get_info_from_163.http.connect_Linux import connect_linux
+from get_info_from_163.tools.connect_Linux import connect_linux
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -67,6 +67,7 @@ def do_curl(command, system="windows"):
 def curl(kind=0, category=1, limit=5, system='windows'):
     """
     根据class（就是上面的kind，因为class是自带的关键字，故换成kind）和category，还有limit来执行curl动作
+    :param system:
     :param kind:http mobile or video
     :param category:
     :param limit:最近的n个资源
@@ -78,7 +79,7 @@ def curl(kind=0, category=1, limit=5, system='windows'):
         kind = 'mobilecache'
     else:
         kind = 'videocache'
-    filepath = '../http/cache/' + kind + str(category)
+    filepath = '../http/cache/' + kind + str(category)  # 找到存放资源地址的文件 随后遍历
     cache_url_list = []
     for line in open(filepath):
         line = line.replace('["', '')
@@ -87,16 +88,14 @@ def curl(kind=0, category=1, limit=5, system='windows'):
         cache_url_list.append(line)
     i = 0
     while i < limit:
-        command1 = 'curl -o test -L "'
+        command1 = 'curl -o test666 -L "'
         command2 = '"'
         command = command1 + cache_url_list[i] + command2
         do_curl(command, system)
         i += 1
+    if system == 'windows':
+        os.remove('test666')
 
 
 if __name__ == '__main__':
-    # do_curl(
-    #     'curl -o test -L "http://officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be/Office/Data/16.0.7870.2013/i640.cab"',
-    #     'linux')
-    curl(0, 1, 5, 'linux')
-    os.remove('test')# 删除curl下来的文件 免得占用太大的空间
+    curl(0, 1, 5)

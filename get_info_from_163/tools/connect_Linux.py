@@ -32,7 +32,7 @@ sys.setdefaultencoding('utf-8')
 
 def connect_linux(command='service iptables stop', ip='192.168.0.59', user='root', pwd='FxData!Cds@2016_'):
     paramiko.util.log_to_file("paramiko.log")
-    current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    # current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     ssh.connect(ip, 22, user, pwd)
@@ -52,4 +52,4 @@ def connect_linux(command='service iptables stop', ip='192.168.0.59', user='root
 
 if __name__ == '__main__':
     connect_linux(
-        'curl -o test -L "http://officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be/Office/Data/16.0.7870.2013/i640.cab"')
+        'curl -o test666 -L "http://officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be/Office/Data/16.0.7870.2013/i640.cab"')

@@ -47,13 +47,18 @@ def init_db(host='192.168.1.106', user='root', passwd='0rd1230ac'):
     return connect
 
 
-def execute_mysql_fetchall(execute, filepath, category):
+def execute_mysql_fetchall(execute, filepath, category, host='192.168.1.106', user='root', passwd='0rd1230ac'):
     """
     返回一个元组，里面有查询到的所有信息
+    :param passwd: 数据库密码
+    :param user: 数据库帐号
+    :param host: 数据库ip
+    :param category:
+    :param filepath:
     :param execute:
     :return:
     """
-    conn = init_db()
+    conn = init_db(host, user, passwd )
     cur = conn.cursor()
     cur.execute(execute)
     results = cur.fetchall()

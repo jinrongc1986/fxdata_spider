@@ -24,16 +24,20 @@ I love animals. They taste delicious.
 """
 import sys
 
-from get_info_from_163.http.connect_Linux import connect_linux
-from get_info_from_163.mysql_db import execute_mysql_fetchall
+from get_info_from_163.tools.connect_Linux import connect_linux
+from get_info_from_163.tools.mysql_db import execute_mysql_fetchall
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
 
-def get_http_cache_top(category="1", limit='10', filepath='./cache/httpcache'):
+def get_http_cache_top(category="1", limit='10', host='192.168.1.106', user='root',
+                       passwd='0rd1230ac', filepath='./http/cache/httpcache'):
     """
     在httpcache这个表里根据category和limit选择uri
+    :param user:
+    :param passwd:
+    :param host:
     :param filepath:
     :param category:种类
     :param limit:限定条数，从根据createtime来排序，取最新的limit条数
@@ -43,12 +47,16 @@ def get_http_cache_top(category="1", limit='10', filepath='./cache/httpcache'):
     str2 = " ORDER BY create_time DESC LIMIT "
     execute = str1 + category + str2 + limit
     # print execute
-    return execute_mysql_fetchall(execute, filepath, category)
+    return execute_mysql_fetchall(execute, filepath, category, host, user, passwd)
 
 
-def get_video_cache_top(category='1', limit='10', filepath='./cache/videocache'):
+def get_video_cache_top(category='1', limit='10', host='192.168.1.106', user='root',
+                        passwd='0rd1230ac', filepath='./http/cache/httpcache'):
     """
     在videocache这个表里根据category和limit选择uri
+    :param passwd:
+    :param user:
+    :param host:
     :param category:
     :param limit:
     :param filepath:
@@ -58,12 +66,16 @@ def get_video_cache_top(category='1', limit='10', filepath='./cache/videocache')
     str2 = " ORDER BY create_time DESC LIMIT "
     execute = str1 + category + str2 + limit
     # print execute
-    return execute_mysql_fetchall(execute, filepath, category)
+    return execute_mysql_fetchall(execute, filepath, category, host, user, passwd)
 
 
-def get_mobile_cache_top(category='0', limit='10', filepath='./cache/mobilecache'):
+def get_mobile_cache_top(category='0', limit='10', host='192.168.1.106', user='root',
+                         passwd='0rd1230ac', filepath='./http/cache/httpcache'):
     """
     在mobilecache这个表里根据category和limit选择uri
+    :param passwd:
+    :param user:
+    :param host:
     :param category:
     :param limit:
     :param filepath:
@@ -73,31 +85,35 @@ def get_mobile_cache_top(category='0', limit='10', filepath='./cache/mobilecache
     str2 = " ORDER BY create_time DESC LIMIT "
     execute = str1 + category + str2 + limit
     # print execute
-    return execute_mysql_fetchall(execute, filepath, category)
+    return execute_mysql_fetchall(execute, filepath, category, host, user, passwd)
 
 
-def get_all_cache(limit=10):
+def get_all_cache(limit=100, host='192.168.1.106', user='root', passwd='0rd1230ac'):
     """
     获取全部种类的资源
     class=0 时 category有0--4
     class=1 时 category有0--2
     class=2 时 category有0--19
+    :param limit:
+    :param host:
+    :param user:
+    :param passwd:
     :return:
     """
-    connect_linux()  # 初始化 免得数据库无法连上
+    connect_linux('service iptables stop', '192.168.1.106')  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
     kind = 0
     while kind < 5:
-        get_http_cache_top(str(kind), str(limit))
+        get_http_cache_top(str(kind), str(limit), host, user, passwd)
         kind += 1
     kind = 0
     while kind < 3:
-        get_mobile_cache_top(str(kind), str(limit))
+        get_mobile_cache_top(str(kind), str(limit), host, user, passwd)
         kind += 1
     kind = 0
     while kind < 20:
-        get_video_cache_top(str(kind), str(limit))
+        get_video_cache_top(str(kind), str(limit), host, user, passwd)
         kind += 1
 
 
 if __name__ == '__main__':
-    get_all_cache()
+    pass
