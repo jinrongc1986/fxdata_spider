@@ -35,5 +35,5 @@ if __name__ == '__main__':
     所有的curl指令，因为涉及到相对路径，请都在main这个页面下执行
     """
     # get_all_cache()
-    # curl_resource(0, 1, 5)
-    curl_resource_class(2)
+    curl_resource(0, 1, 5)
+    # curl_resource_class(0, 5, 'windows', 'tangtao')

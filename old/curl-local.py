@@ -94,7 +94,7 @@ for i in range(times):
     for result in results:
         # uri = result['uri']
         uri=video_list[count]
-        cmd = "curl -o /dev/null -L '" + uri + "' --user-agent 'iphone'" + ' --limit-rate 5M'
+        cmd = "curl -o /dev/null -L '" + uri + "' user-agent 'iphone'" + ' --limit-rate 5M'
         print 'cmd_command:     ' + cmd
         p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         time.sleep(seconds)
