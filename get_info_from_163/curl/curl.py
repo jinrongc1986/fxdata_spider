@@ -56,6 +56,10 @@ def do_curl(command, system="windows"):
     else:  # 此处编写linux下的命令
         x = open("linux_curl_log", "a")
         x.write(current_time + '\n' + command + '\n')
+        #在此增加读取linux配置的语句
+
+
+
         info = connect_linux(command)
         with open("linux_curl_log", "a") as f:
             # line = info.strip('\n')
