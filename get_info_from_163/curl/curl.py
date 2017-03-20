@@ -33,6 +33,8 @@ from get_info_from_163.tools.connect_Linux import connect_linux
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
+current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
 
 def do_curl(command, system="windows"):
     """
@@ -41,7 +43,7 @@ def do_curl(command, system="windows"):
     :param system:linux or windows
     :return:
     """
-    current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
     if system == 'windows':
         p = os.popen(command)
         info = p.readlines()  # 读取命令行的输出到一个list
@@ -56,11 +58,13 @@ def do_curl(command, system="windows"):
     else:  # 此处编写linux下的命令
         x = open("linux_curl_log", "a")
         x.write(current_time + '\n' + command + '\n')
-        #在此增加读取linux配置的语句
-
-
-
-        info = connect_linux(command)
+        # 在此增加读取linux配置的语句
+        f = open('./http/config_linux_to_curl', 'r')
+        linux_config = f.readline().split()
+        ip_add = linux_config[0]
+        user = linux_config[1]
+        pwd = linux_config[2]
+        info = connect_linux(command, ip_add, user, pwd)
         with open("linux_curl_log", "a") as f:
             # line = info.strip('\n')
             f.write(info)
@@ -68,7 +72,7 @@ def do_curl(command, system="windows"):
         x.write("-----------------------------------------------" + '\n')
 
 
-def curl_resource(kind=0, category=0, limit=5, system='windows', ua='iphone'):
+def curl_resource_verbose(kind=0, category=0, limit=5, system='windows', ua='iphone'):
     """
     根据class（就是上面的kind，因为class是自带的关键字，故换成kind）和category，还有limit来执行curl动作
     :param ua:
@@ -79,22 +83,29 @@ def curl_resource(kind=0, category=0, limit=5, system='windows', ua='iphone'):
     :return:
     """
     if kind == 0:
-        kind = 'httpcache'
+        kind_ = 'httpcache'
     elif kind == 1:
-        kind = 'mobilecache'
+        kind_ = 'mobilecache'
     else:
-        kind = 'videocache'
-    filepath = './http/cache/' + kind + str(category)  # 找到存放资源地址的文件 随后遍历
+        kind_ = 'videocache'
+    filepath = './http/cache/' + kind_ + str(category)  # 找到存放资源地址的文件 随后遍历
     cache_url_list = []
+    cache_size_list=[]
     # print filepath
-    count = 0
+    count = 0  # 计算文件中一共有多少资源 从0开始
+    cache_size_total = 0
     for line in open(filepath):
+        cache_size = line.split(',')[1]  # 此处获取资源的缓存大小
+        line = line.split(',')[0]  # 此处获取的地址
         line = line.replace('["', '')
-        line = line.replace('"]', '')
+        line = line.replace('"', '')
         line = line.replace('\n', '')
         cache_url_list.append(line)
+        cache_size = int(cache_size.replace(']', ''))
+        cache_size_total += cache_size  # 这个文件中所有资源的cache_size的总和
+        cache_size_list.append(cache_size)
         count += 1
-    # print cache_url_list
+
     if count <= limit:  # 如果出现limit为5而实际只存在两个或三个数据的时候
         limit = count
     i = 0
@@ -103,7 +114,12 @@ def curl_resource(kind=0, category=0, limit=5, system='windows', ua='iphone'):
         command2 = '" '
         command3 = ' --user-agent "' + ua + '"'
         command = command1 + cache_url_list[i] + command2 + command3
-        # print command
+        cache_size_total=cache_size_list[i]+cache_size_total
+        x = open("cache_size_log", "a")
+        x.write(
+            current_time + '\n' + ' class= ' + str(kind_) + ' category= ' + str(
+                category) + ' cache_size=' + str(cache_size_list[i]) + ' cache_size_total:' + str(
+                cache_size_total) + '\n' + '----------------------------------------------------------------------------------' + '\n')
         do_curl(command, system)
         i += 1
     if system == 'windows':
@@ -128,7 +144,7 @@ def curl_resource_class(kind=0, limit=10, system='windows', ua='iphone'):
             # print is_unempty
             # print filepath1
             if is_unempty:  # 如果不为空 则执行读取和curl操作
-                curl_resource(int(kind), category, limit, system, ua)
+                curl_resource_verbose(int(kind), category, limit, system, ua)
             else:  # 如果为空则跳过
                 pass
             category += 1
@@ -141,7 +157,7 @@ def curl_resource_class(kind=0, limit=10, system='windows', ua='iphone'):
             # print is_unempty
             # print filepath1
             if is_unempty:  # 如果不为空 则执行读取和curl操作
-                curl_resource(int(kind), category, limit, system, ua)
+                curl_resource_verbose(int(kind), category, limit, system, ua)
             else:  # 如果为空则跳过
                 pass
             category += 1
@@ -153,12 +169,12 @@ def curl_resource_class(kind=0, limit=10, system='windows', ua='iphone'):
             is_unempty = any(f)
             # print is_unempty
             if is_unempty:  # 如果不为空 则执行读取和curl操作
-                curl_resource(int(kind), category, limit, system, ua)
+                curl_resource_verbose(int(kind), category, limit, system, ua)
             else:  # 如果为空则跳过
                 pass
             category += 1
 
 
 if __name__ == '__main__':
-    # curl_resource(0, 1, 5)
-    curl_resource_class()
+    curl_resource_verbose(0, 1, 5)
+    curl_resource_class(0, )

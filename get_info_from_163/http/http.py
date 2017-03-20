@@ -43,7 +43,7 @@ def get_http_cache_top(category="1", limit='10', host='192.168.1.106', user='roo
     :param limit:限定条数，从根据createtime来排序，取最新的limit条数
     :return:
     """
-    str1 = "SELECT uri FROM http_cache WHERE category="
+    str1 = "SELECT uri,cache_size FROM http_cache WHERE cache_size < 10485760 AND category="
     str2 = " ORDER BY create_time DESC LIMIT "
     execute = str1 + category + str2 + limit
     # print execute
@@ -62,7 +62,7 @@ def get_video_cache_top(category='1', limit='10', host='192.168.1.106', user='ro
     :param filepath:
     :return:
     """
-    str1 = "SELECT uri FROM video_cache WHERE category="
+    str1 = "SELECT uri,cache_size FROM video_cache WHERE cache_size < 10485760 AND category="
     str2 = " ORDER BY create_time DESC LIMIT "
     execute = str1 + category + str2 + limit
     # print execute
@@ -81,7 +81,7 @@ def get_mobile_cache_top(category='0', limit='10', host='192.168.1.106', user='r
     :param filepath:
     :return:
     """
-    str1 = "SELECT uri FROM mobile_cache WHERE category="
+    str1 = "SELECT uri,cache_size  FROM mobile_cache WHERE cache_size < 10485760 AND category="
     str2 = " ORDER BY create_time DESC LIMIT "
     execute = str1 + category + str2 + limit
     # print execute
