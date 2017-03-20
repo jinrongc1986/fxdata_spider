@@ -33,7 +33,7 @@ from get_info_from_163.tools.connect_Linux import connect_linux
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
 
 
 def do_curl(command, system="windows"):
@@ -43,7 +43,7 @@ def do_curl(command, system="windows"):
     :param system:linux or windows
     :return:
     """
-
+    current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     if system == 'windows':
         p = os.popen(command)
         info = p.readlines()  # 读取命令行的输出到一个list
@@ -54,7 +54,7 @@ def do_curl(command, system="windows"):
                 line = line.strip('\r\n')
                 json.dump(line, f, ensure_ascii=False)
                 f.write('\n')
-        x.write("-----------------------------------------------" + '\n')
+        x.write("-----------------------------------------------" )
     else:  # 此处编写linux下的命令
         x = open("linux_curl_log", "a")
         x.write(current_time + '\n' + command + '\n')
@@ -69,7 +69,7 @@ def do_curl(command, system="windows"):
             # line = info.strip('\n')
             f.write(info)
             f.write('\n')
-        x.write("-----------------------------------------------" + '\n')
+        x.write("-----------------------------------------------" )
 
 
 def curl_resource_verbose(kind=0, category=0, limit=5, system='windows', ua='iphone'):
@@ -82,6 +82,7 @@ def curl_resource_verbose(kind=0, category=0, limit=5, system='windows', ua='iph
     :param limit:最近的n个资源
     :return:
     """
+    current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     if kind == 0:
         kind_ = 'httpcache'
     elif kind == 1:
