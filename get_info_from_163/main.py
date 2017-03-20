@@ -62,7 +62,7 @@ def kind1(time_line=125):
 
 
 def kind2(time_line=125):
-    curl_resource_verbose(2, 14, 5, 'linux', 'windows')
+    curl_resource_verbose(2, 13, 5, 'linux', 'windows')
     curl_resource_verbose(0, 4, 5, 'linux', 'iphone')
     curl_resource_verbose(1, 0, 5, 'linux', 'windows')
     time.sleep(time_line)
@@ -72,7 +72,7 @@ def kind2(time_line=125):
 def kind3(time_line=125):
     curl_resource_verbose(1, 0, 5, 'linux', 'windows')
     curl_resource_verbose(2, 6, 5, 'linux', 'windows')
-    curl_resource_verbose(0, 5, 5, 'linux', 'windows')
+    curl_resource_verbose(0, 3, 5, 'linux', 'windows')
     time.sleep(time_line)
     curl_resource_verbose(2, 13, 5, 'linux', 'windows')
 
@@ -94,12 +94,11 @@ def kind5(time_line=125):
     curl_resource_verbose(2, 6, 5, 'linux', 'windows')
     curl_resource_verbose(2, 8, 5, 'linux', 'windows')
     curl_resource_verbose(2, 13, 5, 'linux', 'windows')
-    curl_resource_verbose(2, 14, 5, 'linux', 'windows')
     curl_resource_verbose(2, 15, 5, 'linux', 'windows')
     curl_resource_verbose(2, 16, 5, 'linux', 'windows')
 
 
-def timer(expect_time='2017-03-20 17:57:00'):
+def timer(expect_time='2017-03-20 18:41:00'):
     """
     输入期望开始的时间随后每隔五分钟会调用一次
     :param expect_time:
@@ -110,6 +109,7 @@ def timer(expect_time='2017-03-20 17:57:00'):
     while True:
         current_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         current_time = datetime.datetime.strptime(current_time, '%Y-%m-%d %H:%M:%S')
+        print current_time
         wait_time = str(expect_time - current_time)
         minute = int(wait_time.split(':')[1])
         seconds = int(wait_time.split(':')[2])
@@ -119,6 +119,12 @@ def timer(expect_time='2017-03-20 17:57:00'):
             kind1()
         elif node == 2:
             kind2()
+        elif node == 3:
+            kind3()
+        elif node == 4:
+            kind4()
+        elif node == 5:
+            kind5()
         time_line = datetime.timedelta(minutes=5)
         expect_time = expect_time + time_line
         node += 1
@@ -130,5 +136,6 @@ if __name__ == '__main__':
     """
     所有的curl指令，因为涉及到相对路径，请都在main这个页面下执行
     """
-
-    timer()
+    curl_resource_verbose(0, 5, 5, 'linux', 'windows')
+    # get_all_cache()
+    # timer()

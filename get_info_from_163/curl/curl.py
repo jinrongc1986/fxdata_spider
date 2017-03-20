@@ -34,8 +34,6 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 
-
-
 def do_curl(command, system="windows"):
     """
     执行curl命令，目前只支持windows系统和linux系统
@@ -54,7 +52,7 @@ def do_curl(command, system="windows"):
                 line = line.strip('\r\n')
                 json.dump(line, f, ensure_ascii=False)
                 f.write('\n')
-        x.write("-----------------------------------------------" )
+        x.write("-----------------------------------------------")
     else:  # 此处编写linux下的命令
         x = open("linux_curl_log", "a")
         x.write(current_time + '\n' + command + '\n')
@@ -69,7 +67,7 @@ def do_curl(command, system="windows"):
             # line = info.strip('\n')
             f.write(info)
             f.write('\n')
-        x.write("-----------------------------------------------" )
+        x.write("-----------------------------------------------")
 
 
 def curl_resource_verbose(kind=0, category=0, limit=5, system='windows', ua='iphone'):
@@ -91,7 +89,7 @@ def curl_resource_verbose(kind=0, category=0, limit=5, system='windows', ua='iph
         kind_ = 'videocache'
     filepath = './http/cache/' + kind_ + str(category)  # 找到存放资源地址的文件 随后遍历
     cache_url_list = []
-    cache_size_list=[]
+    cache_size_list = []
     # print filepath
     count = 0  # 计算文件中一共有多少资源 从0开始
     cache_size_total = 0
@@ -101,12 +99,11 @@ def curl_resource_verbose(kind=0, category=0, limit=5, system='windows', ua='iph
         line = line.replace('["', '')
         line = line.replace('"', '')
         line = line.replace('\n', '')
-        cache_url_list.append(line)
         cache_size = int(cache_size.replace(']', ''))
         cache_size_total += cache_size  # 这个文件中所有资源的cache_size的总和
         cache_size_list.append(cache_size)
+        cache_url_list.append(line)
         count += 1
-
     if count <= limit:  # 如果出现limit为5而实际只存在两个或三个数据的时候
         limit = count
     i = 0
@@ -115,7 +112,7 @@ def curl_resource_verbose(kind=0, category=0, limit=5, system='windows', ua='iph
         command2 = '" '
         command3 = ' --user-agent "' + ua + '"'
         command = command1 + cache_url_list[i] + command2 + command3
-        cache_size_total=cache_size_list[i]+cache_size_total
+        cache_size_total = cache_size_list[i] + cache_size_total
         x = open("cache_size_log", "a")
         x.write(
             current_time + '\n' + ' class= ' + str(kind_) + ' category= ' + str(
