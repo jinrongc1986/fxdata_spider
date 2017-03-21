@@ -66,7 +66,7 @@ def do_curl(command, system="windows"):
         info = connect_linux(command, ip_add, user, pwd)
         with open("linux_curl_log", "a") as f:
             # line = info.strip('\n')
-            f.write(info)
+            f.write("                  "+info)
             f.write('\n')
             f.flush()
             # x.write("-----------------------------------------------\n")
@@ -83,7 +83,6 @@ def curl_resource_verbose(kind=0, category=0, limit=5, system='windows', ua='iph
     :return:
     """
     global x
-    current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     if kind == 0:
         kind_ = 'httpcache'
     elif kind == 1:
@@ -103,7 +102,6 @@ def curl_resource_verbose(kind=0, category=0, limit=5, system='windows', ua='iph
         line = line.replace('"', '')
         line = line.replace('\n', '')
         cache_size = int(cache_size.replace(']', ''))
-        # cache_size_total += cache_size  # 这个文件中所有资源的cache_size的总和
         cache_size_list.append(cache_size)
         cache_url_list.append(line)
         count += 1
@@ -115,19 +113,19 @@ def curl_resource_verbose(kind=0, category=0, limit=5, system='windows', ua='iph
         command2 = '" '
         command3 = ' --user-agent "' + ua + '"'
         command = command1 + cache_url_list[i] + command2 + command3
+        do_curl(command, system)
         cache_size_total = cache_size_list[i] + cache_size_total  # 写入日志的cache_size_total指的是执行了curl的所有资源的大小总和
         if system == 'windows':
             x = open("windows_curl_log", "a")
         else:
             x = open("linux_curl_log", "a")
         # x = open("cache_size_log", "a")
-        x.write('class= ' + str(kind_) + ' category= ' + str(
+        x.write('class=' + str(kind_) + ' category=' + str(
             category) + ' cache_size=' + str(cache_size_list[i]) + ' cache_size_total:' + str(
             cache_size_total) + '\n' + '----------------------------------------------------------------------------------')
         x.flush()
-        do_curl(command, system)
+
         i += 1
-    x.write('************************************')
     if system == 'windows':
         os.remove('test666')
 
