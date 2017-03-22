@@ -1,0 +1,10 @@
+# fxdata_spider
+工作需要定制的爬虫
+目前第一阶段的工作内容都放在get_info_from_163文件夹中
+在此文件夹中有以下几个文件夹，所存放的文件及内容介绍如下:
+·curl文件夹 curl.py 主要提供curl各种资源，如curl某个特定的url，curl某个特定的class和category，curl某个特定的class
+·http文件夹下的cache文件夹是根据class 和category 读取数据库中已存在的资源的url和文件大小  这个文件是由http.py生成的
+kind_info是每种kind（多个curl资源组成某种kind）的url地址和总的大小，这个文件是由class_info.py生成的config
+config_linux_to_curl里的内容为你所需要执行curl操作的linux机器的ip 登录帐号和密码
+tools文件夹下存放链接数据库以及链接linux的函数
+使用的时候直接调用根目录下的main函数即可
