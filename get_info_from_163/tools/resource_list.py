@@ -74,11 +74,11 @@ def get_resource_size(url):
         if res is None:
             command = command1 + kind3 + command2 + url + command3
             res = execute_mysql(command)
-            info.append("video")
+            info.append("videocache")
             info.append(res[1])
             info.append(res[0])
         else:
-            info.append("mobile")
+            info.append("mobilecache")
             info.append(res[1])
             info.append(res[0])
     else:
@@ -119,26 +119,53 @@ def hot_list(kind=0):
     x = open("./kind_info/resource_list_verbose", 'r')
     lines = x.readlines()
     info_all = []  # 把所有的数据写入二维数组 随后开始对二维数组进行操作
-    for line in lines:
-        info = []
-        line = line.split()
-        url = line[0].replace("url:", '')
-        class_kind = line[1].replace('class=', '')
-        category = int(line[2].replace('category=', ''))
-        total_size = int(line[5].replace('total_size:', ''))
-        info.append(url)
-        info.append(class_kind)
-        info.append(category)
-        info.append(total_size)
-        info = tuple(info)
-        info_all.append(info)
-    # print info_all
-    info_all = sorted(info_all, key=lambda totalsize: totalsize[3], reverse=True)  # 根据total_size 从大到小排序
-    f = open("./kind_info/hot_resource", 'w')
-    i = 0
-    while i < len(info_all):
-        f.write(str(info_all[i])+'\n')
-        i += 1
+    if kind == 0:
+        for line in lines:
+            info = []
+            line = line.split()
+            url = line[0].replace("url:", '')
+            class_kind = line[1].replace('class=', '')
+            category = int(line[2].replace('category=', ''))
+            total_size = int(line[5].replace('total_size:', ''))
+            info.append(url)
+            info.append(class_kind)
+            info.append(category)
+            info.append(total_size)
+            info = tuple(info)
+            info_all.append(info)
+        info_all = sorted(info_all, key=lambda totalsize: totalsize[3], reverse=True)  # 根据total_size 从大到小排序
+        f = open("./kind_info/hot_resource", 'w')
+        i = 0
+        while i < len(info_all):
+            f.write(str(info_all[i]) + '\n')
+            i += 1
+    else:
+        if kind == 1:
+            kind = 'httpcache'
+        elif kind == 2:
+            kind = 'mobilecache'
+        elif kind == 3:
+            kind = 'videocache'
+        for line in lines:
+            line = line.split()
+            class_kind = line[1].replace('class=', '')
+            if class_kind == kind:
+                info = []
+                url = line[0].replace("url:", '')
+                category = int(line[2].replace('category=', ''))
+                total_size = int(line[5].replace('total_size:', ''))
+                info.append(url)
+                info.append(class_kind)
+                info.append(category)
+                info.append(total_size)
+                info = tuple(info)
+                info_all.append(info)
+        info_all = sorted(info_all, key=lambda totalsize: totalsize[3], reverse=True)  # 根据total_size 从大到小排序
+        f = open("./kind_info/hot_resource_"+kind, 'w')
+        i = 0
+        while i < len(info_all):
+            f.write(str(info_all[i]) + '\n')
+            i += 1
 
 
 if __name__ == '__main__':

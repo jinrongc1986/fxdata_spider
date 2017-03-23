@@ -220,13 +220,14 @@ def main():
     os.system('cls')
     print u"准备工作就绪 开始进行curl操作"
     print datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    timer('2017-03-23 12:46:00', '2017-03-23 15:00:00')
+    timer('2017-03-23 17:46:00', '2017-03-23 09:00:00')
+    get_resource_verbose()
+    hot_list()
 
 
 if __name__ == '__main__':
     """
     所有的curl指令，因为涉及到相对路径，请都在main这个页面下执行
     """
-    # main()
-    # get_resource_verbose(
-    hot_list()
+    main()
+
