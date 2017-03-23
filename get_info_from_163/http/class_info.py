@@ -253,11 +253,11 @@ def kind_info_verbose(kind=1):
             if line.split()[1] == "class=videocache" and line.split()[2] == 'category=17':
                 video_fenxing += 1
                 video_fenxing_size = int(line.split()[3].replace("cache_size=", ''))
-                video_fenxing_size_total == video_fenxing_size
+                video_fenxing_size_total += video_fenxing_size
             if line.split()[1] == "class=videocache" and line.split()[2] == 'category=18':
                 video_icntv += 1
                 video_icntv_size = int(line.split()[3].replace("cache_size=", ''))
-                video_icntv_size_total == video_icntv_size
+                video_icntv_size_total += video_icntv_size
             if line.split()[1] == "class=videocache" and line.split()[2] == 'category=19':
                 video_mongotv += 1
                 video_mongotv_size = int(line.split()[3].replace("cache_size=", ''))

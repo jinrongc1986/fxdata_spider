@@ -45,8 +45,8 @@ def do_curl(command, system="windows"):
     if system == 'windows':
         p = os.popen(command)
         info = p.readlines()  # 读取命令行的输出到一个list
-        x = open("windows_curl_log", "a")
-        x.write(current_time + '\n' + command + '\n')
+        x1 = open("windows_curl_log", "a")
+        x1.write(current_time + '\n' + command + '\n')
         for line in info:  # 按行遍历
             with open("windows_curl_log", "a") as f:
                 line = line.strip('\r\n')
@@ -55,8 +55,8 @@ def do_curl(command, system="windows"):
                 f.flush()
                 # x.write("-----------------------------------------------\n")
     else:  # 此处编写linux下的命令
-        x = open("linux_curl_log", "a")
-        x.write(current_time + '\n' + command + '\n')
+        x1 = open("linux_curl_log", "a")
+        x1.write(current_time + '\n' + command + '\n')
         # 在此增加读取linux配置的语句
         f = open('./http/config_linux_to_curl', 'r')
         linux_config = f.readline().split()
@@ -66,7 +66,7 @@ def do_curl(command, system="windows"):
         info = connect_linux(command, ip_add, user, pwd)
         with open("linux_curl_log", "a") as f:
             # line = info.strip('\n')
-            f.write("                  "+info)
+            f.write("                  " + info)
             f.write('\n')
             f.flush()
             # x.write("-----------------------------------------------\n")

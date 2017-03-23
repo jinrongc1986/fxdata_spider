@@ -22,14 +22,14 @@ I love animals. They taste delicious.
 ┃┫┫  ┃┫┫
 ┗┻┛  ┗┻┛
 """
-import sys
-import time
+import time, os
 import datetime
 
-from get_info_from_163.curl.curl import curl_resource_verbose, curl_resource_class
+from get_info_from_163.curl.curl import curl_resource_verbose
 from get_info_from_163.http.class_info import *
 from get_info_from_163.http.http import get_all_cache
 from get_info_from_163.tools.connect_Linux import connect_linux
+from get_info_from_163.tools.resource_list import get_resource_list_by_time, get_resource_verbose, hot_list
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -139,16 +139,17 @@ def timer(expect_start_time='2017-03-21 17:04:00', expect_end_time='2017-03-21 1
     init_debug_info = connect_linux(
         ' /home/icache/icached debug', '192.168.1.106')
     f = open('linux_curl_log', 'a')
-    f.write(init_debug_info)
+    f.write(init_debug_info)  # 删除文件中的内容
     f.flush()
-    count_kind1 = 0
-    count_kind2 = 0
-    count_kind3 = 0
-    count_kind4 = 0
-    count_kind5 = 0
+    count_kind1 = 1
+    count_kind2 = 1
+    count_kind3 = 1
+    count_kind4 = 1
+    count_kind5 = 1
     print u"开始写入日志操作"
     while True:
         current_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 显示现在的时间
+        print 'current_time:' + current_time
         current_time = datetime.datetime.strptime(current_time, '%Y-%m-%d %H:%M:%S')  # 格式化当前的时间
         print u'期望结束的时间加上五分钟是：' + str(expect_end_time)  # 离结束还有多久
         wait_to_end = str(expect_end_time - current_time)  # 期望结束的时间+5分钟-当前的时间 即剩下多少时间
@@ -164,35 +165,36 @@ def timer(expect_start_time='2017-03-21 17:04:00', expect_end_time='2017-03-21 1
         else:
             print u"倒计时还没结束"
         wait_time = str(expect_start_time - current_time)
+        hours = int(wait_time.split(':')[0])
         minute = int(wait_time.split(':')[1])
         seconds = int(wait_time.split(':')[2])
-        seconds_to_wait = minute * 60 + seconds
+        seconds_to_wait = hours * 3600 + minute * 60 + seconds
         print u"等待时间为" + str(seconds_to_wait) + u'秒后开始执行'
         time.sleep(seconds_to_wait)
         print u'开始执行kind的curl操作'
         if node == 1:
-            print count_kind1
             kind1()
+            print u'kind1执行了' + str(count_kind1) + u"次"
             count_kind1 += 1
         elif node == 2:
             kind2()
-            print count_kind2
+            print u'kind2执行了' + str(count_kind2) + u"次"
             count_kind2 += 1
         elif node == 3:
             kind3()
-            print count_kind3
+            print u'kind3执行了' + str(count_kind3) + u"次"
             count_kind3 += 1
         elif node == 4:
             kind4()
-            print count_kind4
+            print u'kind4执行了' + str(count_kind4) + u"次"
             count_kind4 += 1
         elif node == 5:
             kind5()
-            print count_kind5
+            print u'kind5执行了' + str(count_kind5) + u"次"
             count_kind5 += 1
-        time_line = datetime.timedelta(minutes=5)  # 每次curl间隔的时间，要求为5分钟
+        time_line = datetime.timedelta(minutes=5)  # 两个kind之间每次curl间隔的时间，要求为5分钟
         expect_start_time = expect_start_time + time_line
-        print u'下次执行的时间为：' + str(expect_start_time)
+        print u'下次执行的时间为(expect_start_time)：' + str(expect_start_time)
         node += 1
         if node == 6:
             node = 1
@@ -215,14 +217,16 @@ def main():
     while i < 6:
         calculate_kind(i)  # 目前一共五钟kind，把每个kind的cache文件信息存放在kind_info中
         i += 1
+    os.system('cls')
     print u"准备工作就绪 开始进行curl操作"
     print datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    # timer('2017-03-22 13:50:00', '2017-03-22 19:25:00')
+    timer('2017-03-23 12:46:00', '2017-03-23 15:00:00')
 
 
 if __name__ == '__main__':
     """
     所有的curl指令，因为涉及到相对路径，请都在main这个页面下执行
     """
-    main()
-    # kind_info_verbose()
+    # main()
+    # get_resource_verbose(
+    hot_list()

@@ -58,7 +58,7 @@ def execute_mysql_fetchall(execute, filepath, category, host='192.168.1.106', us
     :param execute:
     :return:
     """
-    conn = init_db(host, user, passwd )
+    conn = init_db(host, user, passwd)
     cur = conn.cursor()
     cur.execute(execute)
     results = cur.fetchall()
@@ -74,5 +74,24 @@ def execute_mysql_fetchall(execute, filepath, category, host='192.168.1.106', us
     return results
 
 
+def execute_mysql(execute, host='192.168.1.106', user='root', passwd='0rd1230ac'):
+    """
+    返回数据库查询的单个信息
+    :param execute:
+    :param host:
+    :param user:
+    :param passwd:
+    :return:
+    """
+    conn = init_db(host, user, passwd)
+    cur = conn.cursor()
+    cur.execute(execute)
+    results = cur.fetchone()
+    cur.close()
+    conn.commit()
+    conn.close()
+    return results
+
+
 if __name__ == '__main__':
-    pass
+    execute_mysql("SELECT cache_size FROM http_cache WHERE uri='http://officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be/Office/Data/16.0.7870.2024/i642052.cab'")
