@@ -25,7 +25,7 @@ I love animals. They taste delicious.
 import sys
 
 from get_info_from_163.tools.connect_Linux import connect_linux
-from get_info_from_163.tools.mysql_db import execute_mysql_fetchall
+from get_info_from_163.tools.mysql_db import execute_mysql_get_cache_info
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -47,7 +47,7 @@ def get_http_cache_top(category="1", limit='10', host='192.168.1.106', user='roo
     str2 = " ORDER BY create_time DESC LIMIT "
     execute = str1 + category + str2 + limit
     # print execute
-    return execute_mysql_fetchall(execute, filepath, category, host, user, passwd)
+    return execute_mysql_get_cache_info(execute, filepath, category, host, user, passwd)
 
 
 def get_video_cache_top(category='1', limit='10', host='192.168.1.106', user='root',
@@ -66,7 +66,7 @@ def get_video_cache_top(category='1', limit='10', host='192.168.1.106', user='ro
     str2 = " ORDER BY create_time DESC LIMIT "
     execute = str1 + category + str2 + limit
     # print execute
-    return execute_mysql_fetchall(execute, filepath, category, host, user, passwd)
+    return execute_mysql_get_cache_info(execute, filepath, category, host, user, passwd)
 
 
 def get_mobile_cache_top(category='0', limit='10', host='192.168.1.106', user='root',
@@ -85,7 +85,7 @@ def get_mobile_cache_top(category='0', limit='10', host='192.168.1.106', user='r
     str2 = " ORDER BY create_time DESC LIMIT "
     execute = str1 + category + str2 + limit
     # print execute
-    return execute_mysql_fetchall(execute, filepath, category, host, user, passwd)
+    return execute_mysql_get_cache_info(execute, filepath, category, host, user, passwd)
 
 
 def get_all_cache(limit=100, host='192.168.1.106', user='root', passwd='0rd1230ac'):

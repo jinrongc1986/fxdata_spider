@@ -22,3 +22,22 @@ tools文件夹下存放链接数据库以及链接linux的函数
 linux_curl_log : 在什么时间 curl了什么东西，包括url 大小 class 和category 开始和结束的时候还会输出debug日志以及一共循环执行了多少次kind
 
 
+原理图：
+
+第一步：使用get_all_cache()函数 根据class 和 category 从数据库中筛选出小于10mb的资源，放入各自的文件夹中 /http/cache/各类文件
+
+kind为各种curl指定的class和category的集合，不同的kind由不同的class和category组合而成。而他们所执行的curl的url都是上文中/http/cache中的url
+
+第二步：使用calculate_kind函数获取没中kind所curl的资源并且写入到/kind_info/cache_service下 里面的信息包含了各种class资源的大小 和各种class+category的资源大小
+
+第三步：输入开始时间和结束时间开始执行规律的curl操作 在执行前和执行后都获取一次debug信息 
+
+所有执行的curl操作都写入到curl_log文件中
+
+目前共五个kind 每个kind分为两部分，中间间隔120秒 
+
+固定每五分钟执行一次kind 五个kind一个循环，直到到达指定的结束时间
+
+第四步：使用get_resource_verbose函数，从curl_log中获取每个资源执行了多少次，随后从数据库中获取该资源的大小并且写入到resource_list_verbose中
+
+第五步：使用hot_list函数，根据次数*每个资源的大小求出总共的service_size后从大到小排序并且根据class和总榜单写入相应的文件中。
