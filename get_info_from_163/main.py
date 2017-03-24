@@ -22,35 +22,36 @@ I love animals. They taste delicious.
 ┃┫┫  ┃┫┫
 ┗┻┛  ┗┻┛
 """
-import time, os
 import datetime
+import os
+import time
 
 from get_info_from_163.curl.curl import curl_resource_verbose
 from get_info_from_163.http.class_info import *
 from get_info_from_163.http.http import get_all_cache
 from get_info_from_163.tools.connect_Linux import connect_linux
-from get_info_from_163.tools.resource_list import get_resource_list_by_time, get_resource_verbose, hot_list
+from get_info_from_163.tools.resource_list import get_resource_verbose, hot_list, get_all_hot_list
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
 
-def kind1(is_sleep=True, time_line=115):
+def kind1(time_stamp, is_sleep=True, time_line=115):
     """
     :return:
     """
     # 第一个五分钟 执行如下操作 下载
     print u'执行kind1的上半部分'
-    curl_resource_verbose(0, 2, 10, 'linux', 'windows')
-    curl_resource_verbose(1, 0, 10, 'linux', 'windows')
-    curl_resource_verbose(2, 15, 10, 'linux', 'iphone')
+    curl_resource_verbose(time_stamp, 0, 2, 10, 'linux', 'windows')
+    curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows')
+    curl_resource_verbose(time_stamp, 2, 15, 10, 'linux', 'iphone')
     if is_sleep:
         print u'间隔125秒后再curl'
         time.sleep(time_line)
     print u'执行kind1的下半部分'
-    curl_resource_verbose(2, 1, 10, 'linux', 'windows')
-    curl_resource_verbose(1, 0, 10, 'linux', 'windows')
-    curl_resource_verbose(0, 1, 10, 'linux', 'windows')
+    curl_resource_verbose(time_stamp, 2, 1, 10, 'linux', 'windows')
+    curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows')
+    curl_resource_verbose(time_stamp, 0, 1, 10, 'linux', 'windows')
 
     """
     curl_resource_verbose(0, 2, 5, 'linux', 'windows')
@@ -66,65 +67,66 @@ def kind1(is_sleep=True, time_line=115):
     """
 
 
-def kind2(is_sleep=True, time_line=115):
+def kind2(time_stamp, is_sleep=True, time_line=115):
     print u'执行kind2的上半部分'
-    curl_resource_verbose(2, 13, 10, 'linux', 'windows')
-    curl_resource_verbose(0, 4, 10, 'linux', 'iphone')
-    curl_resource_verbose(1, 0, 10, 'linux', 'windows')
+    curl_resource_verbose(time_stamp, 2, 13, 10, 'linux', 'windows')
+    curl_resource_verbose(time_stamp, 0, 4, 10, 'linux', 'iphone')
+    curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows')
     if is_sleep:
         print u'间隔125秒后再curl'
         time.sleep(time_line)
     print u'执行kind2的下半部分'
-    curl_resource_verbose(2, 16, 10, 'linux', 'windows')
-    curl_resource_verbose(0, 3, 10, 'linux', 'iphone')
-    curl_resource_verbose(1, 0, 10, 'linux', 'windows')
+    curl_resource_verbose(time_stamp, 2, 16, 10, 'linux', 'windows')
+    curl_resource_verbose(time_stamp, 0, 3, 10, 'linux', 'iphone')
+    curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows')
 
 
-def kind3(is_sleep=True, time_line=115):
+def kind3(time_stamp, is_sleep=True, time_line=115):
     print u'执行kind3的上半部分'
-    curl_resource_verbose(1, 0, 10, 'linux', 'windows')
-    curl_resource_verbose(2, 6, 10, 'linux', 'iphone')
-    curl_resource_verbose(0, 3, 10, 'linux', 'windows')
+    curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows')
+    curl_resource_verbose(time_stamp, 2, 6, 10, 'linux', 'iphone')
+    curl_resource_verbose(time_stamp, 0, 3, 10, 'linux', 'windows')
     if is_sleep:
         print u'间隔125秒后再curl'
         time.sleep(time_line)
     print u'执行kind3的下半部分'
-    curl_resource_verbose(2, 13, 10, 'linux', 'windows')
-    curl_resource_verbose(1, 0, 10, 'linux', 'windows')
-    curl_resource_verbose(0, 4, 10, 'linux', 'windows')
+    curl_resource_verbose(time_stamp, 2, 13, 10, 'linux', 'windows')
+    curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows')
+    curl_resource_verbose(time_stamp, 0, 4, 10, 'linux', 'windows')
 
 
-def kind4(is_sleep=True, time_line=115):
+def kind4(time_stamp, is_sleep=True, time_line=115):
     print u'执行kind4的上半部分'
-    curl_resource_verbose(0, 2, 10, 'linux', 'windows')
-    curl_resource_verbose(1, 0, 10, 'linux', 'windows')
-    curl_resource_verbose(2, 1, 10, 'linux', 'iphone')
+    curl_resource_verbose(time_stamp, 0, 2, 10, 'linux', 'windows')
+    curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows')
+    curl_resource_verbose(time_stamp, 2, 1, 10, 'linux', 'iphone')
     if is_sleep:
         print u'间隔125秒后再curl'
         time.sleep(time_line)
     print u'执行kind4的下半部分'
-    curl_resource_verbose(2, 6, 10, 'linux', 'windows')
-    curl_resource_verbose(0, 3, 10, 'linux', 'windows')
-    curl_resource_verbose(1, 0, 10, 'linux', 'windows')
+    curl_resource_verbose(time_stamp, 2, 6, 10, 'linux', 'windows')
+    curl_resource_verbose(time_stamp, 0, 3, 10, 'linux', 'windows')
+    curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows')
 
 
-def kind5(is_sleep=True, time_line=115):
+def kind5(time_stamp, is_sleep=True, time_line=115):
     print u'执行kind5的上半部分'
-    curl_resource_verbose(2, 8, 10, 'linux', 'iphone')
-    curl_resource_verbose(1, 0, 10, 'linux', 'windows')
-    curl_resource_verbose(0, 4, 10, 'linux', 'windows')
+    curl_resource_verbose(time_stamp, 2, 8, 10, 'linux', 'iphone')
+    curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows')
+    curl_resource_verbose(time_stamp, 0, 4, 10, 'linux', 'windows')
     if is_sleep:
         print u'间隔125秒后再curl'
         time.sleep(time_line)
     print u'执行kind5的下半部分'
-    curl_resource_verbose(2, 1, 10, 'linux', 'windows')
-    curl_resource_verbose(1, 0, 10, 'linux', 'windows')
-    curl_resource_verbose(0, 1, 10, 'linux', 'windows')
+    curl_resource_verbose(time_stamp, 2, 1, 10, 'linux', 'windows')
+    curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows')
+    curl_resource_verbose(time_stamp, 0, 1, 10, 'linux', 'windows')
 
 
-def timer(expect_start_time='2017-03-21 17:04:00', expect_end_time='2017-03-21 17:20:00'):
+def timer(time_stamp, expect_start_time='2017-03-21 17:04:00', expect_end_time='2017-03-21 17:20:00'):
     """
     输入期望开始的时间随后每隔五分钟会调用一次
+    :param time_stamp:
     :param expect_end_time:
     :param expect_start_time:
     :return:
@@ -134,11 +136,12 @@ def timer(expect_start_time='2017-03-21 17:04:00', expect_end_time='2017-03-21 1
     expect_end_time = expect_end_time + datetime.timedelta(minutes=5)
     node = 1
     print u'debug信息如下所示：'
-    f = open('linux_curl_log', 'w+')
+    curl_log = "curl_log_" + time_stamp
+    f = open(curl_log, 'w+')
     f.close()
     init_debug_info = connect_linux(
         ' /home/icache/icached debug', '192.168.1.106')
-    f = open('linux_curl_log', 'a')
+    f = open(curl_log, 'a')
     f.write(init_debug_info)  # 删除文件中的内容
     f.flush()
     count_kind1 = 1
@@ -173,23 +176,23 @@ def timer(expect_start_time='2017-03-21 17:04:00', expect_end_time='2017-03-21 1
         time.sleep(seconds_to_wait)
         print u'开始执行kind的curl操作'
         if node == 1:
-            kind1()
+            kind1(time_stamp)
             print u'kind1执行了' + str(count_kind1) + u"次"
             count_kind1 += 1
         elif node == 2:
-            kind2()
+            kind2(time_stamp)
             print u'kind2执行了' + str(count_kind2) + u"次"
             count_kind2 += 1
         elif node == 3:
-            kind3()
+            kind3(time_stamp)
             print u'kind3执行了' + str(count_kind3) + u"次"
             count_kind3 += 1
         elif node == 4:
-            kind4()
+            kind4(time_stamp)
             print u'kind4执行了' + str(count_kind4) + u"次"
             count_kind4 += 1
         elif node == 5:
-            kind5()
+            kind5(time_stamp)
             print u'kind5执行了' + str(count_kind5) + u"次"
             count_kind5 += 1
         time_line = datetime.timedelta(minutes=5)  # 两个kind之间每次curl间隔的时间，要求为5分钟
@@ -211,18 +214,18 @@ def timer(expect_start_time='2017-03-21 17:04:00', expect_end_time='2017-03-21 1
 
 
 def main():
-    get_all_cache()  # 获取全部资源放入到指定的文件夹中
-    i = 1
-    print u'开始准备工作，计算每种kind的资源和大小'
-    while i < 6:
-        calculate_kind(i)  # 目前一共五钟kind，把每个kind的cache文件信息存放在kind_info中
-        i += 1
-    os.system('cls')
-    print u"准备工作就绪 开始进行curl操作"
-    print datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    timer('2017-03-24 10:01:00', '2017-03-24 13:10:00')
-    get_resource_verbose()
-    hot_list()
+    time_stamp = str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M'))
+    print 'time_stamp:' + time_stamp
+    # get_all_cache(time_stamp)  # 获取全部资源放入到指定的文件夹中
+    # i = 1
+    # print u'开始准备工作，计算每种kind的资源和大小'
+    # while i < 6:
+    #     calculate_kind(time_stamp, i)  # 目前一共五钟kind，把每个kind的cache文件信息存放在kind_info中
+    #     i += 1
+    # print u"准备工作就绪 开始进行curl操作"
+    # print datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    # timer(time_stamp, '2017-03-24 15:46:00', '2017-03-24 16:00:00')
+    get_all_hot_list(time_stamp)
 
 
 if __name__ == '__main__':
@@ -230,4 +233,3 @@ if __name__ == '__main__':
     所有的curl指令，因为涉及到相对路径，请都在main这个页面下执行
     """
     main()
-

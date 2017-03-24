@@ -34,9 +34,10 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 
-def do_curl(command, system="windows"):
+def do_curl(time_stamp, command, system="windows"):
     """
     执行curl命令，目前只支持windows系统和linux系统
+    :param time_stamp:
     :param command:命令语句
     :param system:linux or windows
     :return:
@@ -55,7 +56,9 @@ def do_curl(command, system="windows"):
                 f.flush()
                 # x.write("-----------------------------------------------\n")
     else:  # 此处编写linux下的命令
-        x1 = open("linux_curl_log", "a")
+        curl_log = "curl_log_" + time_stamp
+        x1 = open(curl_log, 'a')
+        # x1 = open("linux_curl_log", "a")
         x1.write(current_time + '\n' + command + '\n')
         # 在此增加读取linux配置的语句
         f = open('./http/config_linux_to_curl', 'r')
@@ -64,17 +67,17 @@ def do_curl(command, system="windows"):
         user = linux_config[1]
         pwd = linux_config[2]
         info = connect_linux(command, ip_add, user, pwd)
-        with open("linux_curl_log", "a") as f:
-            # line = info.strip('\n')
+        with open(curl_log, "a") as f:
             f.write("                  " + info)
             f.write('\n')
             f.flush()
             # x.write("-----------------------------------------------\n")
 
 
-def curl_resource_verbose(kind=0, category=0, limit=5, system='windows', ua='iphone'):
+def curl_resource_verbose(current_time, kind=0, category=0, limit=5, system='windows', ua='iphone'):
     """
     根据class（就是上面的kind，因为class是自带的关键字，故换成kind）和category，还有limit来执行curl动作
+    :param current_time:
     :param ua:
     :param system:
     :param kind:http mobile or video
@@ -89,7 +92,8 @@ def curl_resource_verbose(kind=0, category=0, limit=5, system='windows', ua='iph
         kind_ = 'mobilecache'
     else:
         kind_ = 'videocache'
-    filepath = './http/cache/' + kind_ + str(category)  # 找到存放资源地址的文件 随后遍历
+    filepath = './http/cache' + current_time + '/' + kind_ + str(category)  # 找到存放资源地址的文件 随后遍历
+    # print filepath
     cache_url_list = []
     cache_size_list = []
     # print filepath
@@ -113,26 +117,27 @@ def curl_resource_verbose(kind=0, category=0, limit=5, system='windows', ua='iph
         command2 = '" '
         command3 = ' --user-agent "' + ua + '"'
         command = command1 + cache_url_list[i] + command2 + command3
-        do_curl(command, system)
+        do_curl(current_time, command, system)
         cache_size_total = cache_size_list[i] + cache_size_total  # 写入日志的cache_size_total指的是执行了curl的所有资源的大小总和
-        if system == 'windows':
-            x = open("windows_curl_log", "a")
-        else:
-            x = open("linux_curl_log", "a")
-        # x = open("cache_size_log", "a")
+        # if system == 'windows':
+        #     x = open("windows_curl_log", "a")
+        # else:
+        #     x = open("linux_curl_log", "a")
+        curl_log = 'curl_log_' + current_time
+        x = open(curl_log, 'a')
         x.write('class=' + str(kind_) + ' category=' + str(
             category) + ' cache_size=' + str(cache_size_list[i]) + ' cache_size_total:' + str(
             cache_size_total) + '\n' + '----------------------------------------------------------------------------------')
         x.flush()
-
         i += 1
     if system == 'windows':
         os.remove('test666')
 
 
-def curl_resource_class(kind=0, limit=10, system='windows', ua='iphone'):
+def curl_resource_class(time_stamp, kind=0, limit=10, system='windows', ua='iphone'):
     """
     根据class的种类来curl所有的这个class下的cache资源（存放于文件中）
+    :param time_stamp:
     :param system:
     :param ua:
     :param limit:
@@ -148,7 +153,7 @@ def curl_resource_class(kind=0, limit=10, system='windows', ua='iphone'):
             # print is_unempty
             # print filepath1
             if is_unempty:  # 如果不为空 则执行读取和curl操作
-                curl_resource_verbose(int(kind), category, limit, system, ua)
+                curl_resource_verbose(time_stamp, int(kind), category, limit, system, ua)
             else:  # 如果为空则跳过
                 pass
             category += 1
@@ -161,7 +166,7 @@ def curl_resource_class(kind=0, limit=10, system='windows', ua='iphone'):
             # print is_unempty
             # print filepath1
             if is_unempty:  # 如果不为空 则执行读取和curl操作
-                curl_resource_verbose(int(kind), category, limit, system, ua)
+                curl_resource_verbose(time_stamp, int(kind), category, limit, system, ua)
             else:  # 如果为空则跳过
                 pass
             category += 1
@@ -173,7 +178,7 @@ def curl_resource_class(kind=0, limit=10, system='windows', ua='iphone'):
             is_unempty = any(f)
             # print is_unempty
             if is_unempty:  # 如果不为空 则执行读取和curl操作
-                curl_resource_verbose(int(kind), category, limit, system, ua)
+                curl_resource_verbose(time_stamp, int(kind), category, limit, system, ua)
             else:  # 如果为空则跳过
                 pass
             category += 1

@@ -30,13 +30,15 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 
-def get_resource_list_by_time():
+def get_resource_list_by_time(time_stamp):
     """
     根据linux_curl_log来计算出每个url被执行了多少次并且写入日志中
     :return:
     """
-    f = open("linux_curl_log", "r")
-    x = open("./kind_info/resource_list", 'w')
+    curl_log = 'curl_log_' + time_stamp
+    f = open(curl_log, "r")
+    resource_list_file = './kind_info/' + time_stamp + '/resource_list'
+    x = open(resource_list_file, 'w')
     result = dict()
     lines = f.readlines()
     for line in lines:
@@ -88,13 +90,15 @@ def get_resource_size(url):
     return info
 
 
-def get_resource_verbose():
+def get_resource_verbose(time_stamp):
     """
-    获取热点榜单后进行写入文件，可进行下一步分析操作
+    获取热点榜单后进行写入文件，可进行下一步分析操作 文件名为resource_list_verbose
     :return:
     """
-    x = open("./kind_info/resource_list_verbose", 'w')
-    f = open("./kind_info/resource_list", 'r')
+    file_path = './kind_info/' + time_stamp + '/'
+    x = open(file_path + "resource_list_verbose", 'w')
+    get_resource_list_by_time(time_stamp)
+    f = open(file_path + "resource_list", 'r')
     lines = f.readlines()
     for line in lines:
         url = line.split()[0]
@@ -110,13 +114,15 @@ def get_resource_verbose():
     x.close()
 
 
-def hot_list(kind=0):
+def hot_list(time_stamp, kind=0):
     """
     根据curl_log列出热榜资源并写入到文件中
+    :param time_stamp:
     :param kind: 0表示所有资源
     :return:
     """
-    x = open("./kind_info/resource_list_verbose", 'r')
+    resource_list_verbose_file = './kind_info/' + time_stamp + '/resource_list_verbose'
+    x = open(resource_list_verbose_file, 'r')
     lines = x.readlines()
     info_all = []  # 把所有的数据写入二维数组 随后开始对二维数组进行操作
     if kind == 0:
@@ -134,7 +140,8 @@ def hot_list(kind=0):
             info = tuple(info)
             info_all.append(info)
         info_all = sorted(info_all, key=lambda totalsize: totalsize[3], reverse=True)  # 根据total_size 从大到小排序
-        f = open("./kind_info/hot_resource", 'w')
+        hot_resource_file = './kind_info/' + time_stamp + '/hot_resource'
+        f = open(hot_resource_file, 'w')
         i = 0
         while i < len(info_all):
             f.write(str(info_all[i]) + '\n')
@@ -161,11 +168,20 @@ def hot_list(kind=0):
                 info = tuple(info)
                 info_all.append(info)
         info_all = sorted(info_all, key=lambda totalsize: totalsize[3], reverse=True)  # 根据total_size 从大到小排序
-        f = open("./kind_info/hot_resource_"+kind, 'w')
+        hot_resource_kind_file = './kind_info/' + time_stamp + '/hot_resource_'
+        f = open(hot_resource_kind_file + kind, 'w')
         i = 0
         while i < len(info_all):
             f.write(str(info_all[i]) + '\n')
             i += 1
+
+
+def get_all_hot_list(time_stamp):
+    get_resource_verbose(time_stamp)
+    hot_list(time_stamp)
+    hot_list(time_stamp, 1)
+    hot_list(time_stamp, 2)
+    hot_list(time_stamp, 3)
 
 
 if __name__ == '__main__':

@@ -23,35 +23,42 @@ I love animals. They taste delicious.
 ┗┻┛  ┗┻┛
 """
 import sys
-
+import os
 from get_info_from_163.main import kind1, kind2, kind3, kind4, kind5
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
 
-def calculate_kind(kind=1):
-    f = open('./linux_curl_log', 'w')
+def calculate_kind(time_stamp, kind=1):
+    curl_log = "curl_log_" + time_stamp
+    f = open(curl_log, 'w')
     f.close()
     if kind == 1:
-        kind1(False)
+        kind1(time_stamp, False)
     elif kind == 2:
-        kind2(False)
+        kind2(time_stamp, False)
     elif kind == 3:
-        kind3(False)
+        kind3(time_stamp, False)
     elif kind == 4:
-        kind4(False)
+        kind4(time_stamp, False)
     elif kind == 5:
-        kind5(False)
-    f = open('./linux_curl_log', 'r')
+        kind5(time_stamp, False)
+    f = open(curl_log, 'r')
     total_cache_size = 0
     lines = f.readlines()
-    x = open('./kind_info/cache_service_kind' + str(kind), "w")
+    is_dir_exist = os.path.exists('./kind_info/' + time_stamp)
+    if is_dir_exist is True:
+        pass
+    else:
+        os.mkdir('./kind_info/' + time_stamp)
+    x = open('./kind_info/' + time_stamp + '/cache_service_kind' + str(kind), "w")
     x.close()
+    kind_info_file = './kind_info/' + time_stamp + '/cache_service_kind'
     for line in lines:
         if 'curl' in line:
             url = line.split()[4]
-            x = open('./kind_info/cache_service_kind' + str(kind), "a+")
+            x = open(kind_info_file + str(kind), "a+")
             x.write(url + ' ')
             x.close()
         if 'class' in line:
@@ -60,19 +67,20 @@ def calculate_kind(kind=1):
             class_kind = line.split()[0]
             category = line.split()[1]
             total_cache_size += cache_size
-            x = open('./kind_info/cache_service_kind' + str(kind), "a+")
+            x = open(kind_info_file + str(kind), "a+")
             x.write(class_kind + ' ' + category + ' ')
             x.write("cache_size=" + str(cache_size) + '\n')
             x.close()
-    x = open('./kind_info/cache_service_kind' + str(kind), "a+")
+    x = open(kind_info_file + str(kind), "a+")
     x.write(str(total_cache_size) + '\n')
     x.write('-------------------------------------\n')
     x.close()
-    kind_info_verbose(kind)
+    kind_info_verbose(time_stamp, kind)
 
 
-def kind_info_verbose(kind=1):
-    f = open('./kind_info/cache_service_kind' + str(kind), "a+")
+def kind_info_verbose(time_stamp, kind=1):
+    kind_info_file = './kind_info/' + time_stamp + '/cache_service_kind'
+    f = open(kind_info_file + str(kind), "a+")
     lines = f.readlines()
     httpcache_count = 0
     videocache_count = 0

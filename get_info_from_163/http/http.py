@@ -23,7 +23,8 @@ I love animals. They taste delicious.
 ┗┻┛  ┗┻┛
 """
 import sys
-
+import datetime
+import os
 from get_info_from_163.tools.connect_Linux import connect_linux
 from get_info_from_163.tools.mysql_db import execute_mysql_get_cache_info
 
@@ -47,6 +48,7 @@ def get_http_cache_top(category="1", limit='10', host='192.168.1.106', user='roo
     str2 = " ORDER BY create_time DESC LIMIT "
     execute = str1 + category + str2 + limit
     # print execute
+    filepath += 'httpcache'
     return execute_mysql_get_cache_info(execute, filepath, category, host, user, passwd)
 
 
@@ -66,6 +68,7 @@ def get_video_cache_top(category='1', limit='10', host='192.168.1.106', user='ro
     str2 = " ORDER BY create_time DESC LIMIT "
     execute = str1 + category + str2 + limit
     # print execute
+    filepath += 'videocache'
     return execute_mysql_get_cache_info(execute, filepath, category, host, user, passwd)
 
 
@@ -85,15 +88,17 @@ def get_mobile_cache_top(category='0', limit='10', host='192.168.1.106', user='r
     str2 = " ORDER BY create_time DESC LIMIT "
     execute = str1 + category + str2 + limit
     # print execute
+    filepath += 'mobilecache'
     return execute_mysql_get_cache_info(execute, filepath, category, host, user, passwd)
 
 
-def get_all_cache(limit=100, host='192.168.1.106', user='root', passwd='0rd1230ac'):
+def get_all_cache(current_time, limit=100, host='192.168.1.106', user='root', passwd='0rd1230ac'):
     """
     获取全部种类的资源
     class=0 时 category有0--4
     class=1 时 category有0--2
     class=2 时 category有0--19
+    :param current_time:
     :param limit:
     :param host:
     :param user:
@@ -101,17 +106,23 @@ def get_all_cache(limit=100, host='192.168.1.106', user='root', passwd='0rd1230a
     :return:
     """
     connect_linux('service iptables stop', '192.168.1.106')  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
+    dir_exist = os.path.exists('./http/cache' + str(current_time))
+    if dir_exist is True:
+        pass
+    else:
+        os.mkdir('./http/cache' + str(current_time))
+    filepath = './http/cache' + str(current_time) + '/'
     kind = 0
     while kind < 5:
-        get_http_cache_top(str(kind), str(limit), host, user, passwd)
+        get_http_cache_top(str(kind), str(limit), host, user, passwd, filepath)
         kind += 1
     kind = 0
     while kind < 3:
-        get_mobile_cache_top(str(kind), str(limit), host, user, passwd)
+        get_mobile_cache_top(str(kind), str(limit), host, user, passwd, filepath)
         kind += 1
     kind = 0
     while kind < 20:
-        get_video_cache_top(str(kind), str(limit), host, user, passwd)
+        get_video_cache_top(str(kind), str(limit), host, user, passwd, filepath)
         kind += 1
 
 
