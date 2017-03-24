@@ -24,7 +24,8 @@ I love animals. They taste delicious.
 """
 import sys
 import os
-from get_info_from_163.main import kind1, kind2, kind3, kind4, kind5
+
+from get_info_from_163.tools.curl_kind import kind1, kind2, kind3, kind4, kind5
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
