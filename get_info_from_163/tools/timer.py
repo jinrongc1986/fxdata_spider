@@ -32,7 +32,7 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 
-def timer(time_stamp, expect_start_time='2017-03-21 17:04:00', expect_end_time='2017-03-21 17:20:00'):
+def timer_customize(time_stamp, expect_start_time='2017-03-21 17:04:00', expect_end_time='2017-03-21 17:20:00'):
     """
     输入期望开始的时间随后每隔五分钟会调用一次
     :param time_stamp:

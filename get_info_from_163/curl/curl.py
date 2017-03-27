@@ -30,7 +30,7 @@ from datetime import datetime
 import time
 
 from get_info_from_163.tools.connect_Linux import connect_linux
-from get_info_from_163.tools.judge import assert_location_log
+from get_info_from_163.tools.judge import assert_location_log, assert_service_log
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -92,15 +92,19 @@ def curl_resource_verbose(timestamp, kind=0, category=0, limit=5, system='window
         kind_ = 'mobilecache'
     else:
         kind_ = 'videocache'
-    filepath = './http/cache' + timestamp + '/' + kind_ + str(category)  # 找到存放资源地址的文件 随后遍历
-    # print filepath
+    filepath = './http/cache_info/' + timestamp + '/' + kind_ + str(category)  # 找到存放资源地址的文件 随后遍历
     cache_url_list = []
     cache_size_list = []
-    # print filepath
+    md5_list = []
     count = 0  # 计算文件中一共有多少资源 从0开始
     cache_size_total = 0
     for line in open(filepath):
-        cache_size = line.split(',')[-1]  # 此处获取资源的缓存大小
+        md5 = line.split(',')[-1]
+        md5 = md5.replace('"', '')
+        md5 = md5.replace(']', '')
+        md5 = md5.replace('\n', '')
+        md5 = md5.replace(" ", "")
+        cache_size = line.split(',')[-2]  # 此处获取资源的缓存大小
         line = line.split(',')[0]  # 此处获取的地址
         line = line.replace('["', '')
         line = line.replace('"', '')
@@ -108,6 +112,7 @@ def curl_resource_verbose(timestamp, kind=0, category=0, limit=5, system='window
         cache_size = int(cache_size.replace(']', ''))
         cache_size_list.append(cache_size)
         cache_url_list.append(line)
+        md5_list.append(md5)
         count += 1
     if count <= limit:  # 如果出现limit为5而实际只存在两个或三个数据的时候
         limit = count
@@ -118,9 +123,11 @@ def curl_resource_verbose(timestamp, kind=0, category=0, limit=5, system='window
         command3 = ' --user-agent "' + ua + '"'
         url = cache_url_list[i]
         cache_size_each = cache_size_list[i]
+        md5_each = md5_list[i]
         command = command1 + url + command2 + command3
         do_curl(timestamp, command, system)  # 执行curl 操作
         assert_location_log(kind, category, url, cache_size_each, timestamp)
+        assert_service_log(kind, category, cache_size_each, cache_size_each, md5_each, timestamp)
         cache_size_total = cache_size_list[i] + cache_size_total  # 写入日志的cache_size_total指的是执行了curl的所有资源的大小总和
         curl_log = './curl_log/curl_log_' + timestamp
         x = open(curl_log, 'a')
@@ -149,8 +156,6 @@ def curl_resource_class(time_stamp, kind=0, limit=10, system='windows', ua='ipho
             filepath1 = './http/cache/httpcache' + str(category)
             f = open(filepath1)
             is_unempty = any(f)
-            # print is_unempty
-            # print filepath1
             if is_unempty:  # 如果不为空 则执行读取和curl操作
                 curl_resource_verbose(time_stamp, int(kind), category, limit, system, ua)
             else:  # 如果为空则跳过
@@ -181,7 +186,3 @@ def curl_resource_class(time_stamp, kind=0, limit=10, system='windows', ua='ipho
             else:  # 如果为空则跳过
                 pass
             category += 1
-
-
-
-

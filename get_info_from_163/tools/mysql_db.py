@@ -110,5 +110,21 @@ def get_location_log(url):
     return execute_mysql(cmd)
 
 
+def get_service_log(classes, md5):
+    connect_linux('service iptables stop', '192.168.1.106')  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
+    if int(classes) == 0:
+        classes = "http_service_log"
+    elif int(classes) == 1:
+        classes = 'mobile_service_log'
+    elif int(classes) == 2:
+        classes = "video_service_log"
+    cmd1 = 'SELECT category,cache_size,service_size FROM '
+    cmd2 = ' WHERE md5="'
+    cmd3 = '" ORDER BY create_time DESC'
+    cmd = cmd1 + classes + cmd2 + md5 + cmd3
+    res = execute_mysql(cmd)
+    return res
+
+
 if __name__ == '__main__':
-    print get_location_log('http://112.17.6.140/videos/other/20170213/ea/50/e33bf11c06f9534ca29e7aed999c89db.f4v')
+    print get_service_log(0, 'ab534b12b936e7f5ca4072417290a8af')

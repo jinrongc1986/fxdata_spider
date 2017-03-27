@@ -50,6 +50,9 @@ def calculate_kind(time_stamp, kind=1):
     f = open(curl_log, 'r')
     total_cache_size = 0
     lines = f.readlines()
+    is_kind_info_dir_exist = os.path.exists('./kind_info')
+    if is_kind_info_dir_exist is False:
+        os.mkdir('./kind_info')
     is_dir_exist = os.path.exists('./kind_info/' + time_stamp)
     if is_dir_exist is True:
         pass

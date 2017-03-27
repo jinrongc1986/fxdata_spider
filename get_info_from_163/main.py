@@ -23,19 +23,17 @@ I love animals. They taste delicious.
 ┗┻┛  ┗┻┛
 """
 import datetime
-
-from get_info_from_163.curl.curl import curl_resource_verbose
 from get_info_from_163.http.class_info import calculate_kind
 from get_info_from_163.http.http import get_all_cache
 from get_info_from_163.tools.resource_list import get_all_hot_list
-from get_info_from_163.tools.timer import timer
+from get_info_from_163.tools.timer import timer_customize
 import sys
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
 
-def main():
+def main_kind():
     time_stamp = str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M'))
     print 'time_stamp:' + time_stamp
     get_all_cache(time_stamp)  # 获取全部资源放入到指定的文件夹中
@@ -46,10 +44,9 @@ def main():
         i += 1
     print u"准备工作就绪 开始进行curl操作"
     print datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 打印当前的时间
-    timer(time_stamp, '2017-03-27 14:56:00', '2017-03-27 15:10:00')
+    timer_customize(time_stamp, '2017-03-27 14:56:00', '2017-03-27 15:10:00')
     get_all_hot_list(time_stamp)
 
 
 if __name__ == '__main__':
-    # main()
-    curl_resource_verbose('2017-03-27-15-08', 2, 16)
+    main_kind()
