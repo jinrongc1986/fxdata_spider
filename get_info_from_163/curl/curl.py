@@ -100,7 +100,7 @@ def curl_resource_verbose(timestamp, kind=0, category=0, limit=5, system='window
     count = 0  # 计算文件中一共有多少资源 从0开始
     cache_size_total = 0
     for line in open(filepath):
-        cache_size = line.split(',')[1]  # 此处获取资源的缓存大小
+        cache_size = line.split(',')[-1]  # 此处获取资源的缓存大小
         line = line.split(',')[0]  # 此处获取的地址
         line = line.replace('["', '')
         line = line.replace('"', '')
@@ -121,7 +121,6 @@ def curl_resource_verbose(timestamp, kind=0, category=0, limit=5, system='window
         command = command1 + url + command2 + command3
         do_curl(timestamp, command, system)  # 执行curl 操作
         assert_location_log(kind, category, url, cache_size_each, timestamp)
-
         cache_size_total = cache_size_list[i] + cache_size_total  # 写入日志的cache_size_total指的是执行了curl的所有资源的大小总和
         curl_log = './curl_log/curl_log_' + timestamp
         x = open(curl_log, 'a')
@@ -184,6 +183,5 @@ def curl_resource_class(time_stamp, kind=0, limit=10, system='windows', ua='ipho
             category += 1
 
 
-if __name__ == '__main__':
-    curl_resource_verbose(0, 1, 5)
-    curl_resource_class(0, )
+
+

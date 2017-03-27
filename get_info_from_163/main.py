@@ -23,9 +23,10 @@ I love animals. They taste delicious.
 ┗┻┛  ┗┻┛
 """
 import datetime
+
+from get_info_from_163.curl.curl import curl_resource_verbose
 from get_info_from_163.http.class_info import calculate_kind
 from get_info_from_163.http.http import get_all_cache
-from get_info_from_163.tools.connect_Linux import connect_linux
 from get_info_from_163.tools.resource_list import get_all_hot_list
 from get_info_from_163.tools.timer import timer
 import sys
@@ -45,12 +46,10 @@ def main():
         i += 1
     print u"准备工作就绪 开始进行curl操作"
     print datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 打印当前的时间
-    timer(time_stamp, '2017-03-27 11:51:00', '2017-03-27 13:15:00')
+    timer(time_stamp, '2017-03-27 14:56:00', '2017-03-27 15:10:00')
     get_all_hot_list(time_stamp)
 
 
 if __name__ == '__main__':
-    """
-    所有的curl指令，因为涉及到相对路径，请都在main这个页面下执行
-    """
-    main()
+    # main()
+    curl_resource_verbose('2017-03-27-15-08', 2, 16)
