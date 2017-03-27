@@ -35,7 +35,7 @@ def get_resource_list_by_time(time_stamp):
     根据linux_curl_log来计算出每个url被执行了多少次并且写入日志中
     :return:
     """
-    curl_log = 'curl_log_' + time_stamp
+    curl_log = './curl_log/curl_log_' + time_stamp
     f = open(curl_log, "r")
     resource_list_file = './kind_info/' + time_stamp + '/resource_list'
     x = open(resource_list_file, 'w')

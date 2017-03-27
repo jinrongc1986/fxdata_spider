@@ -56,7 +56,7 @@ def do_curl(time_stamp, command, system="windows"):
                 f.flush()
                 # x.write("-----------------------------------------------\n")
     else:  # 此处编写linux下的命令
-        curl_log = "curl_log_" + time_stamp
+        curl_log = "./curl_log/curl_log_" + time_stamp
         x1 = open(curl_log, 'a')
         # x1 = open("linux_curl_log", "a")
         x1.write(current_time + '\n' + command + '\n')
@@ -123,7 +123,7 @@ def curl_resource_verbose(current_time, kind=0, category=0, limit=5, system='win
         #     x = open("windows_curl_log", "a")
         # else:
         #     x = open("linux_curl_log", "a")
-        curl_log = 'curl_log_' + current_time
+        curl_log = './curl_log/curl_log_' + current_time
         x = open(curl_log, 'a')
         x.write('class=' + str(kind_) + ' category=' + str(
             category) + ' cache_size=' + str(cache_size_list[i]) + ' cache_size_total:' + str(

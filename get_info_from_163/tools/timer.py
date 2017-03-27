@@ -53,7 +53,7 @@ def timer(time_stamp, expect_start_time='2017-03-21 17:04:00', expect_end_time='
     expect_end_time = expect_end_time + datetime.timedelta(minutes=5)
     node = 1
     print u'debug信息如下所示：'
-    curl_log = "curl_log_" + time_stamp
+    curl_log = "./curl_log/curl_log_" + time_stamp
     f = open(curl_log, 'w+')
     f.close()
     init_debug_info = connect_linux(

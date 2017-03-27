@@ -32,7 +32,7 @@ sys.setdefaultencoding('utf-8')
 
 
 def calculate_kind(time_stamp, kind=1):
-    curl_log = "curl_log_" + time_stamp
+    curl_log = "./curl_log/curl_log_" + time_stamp
     f = open(curl_log, 'w')
     f.close()
     if kind == 1:
