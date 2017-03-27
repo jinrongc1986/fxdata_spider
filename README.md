@@ -44,4 +44,5 @@ kind为各种curl指定的class和category的集合，不同的kind由不同的c
 
 第五步：使用hot_list函数，根据次数*每个资源的大小求出总共的service_size后从大到小排序并且根据class和总榜单写入相应的文件中。
 
-https://github.com/lhtangtao/fxdata_spider/blob/master/get_info_from_163/%E5%87%BD%E6%95%B0%E5%9B%BE.png
+![函数图](https://github.com/lhtangtao/fxdata_spider/blob/master/get_info_from_163/%E5%87%BD%E6%95%B0%E5%9B%BE.png)
+
