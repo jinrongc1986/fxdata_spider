@@ -33,6 +33,8 @@ sys.setdefaultencoding('utf-8')
 
 def calculate_kind(time_stamp, kind=1):
     curl_log = "./curl_log/curl_log_" + time_stamp
+    if not os.path.exists('./curl_log'):
+        os.mkdir('./curl_log')
     f = open(curl_log, 'w')
     f.close()
     if kind == 1:

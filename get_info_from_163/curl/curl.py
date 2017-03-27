@@ -27,8 +27,10 @@ import json
 import os
 import sys
 from datetime import datetime
+import time
 
 from get_info_from_163.tools.connect_Linux import connect_linux
+from get_info_from_163.tools.judge import assert_location_log
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -54,7 +56,6 @@ def do_curl(time_stamp, command, system="windows"):
                 json.dump(line, f, ensure_ascii=False)
                 f.write('\n')
                 f.flush()
-                # x.write("-----------------------------------------------\n")
     else:  # 此处编写linux下的命令
         curl_log = "./curl_log/curl_log_" + time_stamp
         x1 = open(curl_log, 'a')
@@ -71,13 +72,12 @@ def do_curl(time_stamp, command, system="windows"):
             f.write("                  " + info)
             f.write('\n')
             f.flush()
-            # x.write("-----------------------------------------------\n")
 
 
-def curl_resource_verbose(current_time, kind=0, category=0, limit=5, system='windows', ua='iphone'):
+def curl_resource_verbose(timestamp, kind=0, category=0, limit=5, system='windows', ua='iphone'):
     """
     根据class（就是上面的kind，因为class是自带的关键字，故换成kind）和category，还有limit来执行curl动作
-    :param current_time:
+    :param timestamp:
     :param ua:
     :param system:
     :param kind:http mobile or video
@@ -92,7 +92,7 @@ def curl_resource_verbose(current_time, kind=0, category=0, limit=5, system='win
         kind_ = 'mobilecache'
     else:
         kind_ = 'videocache'
-    filepath = './http/cache' + current_time + '/' + kind_ + str(category)  # 找到存放资源地址的文件 随后遍历
+    filepath = './http/cache' + timestamp + '/' + kind_ + str(category)  # 找到存放资源地址的文件 随后遍历
     # print filepath
     cache_url_list = []
     cache_size_list = []
@@ -116,14 +116,14 @@ def curl_resource_verbose(current_time, kind=0, category=0, limit=5, system='win
         command1 = 'curl -o test666 -L "'
         command2 = '" '
         command3 = ' --user-agent "' + ua + '"'
-        command = command1 + cache_url_list[i] + command2 + command3
-        do_curl(current_time, command, system)
+        url = cache_url_list[i]
+        cache_size_each = cache_size_list[i]
+        command = command1 + url + command2 + command3
+        do_curl(timestamp, command, system)  # 执行curl 操作
+        assert_location_log(kind, category, url, cache_size_each, timestamp)
+
         cache_size_total = cache_size_list[i] + cache_size_total  # 写入日志的cache_size_total指的是执行了curl的所有资源的大小总和
-        # if system == 'windows':
-        #     x = open("windows_curl_log", "a")
-        # else:
-        #     x = open("linux_curl_log", "a")
-        curl_log = './curl_log/curl_log_' + current_time
+        curl_log = './curl_log/curl_log_' + timestamp
         x = open(curl_log, 'a')
         x.write('class=' + str(kind_) + ' category=' + str(
             category) + ' cache_size=' + str(cache_size_list[i]) + ' cache_size_total:' + str(

@@ -1,0 +1,61 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+#name   = assert
+#author = tangtao
+#time   = 2017/3/27 13:58
+#Description=各种校验信息
+#eMail   =tangtao@lhtangtao.com
+#git     =lhtangtao
+# code is far away from bugs with the god animal protecting
+I love animals. They taste delicious.
+┏┓      ┏┓
+┏┛┻━━━┛┻┓
+┃      ☃      ┃
+┃  ┳┛  ┗┳  ┃
+┃      ┻      ┃
+┗━┓      ┏━┛
+┃      ┗━━━┓
+┃  神兽保佑    ┣┓
+┃　永无BUG！   ┏┛
+┗┓┓┏━┳┓┏┛
+┃┫┫  ┃┫┫
+┗┻┛  ┗┻┛
+"""
+import os
+import sys
+from datetime import datetime
+
+from get_info_from_163.tools.mysql_db import get_location_log
+
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
+
+def assert_location_log(classes, category, url, cache_size, timestamp):
+    info = get_location_log(url)
+    log_classes = info[0]
+    log_category = info[1]
+    log_cache_size = info[2]
+    if classes != log_classes or category != log_category or cache_size != log_cache_size:
+        print u'预期的class不同'
+        """
+        在此处加入新的文件 时间戳+location_log——judge
+        如果没有则新建
+        """
+        is_judge_exist = os.path.exists('./judge')
+        if is_judge_exist is True:
+            pass
+        else:
+            os.mkdir('./judge')
+        is_dir_exist = os.path.exists('./judge/location_log/')
+        if is_dir_exist is True:
+            pass
+        else:
+            os.mkdir('./judge/location_log')
+        f = open('./judge/location_log/' + timestamp, 'a')
+        current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        f.write(current_time + ':\n')
+        f.write(str(u'从数据库中读到的资源：') + '\t' + str(log_classes) + '\t' + str(log_category) + '\t' + str(
+            log_cache_size) + ':\n')
+        f.write(str(u'实际curl到的资源：') + '\t' + classes + '\t' + category + '\t' + cache_size + ':\n')

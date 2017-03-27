@@ -48,19 +48,6 @@ def kind1(time_stamp, is_sleep=True, time_line=115):
     curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows')
     curl_resource_verbose(time_stamp, 0, 1, 10, 'linux', 'windows')
 
-    """
-    curl_resource_verbose(0, 2, 5, 'linux', 'windows')
-    curl_resource_verbose(0, 4, 5, 'linux', 'windows')
-    curl_resource_verbose(1, 0, 5, 'linux', 'windows')
-    curl_resource_verbose(2, 1, 5, 'linux', 'windows')
-    curl_resource_verbose(2, 6, 5, 'linux', 'windows')
-    curl_resource_verbose(2, 8, 5, 'linux', 'windows')
-    curl_resource_verbose(2, 13, 5, 'linux', 'windows')
-    curl_resource_verbose(2, 14, 5, 'linux', 'windows')
-    curl_resource_verbose(2, 15, 5, 'linux', 'windows')
-    curl_resource_verbose(2, 16, 5, 'linux', 'windows')
-    """
-
 
 def kind2(time_stamp, is_sleep=True, time_line=115):
     print u'执行kind2的上半部分'

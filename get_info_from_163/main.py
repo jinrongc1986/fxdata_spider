@@ -25,6 +25,7 @@ I love animals. They taste delicious.
 import datetime
 from get_info_from_163.http.class_info import calculate_kind
 from get_info_from_163.http.http import get_all_cache
+from get_info_from_163.tools.connect_Linux import connect_linux
 from get_info_from_163.tools.resource_list import get_all_hot_list
 from get_info_from_163.tools.timer import timer
 import sys
@@ -53,4 +54,3 @@ if __name__ == '__main__':
     所有的curl指令，因为涉及到相对路径，请都在main这个页面下执行
     """
     main()
-    # get_all_hot_list('2017-03-27-11-19')
