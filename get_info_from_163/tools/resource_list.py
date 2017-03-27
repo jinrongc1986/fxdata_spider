@@ -96,7 +96,6 @@ def get_resource_verbose(time_stamp):
     :return:
     """
     file_path = './kind_info/' + time_stamp + '/'
-    x = open(file_path + "resource_list_verbose", 'w')
     get_resource_list_by_time(time_stamp)
     f = open(file_path + "resource_list", 'r')
     lines = f.readlines()
@@ -108,6 +107,7 @@ def get_resource_verbose(time_stamp):
         category = str(info[1])
         cache_size = str(info[2])
         total_size = int(times) * int(cache_size)
+        x = open(file_path + "resource_list_verbose", 'w')
         x.write(
             "url:" + url + '\t' + 'class=' + kind + ' category=' + category + ' times:' + times + '\t' + 'cache_size:' + cache_size + '\t' + 'total_size:' + str(
                 total_size) + '\n')

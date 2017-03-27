@@ -43,8 +43,8 @@ def main():
         calculate_kind(time_stamp, i)  # 目前一共五钟kind，把每个kind的cache文件信息存放在kind_info中
         i += 1
     print u"准备工作就绪 开始进行curl操作"
-    print datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') #打印当前的时间
-    timer(time_stamp, '2017-03-27 18:01:00', '2017-03-27 16:40:00')
+    print datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 打印当前的时间
+    timer(time_stamp, '2017-03-27 11:51:00', '2017-03-27 13:15:00')
     get_all_hot_list(time_stamp)
 
 
@@ -53,3 +53,4 @@ if __name__ == '__main__':
     所有的curl指令，因为涉及到相对路径，请都在main这个页面下执行
     """
     main()
+    # get_all_hot_list('2017-03-27-11-19')

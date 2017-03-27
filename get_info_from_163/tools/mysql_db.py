@@ -26,6 +26,8 @@ import sys
 import json
 import MySQLdb
 
+from get_info_from_163.tools.connect_Linux import connect_linux
+
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
@@ -88,11 +90,25 @@ def execute_mysql(execute, host='192.168.1.106', user='root', passwd='0rd1230ac'
     cur = conn.cursor()
     cur.execute(execute)
     results = cur.fetchone()
+    # results = cur.fetchall()
     cur.close()
     conn.commit()
     conn.close()
     return results
 
 
+def get_location_log(url):
+    """
+    根据url获取location资料后，下一步对比
+    :param url:
+    :return:
+    """
+    connect_linux('service iptables stop', '192.168.1.106')  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
+    cmd1 = 'SELECT class,category,cache_size FROM location_log WHERE req_uri = "'
+    cmd2 = '" ORDER BY create_time DESC'
+    cmd = cmd1 + url + cmd2
+    return execute_mysql(cmd)
+
+
 if __name__ == '__main__':
-    execute_mysql("SELECT cache_size FROM http_cache WHERE uri='http://officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be/Office/Data/16.0.7870.2024/i642052.cab'")
+    print get_location_log('http://112.17.6.140/videos/other/20170213/ea/50/e33bf11c06f9534ca29e7aed999c89db.f4v')

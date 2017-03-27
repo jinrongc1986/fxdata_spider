@@ -43,3 +43,4 @@ kind为各种curl指定的class和category的集合，不同的kind由不同的c
 第四步：使用get_resource_verbose函数，从curl_log中获取每个资源执行了多少次，随后从数据库中获取该资源的大小并且写入到resource_list_verbose中
 
 第五步：使用hot_list函数，根据次数*每个资源的大小求出总共的service_size后从大到小排序并且根据class和总榜单写入相应的文件中。
+
