@@ -25,6 +25,7 @@ I love animals. They taste delicious.
 import datetime
 from get_info_from_163.http.class_info import calculate_kind
 from get_info_from_163.http.http import get_all_cache
+from get_info_from_163.tools.del_log import del_all_log
 from get_info_from_163.tools.resource_list import get_all_hot_list
 from get_info_from_163.tools.timer import timer_customize
 import sys
@@ -44,9 +45,10 @@ def main_kind():
         i += 1
     print u"准备工作就绪 开始进行curl操作"
     print datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 打印当前的时间
-    timer_customize(time_stamp, '2017-03-27 14:56:00', '2017-03-27 15:10:00')
+    timer_customize(time_stamp, '2017-03-27 17:31:00', '2017-03-27 17:35:00')
     get_all_hot_list(time_stamp)
 
 
 if __name__ == '__main__':
+    # del_all_log()
     main_kind()
