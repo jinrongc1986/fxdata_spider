@@ -177,6 +177,11 @@ def hot_list(time_stamp, kind=0):
 
 
 def get_all_hot_list(time_stamp):
+    """
+    从操作日志中分析出各种热榜（包括三种class以及总榜单）
+    :param time_stamp:
+    :return:
+    """
     get_resource_verbose(time_stamp)
     hot_list(time_stamp)
     hot_list(time_stamp, 1)

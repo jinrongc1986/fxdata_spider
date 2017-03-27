@@ -26,7 +26,6 @@ I love animals. They taste delicious.
 import datetime
 import time
 from get_info_from_163.http.class_info import *
-
 from get_info_from_163.tools.connect_Linux import connect_linux
 
 reload(sys)
@@ -43,6 +42,14 @@ def timer(time_stamp, expect_start_time='2017-03-21 17:04:00', expect_end_time='
     """
     expect_start_time = datetime.datetime.strptime(expect_start_time, '%Y-%m-%d %H:%M:%S')
     expect_end_time = datetime.datetime.strptime(expect_end_time, '%Y-%m-%d %H:%M:%S')
+    current_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 显示现在的时间
+    current_time = datetime.datetime.strptime(current_time, '%Y-%m-%d %H:%M:%S')  # 格式化当前的时间
+    if current_time > expect_start_time:
+        print u'预期开始时间不能大于现在的时间'
+        sys.exit()
+    if expect_end_time < expect_start_time:
+        print u'结束时间不能小于开始时间'
+        sys.exit()
     expect_end_time = expect_end_time + datetime.timedelta(minutes=5)
     node = 1
     print u'debug信息如下所示：'
