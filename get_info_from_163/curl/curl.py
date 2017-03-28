@@ -35,9 +35,10 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 
-def do_curl(time_stamp, command, system="windows"):
+def do_curl(time_stamp, command, system="windows", really_do=True):
     """
     执行curl命令，目前只支持windows系统和linux系统
+    :param really_do: 默认是真的要执行curl操作
     :param time_stamp:
     :param command:命令语句
     :param system:linux or windows
@@ -66,16 +67,18 @@ def do_curl(time_stamp, command, system="windows"):
         ip_add = linux_config[0]
         user = linux_config[1]
         pwd = linux_config[2]
-        info = connect_linux(command, ip_add, user, pwd)
-        with open(curl_log, "a") as f:
-            f.write("                  " + info)
-            f.write('\n')
-            f.flush()
+        if really_do is True:
+            info = connect_linux(command, ip_add, user, pwd)
+            with open(curl_log, "a") as f:
+                f.write("                  " + info)
+                f.write('\n')
+                f.flush()
 
 
-def curl_resource_verbose(timestamp, kind=0, category=0, limit=5, system='windows', ua='iphone'):
+def curl_resource_verbose(timestamp, kind=0, category=0, limit=5, system='windows', ua='iphone', need_assert=True):
     """
     根据class（就是上面的kind，因为class是自带的关键字，故换成kind）和category，还有limit来执行curl动作
+    :param need_assert: 
     :param timestamp:
     :param ua:
     :param system:
@@ -122,13 +125,11 @@ def curl_resource_verbose(timestamp, kind=0, category=0, limit=5, system='window
         command3 = ' --user-agent "' + ua + '"'
         url = cache_url_list[i]
         command = command1 + url + command2 + command3
-        print command
+        # print command
         try:
-            do_curl(timestamp, command, system)  # 执行curl 操作
+            do_curl(timestamp, command, system, need_assert)  # 执行curl 操作
         except BaseException as e:
             print e
-        # assert_location_log(kind, category, url, cache_size_each, timestamp)
-        # assert_service_log(kind, category, cache_size_each, cache_size_each, md5_each, timestamp)
         cache_size_total = cache_size_list[i] + cache_size_total  # 写入日志的cache_size_total指的是执行了curl的所有资源的大小总和
         curl_log = './curl_log/curl_log_' + timestamp
         x = open(curl_log, 'a')
@@ -139,13 +140,14 @@ def curl_resource_verbose(timestamp, kind=0, category=0, limit=5, system='window
         i += 1
     i = 0
     time.sleep(2)
-    while i < limit:
-        cache_size_each = cache_size_list[i]
-        url = cache_url_list[i]
-        md5_each = md5_list[i]
-        assert_location_log(kind, category, url, cache_size_each, timestamp)
-        # assert_service_log(kind, category, cache_size_each, cache_size_each, md5_each, timestamp)
-        i += 1
+    if need_assert is True:
+        while i < limit:
+            cache_size_each = cache_size_list[i]
+            url = cache_url_list[i]
+            md5_each = md5_list[i]
+            assert_location_log(kind, category, url, cache_size_each, timestamp)
+            assert_service_log(kind, category, cache_size_each, cache_size_each, md5_each, timestamp)
+            i += 1
 
     if system == 'windows':
         os.remove('test666')
@@ -178,8 +180,6 @@ def curl_resource_class(time_stamp, kind=0, limit=10, system='windows', ua='ipho
             filepath1 = './http/cache/mobilecache' + str(category)
             f = open(filepath1)
             is_unempty = any(f)
-            # print is_unempty
-            # print filepath1
             if is_unempty:  # 如果不为空 则执行读取和curl操作
                 curl_resource_verbose(time_stamp, int(kind), category, limit, system, ua)
             else:  # 如果为空则跳过

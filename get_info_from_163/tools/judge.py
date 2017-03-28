@@ -53,16 +53,6 @@ def assert_location_log(classes, category, url, cache_size, timestamp):
     time_lag = abs(current_time - log_create_time)  # 校验时间差，理论上执行完curl之后 会马上生成一个数据 随后时间差不会超过3秒
     time_lag_float = float(str(time_lag).split(':')[2])
     if classes != log_classes or category != log_category or cache_size != log_cache_size or time_lag_float > 10:
-        print '*****************************************'
-        if classes != log_classes:
-            print u'cache_size 与预期不符'
-        elif category != log_category:
-            print u'category 与预期不符'
-        elif cache_size != log_cache_size:
-            print u'cache_size 与预期不符'
-        elif time_lag_float > 10:
-            print u'create_time与预期不符，请查看日志'
-        print '*****************************************'
         is_judge_exist = os.path.exists('./judge')
         if is_judge_exist is True:
             pass
@@ -82,13 +72,24 @@ def assert_location_log(classes, category, url, cache_size, timestamp):
         f.write(
             str(u'实际curl到的资源：') + '\t' + str(log_classes) + '\t' + str(log_category) + '\t' + str(
                 cache_size) + '\t' + str(time_lag) + ':\n')
+        print '*****************************************'
+        if classes != log_classes:
+            print u'cache_size 与预期不符'
+            f.write("cache_size was wrong" + '\n')
+        elif category != log_category:
+            print u'category 与预期不符'
+            f.write("category was wrong" + '\n')
+        elif cache_size != log_cache_size:
+            print u'cache_size 与预期不符'
+            f.write("cache_size was wrong" + '\n')
+        elif time_lag_float > 10:
+            print u'create_time与预期不符，请查看location日志'
+            f.write("create_time was wrong" + '\n')
+        f.write('***************************************')
+        print '*****************************************'
 
 
 def assert_service_log(classes, category, cache_size, service_size, md5, timestamp):
-    print classes
-    print category
-    print cache_size
-    print md5
     info = get_service_log(classes, md5)
     log_category = info[0]
     log_cache_size = info[1]
@@ -98,16 +99,6 @@ def assert_service_log(classes, category, cache_size, service_size, md5, timesta
     time_lag = abs(current_time - log_create_time)  # 校验时间差，理论上执行完curl之后 会马上生成一个数据 随后时间差不会超过3秒
     time_lag_float = float(str(time_lag).split(':')[2])
     if cache_size != log_cache_size or category != log_category or service_size != log_service_size or time_lag_float > 10:
-        print '*****************************************'
-        if cache_size != log_cache_size:
-            print u'cache_size 与预期不符'
-        elif category != log_category:
-            print u'category 与预期不符'
-        elif service_size != log_service_size:
-            print u'service_size 与预期不符'
-        elif time_lag_float > 10:
-            print u'create_time与预期不符，请查看日志' + md5 + '--------------------------------'
-        print '*****************************************'
         is_judge_exist = os.path.exists('./judge')
         if is_judge_exist is True:
             pass
@@ -127,3 +118,19 @@ def assert_service_log(classes, category, cache_size, service_size, md5, timesta
         f.write(
             str(u'实际curl到的资源：') + '\t' + str(category) + '\t' + str(cache_size) + '\t' + str(service_size) + '\t' + str(
                 time_lag) + ':\n')
+        print '*****************************************'
+        print str(classes) + '\t' + str(category) + '\t' + str(cache_size) + '\t' + str(md5)
+        if cache_size != log_cache_size:
+            print u'cache_size 与预期不符'
+            f.write("cache_size was wrong" + '\n')
+        elif category != log_category:
+            print u'category 与预期不符'
+            f.write("category was wrong" + '\n')
+        elif service_size != log_service_size:
+            print u'service_size 与预期不符'
+            f.write("service_size was wrong" + '\n')
+        elif time_lag_float > 10:
+            print u'create_time与预期不符，请查看service日志'
+            f.write("create_time was wrong" + '\n')
+        f.write('***************************************')
+        print '*****************************************'

@@ -27,6 +27,7 @@ import datetime
 from get_info_from_163.curl.curl import curl_resource_verbose
 from get_info_from_163.http.class_info import calculate_kind
 from get_info_from_163.http.http import get_all_cache
+from get_info_from_163.tools.curl_kind import kind1
 from get_info_from_163.tools.del_log import del_all_log
 from get_info_from_163.tools.resource_list import get_all_hot_list
 from get_info_from_163.tools.timer import timer_customize
@@ -40,6 +41,7 @@ def main_kind():
     time_stamp = str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M'))
     print 'time_stamp:' + time_stamp
     get_all_cache(time_stamp)  # 获取全部资源放入到指定的文件夹中
+    # sys.exit()
     i = 1
     print u'开始准备工作，计算每种kind的资源和大小'
     while i < 6:
@@ -47,12 +49,11 @@ def main_kind():
         i += 1
     print u"准备工作就绪 开始进行curl操作"
     print datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 打印当前的时间
-    timer_customize(time_stamp, '2017-03-28 10:55:00', '2017-03-28 10:35:00')
+    timer_customize(time_stamp, '2017-03-28 16:35:00', '2017-03-28 17:00:00')
     get_all_hot_list(time_stamp)
 
 
 if __name__ == '__main__':
     # del_all_log()
-    # main_kind()
-    curl_resource_verbose("2017-03-28-10-46", 0, 2, 10, 'linux', 'iphone')
+    main_kind()
 

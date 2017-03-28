@@ -32,6 +32,12 @@ sys.setdefaultencoding('utf-8')
 
 
 def calculate_kind(time_stamp, kind=1):
+    """
+    curl了哪些资源都写入到文件中
+    :param time_stamp: 
+    :param kind: 
+    :return: 
+    """
     curl_log = "./curl_log/curl_log_" + time_stamp
     if not os.path.exists('./curl_log'):
         os.mkdir('./curl_log')
@@ -85,6 +91,12 @@ def calculate_kind(time_stamp, kind=1):
 
 
 def kind_info_verbose(time_stamp, kind=1):
+    """
+    求出每种kind的操作所涉及到的信息
+    :param time_stamp: 
+    :param kind: 
+    :return: 
+    """
     kind_info_file = './kind_info/' + time_stamp + '/cache_service_kind'
     f = open(kind_info_file + str(kind), "a+")
     lines = f.readlines()
