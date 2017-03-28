@@ -25,6 +25,7 @@ I love animals. They taste delicious.
 import os
 import sys
 from datetime import datetime
+import time
 
 from get_info_from_163.tools.mysql_db import get_location_log, get_service_log
 
@@ -33,12 +34,35 @@ sys.setdefaultencoding('utf-8')
 
 
 def assert_location_log(classes, category, url, cache_size, timestamp):
+    """
+    在执行curl操作后校验 理论上每次执行一次curl操作的话都会产生一个location_kog
+    此处我们需要校验的是class category size 以及生成时间是否正确
+    :param classes: 
+    :param category: 
+    :param url: 
+    :param cache_size: 
+    :param timestamp: 
+    :return: 
+    """
     info = get_location_log(url)
     log_classes = info[0]
     log_category = info[1]
     log_cache_size = info[2]
-    if classes != log_classes or category != log_category or cache_size != log_cache_size:
-        print u'location_log与预期不符，请查看日志'
+    log_create_time = info[3]
+    current_time = datetime.now()
+    time_lag = abs(current_time - log_create_time)  # 校验时间差，理论上执行完curl之后 会马上生成一个数据 随后时间差不会超过3秒
+    time_lag_float = float(str(time_lag).split(':')[2])
+    if classes != log_classes or category != log_category or cache_size != log_cache_size or time_lag_float > 10:
+        print '*****************************************'
+        if classes != log_classes:
+            print u'cache_size 与预期不符'
+        elif category != log_category:
+            print u'category 与预期不符'
+        elif cache_size != log_cache_size:
+            print u'cache_size 与预期不符'
+        elif time_lag_float > 10:
+            print u'create_time与预期不符，请查看日志'
+        print '*****************************************'
         is_judge_exist = os.path.exists('./judge')
         if is_judge_exist is True:
             pass
@@ -54,18 +78,36 @@ def assert_location_log(classes, category, url, cache_size, timestamp):
         f.write(current_time + ':\n')
         f.write(url + '\n')
         f.write(str(u'从数据库中读到的资源：') + '\t' + str(log_classes) + '\t' + str(log_category) + '\t' + str(
-            log_cache_size) + ':\n')
+            log_cache_size) + '\t' + str(log_create_time) + ':\n')
         f.write(
-            str(u'实际curl到的资源：') + '\t' + str(log_classes) + '\t' + str(log_category) + '\t' + str(cache_size) + ':\n')
+            str(u'实际curl到的资源：') + '\t' + str(log_classes) + '\t' + str(log_category) + '\t' + str(
+                cache_size) + '\t' + str(time_lag) + ':\n')
 
 
 def assert_service_log(classes, category, cache_size, service_size, md5, timestamp):
+    print classes
+    print category
+    print cache_size
+    print md5
     info = get_service_log(classes, md5)
     log_category = info[0]
     log_cache_size = info[1]
     log_service_size = info[2]
-    if cache_size != log_cache_size or category != log_category or service_size != log_service_size:
-        print u'service_log与预期不符，请查看日志'
+    log_create_time = info[3]
+    current_time = datetime.now()
+    time_lag = abs(current_time - log_create_time)  # 校验时间差，理论上执行完curl之后 会马上生成一个数据 随后时间差不会超过3秒
+    time_lag_float = float(str(time_lag).split(':')[2])
+    if cache_size != log_cache_size or category != log_category or service_size != log_service_size or time_lag_float > 10:
+        print '*****************************************'
+        if cache_size != log_cache_size:
+            print u'cache_size 与预期不符'
+        elif category != log_category:
+            print u'category 与预期不符'
+        elif service_size != log_service_size:
+            print u'service_size 与预期不符'
+        elif time_lag_float > 10:
+            print u'create_time与预期不符，请查看日志' + md5 + '--------------------------------'
+        print '*****************************************'
         is_judge_exist = os.path.exists('./judge')
         if is_judge_exist is True:
             pass
@@ -81,6 +123,7 @@ def assert_service_log(classes, category, cache_size, service_size, md5, timesta
         f.write(current_time + ':\n')
         f.write(md5 + '\n')
         f.write(str(u'从数据库中读到的资源：') + '\t' + str(log_category) + '\t' + str(log_cache_size) + '\t' + str(
-            log_service_size) + ':\n')
+            log_service_size) + '\t' + str(log_create_time) + ':\n')
         f.write(
-            str(u'实际curl到的资源：') + '\t' + str(category) + '\t' + str(cache_size) + '\t' + str(service_size) + ':\n')
+            str(u'实际curl到的资源：') + '\t' + str(category) + '\t' + str(cache_size) + '\t' + str(service_size) + '\t' + str(
+                time_lag) + ':\n')

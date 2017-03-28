@@ -28,7 +28,6 @@ import os
 import sys
 from datetime import datetime
 import time
-
 from get_info_from_163.tools.connect_Linux import connect_linux
 from get_info_from_163.tools.judge import assert_location_log, assert_service_log
 
@@ -122,12 +121,14 @@ def curl_resource_verbose(timestamp, kind=0, category=0, limit=5, system='window
         command2 = '" '
         command3 = ' --user-agent "' + ua + '"'
         url = cache_url_list[i]
-        cache_size_each = cache_size_list[i]
-        md5_each = md5_list[i]
         command = command1 + url + command2 + command3
-        do_curl(timestamp, command, system)  # 执行curl 操作
-        assert_location_log(kind, category, url, cache_size_each, timestamp)
-        assert_service_log(kind, category, cache_size_each, cache_size_each, md5_each, timestamp)
+        print command
+        try:
+            do_curl(timestamp, command, system)  # 执行curl 操作
+        except BaseException as e:
+            print e
+        # assert_location_log(kind, category, url, cache_size_each, timestamp)
+        # assert_service_log(kind, category, cache_size_each, cache_size_each, md5_each, timestamp)
         cache_size_total = cache_size_list[i] + cache_size_total  # 写入日志的cache_size_total指的是执行了curl的所有资源的大小总和
         curl_log = './curl_log/curl_log_' + timestamp
         x = open(curl_log, 'a')
@@ -136,6 +137,16 @@ def curl_resource_verbose(timestamp, kind=0, category=0, limit=5, system='window
             cache_size_total) + '\n' + '----------------------------------------------------------------------------------')
         x.flush()
         i += 1
+    i = 0
+    time.sleep(2)
+    while i < limit:
+        cache_size_each = cache_size_list[i]
+        url = cache_url_list[i]
+        md5_each = md5_list[i]
+        assert_location_log(kind, category, url, cache_size_each, timestamp)
+        # assert_service_log(kind, category, cache_size_each, cache_size_each, md5_each, timestamp)
+        i += 1
+
     if system == 'windows':
         os.remove('test666')
 

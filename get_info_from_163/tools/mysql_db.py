@@ -104,7 +104,7 @@ def get_location_log(url):
     :return:
     """
     connect_linux('service iptables stop', '192.168.1.106')  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
-    cmd1 = 'SELECT class,category,cache_size FROM location_log WHERE req_uri = "'
+    cmd1 = 'SELECT class,category,cache_size,create_time FROM location_log WHERE req_uri = "'
     cmd2 = '" ORDER BY create_time DESC'
     cmd = cmd1 + url + cmd2
     return execute_mysql(cmd)
@@ -118,7 +118,7 @@ def get_service_log(classes, md5):
         classes = 'mobile_service_log'
     elif int(classes) == 2:
         classes = "video_service_log"
-    cmd1 = 'SELECT category,cache_size,service_size FROM '
+    cmd1 = 'SELECT category,cache_size,service_size,create_time FROM '
     cmd2 = ' WHERE md5="'
     cmd3 = '" ORDER BY create_time DESC'
     cmd = cmd1 + classes + cmd2 + md5 + cmd3

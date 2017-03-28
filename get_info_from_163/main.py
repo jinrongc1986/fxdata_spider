@@ -23,6 +23,8 @@ I love animals. They taste delicious.
 ┗┻┛  ┗┻┛
 """
 import datetime
+
+from get_info_from_163.curl.curl import curl_resource_verbose
 from get_info_from_163.http.class_info import calculate_kind
 from get_info_from_163.http.http import get_all_cache
 from get_info_from_163.tools.del_log import del_all_log
@@ -45,10 +47,12 @@ def main_kind():
         i += 1
     print u"准备工作就绪 开始进行curl操作"
     print datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 打印当前的时间
-    timer_customize(time_stamp, '2017-03-27 17:31:00', '2017-03-27 17:35:00')
+    timer_customize(time_stamp, '2017-03-28 10:55:00', '2017-03-28 10:35:00')
     get_all_hot_list(time_stamp)
 
 
 if __name__ == '__main__':
     # del_all_log()
-    main_kind()
+    # main_kind()
+    curl_resource_verbose("2017-03-28-10-46", 0, 2, 10, 'linux', 'iphone')
+
