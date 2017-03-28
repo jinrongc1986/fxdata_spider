@@ -46,3 +46,12 @@ kind为各种curl指定的class和category的集合，不同的kind由不同的c
 
 ![函数图](https://github.com/lhtangtao/fxdata_spider/blob/master/get_info_from_163/%E5%87%BD%E6%95%B0%E5%9B%BE.png)
 
+------------------------------------------------------------------------------------------------------------
+
+目前实现功能：
+
+1.get_all_cache（）获取
+从内网的数据库中获取所有的已存在的资源，按照class和category分类。如下图所示
+![资源示意图](https://github.com/lhtangtao/fxdata_spider/blob/master/get_info_from_163/222.png)
+
+2.calculate_kind（）计算每种kind的资源信息，如下图所示
