@@ -1,0 +1,417 @@
+server(cloud) count: 1
+sysinfo: cpu8
+match_db_count: 45 log_en: 0|0
+http thread: 0
+mobile thread: 0
+video thread: 0
+upcache thread: http|mobile: 0|0
+mysql connect: 0
+sys_run_time: 453490s (125h58m)
+down_enable: http|video|mobile: 1|1|1
+down_info: sucess|fault|redown: 23|435|0
+handle packets for vlan|pppoe|ip6|ip4: 41394|0|0|41398
+cache avoid for delay|limit: 328,694,98,0|6,14,0,0
+user online|hit: 1|0
+--------
+capture uri: 41398
+drop uri: 0
+check threshold task: 1364
+drop threshold task: 0
+add cache task: 1851
+drop cache task: 0
+log match: 0
+drop matchlog: 0
+log opt: 755
+drop optlog: 0
+location uri: 9869
+drop location: 0
+avg location time: 1.93ms
+max location time: 140.87ms
+location time > 10ms: 656
+--------
+diskmask: 0xfffffffe
+                  
+2017-03-28 16:51:00
+curl -o test666 -L "http://pub.idqqimg.com/pc/misc/groupgift/animation_PC_96.zip"  --user-agent "windows"
+class=httpcache category=2 cache_size=1738096 cache_size_total:1738096
+----------------------------------------------------------------------------------                  
+2017-03-28 16:51:01
+curl -o test666 -L "http://dlied6.qq.com/invc/qqmaster/sys_opt_assist_tips/315_20170317.zip"  --user-agent "windows"
+class=httpcache category=2 cache_size=593108 cache_size_total:2331204
+----------------------------------------------------------------------------------                  
+2017-03-28 16:51:01
+curl -o test666 -L "http://dlied6.qq.com/invc/xfspeed/qqpcmgr/module_update/file_e37dc5bd703f0122bf905f11466340bb.zip"  --user-agent "windows"
+class=httpcache category=2 cache_size=4592479 cache_size_total:6923683
+----------------------------------------------------------------------------------                  
+2017-03-28 16:51:02
+curl -o test666 -L "http://dlied6.qq.com/invc/xfspeed/qqpcmgr/module_update/file_60155903c6ef8494588ef6942c8326f2.zip"  --user-agent "windows"
+class=httpcache category=2 cache_size=3685870 cache_size_total:10609553
+----------------------------------------------------------------------------------                  
+2017-03-28 16:51:03
+curl -o test666 -L "http://pub.idqqimg.com/pc/misc/connect/files/20170309/000000005a4aef85015ab0fa748b0005.zip"  --user-agent "windows"
+class=httpcache category=2 cache_size=1199146 cache_size_total:11808699
+----------------------------------------------------------------------------------                  
+2017-03-28 16:51:03
+curl -o test666 -L "http://media.info.client.xunlei.com/ThunderPush/P1481537587061.zip"  --user-agent "windows"
+class=httpcache category=2 cache_size=1610530 cache_size_total:13419229
+----------------------------------------------------------------------------------                  
+2017-03-28 16:51:03
+curl -o test666 -L "http://media.info.client.xunlei.com/ThunderPush/P1429101874486.zip"  --user-agent "windows"
+class=httpcache category=2 cache_size=897592 cache_size_total:14316821
+----------------------------------------------------------------------------------                  
+2017-03-28 16:51:04
+curl -o test666 -L "http://dldir2.qq.com/invc/xfspeed/tavupdate/20170207eng2.zip"  --user-agent "windows"
+class=httpcache category=2 cache_size=3900888 cache_size_total:18217709
+----------------------------------------------------------------------------------                  
+2017-03-28 16:51:04
+curl -o test666 -L "http://dlied6.qq.com/invc/xfspeed/qqpcmgr/module_update/fid1486430492_TVL00001.tvl.zip"  --user-agent "windows"
+class=httpcache category=2 cache_size=677729 cache_size_total:18895438
+----------------------------------------------------------------------------------                  
+2017-03-28 16:51:05
+curl -o test666 -L "http://dlied6.qq.com/invc/xfspeed/qqpcmgr/data_update/did1_2017.03.02.0918_TVL00001.tvl.zip"  --user-agent "windows"
+class=httpcache category=2 cache_size=662072 cache_size_total:19557510
+----------------------------------------------------------------------------------                  
+2017-03-28 16:51:14
+curl -o test666 -L "http://m5.apk.67mo.com/apk/360/com.qihoo.appstore_300050260.apk"  --user-agent "windows"
+class=mobilecache category=0 cache_size=7159139 cache_size_total:7159139
+----------------------------------------------------------------------------------                  
+2017-03-28 16:51:15
+curl -o test666 -L "http://appdlc.hicloud.com/dl/appdl/application/apk/93/93c5a565aa0c4276a3dac13c68b09f19/com.dtdream.publictransit.1702252107.apk?sign=d9dz1011e510010820009000@E08EA7E82DCF2067AEAA4F4AF6D9E001&source=search&subsource=%E6%9D%AD%E5%B7%9E%E5%85%AC%E4%BA%A4&listId=qsearch&position=1&hcrId=12CEFA836BAD429F979DBA0784C16948&extendStr=detail:1;&encryptType=1"  --user-agent "windows"
+class=mobilecache category=0 cache_size=9704874 cache_size_total:16864013
+----------------------------------------------------------------------------------                  
+2017-03-28 16:51:20
+curl -o test666 -L "http://183.134.64.20/videos/other/20170216/a2/bb/76e370a609dd1fa29e7c82f43f546e79.f4v?src=iqiyi.com"  --user-agent "iphone"
+class=videocache category=15 cache_size=649655 cache_size_total:649655
+----------------------------------------------------------------------------------                  
+2017-03-28 16:51:21
+curl -o test666 -L "http://112.17.6.140/videos/other/20170213/ea/50/e33bf11c06f9534ca29e7aed999c89db.f4v"  --user-agent "iphone"
+class=videocache category=15 cache_size=2232654 cache_size_total:2882309
+----------------------------------------------------------------------------------                  
+2017-03-28 16:51:21
+curl -o test666 -L "http://112.17.6.140/videos/other/20170111/65/60/0914e4125fd2bb0bb1187f9ec62e4433.f4v"  --user-agent "iphone"
+class=videocache category=15 cache_size=1232967 cache_size_total:4115276
+----------------------------------------------------------------------------------                  
+2017-03-28 16:51:21
+curl -o test666 -L "http://112.17.6.140/videos/other/20170215/a0/bd/21bb0a026d304aeb6e23c22f9da54267.f4v"  --user-agent "iphone"
+class=videocache category=15 cache_size=1687320 cache_size_total:5802596
+----------------------------------------------------------------------------------                  
+2017-03-28 16:51:22
+curl -o test666 -L "http://112.17.6.140/videos/other/20170213/62/39/65597cbec4a9f95a02c4599fbbafb7e7.f4v"  --user-agent "iphone"
+class=videocache category=15 cache_size=2191278 cache_size_total:7993874
+----------------------------------------------------------------------------------                  
+2017-03-28 16:53:23
+curl -o test666 -L "http://112.17.4.21/youku/6774DFB29C14B76BE0EAD2CA3/030002010058B7D1802A5007D2AC4960993E09-F836-A199-CFDF-F0ED19FDB944.flv?sid=04885161114091026a3a8_00&sign=74f33cd298bef782dd95b635eb99025d&ctype=10"  --user-agent "windows"
+class=videocache category=1 cache_size=4085657 cache_size_total:4085657
+----------------------------------------------------------------------------------                  
+2017-03-28 16:53:28
+curl -o test666 -L "http://112.17.14.107/cache/112.25.17.210/youku/6771F5E45A4437816FF98239B/030002010058B7DD23272B07D2AC4936E258E4-B187-E7AD-5393-2B62609F1CFA.flv?sid=0488516007504109bce66_00&sign=4584497d4a160c8e83d50344e73cf942&ctype=10&ich_args2=364-03124107031503_8156546135e947e9ee95b32dd87e68c0_10013002_9c886c24d2c2f7d0963d518939a83798_40c6f7a2c6c6818c97d629100a7984e9"  --user-agent "windows"
+class=videocache category=1 cache_size=2031958 cache_size_total:6117615
+----------------------------------------------------------------------------------                  
+2017-03-28 16:53:29
+curl -o test666 -L "http://218.205.72.114/youku/65727044DB247839DB6C9C3105/030002010058B72BBE206A07D2AC4977F8C3D8-18DF-787E-9C09-8C90F5B6C89F.flv?sid=0488429283350103666f8_00&sign=339b1d106a17c7cc7a19255bb07594b9&ctype=10"  --user-agent "windows"
+class=videocache category=1 cache_size=1858657 cache_size_total:7976272
+----------------------------------------------------------------------------------                  
+2017-03-28 16:53:29
+curl -o test666 -L "http://112.17.4.19/youku/65755858D143774EB7A1E2D4E/030002050452C6BF78AFC101D5830CB93CE6DF-3048-5562-3F2A-C327BE314617.flv?sid=04881797668171095a057_04&sign=9000f884c89defa9b247efed26b3237e&ctype=10"  --user-agent "windows"
+class=videocache category=1 cache_size=8054551 cache_size_total:16030823
+----------------------------------------------------------------------------------                  
+2017-03-28 16:53:29
+curl -o test666 -L "http://111.1.56.181/youku/697759796C53D71C3C13329A1/030002050352C6BF78AFC101D5830CB93CE6DF-3048-5562-3F2A-C327BE314617.flv?sid=04881797668171095a057_03&sign=676f51b01e649ad9bc6d9ee9c39bdc37&ctype=10"  --user-agent "windows"
+class=videocache category=1 cache_size=6328032 cache_size_total:22358855
+----------------------------------------------------------------------------------                  
+2017-03-28 16:53:35
+curl -o test666 -L "http://m5.apk.67mo.com/apk/360/com.qihoo.appstore_300050260.apk"  --user-agent "windows"
+class=mobilecache category=0 cache_size=7159139 cache_size_total:7159139
+----------------------------------------------------------------------------------                  
+2017-03-28 16:53:36
+curl -o test666 -L "http://appdlc.hicloud.com/dl/appdl/application/apk/93/93c5a565aa0c4276a3dac13c68b09f19/com.dtdream.publictransit.1702252107.apk?sign=d9dz1011e510010820009000@E08EA7E82DCF2067AEAA4F4AF6D9E001&source=search&subsource=%E6%9D%AD%E5%B7%9E%E5%85%AC%E4%BA%A4&listId=qsearch&position=1&hcrId=12CEFA836BAD429F979DBA0784C16948&extendStr=detail:1;&encryptType=1"  --user-agent "windows"
+class=mobilecache category=0 cache_size=9704874 cache_size_total:16864013
+----------------------------------------------------------------------------------                  
+2017-03-28 16:53:44
+curl -o test666 -L "http://dl.softmgr.qq.com/original/Development/npp.7.3.3.Installer.exe"  --user-agent "windows"
+class=httpcache category=1 cache_size=2982992 cache_size_total:2982992
+----------------------------------------------------------------------------------                  
+2017-03-28 16:53:45
+curl -o test666 -L "http://officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be/Office/Data/16.0.7870.2024/i642052.cab"  --user-agent "windows"
+class=httpcache category=1 cache_size=682837 cache_size_total:3665829
+----------------------------------------------------------------------------------                  
+2017-03-28 16:53:45
+curl -o test666 -L "http://officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be/Office/Data/16.0.7870.2024/s640.cab"  --user-agent "windows"
+class=httpcache category=1 cache_size=3969774 cache_size_total:7635603
+----------------------------------------------------------------------------------                  
+2017-03-28 16:53:46
+curl -o test666 -L "http://officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be/Office/Data/16.0.7870.2024/s642052.cab"  --user-agent "windows"
+class=httpcache category=1 cache_size=717194 cache_size_total:8352797
+----------------------------------------------------------------------------------                  
+2017-03-28 16:53:46
+curl -o test666 -L "http://officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be/Office/Data/16.0.7870.2020/s640.cab"  --user-agent "windows"
+class=httpcache category=1 cache_size=4184708 cache_size_total:12537505
+----------------------------------------------------------------------------------                  
+2017-03-28 16:53:47
+curl -o test666 -L "http://officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be/Office/Data/16.0.7870.2020/s642052.cab"  --user-agent "windows"
+class=httpcache category=1 cache_size=805809 cache_size_total:13343314
+----------------------------------------------------------------------------------                  
+2017-03-28 16:53:47
+curl -o test666 -L "http://issuecdn.baidupcs.com/issue/netdisk/pc-guanjia-update/5.5.4.1/upgrade_5534_5541.cab"  --user-agent "windows"
+class=httpcache category=1 cache_size=7192193 cache_size_total:20535507
+----------------------------------------------------------------------------------                  
+2017-03-28 16:53:50
+curl -o test666 -L "http://xz.15111223344.com/qqxzb/%e5%b7%a8%e5%a9%b4%e5%9b%bd_102@164573.exe"  --user-agent "windows"
+class=httpcache category=1 cache_size=4081256 cache_size_total:24616763
+----------------------------------------------------------------------------------                  
+2017-03-28 16:53:53
+curl -o test666 -L "http://officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be/Office/Data/16.0.7870.2013/s642052.cab"  --user-agent "windows"
+class=httpcache category=1 cache_size=785268 cache_size_total:25402031
+----------------------------------------------------------------------------------                  
+2017-03-28 16:53:54
+curl -o test666 -L "http://officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be/Office/Data/16.0.7870.2013/s640.cab"  --user-agent "windows"
+class=httpcache category=1 cache_size=4152411 cache_size_total:29554442
+----------------------------------------------------------------------------------                  
+2017-03-28 16:56:00
+curl -o test666 -L "http://183.192.163.159/vhot2.qqvideo.tc.qq.com/k1767nui35z.mp4?sdtfrom=v1099&type=mp4&vkey=621D98A5FD4B3045806B8B1381358F24CA5E363B841741C90AD650B7F20D74AA462CB79CAE0E9A4E93B34A0B0A844B3D6E48640D9C4D1744336ACF6217C93231F79B81152CA548B6466FEC2395E10125E61A043CDBCA987C&level=0&platform=3060202&br=62&fmt=mp4&sp=0&guid=E3C577540A06DAF62ABF39B97784B5AD7F1F121F"  --user-agent "windows"
+class=videocache category=13 cache_size=203055 cache_size_total:203055
+----------------------------------------------------------------------------------                  
+2017-03-28 16:56:00
+curl -o test666 -L "http://122.228.251.155/vhot2.qqvideo.tc.qq.com/k1757awaje7.mp4?sdtfrom=v1099&type=mp4&vkey=124CF1F26DB509EB4B214C3DEAE5AB0969E6F9004CBF63C826311BC8300E49C73FFC10025D04BE314AE371E83F5F9E18FE764A209F4FC42A8424C4C6A59442F184B2894BFC8AE8917FEFC373A02033C3307C46DDBAF2BD20&level=0&platform=3060202&br=66&fmt=mp4&sp=0&guid=E3C577540A06DAF62ABF39B97784B5AD7F1F121F"  --user-agent "windows"
+class=videocache category=13 cache_size=265279 cache_size_total:468334
+----------------------------------------------------------------------------------                  
+2017-03-28 16:56:01
+curl -o test666 -L "http://122.228.251.158/vhot2.qqvideo.tc.qq.com/k175575d9i8.mp4?sdtfrom=v1099&type=mp4&vkey=87476F6E5F3971583C1F4680D66B2D1306CD13A632B47FC1D089C6931652BE91DCDF3F9F08873F8F1657D809BA4F6712E36A5ACD8BFBA8FA62D5AD596D58E8FB71A8F22E7C32190FDBED39124AF85536EE9EB5F37017CA58&level=0&platform=3060202&br=65&fmt=mp4&sp=0&guid=E3C577540A06DAF62ABF39B97784B5AD7F1F121F"  --user-agent "windows"
+class=videocache category=13 cache_size=223770 cache_size_total:692104
+----------------------------------------------------------------------------------                  
+2017-03-28 16:56:01
+curl -o test666 -L "http://122.228.251.158/vhot2.qqvideo.tc.qq.com/b1747wewwoo.mp4?sdtfrom=v1099&type=mp4&vkey=E6445F66C4E2D770B05E01F38ADEDE12AA58087B46296B8A83EB470B747B41E779A1B38CC13CF6A5E4558565C0687E66E1B2F400F7D4DF642D0D3FF691025BFECF9BF5D9CCF4BB1284AC5E3A22F11921669DD4ECECBB6608&level=0&platform=3060202&br=65&fmt=mp4&sp=0&guid=E3C577540A06DAF62ABF39B97784B5AD7F1F121F"  --user-agent "windows"
+class=videocache category=13 cache_size=236848 cache_size_total:928952
+----------------------------------------------------------------------------------                  
+2017-03-28 16:56:01
+curl -o test666 -L "http://183.192.163.157/vhot2.qqvideo.tc.qq.com/j1735yhgriy.mp4?sdtfrom=v1099&type=mp4&vkey=DEAF886510C92279010D0048CC22705D79C329E733629ECF94364DDE13C05A062850869ACD5F909885B5CEFB162BABB8DCDC3A0F91B63554BECE0BC735E07C76A6377866475BF50BBCE8924B05D4BE19BF8C3A9111BF5068&level=0&platform=3060202&br=69&fmt=mp4&sp=0&guid=E8C6D0A1102ED3DD86D27093544A7A12EEF199A4"  --user-agent "windows"
+class=videocache category=13 cache_size=245047 cache_size_total:1173999
+----------------------------------------------------------------------------------                  
+2017-03-28 16:56:02
+curl -o test666 -L "http://117.135.128.158/vhot2.qqvideo.tc.qq.com/b1732vj7wcj.mp4?sdtfrom=v1099&type=mp4&vkey=B73A039B3C78BC188798B5D4F4317A20813850090448DAF269AECF8FBE27BD4EF70A20E82611EE69D87D3A6222A14AF06F695B2ABFAF3D95AFF415133D2857C5C0EB9474BCBE9CA58244F046F2B9FE98ACC4393ACB13FF2F&level=0&platform=3060202&br=58&fmt=mp4&sp=0&guid=E8C6D0A1102ED3DD86D27093544A7A12EEF199A4"  --user-agent "windows"
+class=videocache category=13 cache_size=274037 cache_size_total:1448036
+----------------------------------------------------------------------------------                  
+2017-03-28 16:56:02
+curl -o test666 -L "http://117.135.128.158/vhot2.qqvideo.tc.qq.com/w1729a5dct8.mp4?sdtfrom=v1099&type=mp4&vkey=F1D2ECEC030BD28BD15503633787CAC34E974ABF2529CBD1B8B873E18DD4C3D8286B3A83CD8F33F47B128FB39C308279A5D3F953C4449685CD6143EF596E2ED43F5259E1393467CF867785D9AE120DA55229E9FAB8EC5F65&level=0&platform=3060202&br=60&fmt=mp4&sp=0&guid=E8C6D0A1102ED3DD86D27093544A7A12EEF199A4"  --user-agent "windows"
+class=videocache category=13 cache_size=214074 cache_size_total:1662110
+----------------------------------------------------------------------------------                  
+2017-03-28 16:56:02
+curl -o test666 -L "http://112.17.5.26/vhot2.qqvideo.tc.qq.com/d1721tkjadr.mp4?sdtfrom=v1099&type=mp4&vkey=96AA9BCC1EB635C8BCC17F8FCCF019DD9C9FED4D863FB007F9725EF069DBC05D45844B98115547F52CD52F1066239A066009A5548ECA1939136FBD4A53F6D38144AD48ED5C65665E18D5D8A83C54DEB7DE1FC55313AA3C39&level=0&platform=3060202&br=59&fmt=mp4&sp=0&guid=E8C6D0A1102ED3DD86D27093544A7A12EEF199A4"  --user-agent "windows"
+class=videocache category=13 cache_size=264489 cache_size_total:1926599
+----------------------------------------------------------------------------------                  
+2017-03-28 16:56:02
+curl -o test666 -L "http://183.192.163.157/vhot2.qqvideo.tc.qq.com/c1718a87w4y.mp4?sdtfrom=v1099&type=mp4&vkey=B2296A6F26898AD7B2AE8D69CA1CAC15EFE234C2B83FB3349E90AC9CA256C48AC6AD49291ECA4DD8B6AF1CBDB4113B1604EFF7A34E806D712D345AAE4EE74E26171BEF59FC61FC9E449E263F56D336E962CE7800B76BE305&level=0&platform=3060202&br=66&fmt=mp4&sp=0&guid=E8C6D0A1102ED3DD86D27093544A7A12EEF199A4"  --user-agent "windows"
+class=videocache category=13 cache_size=314869 cache_size_total:2241468
+----------------------------------------------------------------------------------                  
+2017-03-28 16:56:03
+curl -o test666 -L "http://117.135.168.26/vhot2.qqvideo.tc.qq.com/o1717zeq2w1.mp4?sdtfrom=v1099&type=mp4&vkey=3275B1BADF7E9A3DD124068D821FDFB8939DE6A9B64DFB824C74C0A0FDDE41ADDE18A66C197A97CABD5CFAD7735C1CBCF5687940274962BFFF0CBFBBC3AB881829BDBA45B3FC510C052DDBC036B1E76B24F073F4CAD2F16D&level=0&platform=3060202&br=66&fmt=mp4&sp=0&guid=E8C6D0A1102ED3DD86D27093544A7A12EEF199A4"  --user-agent "windows"
+class=videocache category=13 cache_size=336937 cache_size_total:2578405
+----------------------------------------------------------------------------------                  
+2017-03-28 16:57:22
+curl -o test666 -L "http://183.192.163.159/vhot2.qqvideo.tc.qq.com/k1767nui35z.mp4?sdtfrom=v1099&type=mp4&vkey=621D98A5FD4B3045806B8B1381358F24CA5E363B841741C90AD650B7F20D74AA462CB79CAE0E9A4E93B34A0B0A844B3D6E48640D9C4D1744336ACF6217C93231F79B81152CA548B6466FEC2395E10125E61A043CDBCA987C&level=0&platform=3060202&br=62&fmt=mp4&sp=0&guid=E3C577540A06DAF62ABF39B97784B5AD7F1F121F"  --user-agent "windows"
+class=videocache category=13 cache_size=203055 cache_size_total:203055
+----------------------------------------------------------------------------------                  
+2017-03-28 16:57:23
+curl -o test666 -L "http://122.228.251.155/vhot2.qqvideo.tc.qq.com/k1757awaje7.mp4?sdtfrom=v1099&type=mp4&vkey=124CF1F26DB509EB4B214C3DEAE5AB0969E6F9004CBF63C826311BC8300E49C73FFC10025D04BE314AE371E83F5F9E18FE764A209F4FC42A8424C4C6A59442F184B2894BFC8AE8917FEFC373A02033C3307C46DDBAF2BD20&level=0&platform=3060202&br=66&fmt=mp4&sp=0&guid=E3C577540A06DAF62ABF39B97784B5AD7F1F121F"  --user-agent "windows"
+class=videocache category=13 cache_size=265279 cache_size_total:468334
+----------------------------------------------------------------------------------                  
+2017-03-28 16:57:23
+curl -o test666 -L "http://122.228.251.158/vhot2.qqvideo.tc.qq.com/k175575d9i8.mp4?sdtfrom=v1099&type=mp4&vkey=87476F6E5F3971583C1F4680D66B2D1306CD13A632B47FC1D089C6931652BE91DCDF3F9F08873F8F1657D809BA4F6712E36A5ACD8BFBA8FA62D5AD596D58E8FB71A8F22E7C32190FDBED39124AF85536EE9EB5F37017CA58&level=0&platform=3060202&br=65&fmt=mp4&sp=0&guid=E3C577540A06DAF62ABF39B97784B5AD7F1F121F"  --user-agent "windows"
+class=videocache category=13 cache_size=223770 cache_size_total:692104
+----------------------------------------------------------------------------------                  
+2017-03-28 16:57:23
+curl -o test666 -L "http://122.228.251.158/vhot2.qqvideo.tc.qq.com/b1747wewwoo.mp4?sdtfrom=v1099&type=mp4&vkey=E6445F66C4E2D770B05E01F38ADEDE12AA58087B46296B8A83EB470B747B41E779A1B38CC13CF6A5E4558565C0687E66E1B2F400F7D4DF642D0D3FF691025BFECF9BF5D9CCF4BB1284AC5E3A22F11921669DD4ECECBB6608&level=0&platform=3060202&br=65&fmt=mp4&sp=0&guid=E3C577540A06DAF62ABF39B97784B5AD7F1F121F"  --user-agent "windows"
+class=videocache category=13 cache_size=236848 cache_size_total:928952
+----------------------------------------------------------------------------------                  
+2017-03-28 16:57:24
+curl -o test666 -L "http://183.192.163.157/vhot2.qqvideo.tc.qq.com/j1735yhgriy.mp4?sdtfrom=v1099&type=mp4&vkey=DEAF886510C92279010D0048CC22705D79C329E733629ECF94364DDE13C05A062850869ACD5F909885B5CEFB162BABB8DCDC3A0F91B63554BECE0BC735E07C76A6377866475BF50BBCE8924B05D4BE19BF8C3A9111BF5068&level=0&platform=3060202&br=69&fmt=mp4&sp=0&guid=E8C6D0A1102ED3DD86D27093544A7A12EEF199A4"  --user-agent "windows"
+class=videocache category=13 cache_size=245047 cache_size_total:1173999
+----------------------------------------------------------------------------------                  
+2017-03-28 16:57:24
+curl -o test666 -L "http://117.135.128.158/vhot2.qqvideo.tc.qq.com/b1732vj7wcj.mp4?sdtfrom=v1099&type=mp4&vkey=B73A039B3C78BC188798B5D4F4317A20813850090448DAF269AECF8FBE27BD4EF70A20E82611EE69D87D3A6222A14AF06F695B2ABFAF3D95AFF415133D2857C5C0EB9474BCBE9CA58244F046F2B9FE98ACC4393ACB13FF2F&level=0&platform=3060202&br=58&fmt=mp4&sp=0&guid=E8C6D0A1102ED3DD86D27093544A7A12EEF199A4"  --user-agent "windows"
+class=videocache category=13 cache_size=274037 cache_size_total:1448036
+----------------------------------------------------------------------------------                  
+2017-03-28 16:57:24
+curl -o test666 -L "http://117.135.128.158/vhot2.qqvideo.tc.qq.com/w1729a5dct8.mp4?sdtfrom=v1099&type=mp4&vkey=F1D2ECEC030BD28BD15503633787CAC34E974ABF2529CBD1B8B873E18DD4C3D8286B3A83CD8F33F47B128FB39C308279A5D3F953C4449685CD6143EF596E2ED43F5259E1393467CF867785D9AE120DA55229E9FAB8EC5F65&level=0&platform=3060202&br=60&fmt=mp4&sp=0&guid=E8C6D0A1102ED3DD86D27093544A7A12EEF199A4"  --user-agent "windows"
+class=videocache category=13 cache_size=214074 cache_size_total:1662110
+----------------------------------------------------------------------------------                  
+2017-03-28 16:57:24
+curl -o test666 -L "http://112.17.5.26/vhot2.qqvideo.tc.qq.com/d1721tkjadr.mp4?sdtfrom=v1099&type=mp4&vkey=96AA9BCC1EB635C8BCC17F8FCCF019DD9C9FED4D863FB007F9725EF069DBC05D45844B98115547F52CD52F1066239A066009A5548ECA1939136FBD4A53F6D38144AD48ED5C65665E18D5D8A83C54DEB7DE1FC55313AA3C39&level=0&platform=3060202&br=59&fmt=mp4&sp=0&guid=E8C6D0A1102ED3DD86D27093544A7A12EEF199A4"  --user-agent "windows"
+class=videocache category=13 cache_size=264489 cache_size_total:1926599
+----------------------------------------------------------------------------------                  
+2017-03-28 16:57:25
+curl -o test666 -L "http://183.192.163.157/vhot2.qqvideo.tc.qq.com/c1718a87w4y.mp4?sdtfrom=v1099&type=mp4&vkey=B2296A6F26898AD7B2AE8D69CA1CAC15EFE234C2B83FB3349E90AC9CA256C48AC6AD49291ECA4DD8B6AF1CBDB4113B1604EFF7A34E806D712D345AAE4EE74E26171BEF59FC61FC9E449E263F56D336E962CE7800B76BE305&level=0&platform=3060202&br=66&fmt=mp4&sp=0&guid=E8C6D0A1102ED3DD86D27093544A7A12EEF199A4"  --user-agent "windows"
+class=videocache category=13 cache_size=314869 cache_size_total:2241468
+----------------------------------------------------------------------------------                  
+2017-03-28 16:57:25
+curl -o test666 -L "http://117.135.168.26/vhot2.qqvideo.tc.qq.com/o1717zeq2w1.mp4?sdtfrom=v1099&type=mp4&vkey=3275B1BADF7E9A3DD124068D821FDFB8939DE6A9B64DFB824C74C0A0FDDE41ADDE18A66C197A97CABD5CFAD7735C1CBCF5687940274962BFFF0CBFBBC3AB881829BDBA45B3FC510C052DDBC036B1E76B24F073F4CAD2F16D&level=0&platform=3060202&br=66&fmt=mp4&sp=0&guid=E8C6D0A1102ED3DD86D27093544A7A12EEF199A4"  --user-agent "windows"
+class=videocache category=13 cache_size=336937 cache_size_total:2578405
+----------------------------------------------------------------------------------                  
+2017-03-28 16:58:50
+curl -o test666 -L "http://183.192.163.159/vhot2.qqvideo.tc.qq.com/k1767nui35z.mp4?sdtfrom=v1099&type=mp4&vkey=621D98A5FD4B3045806B8B1381358F24CA5E363B841741C90AD650B7F20D74AA462CB79CAE0E9A4E93B34A0B0A844B3D6E48640D9C4D1744336ACF6217C93231F79B81152CA548B6466FEC2395E10125E61A043CDBCA987C&level=0&platform=3060202&br=62&fmt=mp4&sp=0&guid=E3C577540A06DAF62ABF39B97784B5AD7F1F121F"  --user-agent "windows"
+class=videocache category=13 cache_size=203055 cache_size_total:203055
+----------------------------------------------------------------------------------                  
+2017-03-28 16:58:50
+curl -o test666 -L "http://122.228.251.155/vhot2.qqvideo.tc.qq.com/k1757awaje7.mp4?sdtfrom=v1099&type=mp4&vkey=124CF1F26DB509EB4B214C3DEAE5AB0969E6F9004CBF63C826311BC8300E49C73FFC10025D04BE314AE371E83F5F9E18FE764A209F4FC42A8424C4C6A59442F184B2894BFC8AE8917FEFC373A02033C3307C46DDBAF2BD20&level=0&platform=3060202&br=66&fmt=mp4&sp=0&guid=E3C577540A06DAF62ABF39B97784B5AD7F1F121F"  --user-agent "windows"
+class=videocache category=13 cache_size=265279 cache_size_total:468334
+----------------------------------------------------------------------------------                  
+2017-03-28 16:58:50
+curl -o test666 -L "http://122.228.251.158/vhot2.qqvideo.tc.qq.com/k175575d9i8.mp4?sdtfrom=v1099&type=mp4&vkey=87476F6E5F3971583C1F4680D66B2D1306CD13A632B47FC1D089C6931652BE91DCDF3F9F08873F8F1657D809BA4F6712E36A5ACD8BFBA8FA62D5AD596D58E8FB71A8F22E7C32190FDBED39124AF85536EE9EB5F37017CA58&level=0&platform=3060202&br=65&fmt=mp4&sp=0&guid=E3C577540A06DAF62ABF39B97784B5AD7F1F121F"  --user-agent "windows"
+class=videocache category=13 cache_size=223770 cache_size_total:692104
+----------------------------------------------------------------------------------                  
+2017-03-28 16:58:52
+curl -o test666 -L "http://122.228.251.158/vhot2.qqvideo.tc.qq.com/b1747wewwoo.mp4?sdtfrom=v1099&type=mp4&vkey=E6445F66C4E2D770B05E01F38ADEDE12AA58087B46296B8A83EB470B747B41E779A1B38CC13CF6A5E4558565C0687E66E1B2F400F7D4DF642D0D3FF691025BFECF9BF5D9CCF4BB1284AC5E3A22F11921669DD4ECECBB6608&level=0&platform=3060202&br=65&fmt=mp4&sp=0&guid=E3C577540A06DAF62ABF39B97784B5AD7F1F121F"  --user-agent "windows"
+class=videocache category=13 cache_size=236848 cache_size_total:928952
+----------------------------------------------------------------------------------                  
+2017-03-28 16:58:53
+curl -o test666 -L "http://183.192.163.157/vhot2.qqvideo.tc.qq.com/j1735yhgriy.mp4?sdtfrom=v1099&type=mp4&vkey=DEAF886510C92279010D0048CC22705D79C329E733629ECF94364DDE13C05A062850869ACD5F909885B5CEFB162BABB8DCDC3A0F91B63554BECE0BC735E07C76A6377866475BF50BBCE8924B05D4BE19BF8C3A9111BF5068&level=0&platform=3060202&br=69&fmt=mp4&sp=0&guid=E8C6D0A1102ED3DD86D27093544A7A12EEF199A4"  --user-agent "windows"
+class=videocache category=13 cache_size=245047 cache_size_total:1173999
+----------------------------------------------------------------------------------                  
+2017-03-28 16:58:53
+curl -o test666 -L "http://117.135.128.158/vhot2.qqvideo.tc.qq.com/b1732vj7wcj.mp4?sdtfrom=v1099&type=mp4&vkey=B73A039B3C78BC188798B5D4F4317A20813850090448DAF269AECF8FBE27BD4EF70A20E82611EE69D87D3A6222A14AF06F695B2ABFAF3D95AFF415133D2857C5C0EB9474BCBE9CA58244F046F2B9FE98ACC4393ACB13FF2F&level=0&platform=3060202&br=58&fmt=mp4&sp=0&guid=E8C6D0A1102ED3DD86D27093544A7A12EEF199A4"  --user-agent "windows"
+class=videocache category=13 cache_size=274037 cache_size_total:1448036
+----------------------------------------------------------------------------------                  
+2017-03-28 16:58:54
+curl -o test666 -L "http://117.135.128.158/vhot2.qqvideo.tc.qq.com/w1729a5dct8.mp4?sdtfrom=v1099&type=mp4&vkey=F1D2ECEC030BD28BD15503633787CAC34E974ABF2529CBD1B8B873E18DD4C3D8286B3A83CD8F33F47B128FB39C308279A5D3F953C4449685CD6143EF596E2ED43F5259E1393467CF867785D9AE120DA55229E9FAB8EC5F65&level=0&platform=3060202&br=60&fmt=mp4&sp=0&guid=E8C6D0A1102ED3DD86D27093544A7A12EEF199A4"  --user-agent "windows"
+class=videocache category=13 cache_size=214074 cache_size_total:1662110
+----------------------------------------------------------------------------------                  
+2017-03-28 16:58:54
+curl -o test666 -L "http://112.17.5.26/vhot2.qqvideo.tc.qq.com/d1721tkjadr.mp4?sdtfrom=v1099&type=mp4&vkey=96AA9BCC1EB635C8BCC17F8FCCF019DD9C9FED4D863FB007F9725EF069DBC05D45844B98115547F52CD52F1066239A066009A5548ECA1939136FBD4A53F6D38144AD48ED5C65665E18D5D8A83C54DEB7DE1FC55313AA3C39&level=0&platform=3060202&br=59&fmt=mp4&sp=0&guid=E8C6D0A1102ED3DD86D27093544A7A12EEF199A4"  --user-agent "windows"
+class=videocache category=13 cache_size=264489 cache_size_total:1926599
+----------------------------------------------------------------------------------                  
+2017-03-28 16:58:54
+curl -o test666 -L "http://183.192.163.157/vhot2.qqvideo.tc.qq.com/c1718a87w4y.mp4?sdtfrom=v1099&type=mp4&vkey=B2296A6F26898AD7B2AE8D69CA1CAC15EFE234C2B83FB3349E90AC9CA256C48AC6AD49291ECA4DD8B6AF1CBDB4113B1604EFF7A34E806D712D345AAE4EE74E26171BEF59FC61FC9E449E263F56D336E962CE7800B76BE305&level=0&platform=3060202&br=66&fmt=mp4&sp=0&guid=E8C6D0A1102ED3DD86D27093544A7A12EEF199A4"  --user-agent "windows"
+class=videocache category=13 cache_size=314869 cache_size_total:2241468
+----------------------------------------------------------------------------------                  
+2017-03-28 16:58:54
+curl -o test666 -L "http://117.135.168.26/vhot2.qqvideo.tc.qq.com/o1717zeq2w1.mp4?sdtfrom=v1099&type=mp4&vkey=3275B1BADF7E9A3DD124068D821FDFB8939DE6A9B64DFB824C74C0A0FDDE41ADDE18A66C197A97CABD5CFAD7735C1CBCF5687940274962BFFF0CBFBBC3AB881829BDBA45B3FC510C052DDBC036B1E76B24F073F4CAD2F16D&level=0&platform=3060202&br=66&fmt=mp4&sp=0&guid=E8C6D0A1102ED3DD86D27093544A7A12EEF199A4"  --user-agent "windows"
+class=videocache category=13 cache_size=336937 cache_size_total:2578405
+----------------------------------------------------------------------------------                  
+2017-03-28 16:59:05
+curl -o test666 -L "http://www.lhtangtao.com/wp-content/uploads/2016/08/100507_215005.jpg"  --user-agent "iphone"
+class=httpcache category=4 cache_size=1909521 cache_size_total:1909521
+----------------------------------------------------------------------------------                  
+2017-03-28 16:59:06
+curl -o test666 -L "http://www.lhtangtao.com/wp-content/uploads/2016/08/100517_181601.jpg"  --user-agent "iphone"
+class=httpcache category=4 cache_size=1461090 cache_size_total:3370611
+----------------------------------------------------------------------------------                  
+2017-03-28 16:59:06
+curl -o test666 -L "http://www.lhtangtao.com/wp-content/uploads/2016/08/20120111_204804.jpg"  --user-agent "iphone"
+class=httpcache category=4 cache_size=1378167 cache_size_total:4748778
+----------------------------------------------------------------------------------                  
+2017-03-28 16:59:06
+curl -o test666 -L "http://www.lhtangtao.com/wp-content/uploads/2016/08/100311_130857-%E5%89%AF%E6%9C%AC.jpg"  --user-agent "iphone"
+class=httpcache category=4 cache_size=514486 cache_size_total:5263264
+----------------------------------------------------------------------------------                  
+2017-03-28 16:59:07
+curl -o test666 -L "http://www.maiziedu.com/uploads/new_img/vNDWSBwmoEcxxacPvG.png"  --user-agent "iphone"
+class=httpcache category=4 cache_size=603413 cache_size_total:5866677
+----------------------------------------------------------------------------------                  
+2017-03-28 16:59:07
+curl -o test666 -L "http://zzhzbbsimg.zjolcdn.com/data/attachment/forum/201703/06/152931mgl63lecv5751360.jpg"  --user-agent "iphone"
+class=httpcache category=4 cache_size=1691921 cache_size_total:7558598
+----------------------------------------------------------------------------------                  
+2017-03-28 16:59:07
+curl -o test666 -L "http://zzhzbbsimg.zjolcdn.com/data/attachment/forum/201703/12/141020apkpvo5ekih2763z.jpg"  --user-agent "iphone"
+class=httpcache category=4 cache_size=3116623 cache_size_total:10675221
+----------------------------------------------------------------------------------                  
+2017-03-28 16:59:08
+curl -o test666 -L "http://zzhzbbsimg.zjolcdn.com/data/attachment/forum/201703/22/120946v5th31kitjf8idwi.png"  --user-agent "iphone"
+class=httpcache category=4 cache_size=587087 cache_size_total:11262308
+----------------------------------------------------------------------------------                  
+2017-03-28 16:59:08
+curl -o test666 -L "http://ww1.sinaimg.cn/bmiddle/6836aaebgw1err86vhuceg20b408c7wk.gif"  --user-agent "iphone"
+class=httpcache category=4 cache_size=4461185 cache_size_total:15723493
+----------------------------------------------------------------------------------                  
+2017-03-28 16:59:09
+curl -o test666 -L "http://static.runoob.com/images/demo/demo3.jpg"  --user-agent "iphone"
+class=httpcache category=4 cache_size=522334 cache_size_total:16245827
+----------------------------------------------------------------------------------                  
+2017-03-28 16:59:18
+curl -o test666 -L "http://m5.apk.67mo.com/apk/360/com.qihoo.appstore_300050260.apk"  --user-agent "windows"
+class=mobilecache category=0 cache_size=7159139 cache_size_total:7159139
+----------------------------------------------------------------------------------                  
+2017-03-28 16:59:19
+curl -o test666 -L "http://appdlc.hicloud.com/dl/appdl/application/apk/93/93c5a565aa0c4276a3dac13c68b09f19/com.dtdream.publictransit.1702252107.apk?sign=d9dz1011e510010820009000@E08EA7E82DCF2067AEAA4F4AF6D9E001&source=search&subsource=%E6%9D%AD%E5%B7%9E%E5%85%AC%E4%BA%A4&listId=qsearch&position=1&hcrId=12CEFA836BAD429F979DBA0784C16948&extendStr=detail:1;&encryptType=1"  --user-agent "windows"
+class=mobilecache category=0 cache_size=9704874 cache_size_total:16864013
+----------------------------------------------------------------------------------                  
+2017-03-28 17:01:29
+curl -o test666 -L "http://122.228.202.73/230/53/10/letv-uts/14/ver_00_22-1090763955-avc-1498548-aac-96000-298880-60037916-433b9ddc162b1484e7b5b49b802d5870-1489950633696_mp4/ver_00_22_5_11_6_3518608_6862188_0.ts?crypt=90aa7f2e1806&b=1606&nlh=4096&nlt=60&bf=90&p2p=1&video_type=mp4&termid=1&tss=ios&platid=1&splatid=101&its=0&qos=3&fcheck=0&amltag=0&mltag=0&proxy=2061814371"  --user-agent "windows"
+class=videocache category=16 cache_size=3518608 cache_size_total:3518608
+----------------------------------------------------------------------------------                  
+2017-03-28 17:01:31
+curl -o test666 -L "http://122.228.202.73/230/53/10/letv-uts/14/ver_00_22-1090763955-avc-1498548-aac-96000-298880-60037916-433b9ddc162b1484e7b5b49b802d5870-1489950633696_mp4/ver_00_22_4_5_6_3192240_3669948_0.ts?crypt=90aa7f2e1806&b=1606&nlh=4096&nlt=60&bf=90&p2p=1&video_type=mp4&termid=1&tss=ios&platid=1&splatid=101&its=0&qos=3&fcheck=0&amltag=0&mltag=0&proxy=2061814371"  --user-agent "windows"
+class=videocache category=16 cache_size=3192240 cache_size_total:6710848
+----------------------------------------------------------------------------------                  
+2017-03-28 17:01:31
+curl -o test666 -L "http://122.228.202.73/230/53/10/letv-uts/14/ver_00_22-1090763955-avc-1498548-aac-96000-298880-60037916-433b9ddc162b1484e7b5b49b802d5870-1489950633696_mp4/ver_00_22_3_3_2_1443088_2226860_0.ts?crypt=90aa7f2e1806&b=1606&nlh=4096&nlt=60&bf=90&p2p=1&video_type=mp4&termid=1&tss=ios&platid=1&splatid=101&its=0&qos=3&fcheck=0&amltag=0&mltag=0&proxy=2061814371"  --user-agent "windows"
+class=videocache category=16 cache_size=1443088 cache_size_total:8153936
+----------------------------------------------------------------------------------                  
+2017-03-28 17:01:32
+curl -o test666 -L "http://122.228.202.73/230/53/10/letv-uts/14/ver_00_22-1090763955-avc-1498548-aac-96000-298880-60037916-433b9ddc162b1484e7b5b49b802d5870-1489950633696_mp4/ver_00_22_2_2_1_926276_1300584_0.ts?crypt=90aa7f2e1806&b=1606&nlh=4096&nlt=60&bf=90&p2p=1&video_type=mp4&termid=1&tss=ios&platid=1&splatid=101&its=0&qos=3&fcheck=0&amltag=0&mltag=0&proxy=2061814371"  --user-agent "windows"
+class=videocache category=16 cache_size=926276 cache_size_total:9080212
+----------------------------------------------------------------------------------                  
+2017-03-28 17:01:32
+curl -o test666 -L "http://122.228.202.73/230/53/10/letv-uts/14/ver_00_22-1090763955-avc-1498548-aac-96000-298880-60037916-433b9ddc162b1484e7b5b49b802d5870-1489950633696_mp4/ver_00_22_0_0_1_360020_0_0.ts?crypt=90aa7f2e1806&b=1606&nlh=4096&nlt=60&bf=90&p2p=1&video_type=mp4&termid=1&tss=ios&platid=1&splatid=101&its=0&qos=3&fcheck=0&amltag=0&mltag=0&proxy=2061814371"  --user-agent "windows"
+class=videocache category=16 cache_size=360020 cache_size_total:9440232
+----------------------------------------------------------------------------------                  
+2017-03-28 17:01:32
+curl -o test666 -L "http://122.228.202.73/230/53/10/letv-uts/14/ver_00_22-1090763955-avc-1498548-aac-96000-298880-60037916-433b9ddc162b1484e7b5b49b802d5870-1489950633696_mp4/ver_00_22_1_1_1_940564_360020_0.ts?crypt=90aa7f2e1806&b=1606&nlh=4096&nlt=60&bf=90&p2p=1&video_type=mp4&termid=1&tss=ios&platid=1&splatid=101&its=0&qos=3&fcheck=0&amltag=0&mltag=0&proxy=2061814371"  --user-agent "windows"
+class=videocache category=16 cache_size=940564 cache_size_total:10380796
+----------------------------------------------------------------------------------                  
+2017-03-28 17:01:33
+curl -o test666 -L "http://183.136.195.16/227/19/5/letv-uts/14/ver_00_22-1090746721-avc-1497784-aac-96000-275480-55313472-0e77f73d0c2e37293dd4eec708680e24-1489942058758_mp4/ver_00_22_3_3_2_1498548_1950124_0.ts?crypt=5aa7f2e1532&b=1605&nlh=4096&nlt=60&bf=76&p2p=1&video_type=mp4&termid=1&tss=ios&platid=1&splatid=101&its=0&qos=3&fcheck=0&amltag=0&mltag=0&proxy=1945012615"  --user-agent "windows"
+class=videocache category=16 cache_size=1498548 cache_size_total:11879344
+----------------------------------------------------------------------------------                  
+2017-03-28 17:01:33
+curl -o test666 -L "http://183.136.195.16/227/19/5/letv-uts/14/ver_00_22-1090746721-avc-1497784-aac-96000-275480-55313472-0e77f73d0c2e37293dd4eec708680e24-1489942058758_mp4/ver_00_22_2_2_1_655932_1294192_0.ts?crypt=5aa7f2e1532&b=1605&nlh=4096&nlt=60&bf=76&p2p=1&video_type=mp4&termid=1&tss=ios&platid=1&splatid=101&its=0&qos=3&fcheck=0&amltag=0&mltag=0&proxy=1945012615"  --user-agent "windows"
+class=videocache category=16 cache_size=655932 cache_size_total:12535276
+----------------------------------------------------------------------------------                  
+2017-03-28 17:01:34
+curl -o test666 -L "http://183.136.195.16/227/19/5/letv-uts/14/ver_00_22-1090746721-avc-1497784-aac-96000-275480-55313472-0e77f73d0c2e37293dd4eec708680e24-1489942058758_mp4/ver_00_22_1_1_1_951092_343100_0.ts?crypt=5aa7f2e1532&b=1605&nlh=4096&nlt=60&bf=76&p2p=1&video_type=mp4&termid=1&tss=ios&platid=1&splatid=101&its=0&qos=3&fcheck=0&amltag=0&mltag=0&proxy=1945012615"  --user-agent "windows"
+class=videocache category=16 cache_size=951092 cache_size_total:13486368
+----------------------------------------------------------------------------------                  
+2017-03-28 17:01:35
+curl -o test666 -L "http://183.136.195.16/227/19/5/letv-uts/14/ver_00_22-1090746721-avc-1497784-aac-96000-275480-55313472-0e77f73d0c2e37293dd4eec708680e24-1489942058758_mp4/ver_00_22_0_0_1_343100_0_0.ts?crypt=5aa7f2e1532&b=1605&nlh=4096&nlt=60&bf=76&p2p=1&video_type=mp4&termid=1&tss=ios&platid=1&splatid=101&its=0&qos=3&fcheck=0&amltag=0&mltag=0&proxy=1945012615"  --user-agent "windows"
+class=videocache category=16 cache_size=343100 cache_size_total:13829468
+----------------------------------------------------------------------------------                  
+2017-03-28 17:01:47
+curl -o test666 -L "http://120.198.236.15/dlied6.qq.com/invc/xfspeed/qqpcmgr/module_update/fid1489558795_QMTrojanPlugin.dll.zip"  --user-agent "iphone"
+class=httpcache category=3 cache_size=707972 cache_size_total:707972
+----------------------------------------------------------------------------------                  
+2017-03-28 17:01:47
+curl -o test666 -L "http://223.111.153.179/dlied6.qq.com/invc/xfspeed/qqpcmgr/module_update/fid1489558795_QMTrojanPlugin.dll.zip?mkey=58d9f6212c453685&f=b108&c=0&p=.zip"  --user-agent "iphone"
+class=httpcache category=3 cache_size=707972 cache_size_total:1415944
+----------------------------------------------------------------------------------                  
+2017-03-28 17:01:47
+curl -o test666 -L "http://112.25.58.180/dlied6.qq.com/invc/xfspeed/qqpcmgr/module_update/fid1489558795_QMTrojanPlugin.dll.zip?mkey=58d8d3e72c453685&f=b108&c=0&p=.zip"  --user-agent "iphone"
+class=httpcache category=3 cache_size=707972 cache_size_total:2123916
+----------------------------------------------------------------------------------                  
+2017-03-28 17:01:47
+curl -o test666 -L "http://223.111.153.180/dlied6.qq.com/invc/xfspeed/qqpcmgr/module_update/fid1489558795_QMTrojanPlugin.dll.zip?mkey=58d8a3862c453685&f=ab0b&c=0&p=.zip"  --user-agent "iphone"
+class=httpcache category=3 cache_size=707972 cache_size_total:2831888
+----------------------------------------------------------------------------------                  
+2017-03-28 17:01:48
+curl -o test666 -L "http://223.111.153.179/dlied6.qq.com/invc/xfspeed/qqpcmgr/module_update/fid1489558795_QMTrojanPlugin.dll.zip?mkey=58d4dd3d2c453685&f=b110&c=0&p=.zip"  --user-agent "iphone"
+class=httpcache category=3 cache_size=707972 cache_size_total:3539860
+----------------------------------------------------------------------------------                  
+2017-03-28 17:01:48
+curl -o test666 -L "http://115.231.37.159/dlied6.qq.com/invc/xfspeed/qqpcmgr/module_update/fid1489558795_QMTrojanPlugin.dll.zip?mkey=58d08e4391ebcc8f&f=1b58&c=0&p=.zip"  --user-agent "iphone"
+class=httpcache category=3 cache_size=707972 cache_size_total:4247832
+----------------------------------------------------------------------------------                  
+2017-03-28 17:01:53
+curl -o test666 -L "http://dlied6.qq.com/invc/xfspeed/qqpcmgr/module_update/fid1489558795_QMTrojanPlugin.dll.zip"  --user-agent "iphone"
+class=httpcache category=3 cache_size=707972 cache_size_total:4955804
+----------------------------------------------------------------------------------                  
+2017-03-28 17:01:54
+curl -o test666 -L "http://zj.offcn.com/dl/2017/0301/20170301114518510.xls"  --user-agent "iphone"
+class=httpcache category=3 cache_size=1187840 cache_size_total:6143644
+----------------------------------------------------------------------------------                  
+2017-03-28 17:02:03
+curl -o test666 -L "http://m5.apk.67mo.com/apk/360/com.qihoo.appstore_300050260.apk"  --user-agent "windows"
+class=mobilecache category=0 cache_size=7159139 cache_size_total:7159139
+----------------------------------------------------------------------------------                  
+2017-03-28 17:02:04
+curl -o test666 -L "http://appdlc.hicloud.com/dl/appdl/application/apk/93/93c5a565aa0c4276a3dac13c68b09f19/com.dtdream.publictransit.1702252107.apk?sign=d9dz1011e510010820009000@E08EA7E82DCF2067AEAA4F4AF6D9E001&source=search&subsource=%E6%9D%AD%E5%B7%9E%E5%85%AC%E4%BA%A4&listId=qsearch&position=1&hcrId=12CEFA836BAD429F979DBA0784C16948&extendStr=detail:1;&encryptType=1"  --user-agent "windows"
+class=mobilecache category=0 cache_size=9704874 cache_size_total:16864013
+----------------------------------------------------------------------------------

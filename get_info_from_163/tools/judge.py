@@ -72,21 +72,21 @@ def assert_location_log(classes, category, url, cache_size, timestamp):
         f.write(
             str(u'实际curl到的资源：') + '\t' + str(log_classes) + '\t' + str(log_category) + '\t' + str(
                 cache_size) + '\t' + str(time_lag) + ':\n')
-        print '*****************************************'
+        # print '*****************************************'
         if classes != log_classes:
-            print u'cache_size 与预期不符'
+            # print u'cache_size 与预期不符'
             f.write("cache_size was wrong" + '\n')
         elif category != log_category:
-            print u'category 与预期不符'
+            # print u'category 与预期不符'
             f.write("category was wrong" + '\n')
         elif cache_size != log_cache_size:
-            print u'cache_size 与预期不符'
+            # print u'cache_size 与预期不符'
             f.write("cache_size was wrong" + '\n')
         elif time_lag_float > 10:
-            print u'create_time与预期不符，请查看location日志'
+            # print u'create_time与预期不符，请查看location日志'
             f.write("create_time was wrong" + '\n')
         f.write('***************************************')
-        print '*****************************************'
+        # print '*****************************************'
 
 
 def assert_service_log(classes, category, cache_size, service_size, md5, timestamp):
@@ -118,19 +118,19 @@ def assert_service_log(classes, category, cache_size, service_size, md5, timesta
         f.write(
             str(u'实际curl到的资源：') + '\t' + str(category) + '\t' + str(cache_size) + '\t' + str(service_size) + '\t' + str(
                 time_lag) + ':\n')
-        print '*****************************************'
-        print str(classes) + '\t' + str(category) + '\t' + str(cache_size) + '\t' + str(md5)
+        # print '*****************************************'
+        # print str(classes) + '\t' + str(category) + '\t' + str(cache_size) + '\t' + str(md5)
         if cache_size != log_cache_size:
-            print u'cache_size 与预期不符'
+            # print u'cache_size 与预期不符'
             f.write("cache_size was wrong" + '\n')
         elif category != log_category:
-            print u'category 与预期不符'
+            # print u'category 与预期不符'
             f.write("category was wrong" + '\n')
         elif service_size != log_service_size:
-            print u'service_size 与预期不符'
+            # print u'service_size 与预期不符'
             f.write("service_size was wrong" + '\n')
         elif time_lag_float > 10:
-            print u'create_time与预期不符，请查看service日志'
+            # print u'create_time与预期不符，请查看service日志'
             f.write("create_time was wrong" + '\n')
         f.write('***************************************')
-        print '*****************************************'
+        # print '*****************************************'
