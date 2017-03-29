@@ -85,7 +85,7 @@ def assert_location_log(classes, category, url, cache_size, timestamp):
         elif time_lag_float > 10:
             # print u'create_time与预期不符，请查看location日志'
             f.write("create_time was wrong" + '\n')
-        f.write('***************************************')
+        f.write('***************************************\n')
         # print '*****************************************'
 
 
@@ -132,5 +132,5 @@ def assert_service_log(classes, category, cache_size, service_size, md5, timesta
         elif time_lag_float > 10:
             # print u'create_time与预期不符，请查看service日志'
             f.write("create_time was wrong" + '\n')
-        f.write('***************************************')
+        f.write('***************************************\n')
         # print '*****************************************'

@@ -30,9 +30,11 @@ from datetime import datetime
 import time
 from get_info_from_163.tools.connect_Linux import connect_linux
 from get_info_from_163.tools.judge import assert_location_log, assert_service_log
+from get_info_from_163.tools.log.operation_log import my_log
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
+log = my_log()
 
 
 def do_curl(time_stamp, command, system="windows", really_do=True):
@@ -45,6 +47,7 @@ def do_curl(time_stamp, command, system="windows", really_do=True):
     :return:
     """
     current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    log.info(u'当前时间为：' + unicode(current_time))
     if system == 'windows':
         p = os.popen(command)
         info = p.readlines()  # 读取命令行的输出到一个list
@@ -57,18 +60,21 @@ def do_curl(time_stamp, command, system="windows", really_do=True):
                 f.write('\n')
                 f.flush()
     else:  # 此处编写linux下的命令
+        log.info(u'选择的是linux设备执行curl操作')
         curl_log = "./curl_log/curl_log_" + time_stamp
         x1 = open(curl_log, 'a')
-        # x1 = open("linux_curl_log", "a")
         x1.write(current_time + '\n' + command + '\n')
         # 在此增加读取linux配置的语句
         f = open('./http/config_linux_to_curl', 'r')
+        log.info(u"在./http/config_linux_to_curl下读取链接linux设备的操作")
         linux_config = f.readline().split()
         ip_add = linux_config[0]
         user = linux_config[1]
         pwd = linux_config[2]
+        log.info(u"linux的信息如下所示：ip address:" + ip_add + ' user:' + user + " password:" + pwd)
         if really_do is True:
             info = connect_linux(command, ip_add, user, pwd)
+            log.info(u"执行的命令为" + unicode(command) + u'并且写入到curl_log中')
             with open(curl_log, "a") as f:
                 f.write("                  " + info)
                 f.write('\n')
@@ -95,6 +101,7 @@ def curl_resource_verbose(timestamp, kind=0, category=0, limit=5, system='window
     else:
         kind_ = 'videocache'
     filepath = './http/cache_info/' + timestamp + '/' + kind_ + str(category)  # 找到存放资源地址的文件 随后遍历
+    log.info(u"打开下面的文件夹，读取里面的内容" + unicode(filepath))
     cache_url_list = []
     cache_size_list = []
     md5_list = []
@@ -116,7 +123,10 @@ def curl_resource_verbose(timestamp, kind=0, category=0, limit=5, system='window
         cache_url_list.append(line)
         md5_list.append(md5)
         count += 1
+    log.info(u"从" + unicode(filepath) + u"中，读取md5，资源的缓存大小，url 都放入到数组中")
+    log.info(u"得到的md5数组：" + unicode(md5_list) + u" url数组：" + unicode(cache_url_list) + u" 缓存大小数组：" + unicode(cache_size_list) + u" 资源总数为：" + unicode(count))
     if count <= limit:  # 如果出现limit为5而实际只存在两个或三个数据的时候
+        log.info(u"此时limit大于count")
         limit = count
     i = 0
     while i < limit:
@@ -125,12 +135,14 @@ def curl_resource_verbose(timestamp, kind=0, category=0, limit=5, system='window
         command3 = ' --user-agent "' + ua + '"'
         url = cache_url_list[i]
         command = command1 + url + command2 + command3
-        # print command
+        log.info(u'执行的操作指令为：' + unicode(command))
         try:
             do_curl(timestamp, command, system, need_assert)  # 执行curl 操作
         except BaseException as e:
             print e
         cache_size_total = cache_size_list[i] + cache_size_total  # 写入日志的cache_size_total指的是执行了curl的所有资源的大小总和
+        log.info(
+            unicode(kind_) + ' ' + unicode(category) + u'的执行了curl的资源大小总和为：' + str(cache_size_total) + u'并且写入curl_log中 ')
         curl_log = './curl_log/curl_log_' + timestamp
         x = open(curl_log, 'a')
         x.write('class=' + str(kind_) + ' category=' + str(
@@ -141,6 +153,7 @@ def curl_resource_verbose(timestamp, kind=0, category=0, limit=5, system='window
     i = 0
     time.sleep(2)
     if need_assert is True:
+        log.info(u"开始校验核对服务日志和重定向日志")
         while i < limit:
             cache_size_each = cache_size_list[i]
             url = cache_url_list[i]

@@ -22,51 +22,69 @@ I love animals. They taste delicious.
 ┃┫┫  ┃┫┫
 ┗┻┛  ┗┻┛
 """
-import sys
 import os
+import sys
 
 from get_info_from_163.tools.curl_kind import kind1, kind2, kind3, kind4, kind5
+from get_info_from_163.tools.log.operation_log import my_log
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
+log = my_log()
 
 
-def calculate_kind(time_stamp, kind=1):
+def calculate_kind(timestamp, kind=1):
     """
     curl了哪些资源都写入到文件中
-    :param time_stamp: 
+    :param timestamp: 
     :param kind: 
     :return: 
     """
-    curl_log = "./curl_log/curl_log_" + time_stamp
+    curl_log = "./curl_log/curl_log_" + timestamp
     if not os.path.exists('./curl_log'):
         os.mkdir('./curl_log')
     f = open(curl_log, 'w')
     f.close()
     if kind == 1:
-        kind1(time_stamp, False)
+        log.info(u'现在开始执行kind1的操作（不会执行curl操作，只是伪造数据写入curl_log中）')
+        kind1(timestamp, False)
+        log.info(u'kind1伪造curl_log成功')
     elif kind == 2:
-        kind2(time_stamp, False)
+        log.info(u'现在开始执行kind2的操作（不会执行curl操作，只是伪造数据写入curl_log中）')
+        kind2(timestamp, False)
+        log.info(u'kind2伪造curl_log成功')
     elif kind == 3:
-        kind3(time_stamp, False)
+        log.info(u'现在开始执行kind3的操作（不会执行curl操作，只是伪造数据写入curl_log中）')
+        kind3(timestamp, False)
+        log.info(u'kind3伪造curl_log成功')
     elif kind == 4:
-        kind4(time_stamp, False)
+        log.info(u'现在开始执行kind4的操作（不会执行curl操作，只是伪造数据写入curl_log中）')
+        kind4(timestamp, False)
+        log.info(u'kind4伪造curl_log成功')
     elif kind == 5:
-        kind5(time_stamp, False)
+        log.info(u'现在开始执行kind5的操作（不会执行curl操作，只是伪造数据写入curl_log中）')
+        kind5(timestamp, False)
+        log.info(u'kind5伪造curl_log成功')
     f = open(curl_log, 'r')
     total_cache_size = 0
     lines = f.readlines()
     is_kind_info_dir_exist = os.path.exists('./kind_info')
     if is_kind_info_dir_exist is False:
+        log.info(u"kind_info 这个文件夹不存在")
         os.mkdir('./kind_info')
-    is_dir_exist = os.path.exists('./kind_info/' + time_stamp)
+        log.info(u"kind_info 新建完毕")
+    is_dir_exist = os.path.exists('./kind_info/' + timestamp)
     if is_dir_exist is True:
         pass
     else:
-        os.mkdir('./kind_info/' + time_stamp)
-    x = open('./kind_info/' + time_stamp + '/cache_service_kind' + str(kind), "w")
+        log.info(u"kind_info 中 指定时间戳的文件不存在")
+        os.mkdir('./kind_info/' + timestamp)
+        log.info(u"kind_info 中 指定时间戳的文件新建完毕")
+    x = open('./kind_info/' + timestamp + '/cache_service_kind' + str(kind), "w")
+    message = u'删除kind' + str(kind) + u'的文件中的内容 准备写入资料'
+    log.info(message)
     x.close()
-    kind_info_file = './kind_info/' + time_stamp + '/cache_service_kind'
+    kind_info_file = './kind_info/' + timestamp + '/cache_service_kind'
     for line in lines:
         if 'curl' in line:
             url = line.split()[4]
@@ -87,7 +105,9 @@ def calculate_kind(time_stamp, kind=1):
     x.write(str(total_cache_size) + '\n')
     x.write('-------------------------------------\n')
     x.close()
-    kind_info_verbose(time_stamp, kind)
+    message = u'kind' + unicode(kind) + u'的文件中的内容 写入完毕'
+    log.info(message)
+    kind_info_verbose(timestamp, kind)
 
 
 def kind_info_verbose(time_stamp, kind=1):
@@ -97,6 +117,8 @@ def kind_info_verbose(time_stamp, kind=1):
     :param kind: 
     :return: 
     """
+    message = u'开始计算kind' + unicode(kind) + u'的文件中内容详情'
+    log.info(message)
     kind_info_file = './kind_info/' + time_stamp + '/cache_service_kind'
     f = open(kind_info_file + str(kind), "a+")
     lines = f.readlines()
@@ -289,9 +311,16 @@ def kind_info_verbose(time_stamp, kind=1):
                 video_mongotv_size = int(line.split()[3].replace("cache_size=", ''))
                 video_mongotv_size_total += video_mongotv_size
     f.write('httpcache:' + str(httpcache_count) + ' total_size:' + str(httpcache_size_total) + '\n')
+    message = u'kind' + unicode(kind) + u'中httpcache执行了' + unicode(httpcache_count) + u'次'
+    log.info(message)
     f.write('mobilecache:' + str(mobilecache_count) + ' total_size:' + str(mobilecache_size_total) + '\n')
+    message = u'kind' + unicode(kind) + u'中mobilecache执行了' + unicode(httpcache_count) + u'次'
+    log.info(message)
     f.write('videocache:' + str(videocache_count) + ' total_size:' + str(videocache_size_total) + '\n')
+    message = u'kind' + unicode(kind) + u'videocache' + unicode(httpcache_count) + u'次'
+    log.info(message)
     f.write('-----------\n')
+
     if http_other != 0:
         f.write('http_other:' + str(http_other) + ' total_size:' + str(http_other_size_total) + '\n')
     if http_soft != 0:

@@ -26,9 +26,11 @@ import sys
 import time
 
 from get_info_from_163.curl.curl import curl_resource_verbose
+from get_info_from_163.tools.log.operation_log import my_log
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
+log = my_log()
 
 
 def kind1(time_stamp, is_sleep=True, time_line=115):
@@ -36,22 +38,23 @@ def kind1(time_stamp, is_sleep=True, time_line=115):
     :return:
     """
     if is_sleep:
-        print u'执行kind1的上半部分'
+        log.info(u"开始执行kind1的操作")
         curl_resource_verbose(time_stamp, 0, 2, 10, 'linux', 'windows')
-        print u'curl 成功'
+        log.info(u'curl httpcache category=2 成功')
         curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows')
-        print u'curl 成功'
+        log.info(u'curl mobilecache category=0 成功')
         curl_resource_verbose(time_stamp, 2, 15, 10, 'linux', 'iphone')
-        print u'curl 成功'
-        print u'间隔125秒后再curl'
+        log.info(u'curl videocache category=15 成功')
+        log.info(u'等待两分钟后继续执行')
         time.sleep(time_line)
-        print u'执行kind1的下半部分'
+        log.info(u"开始执行kind1的下半部分操作")
         curl_resource_verbose(time_stamp, 2, 1, 10, 'linux', 'windows')
-        print u'curl 成功'
+        log.info(u'curl videocache category=1 成功')
         curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows')
-        print u'curl 成功'
+        log.info(u'curl mobilecache category=0 成功')
         curl_resource_verbose(time_stamp, 0, 1, 10, 'linux', 'windows')
-        print u'curl 成功'
+        log.info(u'curl httpcache category=1 成功')
+        log.info(u"kind1的操作执行完成")
     else:
         curl_resource_verbose(time_stamp, 0, 2, 10, 'linux', 'windows', False)
         curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows', False)
@@ -59,27 +62,29 @@ def kind1(time_stamp, is_sleep=True, time_line=115):
         curl_resource_verbose(time_stamp, 2, 1, 10, 'linux', 'windows', False)
         curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows', False)
         curl_resource_verbose(time_stamp, 0, 1, 10, 'linux', 'windows', False)
-        print u'kind1 info采集 成功'
+        message = u"kind1 的curl_log伪造成功"
+        log.info(message)
 
 
 def kind2(time_stamp, is_sleep=True, time_line=115):
     if is_sleep:
-        print u'执行kind2的上半部分'
+        log.info(u"开始执行kind2的操作")
         curl_resource_verbose(time_stamp, 2, 13, 10, 'linux', 'windows')
-        print u'curl 成功'
+        log.info(u'curl videocache category=13 成功')
         curl_resource_verbose(time_stamp, 0, 4, 10, 'linux', 'iphone')
-        print u'curl 成功'
+        log.info(u'curl httpcache category=4 成功')
         curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows')
-        print u'curl 成功'
-        print u'间隔125秒后再curl'
+        log.info(u'curl mobilecache category=0 成功')
+        log.info(u'等待两分钟后继续执行')
         time.sleep(time_line)
-        print u'执行kind2的下半部分'
+        log.info(u"开始执行kind2的下半部分操作")
         curl_resource_verbose(time_stamp, 2, 16, 10, 'linux', 'windows')
-        print u'curl 成功'
+        log.info(u'curl videocache category=16 成功')
         curl_resource_verbose(time_stamp, 0, 3, 10, 'linux', 'iphone')
-        print u'curl 成功'
+        log.info(u'curl httpcache category=3 成功')
         curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows')
-        print u'curl 成功'
+        log.info(u'curl mobilecache category=0 成功')
+        log.info(u"kind2的操作执行完成")
     else:
         curl_resource_verbose(time_stamp, 2, 13, 10, 'linux', 'windows', False)
         curl_resource_verbose(time_stamp, 0, 4, 10, 'linux', 'iphone', False)
@@ -87,27 +92,29 @@ def kind2(time_stamp, is_sleep=True, time_line=115):
         curl_resource_verbose(time_stamp, 2, 16, 10, 'linux', 'windows', False)
         curl_resource_verbose(time_stamp, 0, 3, 10, 'linux', 'iphone', False)
         curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows', False)
-        print u'kind2 info采集 成功'
+        message = u"kind2 的curl_log伪造成功"
+        log.info(message)
 
 
 def kind3(time_stamp, is_sleep=True, time_line=115):
     if is_sleep:
-        print u'执行kind3的上半部分'
+        log.info(u"开始执行kind3的操作")
         curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows')
-        print u'curl 成功'
+        log.info(u'curl mobilecache category=0 成功')
         curl_resource_verbose(time_stamp, 2, 6, 10, 'linux', 'iphone')
-        print u'curl 成功'
+        log.info(u'curl videocache category=6 成功')
         curl_resource_verbose(time_stamp, 0, 3, 10, 'linux', 'windows')
-        print u'curl 成功'
-        print u'间隔125秒后再curl'
+        log.info(u'curl httpcache category=3 成功')
+        log.info(u'等待两分钟后继续执行')
         time.sleep(time_line)
-        print u'执行kind3的下半部分'
+        log.info(u"开始执行kind3的下半部分操作")
         curl_resource_verbose(time_stamp, 2, 13, 10, 'linux', 'windows')
-        print u'curl 成功'
+        log.info(u'curl videocache category=13 成功')
         curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows')
-        print u'curl 成功'
+        log.info(u'curl mobilecache category=0 成功')
         curl_resource_verbose(time_stamp, 0, 4, 10, 'linux', 'windows')
-        print u'curl 成功'
+        log.info(u'curl httpcache category=4 成功')
+        log.info(u"kind3的操作执行完成")
     else:
         curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows', False)
         curl_resource_verbose(time_stamp, 2, 6, 10, 'linux', 'iphone', False)
@@ -115,27 +122,29 @@ def kind3(time_stamp, is_sleep=True, time_line=115):
         curl_resource_verbose(time_stamp, 2, 13, 10, 'linux', 'windows', False)
         curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows', False)
         curl_resource_verbose(time_stamp, 0, 4, 10, 'linux', 'windows', False)
-        print u'kind3 info采集 成功'
+        message = u"kind3 的curl_log伪造成功"
+        log.info(message)
 
 
 def kind4(time_stamp, is_sleep=True, time_line=115):
     if is_sleep:
-        print u'执行kind4的上半部分'
+        log.info(u"开始执行kind4的操作")
         curl_resource_verbose(time_stamp, 0, 2, 10, 'linux', 'windows')
-        print u'curl 成功'
+        log.info(u'curl httpcache category=2 成功')
         curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows')
-        print u'curl 成功'
+        log.info(u'curl mobilecache category=0 成功')
         curl_resource_verbose(time_stamp, 2, 1, 10, 'linux', 'iphone')
-        print u'curl 成功'
-        print u'间隔125秒后再curl'
+        log.info(u'curl videocache category=1 成功')
+        log.info(u'等待两分钟后继续执行')
         time.sleep(time_line)
-        print u'执行kind4的下半部分'
+        log.info(u"开始执行kind4的下半部分操作")
         curl_resource_verbose(time_stamp, 2, 6, 10, 'linux', 'windows')
-        print u'curl 成功'
+        log.info(u'curl videocache category=6 成功')
         curl_resource_verbose(time_stamp, 0, 3, 10, 'linux', 'windows')
-        print u'curl 成功'
+        log.info(u'curl httpcache category=3 成功')
         curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows')
-        print u'curl 成功'
+        log.info(u'curl mobilecache category=0 成功')
+        log.info(u"kind4的操作执行完成")
     else:
         curl_resource_verbose(time_stamp, 0, 2, 10, 'linux', 'windows', False)
         curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows', False)
@@ -143,27 +152,29 @@ def kind4(time_stamp, is_sleep=True, time_line=115):
         curl_resource_verbose(time_stamp, 2, 6, 10, 'linux', 'windows', False)
         curl_resource_verbose(time_stamp, 0, 3, 10, 'linux', 'windows', False)
         curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows', False)
-        print u'kind4 info采集 成功'
+        message = u"kind4 的curl_log伪造成功"
+        log.info(message)
 
 
 def kind5(time_stamp, is_sleep=True, time_line=115):
     if is_sleep:
-        print u'执行kind5的上半部分'
+        log.info(u"开始执行kind5的操作")
         curl_resource_verbose(time_stamp, 2, 8, 10, 'linux', 'iphone')
-        print u'curl 成功'
+        log.info(u'curl videocache category=8 成功')
         curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows')
-        print u'curl 成功'
+        log.info(u'curl mobilecache category=0 成功')
         curl_resource_verbose(time_stamp, 0, 4, 10, 'linux', 'windows')
-        print u'curl 成功'
-        print u'间隔125秒后再curl'
+        log.info(u'curl httpcache category=4 成功')
+        log.info(u'等待两分钟后继续执行')
         time.sleep(time_line)
-        print u'执行kind5的下半部分'
+        log.info(u"开始执行kind5的下半部分操作")
         curl_resource_verbose(time_stamp, 2, 1, 10, 'linux', 'windows')
-        print u'curl 成功'
+        log.info(u'curl videocache category=1 成功')
         curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows')
-        print u'curl 成功'
+        log.info(u'curl mobilecache category=0 成功')
         curl_resource_verbose(time_stamp, 0, 1, 10, 'linux', 'windows')
-        print u'curl 成功'
+        log.info(u'curl httpcache category=1 成功')
+        log.info(u"kind5的操作执行完成")
     else:
         curl_resource_verbose(time_stamp, 2, 8, 10, 'linux', 'iphone', False)
         curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows', False)
@@ -171,4 +182,5 @@ def kind5(time_stamp, is_sleep=True, time_line=115):
         curl_resource_verbose(time_stamp, 2, 1, 10, 'linux', 'windows', False)
         curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows', False)
         curl_resource_verbose(time_stamp, 0, 1, 10, 'linux', 'windows', False)
-        print u'kind5 info采集 成功'
+        message = u"kind5 的curl_log伪造成功"
+        log.info(message)
