@@ -44,6 +44,7 @@ def connect_linux(command='service iptables stop', ip='192.168.0.59', user='root
     stdin.write("Y")  # Generally speaking, the first connection, need a simple interaction.
     info = stdout.read()
     log.info(u'链接了linux后执行操作的返回值'+str(info))
+    ssh.close()
     return info
 
 

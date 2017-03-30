@@ -43,6 +43,7 @@ def main_kind():
     filepath = './operation_log/' + timestamp
     modify_my_log_file_path(filepath)
     log = my_log()
+    log.info(u'全场关键字 timestamp为：'+timestamp)
     log.info(u'获取全部资源放入到指定的文件夹中')
     get_all_cache(timestamp)  # 获取全部资源放入到指定的文件夹中
     log.info(u"现在的时间戳节点为：" + timestamp)
@@ -53,7 +54,7 @@ def main_kind():
         i += 1
     log.info(u'准备工作就绪，现在可以开始进行真正的curl操作')
     log.info(u'当前的时间为' + unicode(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
-    timer_customize(timestamp, '2017-03-30 18:15:00', '2017-03-30 19:00:00')
+    timer_customize(timestamp, '2017-03-30 18:25:00', '2017-03-30 19:05:00')
     get_all_hot_list(timestamp)
     wrong_statistics_log(timestamp)
     log.info(u"执行完成")

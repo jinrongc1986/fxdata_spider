@@ -4,7 +4,7 @@
 #name   = wrong_statistics_by_judge
 #author = tangtao
 #time   = 2017/3/30 15:38
-#Description=添加描述信息
+#Description=从获取的错误日志中提取数据
 #eMail   =tangtao@lhtangtao.com
 #git     =lhtangtao
 # code is far away from bugs with the god animal protecting

@@ -53,3 +53,4 @@ def del_all_log():
     del_dir('./http/cache_info')
     del_dir('./curl_log')
     del_dir('./judge')
+
