@@ -25,6 +25,8 @@ I love animals. They taste delicious.
 import sys
 import time
 
+import datetime
+
 from get_info_from_163.curl.curl import curl_resource_verbose
 from get_info_from_163.tools.log.operation_log import my_log
 
@@ -45,8 +47,10 @@ def kind1(time_stamp, is_sleep=True, time_line=115):
         log.info(u'curl mobilecache category=0 成功')
         curl_resource_verbose(time_stamp, 2, 15, 10, 'linux', 'iphone')
         log.info(u'curl videocache category=15 成功')
+        log.info(u'现在的时间是'+str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M')))
         log.info(u'等待两分钟后继续执行')
         time.sleep(time_line)
+        log.info(u'现在的时间是'+str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M')))
         log.info(u"开始执行kind1的下半部分操作")
         curl_resource_verbose(time_stamp, 2, 1, 10, 'linux', 'windows')
         log.info(u'curl videocache category=1 成功')
@@ -75,8 +79,10 @@ def kind2(time_stamp, is_sleep=True, time_line=115):
         log.info(u'curl httpcache category=4 成功')
         curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows')
         log.info(u'curl mobilecache category=0 成功')
+        log.info(u'现在的时间是'+str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M')))
         log.info(u'等待两分钟后继续执行')
         time.sleep(time_line)
+        log.info(u'现在的时间是'+str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M')))
         log.info(u"开始执行kind2的下半部分操作")
         curl_resource_verbose(time_stamp, 2, 16, 10, 'linux', 'windows')
         log.info(u'curl videocache category=16 成功')
@@ -105,8 +111,10 @@ def kind3(time_stamp, is_sleep=True, time_line=115):
         log.info(u'curl videocache category=6 成功')
         curl_resource_verbose(time_stamp, 0, 3, 10, 'linux', 'windows')
         log.info(u'curl httpcache category=3 成功')
+        log.info(u'现在的时间是'+str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M')))
         log.info(u'等待两分钟后继续执行')
         time.sleep(time_line)
+        log.info(u'现在的时间是'+str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M')))
         log.info(u"开始执行kind3的下半部分操作")
         curl_resource_verbose(time_stamp, 2, 13, 10, 'linux', 'windows')
         log.info(u'curl videocache category=13 成功')
@@ -135,8 +143,10 @@ def kind4(time_stamp, is_sleep=True, time_line=115):
         log.info(u'curl mobilecache category=0 成功')
         curl_resource_verbose(time_stamp, 2, 1, 10, 'linux', 'iphone')
         log.info(u'curl videocache category=1 成功')
+        log.info(u'现在的时间是'+str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M')))
         log.info(u'等待两分钟后继续执行')
         time.sleep(time_line)
+        log.info(u'现在的时间是'+str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M')))
         log.info(u"开始执行kind4的下半部分操作")
         curl_resource_verbose(time_stamp, 2, 6, 10, 'linux', 'windows')
         log.info(u'curl videocache category=6 成功')
@@ -165,7 +175,9 @@ def kind5(time_stamp, is_sleep=True, time_line=115):
         log.info(u'curl mobilecache category=0 成功')
         curl_resource_verbose(time_stamp, 0, 4, 10, 'linux', 'windows')
         log.info(u'curl httpcache category=4 成功')
+        log.info(u'现在的时间是'+str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M')))
         log.info(u'等待两分钟后继续执行')
+        log.info(u'现在的时间是'+str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M')))
         time.sleep(time_line)
         log.info(u"开始执行kind5的下半部分操作")
         curl_resource_verbose(time_stamp, 2, 1, 10, 'linux', 'windows')

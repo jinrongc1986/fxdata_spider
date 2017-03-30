@@ -151,7 +151,7 @@ def curl_resource_verbose(timestamp, kind=0, category=0, limit=5, system='window
         x.flush()
         i += 1
     i = 0
-    time.sleep(2)
+    time.sleep(1)
     if need_assert is True:
         log.info(u"开始校验核对服务日志和重定向日志")
         while i < limit:

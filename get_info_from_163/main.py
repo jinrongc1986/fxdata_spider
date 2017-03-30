@@ -23,15 +23,16 @@ I love animals. They taste delicious.
 ┗┻┛  ┗┻┛
 """
 import datetime
+import shutil
 import sys
-
-from get_info_from_163.curl.curl import curl_resource_verbose
 from get_info_from_163.http.class_info import calculate_kind
 from get_info_from_163.http.http import get_all_cache
 from get_info_from_163.tools.del_log import del_all_log
 from get_info_from_163.tools.log.operation_log import my_log, modify_my_log_file_path
-from get_info_from_163.tools.resource_list import get_all_hot_list
+from get_info_from_163.tools.resource_list import get_all_hot_list, hot_list
 from get_info_from_163.tools.timer import timer_customize
+from get_info_from_163.tools.wrong_statistics_by_judge import statics_location_log, statics_service_log, \
+    wrong_statistics_log
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -40,7 +41,6 @@ sys.setdefaultencoding('utf-8')
 def main_kind():
     timestamp = str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M'))
     filepath = './operation_log/' + timestamp
-    print filepath
     modify_my_log_file_path(filepath)
     log = my_log()
     log.info(u'获取全部资源放入到指定的文件夹中')
@@ -53,13 +53,13 @@ def main_kind():
         i += 1
     log.info(u'准备工作就绪，现在可以开始进行真正的curl操作')
     log.info(u'当前的时间为' + unicode(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
-    timer_customize(timestamp, '2017-03-30 11:05:00', '2017-03-30 19:50:00')
+    timer_customize(timestamp, '2017-03-30 16:40:00', '2017-03-30 17:00:00')
     get_all_hot_list(timestamp)
+    wrong_statistics_log(timestamp)
+    log.info(u"执行完成")
 
 
 if __name__ == '__main__':
-    # del_all_log()
+    del_all_log()
     main_kind()
-    # get_all_cache("2017-03-30-09-53")
-    # curl_resource_verbose("2017-03-30-09-53", 0, 2, 10, 'linux', 'windows')
-    # kind2('2017-03-28-16-45')
+

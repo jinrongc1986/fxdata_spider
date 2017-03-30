@@ -24,10 +24,12 @@ I love animals. They taste delicious.
 """
 import sys
 
+from get_info_from_163.tools.log.operation_log import my_log
 from get_info_from_163.tools.mysql_db import execute_mysql
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
+log = my_log()
 
 
 def get_resource_list_by_time(time_stamp):
@@ -38,6 +40,7 @@ def get_resource_list_by_time(time_stamp):
     curl_log = './curl_log/curl_log_' + time_stamp
     f = open(curl_log, "r")
     resource_list_file = './kind_info/' + time_stamp + '/resource_list'
+    log.info(resource_list_file + u' 这个文件中包含了资源和执行的次数两个信息')
     x = open(resource_list_file, 'w')
     result = dict()
     lines = f.readlines()
@@ -49,6 +52,7 @@ def get_resource_list_by_time(time_stamp):
             else:
                 result[url] = 1
     for url in result:
+        log.info(u'在' + resource_list_file + u'文件夹中url=' + url + u'被执行了' + str(result[url]) + u'次')
         message = url + '\t' + 'times:' + str(result[url]) + '\n'
         x.write(message)
     x.close()
@@ -68,7 +72,7 @@ def get_resource_size(url):
     command2 = ' WHERE uri like"%'
     command3 = '%"'
     command = command1 + kind1 + command2 + url + command3
-    # print command
+    log.info(u'输入uri获取他的cache_size和category' + command)
     res = execute_mysql(command)
     if res is None:
         command = command1 + kind2 + command2 + url + command3
@@ -100,18 +104,23 @@ def get_resource_verbose(time_stamp):
     f = open(file_path + "resource_list", 'r')
     lines = f.readlines()
     for line in lines:
+        log.info("resource_list" + u'中采集到的line信息为' + line)
         url = line.split()[0]
         times = line.split()[1].replace("times:", "")
         info = get_resource_size(url)
+        log.info(u'输入uri获取得到的cache_size和category' + unicode(info))
         kind = info[0]
         category = str(info[1])
         cache_size = str(info[2])
         total_size = int(times) * int(cache_size)
-        x = open(file_path + "resource_list_verbose", 'w')
+        x = open(file_path + "resource_list_verbose", 'a')
         x.write(
             "url:" + url + '\t' + 'class=' + kind + ' category=' + category + ' times:' + times + '\t' + 'cache_size:' + cache_size + '\t' + 'total_size:' + str(
                 total_size) + '\n')
-    x.close()
+        x.close()
+        log.info(u'从resource_list采集到的写入resource_list_verbose信息为：' +
+                 "url:" + url + '\t' + 'class=' + kind + ' category=' + category + ' times:' + times + '\t' + 'cache_size:' + cache_size + '\t' + 'total_size:' + str(
+            total_size) + '\n')
 
 
 def hot_list(time_stamp, kind=0):
@@ -122,11 +131,14 @@ def hot_list(time_stamp, kind=0):
     :return:
     """
     resource_list_verbose_file = './kind_info/' + time_stamp + '/resource_list_verbose'
+    log.info(
+        u'resource_list_verbose_file(主要内容为包含了URL class category 执行次数，单次缓存大小，总的缓存大小 )\n' + resource_list_verbose_file)
     x = open(resource_list_verbose_file, 'r')
     lines = x.readlines()
     info_all = []  # 把所有的数据写入二维数组 随后开始对二维数组进行操作
     if kind == 0:
         for line in lines:
+            log.info(line)
             info = []
             line = line.split()
             url = line[0].replace("url:", '')
@@ -182,6 +194,7 @@ def get_all_hot_list(time_stamp):
     :param time_stamp:
     :return:
     """
+    log.info(u'从操作日志中分析出各种热榜（包括三种class以及总榜单）')
     get_resource_verbose(time_stamp)
     hot_list(time_stamp)
     hot_list(time_stamp, 1)

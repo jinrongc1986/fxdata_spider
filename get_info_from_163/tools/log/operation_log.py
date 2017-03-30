@@ -24,17 +24,29 @@ I love animals. They taste delicious.
 """
 import logging
 import logging.config
+import os
 
 
 def my_log():
+    is_dir_exist = os.path.exists('./operation_log')
+    if is_dir_exist is True:
+        pass
+    else:
+        os.mkdir('./operation_log')
     logging.config.fileConfig("./tools/log/logging.conf")
-    # create logger
     logger_name = "example01"
     logger_ = logging.getLogger(logger_name)
     return logger_
 
 
 def modify_my_log_file_path(filepath):
+    is_dir_exist = os.path.exists('./operation_log')
+    if is_dir_exist is True:
+        pass
+    else:
+        print "1111111111111111111"
+        os.mkdir('./operation_log')
+
     global src
     f = open("./tools/log/logging.conf", 'a+')
     lines = f.readlines()
@@ -49,6 +61,21 @@ def modify_my_log_file_path(filepath):
     f.close()
     f = open("./tools/log/logging.conf.", 'w')
     f.write(des)
+
+
+def del_operation_log(timestamp):
+    """
+    如果日志大于8mb则删除里面的所有信息，因为此时已经没有意义了，日志只是单纯的用来判断错误程序的
+    :param timestamp: 
+    :return: 
+    """
+    filepath = './operation_log/' + timestamp + '.log'
+    file_size = os.path.getsize(filepath) / 1024 / 1024
+    if file_size > 8:
+        open(filepath, 'w')
+    else:
+        log = my_log()
+        log.info(u'目前文件大小为：' + unicode(file_size) + u'，请放心使用')
 
 
 if __name__ == '__main__':

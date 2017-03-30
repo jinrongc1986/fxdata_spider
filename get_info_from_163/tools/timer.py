@@ -27,16 +27,17 @@ import datetime
 import time
 from get_info_from_163.http.class_info import *
 from get_info_from_163.tools.connect_Linux import connect_linux
+from get_info_from_163.tools.log.operation_log import del_operation_log
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
 log = my_log()
 
 
-def timer_customize(time_stamp, expect_start_time='2017-03-21 17:04:00', expect_end_time='2017-03-21 17:20:00'):
+def timer_customize(timestamp, expect_start_time='2017-03-21 17:04:00', expect_end_time='2017-03-21 17:20:00'):
     """
     输入期望开始的时间随后每隔五分钟会调用一次
-    :param time_stamp:
+    :param timestamp:
     :param expect_end_time:
     :param expect_start_time:
     :return:
@@ -54,7 +55,7 @@ def timer_customize(time_stamp, expect_start_time='2017-03-21 17:04:00', expect_
         sys.exit()
     expect_end_time = expect_end_time + datetime.timedelta(minutes=5)
     node = 1
-    curl_log = "./curl_log/curl_log_" + time_stamp
+    curl_log = "./curl_log/curl_log_" + timestamp
     log.info(u'清除指定的时间戳的curl_log文件中的内容，之前的内容都是测试kind_info中的信息而产生的')
     f = open(curl_log, 'w+')
     f.close()
@@ -71,6 +72,7 @@ def timer_customize(time_stamp, expect_start_time='2017-03-21 17:04:00', expect_
     count_kind5 = 1
     log.info(u'开始执行循环操作')
     while True:
+        del_operation_log(timestamp)
         now_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 显示现在的时间
         log.info(u'当前的时间是：' + unicode(now_time))
         now_time = datetime.datetime.strptime(now_time, '%Y-%m-%d %H:%M:%S')  # 格式化当前的时间
@@ -82,7 +84,7 @@ def timer_customize(time_stamp, expect_start_time='2017-03-21 17:04:00', expect_
         end_second = int(wait_to_end.split(':')[2])
         seconds_to_wait_end = end_hour * 3600 + end_minute * 60 + end_second  # 离跳出循环还有几秒钟
         log.info(u'离结束时间还有几秒：' + str(seconds_to_wait_end))
-        if seconds_to_wait_end < 300:
+        if abs(seconds_to_wait_end) < 300:
             log.info(u'马上自动退出程序，请查看基础日志')
             break
         else:
@@ -96,27 +98,27 @@ def timer_customize(time_stamp, expect_start_time='2017-03-21 17:04:00', expect_
         time.sleep(seconds_to_wait)
         if node == 1:
             log.info(u'开始执行kind1的实际curl操作')
-            kind1(time_stamp)
+            kind1(timestamp)
             log.info(u'kind1执行了' + str(count_kind1) + u"次")
             count_kind1 += 1
         elif node == 2:
             log.info(u'开始执行kind2的实际curl操作')
-            kind2(time_stamp)
+            kind2(timestamp)
             log.info(u'kind2执行了' + str(count_kind2) + u"次")
             count_kind2 += 1
         elif node == 3:
             log.info(u'开始执行kind3的实际curl操作')
-            kind3(time_stamp)
+            kind3(timestamp)
             log.info(u'kind3执行了' + str(count_kind3) + u"次")
             count_kind3 += 1
         elif node == 4:
             log.info(u'开始执行kind4的实际curl操作')
-            kind4(time_stamp)
+            kind4(timestamp)
             log.info(u'kind4执行了' + str(count_kind4) + u"次")
             count_kind4 += 1
         elif node == 5:
             log.info(u'开始执行kind5的实际curl操作')
-            kind5(time_stamp)
+            kind5(timestamp)
             log.info(u'kind5执行了' + str(count_kind5) + u"次")
             count_kind5 += 1
         time_line = datetime.timedelta(minutes=5)  # 两个kind之间每次curl间隔的时间，要求为5分钟
