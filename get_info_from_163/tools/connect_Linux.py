@@ -39,14 +39,6 @@ def connect_linux(command='service iptables stop', ip='192.168.0.59', user='root
     stdin, stdout, stderr = ssh.exec_command(command)
     stdin.write("Y")  # Generally speaking, the first connection, need a simple interaction.
     info = stdout.read()
-    print info
-    # x = open("cds_log", "a")
-    # x.write(current_time + '\t \n' + command + '\t \n')
-    # with open("cds_log", "a") as f:
-    #     f.write(info)
-    #     f.write('\n')
-    # ssh.close()
-    # x.write("-----------------------------------------------" + '\n')
     return info
 
 

@@ -27,9 +27,11 @@ import json
 import MySQLdb
 
 from get_info_from_163.tools.connect_Linux import connect_linux
+from get_info_from_163.tools.log.operation_log import my_log
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
+log = my_log()
 
 
 def init_db(host='192.168.1.106', user='root', passwd='0rd1230ac'):
@@ -63,6 +65,7 @@ def execute_mysql_get_cache_info(execute, filepath, category, host='192.168.1.10
     """
     conn = init_db(host, user, passwd)
     cur = conn.cursor()
+    log.info(u"执行的cmd为："+str(execute))
     cur.execute(execute)
     results = cur.fetchall()
     cur.close()
@@ -107,6 +110,7 @@ def get_location_log(url):
     cmd1 = 'SELECT class,category,cache_size,create_time FROM location_log WHERE req_uri = "'
     cmd2 = '" ORDER BY create_time DESC'
     cmd = cmd1 + url + cmd2
+    log.info(u"执行的获取重定向日志信息的cmd为:"+unicode(cmd))
     return execute_mysql(cmd)
 
 
@@ -122,9 +126,7 @@ def get_service_log(classes, md5):
     cmd2 = ' WHERE md5="'
     cmd3 = '" ORDER BY create_time DESC'
     cmd = cmd1 + classes + cmd2 + md5 + cmd3
+    log.info(u"执行的获取服务日志信息的cmd为:"+unicode(cmd))
     res = execute_mysql(cmd)
     return res
 
-
-if __name__ == '__main__':
-    print get_service_log(0, 'ab534b12b936e7f5ca4072417290a8af')

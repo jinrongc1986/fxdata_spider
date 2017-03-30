@@ -122,7 +122,6 @@ def timer_customize(time_stamp, expect_start_time='2017-03-21 17:04:00', expect_
         time_line = datetime.timedelta(minutes=5)  # 两个kind之间每次curl间隔的时间，要求为5分钟
         expect_start_time = expect_start_time + time_line
         log.info(u'下一次的curl_kind操作开始时间为：' + unicode(expect_start_time))
-        print u'下次执行的时间为(expect_start_time)：' + str(expect_start_time)
         node += 1
         if node == 6:
             node = 1

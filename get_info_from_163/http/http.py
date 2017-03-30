@@ -26,10 +26,12 @@ import sys
 import datetime
 import os
 from get_info_from_163.tools.connect_Linux import connect_linux
+from get_info_from_163.tools.log.operation_log import my_log
 from get_info_from_163.tools.mysql_db import execute_mysql_get_cache_info
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
+log = my_log()
 
 
 def get_http_cache_top(category="1", limit='10', host='192.168.1.106', user='root',
@@ -48,7 +50,9 @@ def get_http_cache_top(category="1", limit='10', host='192.168.1.106', user='roo
     str2 = " ORDER BY create_time DESC LIMIT "
     execute = str1 + category + str2 + limit
     filepath += 'httpcache'
-    return execute_mysql_get_cache_info(execute, filepath, category, host, user, passwd)
+    res = execute_mysql_get_cache_info(execute, filepath, category, host, user, passwd)
+    log.info(u'采集到的放入/http/cache_info的http信息为' + str(res))
+    return res
 
 
 def get_video_cache_top(category='1', limit='10', host='192.168.1.106', user='root',
@@ -68,7 +72,9 @@ def get_video_cache_top(category='1', limit='10', host='192.168.1.106', user='ro
     execute = str1 + category + str2 + limit
     # print execute
     filepath += 'videocache'
-    return execute_mysql_get_cache_info(execute, filepath, category, host, user, passwd)
+    res = execute_mysql_get_cache_info(execute, filepath, category, host, user, passwd)
+    log.info(u'采集到的放入/http/cache_info的video信息为' + str(res))
+    return res
 
 
 def get_mobile_cache_top(category='0', limit='10', host='192.168.1.106', user='root',
@@ -88,7 +94,9 @@ def get_mobile_cache_top(category='0', limit='10', host='192.168.1.106', user='r
     execute = str1 + category + str2 + limit
     # print execute
     filepath += 'mobilecache'
-    return execute_mysql_get_cache_info(execute, filepath, category, host, user, passwd)
+    res = execute_mysql_get_cache_info(execute, filepath, category, host, user, passwd)
+    log.info(u'采集到的放入/http/cache_info的mobile信息为' + str(res))
+    return res
 
 
 def get_all_cache(current_time, limit=100, host='192.168.1.106', user='root', passwd='0rd1230ac'):
@@ -105,11 +113,13 @@ def get_all_cache(current_time, limit=100, host='192.168.1.106', user='root', pa
     :return:
     """
     connect_linux('service iptables stop', '192.168.1.106')  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
+    log.info(u'连接到数据库成功')
     is_http_cache_exist = os.path.exists('./http/cache_info')
     if is_http_cache_exist is True:
         pass
     else:
         os.mkdir('./http/cache_info')
+        log.info(u'创建文件夹./http/cache_info')
     dir_exist = os.path.exists('./http/cache_info/' + str(current_time))
     if dir_exist is True:
         pass

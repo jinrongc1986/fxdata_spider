@@ -1,0 +1,36 @@
+2017-03-30 10:34:47:
+http://m5.apk.67mo.com/apk/360/com.qihoo.appstore_300050260.apk
+从数据库中读到的资源：	1	0	7159139	2017-03-30 10:31:19:
+实际curl到的资源：	1	0	7159139	0:03:28.854000:
+create_time was wrong
+***************************************
+2017-03-30 10:34:48:
+http://appdlc.hicloud.com/dl/appdl/application/apk/93/93c5a565aa0c4276a3dac13c68b09f19/com.dtdream.publictransit.1702252107.apk?sign=d9dz1011e510010820009000@E08EA7E82DCF2067AEAA4F4AF6D9E001&source=search&subsource=%E6%9D%AD%E5%B7%9E%E5%85%AC%E4%BA%A4&listId=qsearch&position=1&hcrId=12CEFA836BAD429F979DBA0784C16948&extendStr=detail:1;&encryptType=1
+从数据库中读到的资源：	1	0	9704874	2017-03-30 10:31:20:
+实际curl到的资源：	1	0	9704874	0:03:28.468000:
+create_time was wrong
+***************************************
+2017-03-30 10:35:05:
+http://definitionupdates.microsoft.com/download/DefinitionUpdates/NRI/amd64/nis_full.exe
+从数据库中读到的资源：	0	1	3125008	2017-03-30 10:34:52:
+实际curl到的资源：	0	1	3125008	0:00:13.984000:
+create_time was wrong
+***************************************
+2017-03-30 10:35:06:
+http://dl.softmgr.qq.com/original/Development/npp.7.3.3.Installer.exe
+从数据库中读到的资源：	0	1	2982992	2017-03-30 10:34:53:
+实际curl到的资源：	0	1	2982992	0:00:13.854000:
+create_time was wrong
+***************************************
+2017-03-30 10:35:07:
+http://officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be/Office/Data/16.0.7870.2024/i642052.cab
+从数据库中读到的资源：	0	1	682837	2017-03-30 10:34:54:
+实际curl到的资源：	0	1	682837	0:00:13.769000:
+create_time was wrong
+***************************************
+2017-03-30 10:35:08:
+http://officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be/Office/Data/16.0.7870.2024/s640.cab
+从数据库中读到的资源：	0	1	3969774	2017-03-30 10:34:54:
+实际curl到的资源：	0	1	3969774	0:00:14.676000:
+create_time was wrong
+***************************************
