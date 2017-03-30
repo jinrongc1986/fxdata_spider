@@ -53,13 +53,12 @@ def main_kind():
         i += 1
     log.info(u'准备工作就绪，现在可以开始进行真正的curl操作')
     log.info(u'当前的时间为' + unicode(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
-    timer_customize(timestamp, '2017-03-30 16:40:00', '2017-03-30 17:00:00')
+    timer_customize(timestamp, '2017-03-30 18:15:00', '2017-03-30 19:00:00')
     get_all_hot_list(timestamp)
     wrong_statistics_log(timestamp)
     log.info(u"执行完成")
 
 
 if __name__ == '__main__':
-    del_all_log()
+    # del_all_log()
     main_kind()
-
