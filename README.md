@@ -23,7 +23,11 @@ linux_curl_log : 在什么时间 curl了什么东西，包括url 大小 class �
 
 
 原理图：
+![网络拓扑图](https://github.com/lhtangtao/fxdata_spider/blob/master/get_info_from_163/pic/%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E5%9B%BE.png)
 
+![基本流程图](https://github.com/lhtangtao/fxdata_spider/blob/master/get_info_from_163/pic/%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B%E5%9B%BE.png)
+
+![基本函数图](https://github.com/lhtangtao/fxdata_spider/blob/master/get_info_from_163/pic/%E5%9F%BA%E6%9C%AC%E5%87%BD%E6%95%B0%E5%9B%BE.png)
 第一步：使用get_all_cache()函数 根据class 和 category 从数据库中筛选出小于10mb的资源，放入各自的文件夹中 /http/cache/各类文件
 
 kind为各种curl指定的class和category的集合，不同的kind由不同的class和category组合而成。而他们所执行的curl的url都是上文中/http/cache中的url
@@ -45,25 +49,25 @@ kind为各种curl指定的class和category的集合，不同的kind由不同的c
 第五步：使用hot_list函数，根据次数*每个资源的大小求出总共的service_size后从大到小排序并且根据class和总榜单写入相应的文件中。
 
 ![函数图](https://github.com/lhtangtao/fxdata_spider/blob/master/get_info_from_163/%E5%87%BD%E6%95%B0%E5%9B%BE.png)
-
+![kind是什么 ](https://github.com/lhtangtao/fxdata_spider/blob/master/get_info_from_163/pic/curl_kind%20%E5%85%B3%E7%B3%BB.png)
 ------------------------------------------------------------------------------------------------------------
 
 目前实现功能：
 
 1.get_all_cache（）获取
 从内网的数据库中获取所有的已存在的资源，按照class和category分类。如下图所示
-![资源示意图](https://github.com/lhtangtao/fxdata_spider/blob/master/get_info_from_163/pic/222.png)
+![获取所有的资源信息](https://github.com/lhtangtao/fxdata_spider/blob/master/get_info_from_163/pic/cache_info_list.png)
 
 2.calculate_kind（）计算每种kind的资源信息，如下图所示
-![资源示意图](https://github.com/lhtangtao/fxdata_spider/blob/master/get_info_from_163/222.png)
+![kind的信息](https://github.com/lhtangtao/fxdata_spider/blob/master/get_info_from_163/pic/kind_info.png)
 
-![资源示意图](https://github.com/lhtangtao/fxdata_spider/blob/master/get_info_from_163/222.png)
+![kind_list信息](https://github.com/lhtangtao/fxdata_spider/blob/master/get_info_from_163/pic/kind_list.png)
+
 3.根据开始和结束时间，循环执行curl操作。先判断开始时间是否大于当前时间，再判断开始时间是否小于预期结束时间。
 
 4.在指定的时间开始执行curl操作，所执行的操作会被写入到curl_log中如下图所示：（可以通过user_agent来区分点播的种类，移动端或者pc端）
 
 5.通过设置node可以设置执行多少次kind循环一次
 
-
-所做的curl信息，写入到curl_log中，
+所做的curl信息，写入到curl_log中，后续的一些操作，包括重定向日志 服务日志 是否出错热榜资源的统计等信息都是从curl_log中提取执行的
 
