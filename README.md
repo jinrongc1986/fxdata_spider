@@ -62,11 +62,12 @@ kind为各种curl指定的class和category的集合，不同的kind由不同的c
 ![kind的信息](https://github.com/lhtangtao/fxdata_spider/blob/master/get_info_from_163/pic/kind_info.png)
 
 ![kind_list信息](https://github.com/lhtangtao/fxdata_spider/blob/master/get_info_from_163/pic/kind_list.png)
+
 3.根据开始和结束时间，循环执行curl操作。先判断开始时间是否大于当前时间，再判断开始时间是否小于预期结束时间。
 
 4.在指定的时间开始执行curl操作，所执行的操作会被写入到curl_log中如下图所示：（可以通过user_agent来区分点播的种类，移动端或者pc端）
 
 5.通过设置node可以设置执行多少次kind循环一次
 
-所做的curl信息，写入到curl_log中，
+所做的curl信息，写入到curl_log中，后续的一些操作，包括重定向日志 服务日志 是否出错热榜资源的统计等信息都是从curl_log中提取执行的
 
