@@ -31,16 +31,27 @@ from get_info_from_163.tools.log.operation_log import my_log, modify_my_log_file
 from get_info_from_163.tools.resource_list import get_all_hot_list
 from get_info_from_163.tools.timer import timer_customize
 from get_info_from_163.tools.wrong_statistics_by_judge import wrong_statistics_log
+import time
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
 
-def main_kind():
+def main_kind(start_time, end_time):
+    now_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 显示现在的时间
+    now_time = datetime.datetime.strptime(now_time, '%Y-%m-%d %H:%M:%S')  # 格式化当前的时间
+    start_time = datetime.datetime.strptime(start_time, '%Y-%m-%d %H:%M:%S')
     timestamp = str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M'))
     filepath = './operation_log/' + timestamp
     modify_my_log_file_path(filepath)
     log = my_log()
+    while True:
+        if start_time - now_time < datetime.timedelta(minutes=2):
+            log.info(u'离开始执行的时间只有2分钟，准备开始')
+            break
+        else:
+            log.info(u'请耐心等待，离开始的时间还有' + str(start_time - now_time))
+            time.sleep(60)
     log.info(u'全场关键字 timestamp为：' + timestamp)
     log.info(u'获取全部资源放入到指定的文件夹中')
     get_all_cache(timestamp)  # 获取全部资源放入到指定的文件夹中
@@ -52,7 +63,7 @@ def main_kind():
         i += 1
     log.info(u'准备工作就绪，现在可以开始进行真正的curl操作')
     log.info(u'当前的时间为' + unicode(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
-    timer_customize(timestamp, '2017-04-01 00:00:00', '2017-04-01 08:00:00')
+    timer_customize(timestamp, start_time, end_time)
     get_all_hot_list(timestamp)
     wrong_statistics_log(timestamp)
     log.info(u"执行完成")
@@ -60,4 +71,4 @@ def main_kind():
 
 if __name__ == '__main__':
     # del_all_log()
-    main_kind()
+    main_kind('2017-04-01 00:00:00', '2017-04-01 08:00:00')
