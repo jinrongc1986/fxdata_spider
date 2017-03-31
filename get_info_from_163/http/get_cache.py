@@ -34,8 +34,8 @@ sys.setdefaultencoding('utf-8')
 log = my_log()
 
 
-def get_http_cache_top(category="1", limit='10', host='192.168.1.106', user='root',
-                       passwd='0rd1230ac', filepath='./http/cache/httpcache'):
+def get_http_cache(category="1", limit='10', host='192.168.1.106', user='root',
+                   passwd='0rd1230ac', filepath='./http/cache/httpcache'):
     """
     在httpcache这个表里根据category和limit选择uri
     :param user:
@@ -55,8 +55,8 @@ def get_http_cache_top(category="1", limit='10', host='192.168.1.106', user='roo
     return res
 
 
-def get_video_cache_top(category='1', limit='10', host='192.168.1.106', user='root',
-                        passwd='0rd1230ac', filepath='./http/cache/videocache'):
+def get_video_cache(category='1', limit='10', host='192.168.1.106', user='root',
+                    passwd='0rd1230ac', filepath='./http/cache/videocache'):
     """
     在videocache这个表里根据category和limit选择uri
     :param passwd:
@@ -77,8 +77,8 @@ def get_video_cache_top(category='1', limit='10', host='192.168.1.106', user='ro
     return res
 
 
-def get_mobile_cache_top(category='0', limit='10', host='192.168.1.106', user='root',
-                         passwd='0rd1230ac', filepath='./http/cache/mobilecache'):
+def get_mobile_cache(category='0', limit='10', host='192.168.1.106', user='root',
+                     passwd='0rd1230ac', filepath='./http/cache/mobilecache'):
     """
     在mobilecache这个表里根据category和limit选择uri
     :param passwd:
@@ -126,18 +126,18 @@ def get_all_cache(current_time, limit=100, host='192.168.1.106', user='root', pa
     else:
         os.mkdir('./http/cache_info/' + str(current_time))
     filepath = './http/cache_info/' + str(current_time) + '/'
-    kind = 0
-    while kind < 5:
-        get_http_cache_top(str(kind), str(limit), host, user, passwd, filepath)
-        kind += 1
-    kind = 0
-    while kind < 3:
-        get_mobile_cache_top(str(kind), str(limit), host, user, passwd, filepath)
-        kind += 1
-    kind = 0
-    while kind < 20:
-        get_video_cache_top(str(kind), str(limit), host, user, passwd, filepath)
-        kind += 1
+    category = 0
+    while category < 5:
+        get_http_cache(str(category), str(limit), host, user, passwd, filepath)
+        category += 1
+    category = 0
+    while category < 3:
+        get_mobile_cache(str(category), str(limit), host, user, passwd, filepath)
+        category += 1
+    category = 0
+    while category < 20:
+        get_video_cache(str(category), str(limit), host, user, passwd, filepath)
+        category += 1
 
 
 if __name__ == '__main__':

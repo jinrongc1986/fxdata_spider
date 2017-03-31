@@ -25,7 +25,7 @@ I love animals. They taste delicious.
 
 import datetime
 import time
-from get_info_from_163.http.class_info import *
+from get_info_from_163.http.kind_info import *
 from get_info_from_163.tools.connect_Linux import connect_linux
 from get_info_from_163.tools.log.operation_log import del_operation_log
 

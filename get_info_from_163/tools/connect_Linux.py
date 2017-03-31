@@ -34,6 +34,14 @@ log = my_log()
 
 
 def connect_linux(command='service iptables stop', ip='192.168.0.59', user='root', pwd='FxData!Cds@2016_'):
+    """
+    输入command在指定ip的linux设备上执行
+    :param command: 
+    :param ip: 
+    :param user: 
+    :param pwd: 
+    :return: 
+    """
     log.info(u'链接59，开始操作')
     paramiko.util.log_to_file("paramiko.log")
     ssh = paramiko.SSHClient()

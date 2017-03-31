@@ -81,22 +81,22 @@ def do_curl(time_stamp, command, system="windows", really_do=True):
                 f.flush()
 
 
-def curl_resource_verbose(timestamp, kind=0, category=0, limit=5, system='windows', ua='iphone', need_assert=True):
+def curl_resource_verbose(timestamp, classes=0, category=0, limit=5, system='windows', ua='iphone', need_assert=True):
     """
     根据class（就是上面的kind，因为class是自带的关键字，故换成kind）和category，还有limit来执行curl动作
     :param need_assert: 
     :param timestamp:
     :param ua:
     :param system:
-    :param kind:http mobile or video
+    :param classes:http mobile or video
     :param category:
     :param limit:最近的n个资源
     :return:
     """
     global x
-    if kind == 0:
+    if classes == 0:
         kind_ = 'httpcache'
-    elif kind == 1:
+    elif classes == 1:
         kind_ = 'mobilecache'
     else:
         kind_ = 'videocache'
@@ -158,8 +158,8 @@ def curl_resource_verbose(timestamp, kind=0, category=0, limit=5, system='window
             cache_size_each = cache_size_list[i]
             url = cache_url_list[i]
             md5_each = md5_list[i]
-            assert_location_log(kind, category, url, cache_size_each, timestamp)
-            assert_service_log(kind, category, cache_size_each, cache_size_each, md5_each, timestamp)
+            assert_location_log(classes, category, url, cache_size_each, timestamp)
+            assert_service_log(classes, category, cache_size_each, cache_size_each, md5_each, timestamp)
             i += 1
 
     if system == 'windows':

@@ -28,6 +28,10 @@ import os
 
 
 def my_log():
+    """
+    初始化函数操作
+    :return: 
+    """
     is_dir_exist = os.path.exists('./operation_log')
     if is_dir_exist is True:
         pass
@@ -40,6 +44,11 @@ def my_log():
 
 
 def modify_my_log_file_path(filepath):
+    """
+    修改日志名字，否则会一直覆盖
+    :param filepath: 
+    :return: 
+    """
     is_dir_exist = os.path.exists('./operation_log')
     if is_dir_exist is True:
         pass

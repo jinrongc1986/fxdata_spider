@@ -25,14 +25,13 @@ I love animals. They taste delicious.
 import datetime
 import shutil
 import sys
-from get_info_from_163.http.class_info import calculate_kind
-from get_info_from_163.http.http import get_all_cache
+from get_info_from_163.http.kind_info import calculate_kind
+from get_info_from_163.http.get_cache import get_all_cache
 from get_info_from_163.tools.del_log import del_all_log
 from get_info_from_163.tools.log.operation_log import my_log, modify_my_log_file_path
 from get_info_from_163.tools.resource_list import get_all_hot_list, hot_list
 from get_info_from_163.tools.timer import timer_customize
-from get_info_from_163.tools.wrong_statistics_by_judge import statics_location_log, statics_service_log, \
-    wrong_statistics_log
+from get_info_from_163.tools.wrong_statistics_by_judge import wrong_statistics_log
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -54,7 +53,7 @@ def main_kind():
         i += 1
     log.info(u'准备工作就绪，现在可以开始进行真正的curl操作')
     log.info(u'当前的时间为' + unicode(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
-    timer_customize(timestamp, '2017-03-30 18:25:00', '2017-03-30 19:05:00')
+    timer_customize(timestamp, '2017-03-31 13:55:00', '2017-03-31 15:30:00')
     get_all_hot_list(timestamp)
     wrong_statistics_log(timestamp)
     log.info(u"执行完成")
