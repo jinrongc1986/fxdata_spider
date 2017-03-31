@@ -38,16 +38,16 @@ sys.setdefaultencoding('utf-8')
 
 
 def main_kind(start_time, end_time):
-    now_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 显示现在的时间
-    now_time = datetime.datetime.strptime(now_time, '%Y-%m-%d %H:%M:%S')  # 格式化当前的时间
     start_time = datetime.datetime.strptime(start_time, '%Y-%m-%d %H:%M:%S')
     timestamp = str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M'))
     filepath = './operation_log/' + timestamp
     modify_my_log_file_path(filepath)
     log = my_log()
     while True:
-        if start_time - now_time < datetime.timedelta(minutes=2):
-            log.info(u'离开始执行的时间只有2分钟，准备开始')
+        now_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 显示现在的时间
+        now_time = datetime.datetime.strptime(now_time, '%Y-%m-%d %H:%M:%S')  # 格式化当前的时间
+        if start_time - now_time < datetime.timedelta(minutes=3):
+            log.info(u'离开始执行的时间只有3分钟，3分钟后准时执行')
             break
         else:
             log.info(u'请耐心等待，离开始的时间还有' + str(start_time - now_time))
@@ -62,7 +62,7 @@ def main_kind(start_time, end_time):
         calculate_kind(timestamp, i)  # 目前一共五钟kind，把每个kind的cache文件信息存放在kind_info中
         i += 1
     log.info(u'准备工作就绪，现在可以开始进行真正的curl操作')
-    log.info(u'当前的时间为' + unicode(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
+    log.info(u'执行time_customize前的当前的时间为' + unicode(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
     timer_customize(timestamp, start_time, end_time)
     get_all_hot_list(timestamp)
     wrong_statistics_log(timestamp)
