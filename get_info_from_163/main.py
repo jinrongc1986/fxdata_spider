@@ -30,7 +30,8 @@ from get_info_from_163.tools.del_log import del_all_log
 from get_info_from_163.tools.log.operation_log import my_log, modify_my_log_file_path
 from get_info_from_163.tools.resource_list import get_all_hot_list
 from get_info_from_163.tools.timer import timer_customize
-from get_info_from_163.tools.wrong_statistics_by_judge import wrong_statistics_log
+from get_info_from_163.tools.wrong_statistics_by_judge import wrong_statistics_log, statics_location_log, \
+    statics_service_log
 import time
 
 reload(sys)
@@ -70,5 +71,6 @@ def main_kind(start_time, end_time):
 
 
 if __name__ == '__main__':
-    del_all_log()
-    main_kind('2017-04-01 00:00:00', '2017-04-01 08:00:00')
+    # del_all_log()
+    main_kind('2017-04-01 11:35:00', '2017-04-01 12:30:00')
+    # statics_service_log("2017-03-31-18-56")
