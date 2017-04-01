@@ -70,5 +70,5 @@ def main_kind(start_time, end_time):
 
 
 if __name__ == '__main__':
-    # del_all_log()
+    del_all_log()
     main_kind('2017-04-01 00:00:00', '2017-04-01 08:00:00')
