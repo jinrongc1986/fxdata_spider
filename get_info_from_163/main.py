@@ -25,7 +25,7 @@ I love animals. They taste delicious.
 import datetime
 import sys
 from get_info_from_163.http.kind_info import calculate_kind
-from get_info_from_163.http.get_cache import get_all_cache
+from get_info_from_163.http.get_cache import get_all_cache, get_mobile_cache, get_http_cache
 from get_info_from_163.tools.connect_Linux import connect_linux
 from get_info_from_163.tools.curl import curl_resource_verbose
 from get_info_from_163.tools.del_log import del_all_log
@@ -126,7 +126,6 @@ def curl_verbose(times, time_interval):
 
 if __name__ == '__main__':
     del_all_log()
-    main_kind('2017-04-06 00:00:00', '2017-04-06 08:00:00')
-    # curl_verbose(20, 30)
+    # main_kind('2017-04-06 14:55:00', '2017-04-06 15:30:00')
+    curl_verbose(1, 30)
     # curl_resource_verbose('2017-04-05-12-51', 1, 0, 10, 'windows', 'windows')
-

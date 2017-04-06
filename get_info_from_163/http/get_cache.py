@@ -27,6 +27,7 @@ import os
 from get_info_from_163.tools.connect_Linux import connect_linux
 from get_info_from_163.tools.log.operation_log import my_log
 from get_info_from_163.tools.mysql_db import execute_mysql_get_cache_info
+import datetime
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -47,7 +48,10 @@ def get_http_cache(category="1", limit='10', host='192.168.1.106', user='root',
     """
     str1 = "SELECT uri,cache_size,md5 FROM http_cache WHERE cache_size < 10485760 AND category="
     str2 = " ORDER BY create_time DESC LIMIT "
-    command = str1 + category + str2 + limit
+    str1_5 = " and expires> '"
+    str1_6 = "'"
+    current_time = str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+    command = str1 + category + str1_5 + current_time + str1_6 + str2 + limit
     filepath += 'httpcache'
     res = execute_mysql_get_cache_info(command, filepath, category, host, user, passwd)
     log.info(u'采集到的放入/http/cache_info的http信息为' + str(res))
@@ -89,9 +93,12 @@ def get_mobile_cache(category='0', limit='10', host='192.168.1.106', user='root'
     :return:
     """
     str1 = "SELECT uri,cache_size, md5  FROM mobile_cache WHERE cache_size < 10485760 AND category="
+    str1_5 = " and expires> '"
+    str1_6 = "'"
+    current_time = str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     str2 = " ORDER BY create_time DESC LIMIT "
-    execute = str1 + category + str2 + limit
-    # print execute
+    execute = str1 + category + str1_5 + current_time + str1_6 + str2 + limit
+    print execute
     filepath += 'mobilecache'
     res = execute_mysql_get_cache_info(execute, filepath, category, host, user, passwd)
     log.info(u'采集到的放入/http/cache_info的mobile信息为' + str(res))
@@ -140,4 +147,4 @@ def get_all_cache(current_time, limit=100, host='192.168.1.106', user='root', pa
 
 
 if __name__ == '__main__':
-    pass
+    print get_mobile_cache()
