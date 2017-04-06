@@ -126,6 +126,6 @@ def curl_verbose(times, time_interval):
 
 if __name__ == '__main__':
     del_all_log()
-    main_kind('2017-04-06 17:00:00', '2017-04-06 18:00:00')
+    main_kind('2017-04-06 18:20:00', '2017-04-07 08:00:00')
     # curl_verbose(1, 30)
     # curl_resource_verbose('2017-04-05-12-51', 1, 0, 10, 'windows', 'windows')

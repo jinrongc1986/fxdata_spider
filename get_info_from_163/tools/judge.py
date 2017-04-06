@@ -63,7 +63,7 @@ def assert_location_log(classes, category, url, cache_size, timestamp):
         current_time = datetime.now()
         time_lag = abs(current_time - log_create_time)  # 校验时间差，理论上执行完curl之后 会马上生成一个数据 随后时间差不会超过3秒
         time_lag_float = float(str(time_lag).split(':')[2])
-        if classes != log_classes or category != log_category or cache_size != log_cache_size or time_lag_float > 10:
+        if classes != log_classes or category != log_category or cache_size != log_cache_size or time_lag_float > 60:
             log.warn(unicode(url) + u"重定向日志存在问题")
             is_judge_exist = os.path.exists('./judge')
             if is_judge_exist is True:
@@ -79,7 +79,8 @@ def assert_location_log(classes, category, url, cache_size, timestamp):
             current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             f.write(current_time + ':\n')
             f.write(url + '\n')
-            f.write(str(u'从数据库中读到的资源：') + '\t' + str(log_classes) + '\t' + str(log_category) + '\t' + str(
+            f.write(str(u'从数据库中读到的资源：') + '\t' + u'class：' + str(log_classes) + '\t' + u'category：' + str(
+                log_category) + '\t' + str(
                 log_cache_size) + '\t' + str(log_create_time) + ':\n')
             f.write(
                 str(u'实际curl到的资源：') + '\t' + str(log_classes) + '\t' + str(log_category) + '\t' + str(
@@ -121,7 +122,7 @@ def assert_service_log(classes, category, cache_size, service_size, md5, timesta
         current_time = datetime.now()
         time_lag = abs(current_time - log_create_time)  # 校验时间差，理论上执行完curl之后 会马上生成一个数据 随后时间差不会超过3秒
         time_lag_float = float(str(time_lag).split(':')[2])
-        if cache_size != log_cache_size or category != log_category or service_size != log_service_size or time_lag_float > 10:
+        if cache_size != log_cache_size or category != log_category or service_size != log_service_size or time_lag_float > 60:
             log.warn(unicode(md5) + u"服务日志有问题")
             is_judge_exist = os.path.exists('./judge')
             if is_judge_exist is True:
@@ -137,10 +138,13 @@ def assert_service_log(classes, category, cache_size, service_size, md5, timesta
             current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             f.write(current_time + ':\n')
             f.write(md5 + '\n')
-            f.write(str(u'从数据库中读到的资源：') + '\t' + str(log_category) + '\t' + str(log_cache_size) + '\t' + str(
+            f.write(str(u'从数据库中读到的资源：') + '\t' + u'classes:' + str(classes) + '\t' + u"category::" + str(
+                log_category) + '\t' + str(
+                log_cache_size) + '\t' + str(
                 log_service_size) + '\t' + str(log_create_time) + ':\n')
             f.write(
-                str(u'实际curl到的资源：') + '\t' + str(category) + '\t' + str(cache_size) + '\t' + str(service_size) + '\t' + str(
+                str(u'实际curl到的资源：') + '\t' + str(category) + '\t' + str(cache_size) + '\t' + str(
+                    service_size) + '\t' + str(
                     time_lag) + ':\n')
             if cache_size != log_cache_size:
                 log.info(u'cache_size与预期不符')
