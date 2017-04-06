@@ -92,7 +92,7 @@ def get_mobile_cache(category='0', limit='10', host='192.168.1.106', user='root'
     :param filepath:
     :return:
     """
-    str1 = "SELECT uri,cache_size, md5  FROM mobile_cache WHERE cache_size < 10485760 AND category="
+    str1 = "SELECT uri,cache_size, md5  FROM mobile_cache WHERE cache_size < 52428800  AND category="
     str1_5 = " and expires> '"
     str1_6 = "'"
     current_time = str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
