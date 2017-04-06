@@ -49,6 +49,7 @@ def do_curl(time_stamp, command, system="windows", really_do=True):
     current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     log.info(u'当前时间为：' + unicode(current_time))
     if system == 'windows':
+        log.info(u'选择的是windows设备执行curl操作')
         p = os.popen(command)
         info = p.readlines()  # 读取命令行的输出到一个list
         x1 = open("windows_curl_log", "a")
@@ -124,7 +125,8 @@ def curl_resource_verbose(timestamp, classes=0, category=0, limit=5, system='win
         md5_list.append(md5)
         count += 1
     log.info(u"从" + unicode(filepath) + u"中，读取md5，资源的缓存大小，url 都放入到数组中")
-    log.info(u"得到的md5数组：" + unicode(md5_list) + u" url数组：" + unicode(cache_url_list) + u" 缓存大小数组：" + unicode(cache_size_list) + u" 资源总数为：" + unicode(count))
+    log.info(u"得到的md5数组：" + unicode(md5_list) + u" url数组：" + unicode(cache_url_list) + u" 缓存大小数组：" + unicode(
+        cache_size_list) + u" 资源总数为：" + unicode(count))
     if count <= limit:  # 如果出现limit为5而实际只存在两个或三个数据的时候
         log.info(u"此时limit大于count")
         limit = count

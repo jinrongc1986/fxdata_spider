@@ -23,7 +23,6 @@ I love animals. They taste delicious.
 ┗┻┛  ┗┻┛
 """
 import sys
-
 from get_info_from_163.tools.log.operation_log import my_log
 from get_info_from_163.tools.mysql_db import execute_mysql
 

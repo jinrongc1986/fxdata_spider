@@ -51,7 +51,7 @@ def init_db(host='192.168.1.106', user='root', passwd='0rd1230ac'):
     return connect
 
 
-def execute_mysql_get_cache_info(execute, filepath, category, host='192.168.1.106', user='root', passwd='0rd1230ac'):
+def execute_mysql_get_cache_info(command, filepath, category, host='192.168.1.106', user='root', passwd='0rd1230ac'):
     """
     返回一个元组，里面有查询到的所有信息
     并且把他写入指定的文件
@@ -60,13 +60,13 @@ def execute_mysql_get_cache_info(execute, filepath, category, host='192.168.1.10
     :param host: 数据库ip
     :param category:
     :param filepath:
-    :param execute:
+    :param command:
     :return:
     """
     conn = init_db(host, user, passwd)
     cur = conn.cursor()
-    log.info(u"执行的cmd为："+str(execute))
-    cur.execute(execute)
+    log.info(u"执行的查询数据库的所有信息的cmd为：" + str(command))
+    cur.execute(command)
     results = cur.fetchall()
     cur.close()
     conn.commit()
@@ -110,7 +110,7 @@ def get_location_log(url):
     cmd1 = 'SELECT class,category,cache_size,create_time FROM location_log WHERE req_uri = "'
     cmd2 = '" ORDER BY create_time DESC'
     cmd = cmd1 + url + cmd2
-    log.info(u"执行的获取重定向日志信息的cmd为:"+unicode(cmd))
+    log.info(u"执行的获取重定向日志信息的cmd为:" + unicode(cmd))
     return execute_mysql(cmd)
 
 
@@ -126,7 +126,28 @@ def get_service_log(classes, md5):
     cmd2 = ' WHERE md5="'
     cmd3 = '" ORDER BY create_time DESC'
     cmd = cmd1 + classes + cmd2 + md5 + cmd3
-    log.info(u"执行的获取服务日志信息的cmd为:"+unicode(cmd))
+    log.info(u"执行的获取服务日志信息的cmd为:" + unicode(cmd))
     res = execute_mysql(cmd)
     return res
+
+
+def get_uri_by_md5(md5):
+    """
+    输入md5值后返回他的uri地址
+    :param md5: 
+    :return: 
+    """
+    cmd1 = 'SELECT uri FROM '
+    cmd2 = ' WHERE md5="'
+    cmd3 = '"'
+    cmd = cmd1 + 'http_cache' + cmd2 + md5 + cmd3
+    res = execute_mysql(cmd)
+    if res is None:
+        cmd = cmd1 + 'video_cache' + cmd2 + md5 + cmd3
+        res = execute_mysql(cmd)
+        if res is None:
+            cmd = cmd1 + 'mobile_cache' + cmd2 + md5 + cmd3
+            res = execute_mysql(cmd)
+    return res
+
 

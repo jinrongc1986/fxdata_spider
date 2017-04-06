@@ -24,7 +24,6 @@ I love animals. They taste delicious.
 """
 import sys
 import paramiko
-from datetime import datetime
 
 from get_info_from_163.tools.log.operation_log import my_log
 

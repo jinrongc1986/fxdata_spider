@@ -25,6 +25,7 @@ I love animals. They taste delicious.
 import sys
 
 from get_info_from_163.tools.log.operation_log import my_log
+from get_info_from_163.tools.mysql_db import get_uri_by_md5
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -104,22 +105,22 @@ def statics_service_log(timestamp):
         log.info(md5[0] + '\t' + u'失败次数:' + str(md5[1]) + '\n')
         message = md5[0] + '\t' + u'失败次数:' + str(md5[1]) + '\n'
         x.write(message)
-
-    # x = open(filepath + "-statistics", 'r')
-    # statics_infos = x.readlines()
-    # x = open(filepath + "-statistics", 'w')
-    # for statics_info in statics_infos:
-    #     statics_info_url = statics_info.split()[0]  # 从统计日志中获取的url
-    #     fail_times = statics_info.split()[1].replace('失败次数:', '')
-    #     for curl_info in curl_infos:
-    #         curl_info_url = curl_info.split()[0]
-    #         curl_times = curl_info.split()[1].replace('times:', '')
-    #         if statics_info_url == curl_info_url:
-    #             fail_rate = float(fail_times) / float(curl_times) * 100
-    #             message = statics_info_url + '\t' + u'失败次数：' + str(
-    #                 fail_times) + '\t' + u"总的执行次数为：" + curl_times + '\t' + u'失败的概率为：' + str(fail_rate) + '%' + '\n'
-    #             log.info(message)
-    #             x.write(message)
+    x = open(filepath + "-statistics", 'r')
+    statics_infos = x.readlines()
+    x = open(filepath + "-statistics", 'w')
+    for statics_info in statics_infos:
+        statics_info_md5 = statics_info.split()[0]  # 从统计日志中获取的md5
+        fail_times = statics_info.split()[1].replace('失败次数:', '')
+        fail_uri = list(get_uri_by_md5(statics_info_md5))[0]
+        for curl_info in curl_infos:
+            curl_info_url = curl_info.split()[0]
+            curl_times = curl_info.split()[1].replace('times:', '')
+            if fail_uri == curl_info_url:
+                fail_rate = float(fail_times) / float(curl_times) * 100
+                message = statics_info_md5 + '\t' + u'URL为:' + fail_uri + '\t' + u'失败次数：' + str(
+                    fail_times) + '\t' + u"总的执行次数为：" + curl_times + '\t' + u'失败的概率为：' + str(fail_rate) + '%' + '\n'
+                log.info(message)
+                x.write(message)
     x.close()
 
 

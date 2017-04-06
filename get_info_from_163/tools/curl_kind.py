@@ -22,12 +22,11 @@ I love animals. They taste delicious.
 ┃┫┫  ┃┫┫
 ┗┻┛  ┗┻┛
 """
+import datetime
 import sys
 import time
 
-import datetime
-
-from get_info_from_163.curl.curl import curl_resource_verbose
+from get_info_from_163.tools.curl import curl_resource_verbose
 from get_info_from_163.tools.log.operation_log import my_log
 
 reload(sys)

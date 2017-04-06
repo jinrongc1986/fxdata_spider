@@ -25,7 +25,6 @@ I love animals. They taste delicious.
 import os
 import sys
 from datetime import datetime
-import time
 
 from get_info_from_163.tools.log.operation_log import my_log
 from get_info_from_163.tools.mysql_db import get_location_log, get_service_log

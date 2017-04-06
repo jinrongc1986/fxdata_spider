@@ -23,7 +23,6 @@ I love animals. They taste delicious.
 ┗┻┛  ┗┻┛
 """
 import sys
-import datetime
 import os
 from get_info_from_163.tools.connect_Linux import connect_linux
 from get_info_from_163.tools.log.operation_log import my_log
@@ -48,9 +47,9 @@ def get_http_cache(category="1", limit='10', host='192.168.1.106', user='root',
     """
     str1 = "SELECT uri,cache_size,md5 FROM http_cache WHERE cache_size < 10485760 AND category="
     str2 = " ORDER BY create_time DESC LIMIT "
-    execute = str1 + category + str2 + limit
+    command = str1 + category + str2 + limit
     filepath += 'httpcache'
-    res = execute_mysql_get_cache_info(execute, filepath, category, host, user, passwd)
+    res = execute_mysql_get_cache_info(command, filepath, category, host, user, passwd)
     log.info(u'采集到的放入/http/cache_info的http信息为' + str(res))
     return res
 
