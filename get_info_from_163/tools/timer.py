@@ -90,6 +90,7 @@ def timer_customize(timestamp, expect_start_time='2017-03-21 17:04:00', expect_e
         else:
             log.info(u"倒计时还没结束,等待倒计时")
         wait_time = str(expect_start_time - now_time)
+        log.info(u"wait_timed的值为："+unicode(wait_time))
         hours = int(wait_time.split(':')[0])
         minute = int(wait_time.split(':')[1])
         seconds = int(wait_time.split(':')[2])
