@@ -44,8 +44,9 @@ def get_resource_list_by_time(time_stamp):
     result = dict()
     lines = f.readlines()
     for line in lines:
-        if 'curl' in line:
-            url = line.split()[4].replace('"', '')
+        if 'curl --connect-timeout' in line:
+            url = line.split()[8].replace('"', '')  # 如果修改了curl指令请记得修改这里
+            log.info(u'提取到的url信息为：' + url)
             if url in result:
                 result[url] += 1
             else:
@@ -71,8 +72,9 @@ def get_resource_size(url):
     command2 = ' WHERE uri like"%'
     command3 = '%"'
     command = command1 + kind1 + command2 + url + command3
-    log.info(u'输入uri获取他的cache_size和category' + command)
+    log.info(u'输入uri获取他的cache_size和category:' + command)
     res = execute_mysql(command)
+    log.info(u"执行的筛选数据res为：" + unicode(res))
     if res is None:
         command = command1 + kind2 + command2 + url + command3
         res = execute_mysql(command)
@@ -99,6 +101,7 @@ def get_resource_verbose(time_stamp):
     :return:
     """
     file_path = './kind_info/' + time_stamp + '/'
+    log.info(u"执行get_resource_list_by_time函数")
     get_resource_list_by_time(time_stamp)
     f = open(file_path + "resource_list", 'r')
     lines = f.readlines()

@@ -42,20 +42,15 @@ def connect_linux(command='service iptables stop', ip='192.168.0.59', user='root
     :return: 
     """
     log.info(u'链接59，开始操作')
-    paramiko.util.log_to_file("paramiko.log")
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     ssh.connect(ip, 22, user, pwd)
     stdin, stdout, stderr = ssh.exec_command(command)
     log.info(u'链接59，执行操作：' + unicode(command))
     stdin.write("Y")  # Generally speaking, the first connection, need a simple interaction.
-    info = stdout.read()
-    log.info(u'链接了linux后执行操作的返回值'+str(info))
+    info1 = stdout.read()
+    info2 = stderr.read()
+    info = info1 + info2
+    log.info(u'链接了linux后执行操作的返回值' + str(info))
     ssh.close()
     return info
-
-
-if __name__ == '__main__':
-    x = connect_linux(
-        ' /home/icache/icached debug', '192.168.1.106')
-    print "----------------------------------\n" + x

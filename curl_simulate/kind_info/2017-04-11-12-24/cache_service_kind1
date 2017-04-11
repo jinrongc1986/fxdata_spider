@@ -1,0 +1,57 @@
+20 class=httpcache category=0 cache_size=9870862
+20 class=httpcache category=0 cache_size=9462085
+20 class=mobilecache category=0 cache_size=27857232
+20 class=mobilecache category=0 cache_size=27857288
+20 class=mobilecache category=0 cache_size=20381825
+20 class=mobilecache category=0 cache_size=17627460
+20 class=mobilecache category=0 cache_size=17627458
+20 class=mobilecache category=0 cache_size=3230346
+20 class=mobilecache category=0 cache_size=4717546
+20 class=mobilecache category=0 cache_size=9704874
+20 class=mobilecache category=0 cache_size=9704874
+20 class=mobilecache category=0 cache_size=9704874
+20 class=videocache category=1 cache_size=17110155
+20 class=videocache category=1 cache_size=2907739
+20 class=videocache category=1 cache_size=20646378
+20 class=videocache category=1 cache_size=7782529
+20 class=videocache category=1 cache_size=28062399
+20 class=videocache category=1 cache_size=1642398
+20 class=videocache category=1 cache_size=1616301
+20 class=videocache category=1 cache_size=1646877
+20 class=videocache category=1 cache_size=3213984
+20 class=videocache category=1 cache_size=3114604
+20 class=httpcache category=1 cache_size=3421747
+20 class=httpcache category=1 cache_size=574135
+20 class=httpcache category=1 cache_size=25687721
+20 class=httpcache category=1 cache_size=683566
+20 class=httpcache category=1 cache_size=948539
+20 class=httpcache category=1 cache_size=697205
+20 class=httpcache category=1 cache_size=946769
+20 class=httpcache category=1 cache_size=809773
+20 class=httpcache category=1 cache_size=816749
+20 class=httpcache category=1 cache_size=535689
+20 class=videocache category=2 cache_size=44761556
+20 class=videocache category=2 cache_size=28425101
+20 class=videocache category=2 cache_size=4728130
+20 class=videocache category=2 cache_size=15565201
+20 class=videocache category=2 cache_size=15482274
+20 class=videocache category=2 cache_size=13004703
+20 class=videocache category=2 cache_size=9483856
+20 class=videocache category=2 cache_size=13341381
+20 class=videocache category=2 cache_size=9909116
+20 class=videocache category=2 cache_size=21482930
+20 class=videocache category=14 cache_size=3784157
+20 class=videocache category=14 cache_size=1922257
+20 class=videocache category=14 cache_size=6023653
+478526296
+-------------------------------------
+httpcache:12 total_size:54454840
+mobilecache:10 total_size:148413777
+videocache:23 total_size:275657679
+-----------
+http_other:2 total_size:19332947
+http_soft:10 total_size:35121893
+mobile_android:10 total_size:148413777
+video_youku:10 total_size:87743364
+video_miaopai:10 total_size:176184248
+video_sina:3 total_size:11730067

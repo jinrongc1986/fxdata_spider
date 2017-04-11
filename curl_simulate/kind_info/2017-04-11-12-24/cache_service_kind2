@@ -1,0 +1,48 @@
+20 class=videocache category=4 cache_size=16873284
+20 class=videocache category=4 cache_size=20512599
+20 class=videocache category=4 cache_size=46091657
+20 class=videocache category=4 cache_size=25267370
+20 class=videocache category=4 cache_size=11001137
+20 class=videocache category=4 cache_size=10189913
+20 class=httpcache category=2 cache_size=6507881
+20 class=httpcache category=2 cache_size=2983461
+20 class=httpcache category=2 cache_size=593108
+20 class=httpcache category=2 cache_size=1199146
+20 class=mobilecache category=1 cache_size=50855362
+20 class=mobilecache category=1 cache_size=36364148
+20 class=mobilecache category=1 cache_size=42495460
+20 class=mobilecache category=1 cache_size=5426142
+20 class=mobilecache category=1 cache_size=22530035
+20 class=mobilecache category=1 cache_size=25522073
+20 class=mobilecache category=1 cache_size=43315293
+20 class=mobilecache category=1 cache_size=46889485
+20 class=mobilecache category=1 cache_size=36245477
+20 class=videocache category=5 cache_size=10334898
+20 class=videocache category=5 cache_size=1470251
+20 class=videocache category=5 cache_size=42187229
+20 class=httpcache category=3 cache_size=708733
+20 class=httpcache category=3 cache_size=708733
+20 class=httpcache category=3 cache_size=707972
+20 class=httpcache category=3 cache_size=1187840
+20 class=videocache category=15 cache_size=2042087
+20 class=videocache category=15 cache_size=1523731
+20 class=videocache category=15 cache_size=1868517
+20 class=videocache category=15 cache_size=2097322
+20 class=videocache category=15 cache_size=27590128
+20 class=videocache category=15 cache_size=24653374
+20 class=videocache category=15 cache_size=2000421
+20 class=videocache category=15 cache_size=1689474
+20 class=videocache category=15 cache_size=1264986
+20 class=videocache category=15 cache_size=22561990
+595460717
+-------------------------------------
+httpcache:8 total_size:14596874
+mobilecache:9 total_size:309643475
+videocache:19 total_size:271220368
+-----------
+http_zip:4 total_size:11283596
+http_doc:4 total_size:3313278
+mobile_ios:9 total_size:309643475
+video_fenghuang:6 total_size:129935960
+video_netease:3 total_size:53992378
+video_iqiyi:10 total_size:87292030

@@ -34,7 +34,7 @@ sys.setdefaultencoding('utf-8')
 log = my_log()
 
 
-def kind1(time_stamp, is_sleep=True, time_line=115):
+def kind1(time_stamp, is_sleep=True, time_line=100):
     """
     :return:
     """
@@ -69,7 +69,7 @@ def kind1(time_stamp, is_sleep=True, time_line=115):
         log.info(message)
 
 
-def kind2(time_stamp, is_sleep=True, time_line=115):
+def kind2(time_stamp, is_sleep=True, time_line=100):
     if is_sleep:
         log.info(u"开始执行kind2的操作")
         curl_resource_verbose(time_stamp, 0, 2, 10, 'linux', 'windows')
@@ -101,7 +101,7 @@ def kind2(time_stamp, is_sleep=True, time_line=115):
         log.info(message)
 
 
-def kind3(time_stamp, is_sleep=True, time_line=115):
+def kind3(time_stamp, is_sleep=True, time_line=100):
     if is_sleep:
         log.info(u"开始执行kind3的操作")
         curl_resource_verbose(time_stamp, 1, 0, 10, 'linux', 'windows')
@@ -133,7 +133,7 @@ def kind3(time_stamp, is_sleep=True, time_line=115):
         log.info(message)
 
 
-def kind4(time_stamp, is_sleep=True, time_line=115):
+def kind4(time_stamp, is_sleep=True, time_line=100):
     if is_sleep:
         log.info(u"开始执行kind4的操作")
         curl_resource_verbose(time_stamp, 0, 1, 10, 'linux', 'windows')
@@ -165,7 +165,7 @@ def kind4(time_stamp, is_sleep=True, time_line=115):
         log.info(message)
 
 
-def kind5(time_stamp, is_sleep=True, time_line=115):
+def kind5(time_stamp, is_sleep=True, time_line=100):
     if is_sleep:
         log.info(u"开始执行kind5的操作")
         curl_resource_verbose(time_stamp, 2, 11, 10, 'linux', 'iphone')

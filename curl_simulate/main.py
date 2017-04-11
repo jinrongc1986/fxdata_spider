@@ -30,7 +30,7 @@ from curl_simulate.tools.connect_Linux import connect_linux
 from curl_simulate.tools.curl import curl_resource_verbose
 from curl_simulate.tools.del_log import del_all_log
 from curl_simulate.tools.log.operation_log import my_log, modify_my_log_file_path
-from curl_simulate.tools.resource_list import get_all_hot_list
+from curl_simulate.tools.resource_list import get_all_hot_list, get_resource_verbose
 from curl_simulate.tools.timer import timer_customize
 from curl_simulate.tools.wrong_statistics_by_judge import wrong_statistics_log, statics_location_log, \
     statics_service_log
@@ -126,4 +126,5 @@ def curl_verbose(times, time_interval):
 
 if __name__ == '__main__':
     # del_all_log()
-    main('2017-04-10 17:40:00', '2017-04-10 17:00:00')
+    # main('2017-04-11 12:25:00', '2017-04-11 13:30:00')
+    get_all_hot_list('2017-04-11-12-24')

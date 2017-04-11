@@ -43,10 +43,15 @@ def timer_customize(timestamp, expect_start_time='2017-03-21 17:04:00', expect_e
     :return:
     """
     expect_start_time = datetime.datetime.strptime(expect_start_time, '%Y-%m-%d %H:%M:%S') + datetime.timedelta(
-        minutes=1)
+        seconds=15
+        )  # 说明加上从0或者5分钟后加上30秒后再执行curl操作
     expect_end_time = datetime.datetime.strptime(expect_end_time, '%Y-%m-%d %H:%M:%S')
     now_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 显示现在的时间
     now_time = datetime.datetime.strptime(now_time, '%Y-%m-%d %H:%M:%S')  # 格式化当前的时间
+    log.info(u'判断当前的时间和开始时间结束时间：')
+    log.info(u'expect_start_time'+unicode(expect_start_time))
+    log.info(u'expect_end_time' + unicode(expect_end_time))
+    log.info(u'now_time' + unicode(now_time))
     if now_time > expect_start_time:
         log.info(u'预期开始时间不能大于现在的时间' + '\n' + u'结束进程')
         sys.exit()
@@ -86,8 +91,11 @@ def timer_customize(timestamp, expect_start_time='2017-03-21 17:04:00', expect_e
         log.info(u'离结束时间还有几秒(seconds_to_wait_end)：' + str(seconds_to_wait_end))
         log.info(u"expect_start_time的值为：" + unicode(expect_start_time))
         log.info(u"now_time的值为：" + unicode(now_time))
-        if abs(seconds_to_wait_end) < 300 or expect_start_time < now_time or seconds_to_wait_end < 0:
+        if abs(seconds_to_wait_end) < 300 or seconds_to_wait_end < 0 or expect_start_time < now_time:
             log.info(u'马上自动退出程序，请查看基础日志')
+            log.info(u"seconds_to_wait_end:" + unicode(seconds_to_wait_end))
+            log.info(u"expect_start_time:" + unicode(expect_start_time))
+            log.info(u"now_time:" + unicode(now_time))
             break
         else:
             log.info(u"倒计时还没结束,等待倒计时")

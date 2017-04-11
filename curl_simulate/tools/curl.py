@@ -77,7 +77,8 @@ def do_curl(time_stamp, command, system="windows", really_do=True):
             info = connect_linux(command, ip_add, user, pwd)
             log.info(u"执行的命令为" + unicode(command) + u'并且写入到curl_log中')
             with open(curl_log, "a") as f:
-                f.write("                  " + info)
+                f.write('\n')
+                f.write("" + info)
                 f.write('\n')
                 f.flush()
 
@@ -132,14 +133,17 @@ def curl_resource_verbose(timestamp, classes=0, category=0, limit=5, system='win
         limit = count
     i = 0
     while i < limit:
-        command1 = 'curl -o test666 -L "'
+        command1 = 'curl --connect-timeout 5 -m 20 -o test666 -L "'  # 连接超时时间用 --connect-timeout 参数来指定，数据传输的最大允许时间用 -m 参数来指定。
         command2 = '" '
         command3 = ' --user-agent "' + ua + '"'
         url = cache_url_list[i]
         command = command1 + url + command2 + command3
         log.info(u'执行的操作指令为：' + unicode(command))
         try:
+            now1 = datetime.now()
             do_curl(timestamp, command, system, need_assert)  # 执行curl 操作
+            now2 = datetime.now()
+            log.info(u'执行这个curl操作花费的时间为：' + str(now2 - now1))
         except BaseException as e:
             log.info(u'curl错误信息' + unicode(e))
             exit()  # 如果无法链接虚拟机则直接退出
