@@ -34,9 +34,10 @@ sys.setdefaultencoding('utf-8')
 log = my_log()
 
 
-def timer_customize(timestamp, expect_start_time='2017-03-21 17:04:00', expect_end_time='2017-03-21 17:20:00'):
+def timer_customize(timestamp, expect_start_time='2017-03-21 17:04:00', expect_end_time='2017-03-21 17:20:00',need_asert=True):
     """
     输入期望开始的时间随后每隔五分钟会调用一次
+    :param need_asert: 
     :param timestamp:
     :param expect_end_time:
     :param expect_start_time:

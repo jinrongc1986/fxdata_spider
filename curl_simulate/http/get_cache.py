@@ -118,8 +118,10 @@ def get_all_cache(current_time, limit=100, host='192.168.1.106', user='root', pa
     :param passwd:
     :return:
     """
-    # connect_linux('service iptables stop', host, user, '123')  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
-    connect_linux('service iptables stop', host, user,)  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
+    if host == '192.168.0.163':
+        connect_linux('service iptables stop', host, user, '123')  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
+    else:
+        connect_linux('service iptables stop', host, user,)  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
     log.info(u'连接到数据库成功')
     is_http_cache_exist = os.path.exists('./http/cache_info')
     if is_http_cache_exist is True:

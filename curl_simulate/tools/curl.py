@@ -83,9 +83,11 @@ def do_curl(time_stamp, command, system="windows", really_do=True):
                 f.flush()
 
 
-def curl_resource_verbose(timestamp, classes=0, category=0, limit=5, system='windows', ua='iphone', need_assert=True):
+def curl_resource_verbose(timestamp, classes=0, category=0, limit=5, system='windows', ua='iphone', need_assert=True,
+                          really_do=True):
     """
     根据class（就是上面的kind，因为class是自带的关键字，故换成kind）和category，还有limit来执行curl动作
+    :param really_do: 
     :param need_assert: 
     :param timestamp:
     :param ua:
@@ -141,7 +143,7 @@ def curl_resource_verbose(timestamp, classes=0, category=0, limit=5, system='win
         log.info(u'执行的操作指令为：' + unicode(command))
         try:
             now1 = datetime.now()
-            do_curl(timestamp, command, system, need_assert)  # 执行curl 操作
+            do_curl(timestamp, command, system, really_do)  # 执行curl 操作
             now2 = datetime.now()
             log.info(u'执行这个curl操作花费的时间为：' + str(now2 - now1))
         except BaseException as e:
@@ -154,7 +156,7 @@ def curl_resource_verbose(timestamp, classes=0, category=0, limit=5, system='win
         x = open(curl_log, 'a')
         x.write('class=' + str(kind_) + ' category=' + str(
             category) + ' cache_size=' + str(cache_size_list[i]) + ' cache_size_total:' + str(
-            cache_size_total) + '\n' + '----------------------------------------------------------------------------------')
+            cache_size_total) + '\n' + '----------------------------------------------------------------------------------' + '\n')  # 在curl_log中，——————————这个线就是一条curl_log信息的分割线
         x.flush()
         i += 1
     i = 0
@@ -171,9 +173,10 @@ def curl_resource_verbose(timestamp, classes=0, category=0, limit=5, system='win
         os.remove('test666')
 
 
-def curl_resource_class(time_stamp, kind=0, limit=10, system='windows', ua='iphone'):
+def curl_resource_class(time_stamp, kind=0, limit=10, system='windows', ua='iphone', need_assert=True):
     """
     根据class的种类来curl所有的这个class下的cache资源（存放于文件中）
+    :param need_assert: 
     :param time_stamp:
     :param system:
     :param ua:
@@ -184,34 +187,45 @@ def curl_resource_class(time_stamp, kind=0, limit=10, system='windows', ua='ipho
     if kind == 0:
         category = 0
         while category < 5:
-            filepath1 = './http/cache/httpcache' + str(category)
+            filepath1 = './http/cache_info/' + time_stamp + '/httpcache' + str(category)
             f = open(filepath1)
             is_unempty = any(f)
             if is_unempty:  # 如果不为空 则执行读取和curl操作
-                curl_resource_verbose(time_stamp, int(kind), category, limit, system, ua)
+                curl_resource_verbose(time_stamp, int(kind), category, limit, system, ua, need_assert)
             else:  # 如果为空则跳过
                 pass
             category += 1
     elif kind == 1:
         category = 0
         while category < 3:
-            filepath1 = './http/cache/mobilecache' + str(category)
+            filepath1 = './http/cache_info/' + time_stamp + '/mobilecache' + str(category)
             f = open(filepath1)
             is_unempty = any(f)
             if is_unempty:  # 如果不为空 则执行读取和curl操作
-                curl_resource_verbose(time_stamp, int(kind), category, limit, system, ua)
+                curl_resource_verbose(time_stamp, int(kind), category, limit, system, ua, need_assert)
             else:  # 如果为空则跳过
                 pass
             category += 1
     elif kind == 2:
         category = 0
         while category < 20:
-            filepath1 = './http/cache/videocache' + str(category)
+            filepath1 = './http/cache_info/' + time_stamp + '/videocache' + str(category)
             f = open(filepath1)
             is_unempty = any(f)
             # print is_unempty
             if is_unempty:  # 如果不为空 则执行读取和curl操作
-                curl_resource_verbose(time_stamp, int(kind), category, limit, system, ua)
+                curl_resource_verbose(time_stamp, int(kind), category, limit, system, ua, need_assert)
             else:  # 如果为空则跳过
                 pass
             category += 1
+
+
+def curl_all(time_stamp):
+    """
+    curl所有的资源
+    :param time_stamp: 
+    :return: 
+    """
+    curl_resource_class(time_stamp, 0, 100, "linux", "iphone", False)
+    curl_resource_class(time_stamp, 1, 100, "linux", "windows", False)
+    curl_resource_class(time_stamp, 2, 100, "linux", "iphone", False)

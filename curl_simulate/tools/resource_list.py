@@ -42,11 +42,30 @@ def get_resource_list_by_time(time_stamp):
     log.info(resource_list_file + u' 这个文件中包含了资源和执行的次数两个信息')
     x = open(resource_list_file, 'w')
     result = dict()
-    lines = f.readlines()
-    for line in lines:
-        if 'curl --connect-timeout' in line:
-            url = line.split()[8].replace('"', '')  # 如果修改了curl指令请记得修改这里
-            log.info(u'提取到的url信息为：' + url)
+    result_time_out = dict()
+    lines = f.read()
+    information = lines.split("----------------------------------------------------------------------------------")
+    length = len(information) - 1
+    log.info(u'分割后的信息大小为：' + str(len(information) - 1))
+    for i in range(0, length):
+        if "timed out"in information[i]:
+            log.info(u'超时信息采集结果如下:'+information[i])
+            line = information[i]
+            url = (line.split()[-7])  # 如果修改了curl指令请记得修改这里
+            log.info(u'提取到的url信息为：' + unicode(url))
+            if url in result_time_out:
+                result_time_out[url] += 1
+                log.info(u'111111：' + unicode(url))
+                log.info(u'111111：' + unicode(result_time_out[url]))
+            else:
+                result_time_out[url] = 1
+                log.info(u'22222：' + unicode(url))
+                log.info(u'22222：' + unicode(result_time_out[url]))
+        elif 'curl --connect-timeout' in information[i]:
+            log.info(u'分割后的信息为：' + information[i])
+            line = information[i]
+            url = (line.split()[-7])  # 如果修改了curl指令请记得修改这里
+            log.info(u'提取到的url信息为：' + unicode(url))
             if url in result:
                 result[url] += 1
             else:
@@ -54,6 +73,10 @@ def get_resource_list_by_time(time_stamp):
     for url in result:
         log.info(u'在' + resource_list_file + u'文件夹中url=' + url + u'被执行了' + str(result[url]) + u'次')
         message = url + '\t' + 'times:' + str(result[url]) + '\n'
+        x.write(message)
+    for url in result_time_out:
+        log.info(u'在' + resource_list_file + u'文件夹中url=' + url + u'执行失败了' + str(result_time_out[url]) + u'次')
+        message = url + '\t' + 'fail_times:' + str(result_time_out[url]) + '\n'
         x.write(message)
     x.close()
 
@@ -104,11 +127,15 @@ def get_resource_verbose(time_stamp):
     log.info(u"执行get_resource_list_by_time函数")
     get_resource_list_by_time(time_stamp)
     f = open(file_path + "resource_list", 'r')
+    log.info(u'读取文件夹中的信息' + file_path + "resource_list")
     lines = f.readlines()
     for line in lines:
         log.info("resource_list" + u'中采集到的line信息为' + line)
-        url = line.split()[0]
-        times = line.split()[1].replace("times:", "")
+        url = line.split()[0].replace('"', "")
+        if "fail_times" not in line.split()[1]:
+            times = line.split()[1].replace("times:", "")
+        log.info("resource_list" + u'中采集到的url信息为' + url)
+        log.info("resource_list" + u'中采集到的times信息为' + times)
         info = get_resource_size(url)
         log.info(u'输入uri获取得到的cache_size和category' + unicode(info))
         kind = info[0]
@@ -120,9 +147,9 @@ def get_resource_verbose(time_stamp):
             "url:" + url + '\t' + 'class=' + kind + ' category=' + category + ' times:' + times + '\t' + 'cache_size:' + cache_size + '\t' + 'total_size:' + str(
                 total_size) + '\n')
         x.close()
-        log.info(u'从resource_list采集到的写入resource_list_verbose信息为：' +
-                 "url:" + url + '\t' + 'class=' + kind + ' category=' + category + ' times:' + times + '\t' + 'cache_size:' + cache_size + '\t' + 'total_size:' + str(
-            total_size) + '\n')
+        log.info(
+            u'从resource_list采集到的写入resource_list_verbose信息为：' + "url:" + url + '\t' + 'class=' + kind + ' category=' + category + ' times:' + times + '\t' + 'cache_size:' + cache_size + '\t' + 'total_size:' + str(
+                total_size) + '\n')
 
 
 def hot_list(time_stamp, kind=0):
