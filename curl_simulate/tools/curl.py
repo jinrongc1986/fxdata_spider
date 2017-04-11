@@ -63,7 +63,7 @@ def do_curl(time_stamp, command, system="windows", really_do=True):
     else:  # 此处编写linux下的命令
         log.info(u'选择的是linux设备执行curl操作')
         curl_log = "./curl_log/curl_log_" + time_stamp
-        x1 = open(curl_log, 'a')
+        x1 = open(curl_log, 'a+')
         x1.write(current_time + '\n' + command + '\n')
         # 在此增加读取linux配置的语句
         f = open('./http/config_linux_to_curl', 'r')

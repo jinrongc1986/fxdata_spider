@@ -35,6 +35,7 @@ from curl_simulate.tools.timer import timer_customize
 from curl_simulate.tools.wrong_statistics_by_judge import wrong_statistics_log, statics_location_log, \
     statics_service_log
 import time
+import os
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -127,7 +128,6 @@ def curl_verbose(times, time_interval):
 def get_info_from_163():
     """
     从163中获取资源并且执行curl操作，无需进行校验
-    :param start_time: 
     :return: 
     """
     timestamp = str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M'))
@@ -137,6 +137,11 @@ def get_info_from_163():
     log.info(u'全场关键字 timestamp为：' + timestamp)
     log.info(u'获取全部资源放入到指定的文件夹中')
     get_all_cache(timestamp, 100, '192.168.0.163', )  # 获取全部资源放入到指定的文件夹中
+    log.info(u'获取全部资源操作完成')
+    curl_log = "./curl_log/curl_log_" + timestamp
+    if not os.path.exists('./curl_log'):
+        os.mkdir('./curl_log')
+    f = open(curl_log, 'w')
     curl_all(timestamp)
 
 
