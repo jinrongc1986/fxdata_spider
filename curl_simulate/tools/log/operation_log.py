@@ -32,11 +32,11 @@ def my_log():
     初始化函数操作
     :return: 
     """
-    # is_dir_exist = os.path.exists('./operation_log')
-    # if is_dir_exist is True:
-    #     pass
-    # else:
-    #     os.mkdir('./operation_log')
+    is_dir_exist = os.path.exists('./operation_log')
+    if is_dir_exist is True:
+        pass
+    else:
+        os.mkdir('./operation_log')
     logging.config.fileConfig("./tools/log/logging.conf")
     logger_name = "example01"
     logger_ = logging.getLogger(logger_name)
@@ -53,7 +53,6 @@ def modify_my_log_file_path(filepath):
     if is_dir_exist is True:
         pass
     else:
-        print "1111111111111111111"
         os.mkdir('./operation_log')
 
     global src
@@ -66,9 +65,9 @@ def modify_my_log_file_path(filepath):
                 f.close()
     f = open("./tools/log/logging.conf", 'a+')
     x = f.read()
-    des = x.replace(src, "args=('" + filepath + ".log', 'a')\n")
+    des = x.replace(src, "args=('" + filepath + "', 'a')\n")
     f.close()
-    f = open("./tools/log/logging.conf.", 'w')
+    f = open("./tools/log/logging.conf.", 'w+')
     f.write(des)
 
 
@@ -78,15 +77,12 @@ def del_operation_log(timestamp):
     :param timestamp: 
     :return: 
     """
-    filepath = './operation_log/' + timestamp + '.log'
+    filepath = './operation_log/' + timestamp + ''
     file_size = os.path.getsize(filepath) / 1024 / 1024
     if file_size > 8:
-        open(filepath, 'w')
+        open(filepath, 'w+')
     else:
         log = my_log()
         log.info(u'目前文件大小为：' + unicode(file_size) + u'，请放心使用')
 
 
-if __name__ == '__main__':
-    logger = my_log()
-    logger.warn('warn message')

@@ -26,6 +26,9 @@ import os
 import shutil
 import sys
 
+from curl_simulate.tools.log.operation_log import my_log
+import logging
+log = my_log()
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
@@ -52,3 +55,5 @@ def del_all_log():
     del_dir('./http/cache_info')
     del_dir('./curl_log')
     del_dir('./judge')
+    logging.shutdown()
+    del_dir('./operation_log')
