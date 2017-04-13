@@ -125,7 +125,7 @@ def curl_verbose(times, time_interval):
     log.info(u"执行完成")
 
 
-def get_info_from_163():
+def get_info_from_163(host='192.168.0.163', user='root', passwd='0rd1230ac'):
     """
     从163中获取资源并且执行curl操作，无需进行校验
     :return: 
@@ -136,15 +136,16 @@ def get_info_from_163():
     log = my_log()
     log.info(u'全场关键字 timestamp为：' + timestamp)
     log.info(u'获取全部资源放入到指定的文件夹中')
-    get_all_cache(timestamp, 100, '192.168.0.163', )  # 获取全部资源放入到指定的文件夹中
+    get_all_cache(timestamp, 100, host, user, passwd)  # 获取全部资源放入到指定的文件夹中
     log.info(u'获取全部资源操作完成')
     curl_log = "./curl_log/curl_log_" + timestamp
     if not os.path.exists('./curl_log'):
         os.mkdir('./curl_log')
     f = open(curl_log, 'w')
+    f.close()
     curl_all(timestamp)
 
 
 if __name__ == '__main__':
-    # del_all_log()
-    main('2017-04-13 18:50:00', '2017-04-13 23:55:00')
+    del_all_log()
+    main('2017-04-14 00:50:00', '2017-04-14 08:55:00')

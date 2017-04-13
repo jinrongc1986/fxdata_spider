@@ -8,5 +8,6 @@ user-agent的选择，need_assert为是否需要校验重定向日志和服务日志，默认是需要
 6.可选择是否执行获取所有执行过的资源榜单get_all_hot_list(timestamp)以及错误日志（重定向日志和服务日志）的统计wrong_statistics_log(timestamp)
 7.curl_resource_verbose 中可以对curl设置两个超时时间（或直接全局搜索连接超时时间用 --connect-timeout 参数来指定，数据传输的最大允许时间用 -m 参数来指定。这句话）
 8.一个kind中，上下部分的时间间隔请修改curl_kind.py文件中的kind的time_line 或者在timer_customize中调用kind函数后面加上参数
+9.如果要修改筛选资源的大小，请在get.cache。.py文件中修改
 
 局限性：如果是从163获取资源的话，那么第一次执行该程序时无法使用自动诊断重定向日志和服务日志，因为163获取的资源 在106的数据库上不一定找得到资源

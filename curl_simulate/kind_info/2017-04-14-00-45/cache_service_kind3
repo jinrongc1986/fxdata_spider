@@ -1,0 +1,55 @@
+8 class=mobilecache category=0 cache_size=20783545
+8 class=mobilecache category=0 cache_size=11056484
+8 class=mobilecache category=0 cache_size=12683319
+8 class=mobilecache category=0 cache_size=13730158
+8 class=mobilecache category=0 cache_size=24316166
+8 class=mobilecache category=0 cache_size=3006271
+8 class=mobilecache category=0 cache_size=2360083
+8 class=mobilecache category=0 cache_size=372020
+8 class=mobilecache category=0 cache_size=1904411
+8 class=mobilecache category=0 cache_size=28095629
+8 class=videocache category=6 cache_size=3116284
+8 class=videocache category=6 cache_size=3221547
+8 class=videocache category=6 cache_size=2532624
+8 class=videocache category=6 cache_size=1774803
+8 class=videocache category=6 cache_size=2281413
+8 class=videocache category=6 cache_size=2081335
+8 class=videocache category=6 cache_size=2184819
+8 class=videocache category=6 cache_size=2180738
+8 class=videocache category=6 cache_size=1937309
+8 class=videocache category=6 cache_size=2205036
+8 class=httpcache category=4 cache_size=652234
+8 class=httpcache category=4 cache_size=880407
+8 class=httpcache category=4 cache_size=644097
+8 class=httpcache category=4 cache_size=681692
+8 class=httpcache category=4 cache_size=4480336
+8 class=httpcache category=4 cache_size=3029793
+8 class=httpcache category=4 cache_size=1326526
+8 class=httpcache category=4 cache_size=1507934
+8 class=httpcache category=4 cache_size=2063231
+8 class=httpcache category=4 cache_size=2382479
+8 class=videocache category=8 cache_size=5028082
+8 class=videocache category=8 cache_size=9133072
+8 class=httpcache category=0 cache_size=9462085
+8 class=videocache category=16 cache_size=3086396
+8 class=videocache category=16 cache_size=631304
+8 class=videocache category=16 cache_size=3883704
+8 class=videocache category=16 cache_size=3139976
+8 class=videocache category=16 cache_size=4012484
+8 class=videocache category=16 cache_size=932480
+8 class=videocache category=16 cache_size=344228
+8 class=videocache category=16 cache_size=1097168
+8 class=videocache category=16 cache_size=4587200
+8 class=videocache category=16 cache_size=5135220
+209946122
+-------------------------------------
+httpcache:11 total_size:27110814
+mobilecache:10 total_size:118308086
+videocache:22 total_size:64527222
+-----------
+http_other:1 total_size:9462085
+http_pic:10 total_size:17648729
+mobile_android:10 total_size:118308086
+video_ads:10 total_size:23515908
+video_pptv:2 total_size:14161154
+video_leshi:10 total_size:26850160

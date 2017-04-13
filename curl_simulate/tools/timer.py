@@ -88,7 +88,7 @@ def timer_customize(timestamp, expect_start_time='2017-03-21 17:04:00', expect_e
         if wait_to_end < datetime.timedelta(seconds=0.5):
             log.info(u"执行完时间已经超过结束时间，结束进程")
             exit()
-        wait_to_end=str(wait_to_end)
+        wait_to_end = str(wait_to_end)
         log.info(u'离结束的时间还有几分几秒（请自行减去五分钟）：' + str(wait_to_end))  # 离结束还有几分几秒
         end_hour = int(wait_to_end.split(':')[0])
         end_minute = int(wait_to_end.split(':')[1])
