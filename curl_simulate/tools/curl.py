@@ -135,7 +135,7 @@ def curl_resource_verbose(timestamp, classes=0, category=0, limit=5, system='win
         limit = count
     i = 0
     while i < limit:
-        command1 = 'curl --connect-timeout 5 -m 20 -o test666 -L "'  # 连接超时时间用 --connect-timeout 参数来指定，数据传输的最大允许时间用 -m 参数来指定。
+        command1 = 'curl --connect-timeout 3 -m 8 -o test666 -L "'  # 连接超时时间用 --connect-timeout 参数来指定，数据传输的最大允许时间用 -m 参数来指定。
         command2 = '" '
         command3 = ' --user-agent "' + ua + '"'
         url = cache_url_list[i]

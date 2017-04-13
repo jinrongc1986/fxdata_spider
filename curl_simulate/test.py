@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-#name   = del
+#name   = test
 #author = tangtao
-#time   = 2017/3/27 17:43
-#Description=删除没必要的多余的日志文件
+#time   = 2017/4/13 17:36
+#Description=添加描述信息
 #eMail   =tangtao@lhtangtao.com
 #git     =lhtangtao
 # code is far away from bugs with the god animal protecting
@@ -22,33 +22,20 @@ I love animals. They taste delicious.
 ┃┫┫  ┃┫┫
 ┗┻┛  ┗┻┛
 """
-import os
-import shutil
 import sys
+import time
+import datetime
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
-
-
-def del_dir(dir_name):
-    """
-    输入文件夹的地址，随后删除
-    :param dir_name:
-    :return:
-    """
-    is_curl_log_exist = os.path.exists(dir_name)
-    if is_curl_log_exist is True:
-        shutil.rmtree(dir_name)
-    else:
-        pass
-
-
-def del_all_log():
-    """
-    删除所有的日志文件
-    :return:
-    """
-    del_dir('./kind_info')
-    del_dir('./http/cache_info')
-    del_dir('./curl_log')
-    del_dir('./judge')
+if __name__ == '__main__':
+    now_time1 = datetime.datetime.now()  # 显示现在的时间
+    time.sleep(1)
+    now_time2 = datetime.datetime.now()
+    x = now_time1 - now_time2
+    y = now_time2 - now_time1
+    print x
+    print y
+    print datetime.timedelta(seconds=0.5)
+    if x>datetime.timedelta(seconds=0.5):
+        print '1111111111'

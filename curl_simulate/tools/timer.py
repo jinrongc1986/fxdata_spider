@@ -34,7 +34,8 @@ sys.setdefaultencoding('utf-8')
 log = my_log()
 
 
-def timer_customize(timestamp, expect_start_time='2017-03-21 17:04:00', expect_end_time='2017-03-21 17:20:00',need_asert=True):
+def timer_customize(timestamp, expect_start_time='2017-03-21 17:04:00', expect_end_time='2017-03-21 17:20:00',
+                    need_asert=True):
     """
     输入期望开始的时间随后每隔五分钟会调用一次
     :param need_asert: 
@@ -45,12 +46,12 @@ def timer_customize(timestamp, expect_start_time='2017-03-21 17:04:00', expect_e
     """
     expect_start_time = datetime.datetime.strptime(expect_start_time, '%Y-%m-%d %H:%M:%S') + datetime.timedelta(
         seconds=15
-        )  # 说明加上从0或者5分钟后加上30秒后再执行curl操作
+    )  # 说明加上从0或者5分钟后加上30秒后再执行curl操作
     expect_end_time = datetime.datetime.strptime(expect_end_time, '%Y-%m-%d %H:%M:%S')
     now_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 显示现在的时间
     now_time = datetime.datetime.strptime(now_time, '%Y-%m-%d %H:%M:%S')  # 格式化当前的时间
     log.info(u'判断当前的时间和开始时间结束时间：')
-    log.info(u'expect_start_time'+unicode(expect_start_time))
+    log.info(u'expect_start_time' + unicode(expect_start_time))
     log.info(u'expect_end_time' + unicode(expect_end_time))
     log.info(u'now_time' + unicode(now_time))
     if now_time > expect_start_time:
@@ -83,7 +84,11 @@ def timer_customize(timestamp, expect_start_time='2017-03-21 17:04:00', expect_e
         log.info(u'当前的时间是：' + unicode(now_time))
         now_time = datetime.datetime.strptime(now_time, '%Y-%m-%d %H:%M:%S')  # 格式化当前的时间
         log.info(u'期望结束的时间加上五分钟是：' + str(expect_end_time))  # 离结束还有多久
-        wait_to_end = str(expect_end_time - now_time)  # 期望结束的时间+5分钟-当前的时间 即剩下多少时间
+        wait_to_end = (expect_end_time - now_time)  # 期望结束的时间+5分钟-当前的时间 即剩下多少时间
+        if wait_to_end < datetime.timedelta(seconds=0.5):
+            log.info(u"执行完时间已经超过结束时间，结束进程")
+            exit()
+        wait_to_end=str(wait_to_end)
         log.info(u'离结束的时间还有几分几秒（请自行减去五分钟）：' + str(wait_to_end))  # 离结束还有几分几秒
         end_hour = int(wait_to_end.split(':')[0])
         end_minute = int(wait_to_end.split(':')[1])
