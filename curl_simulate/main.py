@@ -42,9 +42,11 @@ sys.setdefaultencoding('utf-8')
 
 
 def main(start_time, end_time, host='192.168.0.59', user='root', pwd='FxData!Cds@2016_', limit=10, kind_timeline=120,
-         cds_ip='192.168.1.163',database_pwd='0rd1230ac'):
+         cds_ip='192.168.1.106', database_user='root', database_pwd='0rd1230ac'):
     """
     
+    :param database_pwd: 
+    :param database_user: 
     :param cds_ip: 
     :param start_time: 开始时间
     :param end_time: 结束时间
@@ -55,7 +57,7 @@ def main(start_time, end_time, host='192.168.0.59', user='root', pwd='FxData!Cds
     :param kind_timeline: 每个kind中上下部分的时间差
     :return: 
     """
-    modify_linux_config(host, user, pwd, cds_ip,database_pwd)
+    modify_linux_config(host, user, pwd, cds_ip, database_pwd, database_user)
     start_time = datetime.datetime.strptime(start_time, '%Y-%m-%d %H:%M:%S')
     timestamp = str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M'))
     filepath = './operation_log/' + timestamp
@@ -72,7 +74,7 @@ def main(start_time, end_time, host='192.168.0.59', user='root', pwd='FxData!Cds
             time.sleep(60)
     log.info(u'全场关键字 timestamp为：' + timestamp)
     log.info(u'获取全部资源放入到指定的文件夹中')
-    get_all_cache(timestamp, limit, host, user, pwd)  # 获取全部资源放入到指定的文件夹中
+    get_all_cache(timestamp,100)  # 获取全部资源放入到指定的文件夹中
     log.info(u"现在的时间戳节点为：" + timestamp)
     i = 1
     log.info(u'开始准备工作，计算每种kind的资源和大小')
@@ -154,7 +156,7 @@ def get_info_from_163(host='192.168.0.163', user='root', passwd='0rd1230ac', lim
     log = my_log()
     log.info(u'全场关键字 timestamp为：' + timestamp)
     log.info(u'获取全部资源放入到指定的文件夹中')
-    get_all_cache(timestamp, limit, host, user, passwd)  # 获取全部资源放入到指定的文件夹中
+    get_all_cache(timestamp, limit)  # 获取全部资源放入到指定的文件夹中
     log.info(u'获取全部资源操作完成')
     curl_log = "./curl_log/curl_log_" + timestamp
     if not os.path.exists('./curl_log'):
@@ -166,4 +168,4 @@ def get_info_from_163(host='192.168.0.163', user='root', passwd='0rd1230ac', lim
 
 if __name__ == '__main__':
     del_all_log()
-    main('2017-04-14 16:56:00', '2017-04-14 18:30:00', kind_timeline=120)
+    main('2017-04-14 18:15:00', '2017-04-15 00:30:00', kind_timeline=120)

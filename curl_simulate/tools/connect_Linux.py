@@ -56,9 +56,11 @@ def connect_linux(command, ip, user, pwd):
     return info
 
 
-def modify_linux_config(host, user, pwd, cds_ip,database_pwd):
+def modify_linux_config(host, user, pwd, cds_ip, database_pwd, database_user):
     """
     修改config-linux_to_curl里的配置文件
+    :param database_user: 
+    :param database_pwd: 
     :param cds_ip: 
     :param host: 
     :param user: 
@@ -66,7 +68,5 @@ def modify_linux_config(host, user, pwd, cds_ip,database_pwd):
     :return: 
     """
     f = open('./http/config_linux_to_curl', 'w+')
-    message = host + ' ' + user + ' ' + pwd + ' ' + cds_ip+' '+database_pwd
+    message = host + ' ' + user + ' ' + pwd + ' ' + cds_ip + ' ' + database_pwd + ' ' + database_user
     f.write(message)
-    # f = open('./http/config_linux_to_curl', 'r')
-    # print f.read().split()[4]
