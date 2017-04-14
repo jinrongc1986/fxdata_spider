@@ -1,6 +1,6 @@
 总体来说使用本程序需要只需要在以下几个地方自由选择参数进行调节即可
 1.可选择是否执行del_all_log()函数删除所有之前残留的日志草稿
-2.在main.py文件中输入预期的开始时间和结束时间
+2.在main.py文件中输入预期的开始时间和结束时间,执行curl动作的设备的ip，帐号，密码以及每种资源curl多少个（默认10个）
 3.config_linux_to_curl文件中配置要执行curl动作的linux设备的ip帐号密码等信息
 4.get_all_cache(current_time, limit=100, host='192.168.1.106', user='root', passwd='0rd1230ac'):函数可设置资源获取的地址（cds的ip），前limit条以及该cds的帐号密码存放到
 5.curl_resource_verbose(timestamp, classes=0, category=0, limit=5, system='windows', ua='iphone', need_assert=True):此函数是执行curl操作的，可以自己定义class category 执行limit个资源，在windows 或者 liunx系统下执行

@@ -87,7 +87,7 @@ def calculate_kind(timestamp, kind=1):
     kind_info_file = './kind_info/' + timestamp + '/cache_service_kind'
     for line in lines:
         if 'curl' in line:
-            url = line.split()[4]
+            url = line.split()[8]
             x = open(kind_info_file + str(kind), "a+")
             x.write(url + ' ')
             x.close()

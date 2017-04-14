@@ -54,3 +54,16 @@ def connect_linux(command='service iptables stop', ip='192.168.0.59', user='root
     log.info(u'链接了linux后执行操作的返回值' + str(info))
     ssh.close()
     return info
+
+
+def modify_linux_config(host, user, pwd):
+    """
+    修改config-linux_to_curl里的配置文件
+    :param host: 
+    :param user: 
+    :param pwd: 
+    :return: 
+    """
+    f = open('./http/config_linux_to_curl', 'w+')
+    message = host + '\t' + user + '\t' + pwd
+    f.write(message)

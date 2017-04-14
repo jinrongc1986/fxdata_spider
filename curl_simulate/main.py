@@ -26,7 +26,7 @@ import datetime
 import sys
 from curl_simulate.http.kind_info import calculate_kind
 from curl_simulate.http.get_cache import get_all_cache, get_mobile_cache, get_http_cache
-from curl_simulate.tools.connect_Linux import connect_linux
+from curl_simulate.tools.connect_Linux import connect_linux, modify_linux_config
 from curl_simulate.tools.curl import curl_resource_verbose, curl_all
 from curl_simulate.tools.del_log import del_all_log
 from curl_simulate.tools.log.operation_log import my_log, modify_my_log_file_path
@@ -41,7 +41,8 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 
-def main(start_time, end_time):
+def main(start_time, end_time, host='192.168.0.59', user='root', pwd='FxData!Cds@2016_', limit=10):
+    modify_linux_config(host, user, pwd)
     start_time = datetime.datetime.strptime(start_time, '%Y-%m-%d %H:%M:%S')
     timestamp = str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M'))
     filepath = './operation_log/' + timestamp
@@ -67,7 +68,7 @@ def main(start_time, end_time):
         i += 1
     log.info(u'准备工作就绪，现在可以开始进行真正的curl操作')
     log.info(u'执行time_customize前的当前的时间为' + unicode(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
-    timer_customize(timestamp, str(start_time), end_time)
+    timer_customize(timestamp, str(start_time), end_time, limit)
     get_all_hot_list(timestamp)
     wrong_statistics_log(timestamp)
     log.info(u"执行完成")
@@ -125,9 +126,13 @@ def curl_verbose(times, time_interval):
     log.info(u"执行完成")
 
 
-def get_info_from_163(host='192.168.0.163', user='root', passwd='0rd1230ac'):
+def get_info_from_163(host='192.168.0.163', user='root', passwd='0rd1230ac', limit=100):
     """
     从163中获取资源并且执行curl操作，无需进行校验
+    :param host: 
+    :param user: 
+    :param passwd: 
+    :param limit: 
     :return: 
     """
     timestamp = str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M'))
@@ -136,7 +141,7 @@ def get_info_from_163(host='192.168.0.163', user='root', passwd='0rd1230ac'):
     log = my_log()
     log.info(u'全场关键字 timestamp为：' + timestamp)
     log.info(u'获取全部资源放入到指定的文件夹中')
-    get_all_cache(timestamp, 100, host, user, passwd)  # 获取全部资源放入到指定的文件夹中
+    get_all_cache(timestamp, limit, host, user, passwd)  # 获取全部资源放入到指定的文件夹中
     log.info(u'获取全部资源操作完成')
     curl_log = "./curl_log/curl_log_" + timestamp
     if not os.path.exists('./curl_log'):
@@ -148,4 +153,4 @@ def get_info_from_163(host='192.168.0.163', user='root', passwd='0rd1230ac'):
 
 if __name__ == '__main__':
     del_all_log()
-    main('2017-04-14 00:50:00', '2017-04-14 08:55:00')
+    main('2017-04-14 11:40:00', '2017-04-14 11:50:00')
