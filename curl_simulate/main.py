@@ -41,7 +41,18 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 
-def main(start_time, end_time, host='192.168.0.59', user='root', pwd='FxData!Cds@2016_', limit=10):
+def main(start_time, end_time, host='192.168.0.59', user='root', pwd='FxData!Cds@2016_', limit=10, kind_timeline=120):
+    """
+    
+    :param start_time: 开始时间
+    :param end_time: 结束时间
+    :param host: 执行curl动作的ip
+    :param user: 上述ip的帐号
+    :param pwd: 上述ip的密码
+    :param limit: curl每种资源的个数
+    :param kind_timeline: 每个kind中上下部分的时间差
+    :return: 
+    """
     modify_linux_config(host, user, pwd)
     start_time = datetime.datetime.strptime(start_time, '%Y-%m-%d %H:%M:%S')
     timestamp = str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M'))
@@ -68,7 +79,7 @@ def main(start_time, end_time, host='192.168.0.59', user='root', pwd='FxData!Cds
         i += 1
     log.info(u'准备工作就绪，现在可以开始进行真正的curl操作')
     log.info(u'执行time_customize前的当前的时间为' + unicode(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
-    timer_customize(timestamp, str(start_time), end_time, limit)
+    timer_customize(timestamp, str(start_time), end_time, limit, kind_timeline)
     get_all_hot_list(timestamp)
     wrong_statistics_log(timestamp)
     log.info(u"执行完成")
@@ -153,4 +164,4 @@ def get_info_from_163(host='192.168.0.163', user='root', passwd='0rd1230ac', lim
 
 if __name__ == '__main__':
     del_all_log()
-    main('2017-04-14 11:40:00', '2017-04-14 11:50:00')
+    main('2017-04-14 15:10:00', '2017-04-14 14:30:00', kind_timeline=120)

@@ -41,12 +41,12 @@ def connect_linux(command='service iptables stop', ip='192.168.0.59', user='root
     :param pwd: 
     :return: 
     """
-    log.info(u'链接59，开始操作')
+    log.info(u'链接' + ip + u'，开始操作')
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     ssh.connect(ip, 22, user, pwd)
     stdin, stdout, stderr = ssh.exec_command(command)
-    log.info(u'链接59，执行操作：' + unicode(command))
+    log.info(u'链接' + ip + u'，开始操作' + unicode(command))
     stdin.write("Y")  # Generally speaking, the first connection, need a simple interaction.
     info1 = stdout.read()
     info2 = stderr.read()
