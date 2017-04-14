@@ -51,7 +51,7 @@ def init_db(host='192.168.1.106', user='root', passwd='0rd1230ac'):
     return connect
 
 
-def execute_mysql_get_cache_info(command, filepath, category, host='192.168.1.106', user='root', passwd='0rd1230ac'):
+def execute_mysql_get_cache_info(command, filepath, category, host, user, passwd):
     """
     返回一个元组，里面有查询到的所有信息
     并且把他写入指定的文件
@@ -149,5 +149,3 @@ def get_uri_by_md5(md5):
             cmd = cmd1 + 'mobile_cache' + cmd2 + md5 + cmd3
             res = execute_mysql(cmd)
     return res
-
-

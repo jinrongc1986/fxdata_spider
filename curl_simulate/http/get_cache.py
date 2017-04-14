@@ -34,12 +34,12 @@ sys.setdefaultencoding('utf-8')
 log = my_log()
 
 
-def get_http_cache(category="1", limit='10', host='192.168.1.106', user='root',
-                   passwd='0rd1230ac', filepath='./http/cache/httpcache'):
+def get_http_cache(category, limit, host, user,
+                   database_passwd, filepath='./http/cache/httpcache'):
     """
     在httpcache这个表里根据category和limit选择uri
     :param user:
-    :param passwd:
+    :param database_passwd:
     :param host:
     :param filepath:
     :param category:种类
@@ -53,16 +53,16 @@ def get_http_cache(category="1", limit='10', host='192.168.1.106', user='root',
     current_time = str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     command = str1 + category + str1_5 + current_time + str1_6 + str2 + limit
     filepath += 'httpcache'
-    res = execute_mysql_get_cache_info(command, filepath, category, host, user, passwd)
+    res = execute_mysql_get_cache_info(command, filepath, category, host, user, database_passwd)
     log.info(u'采集到的放入/http/cache_info的http信息为' + str(res))
     return res
 
 
-def get_video_cache(category='1', limit='10', host='192.168.1.106', user='root',
-                    passwd='0rd1230ac', filepath='./http/cache/videocache'):
+def get_video_cache(category, limit, host, user,
+                    database_passwd, filepath='./http/cache/videocache'):
     """
     在videocache这个表里根据category和limit选择uri
-    :param passwd:
+    :param database_passwd:
     :param user:
     :param host:
     :param category:
@@ -75,16 +75,16 @@ def get_video_cache(category='1', limit='10', host='192.168.1.106', user='root',
     execute = str1 + category + str2 + limit
     # print execute
     filepath += 'videocache'
-    res = execute_mysql_get_cache_info(execute, filepath, category, host, user, passwd)
+    res = execute_mysql_get_cache_info(execute, filepath, category, host, user, database_passwd)
     log.info(u'采集到的放入/http/cache_info的video信息为' + str(res))
     return res
 
 
-def get_mobile_cache(category='0', limit='10', host='192.168.1.106', user='root',
-                     passwd='0rd1230ac', filepath='./http/cache/mobilecache'):
+def get_mobile_cache(category, limit, host, user,
+                     database_passwd, filepath='./http/cache/mobilecache'):
     """
     在mobilecache这个表里根据category和limit选择uri
-    :param passwd:
+    :param database_passwd:
     :param user:
     :param host:
     :param category:
@@ -100,12 +100,12 @@ def get_mobile_cache(category='0', limit='10', host='192.168.1.106', user='root'
     execute = str1 + category + str1_5 + current_time + str1_6 + str2 + limit
     # print execute
     filepath += 'mobilecache'
-    res = execute_mysql_get_cache_info(execute, filepath, category, host, user, passwd)
+    res = execute_mysql_get_cache_info(execute, filepath, category, host, user, database_passwd)
     log.info(u'采集到的放入/http/cache_info的mobile信息为' + str(res))
     return res
 
 
-def get_all_cache(current_time, limit=100, host='192.168.1.106', user='root', passwd='0rd1230ac'):
+def get_all_cache(current_time, limit, host, user, pwd):
     """
     获取全部种类的资源
     class=0 时 category有0--4
@@ -115,13 +115,13 @@ def get_all_cache(current_time, limit=100, host='192.168.1.106', user='root', pa
     :param limit:
     :param host:
     :param user:
-    :param passwd:
+    :param pwd:
     :return:
     """
     if host == '192.168.0.163':
         connect_linux('service iptables stop', host, user, '123')  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
     else:
-        connect_linux('service iptables stop', host, user,)  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
+        connect_linux('service iptables stop', host, user, pwd)  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
     log.info(u'连接到数据库成功')
     is_http_cache_exist = os.path.exists('./http/cache_info')
     if is_http_cache_exist is True:
@@ -136,16 +136,16 @@ def get_all_cache(current_time, limit=100, host='192.168.1.106', user='root', pa
         os.mkdir('./http/cache_info/' + str(current_time))
     filepath = './http/cache_info/' + str(current_time) + '/'
     category = 0
+    f = open('./http/config_linux_to_curl', 'r')
+    database_pwd= f.read().split()[4]
     while category < 5:
-        get_http_cache(str(category), str(limit), host, user, passwd, filepath)
+        get_http_cache(str(category), str(limit), host, user, database_pwd, filepath)
         category += 1
     category = 0
     while category < 3:
-        get_mobile_cache(str(category), str(limit), host, user, passwd, filepath)
+        get_mobile_cache(str(category), str(limit), host, user, database_pwd, filepath)
         category += 1
     category = 0
     while category < 20:
-        get_video_cache(str(category), str(limit), host, user, passwd, filepath)
+        get_video_cache(str(category), str(limit), host, user, database_pwd, filepath)
         category += 1
-
-

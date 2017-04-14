@@ -32,7 +32,7 @@ sys.setdefaultencoding('utf-8')
 log = my_log()
 
 
-def connect_linux(command='service iptables stop', ip='192.168.0.59', user='root', pwd='FxData!Cds@2016_'):
+def connect_linux(command, ip, user, pwd):
     """
     输入command在指定ip的linux设备上执行
     :param command: 
@@ -56,14 +56,17 @@ def connect_linux(command='service iptables stop', ip='192.168.0.59', user='root
     return info
 
 
-def modify_linux_config(host, user, pwd):
+def modify_linux_config(host, user, pwd, cds_ip,database_pwd):
     """
     修改config-linux_to_curl里的配置文件
+    :param cds_ip: 
     :param host: 
     :param user: 
     :param pwd: 
     :return: 
     """
     f = open('./http/config_linux_to_curl', 'w+')
-    message = host + '\t' + user + '\t' + pwd
+    message = host + ' ' + user + ' ' + pwd + ' ' + cds_ip+' '+database_pwd
     f.write(message)
+    # f = open('./http/config_linux_to_curl', 'r')
+    # print f.read().split()[4]

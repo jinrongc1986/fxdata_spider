@@ -1,1985 +1,0 @@
-server(cloud) count: 1
-sysinfo: cpu8
-match_db_count: 45 log_en: 0|0
-http thread: 0
-mobile thread: 0
-video thread: 0
-upcache thread: http|mobile: 0|0
-mysql connect: 0
-sys_run_time: 99140s (27h32m)
-down_enable: http|video|mobile: 1|1|1
-down_info: sucess|fault|redown: 12|25|1
-handle packets for vlan|pppoe|ip6|ip4: 12321|0|0|12322
-cache avoid for delay|limit: 2,62,4,0|6,0,0,0
-user online|hit: 0|0
---------
-capture uri: 12322
-drop uri: 0
-check threshold task: 72
-drop threshold task: 0
-add cache task: 210
-drop cache task: 0
-log match: 0
-drop matchlog: 0
-log opt: 165
-drop optlog: 0
-location uri: 6443
-drop location: 0
-avg location time: 2.96ms
-max location time: 124.17ms
-location time > 10ms: 642
---------
-diskmask: 0xfffffffe
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  1 9240k    1  150k    0     0   432k      0  0:00:21 --:--:--  0:00:21  432k 21 9240k   21 2008k    0     0  1491k      0  0:00:06  0:00:01  0:00:05 1858k 39 9240k   39 3675k    0     0  1565k      0  0:00:05  0:00:02  0:00:03 1761k 69 9240k   69 6448k    0     0  1922k      0  0:00:04  0:00:03  0:00:01 2094k 87 9240k   87 8091k    0     0  1861k      0  0:00:04  0:00:04 --:--:-- 1985k100 9240k  100 9240k    0     0  1889k      0  0:00:04  0:00:04 --:--:-- 2000k
-
-2017-04-14 14:10:15
-curl --connect-timeout 3 -m 8 -o test666 -L "http://d7.ixdzs.com/74/74334/74334.epub"  --user-agent "windows"
-class=httpcache category=0 cache_size=9462085 cache_size_total:9462085
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0 26.7M    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 26 26.7M   26 7191k    0     0  6667k      0  0:00:04  0:00:01  0:00:03 8016k 59 26.7M   59 16.0M    0     0  7887k      0  0:00:03  0:00:02  0:00:01 8640k 90 26.7M   90 24.1M    0     0  8040k      0  0:00:03  0:00:03 --:--:-- 8542k100 26.7M  100 26.7M    0     0  8267k      0  0:00:03  0:00:03 --:--:-- 8749k
-
-2017-04-14 14:10:22
-curl --connect-timeout 3 -m 8 -o test666 -L "http://221.180.251.22/cdn/qiyiapp/20170329/143551/ap/qiyi81.apk?dis_k=0fa5dab167bd46c875953f3e75aa50330&dis_t=1492108833&dis_dz=CMNET-ZheJiang&dis_st=36"  --user-agent "windows"
-class=mobilecache category=0 cache_size=28095629 cache_size_total:28095629
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  9 19.8M    9 1886k    0     0  4387k      0  0:00:04 --:--:--  0:00:04 4491k 36 19.8M   36 7334k    0     0  5130k      0  0:00:03  0:00:01  0:00:02 5165k 64 19.8M   64 12.8M    0     0  5402k      0  0:00:03  0:00:02  0:00:01 5423k 87 19.8M   87 17.3M    0     0  5171k      0  0:00:03  0:00:03 --:--:-- 5186k100 19.8M  100 19.8M    0     0  4992k      0  0:00:04  0:00:04 --:--:-- 5005k
-
-2017-04-14 14:10:26
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.202/package.box.xiaomi.com/mfsv2/download/fdsc3/p01ndUiMOtA4/l4mX5KbIG4dDK4.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=20783545 cache_size_total:48879174
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  3 10.5M    3  378k    0     0  3307k      0  0:00:03 --:--:--  0:00:03 3307k100 10.5M  100 10.5M    0     0  9754k      0  0:00:01  0:00:01 --:--:-- 10.2M
-
-2017-04-14 14:10:30
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.203/package.box.xiaomi.com/mfsv2/file/fdsc3/p01HzVduGzUM/K9e5IpPUwDBR6t/master_2b2272eb.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=11056484 cache_size_total:59935658
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 49 12.0M   49 6149k    0     0  9325k      0  0:00:01 --:--:--  0:00:01 9325k100 12.0M  100 12.0M    0     0   9.9M      0  0:00:01  0:00:01 --:--:-- 11.0M
-
-2017-04-14 14:10:31
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.202/package.cdn.box.xiaomi.com/mitv/10009/3/2749d27c25d69f764c65a7f2679fff21.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=12683319 cache_size_total:72618977
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  3 13.0M    3  415k    0     0  4409k      0  0:00:03 --:--:--  0:00:03 4409k 67 13.0M   67 8998k    0     0  8225k      0  0:00:01  0:00:01 --:--:-- 8582k100 13.0M  100 13.0M    0     0  8195k      0  0:00:01  0:00:01 --:--:-- 8431k
-
-2017-04-14 14:10:33
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.203/package.cdn.box.xiaomi.com/mitv/10009/3/5bc8a8bcf2bdf12291dc1ba8ae4cf41e.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=13730158 cache_size_total:86349135
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 11 23.1M   11 2742k    0     0  2810k      0  0:00:08 --:--:--  0:00:08 2841k 20 23.1M   20 4924k    0     0  2496k      0  0:00:09  0:00:01  0:00:08 2511k 27 23.1M   27 6428k    0     0  2162k      0  0:00:10  0:00:02  0:00:08 2170k 31 23.1M   31 7586k    0     0  1909k      0  0:00:12  0:00:03  0:00:09 1914k 39 23.1M   39 9471k    0     0  1904k      0  0:00:12  0:00:04  0:00:08 1908k 49 23.1M   49 11.3M    0     0  1953k      0  0:00:12  0:00:05  0:00:07 1786k 59 23.1M   59 13.7M    0     0  2019k      0  0:00:11  0:00:06  0:00:05 1831k 74 23.1M   74 17.3M    0     0  2221k      0  0:00:10  0:00:07  0:00:03 2256k 75 23.1M   75 17.4M    0     0  2234k      0  0:00:10  0:00:08  0:00:02 2554k
-curl: (28) Operation timed out after 8000 milliseconds with 18327869 out of 24316166 bytes received
-
-2017-04-14 14:10:35
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.203/package.cdn.box.xiaomi.com/mitv/10009/3/ad7c335c5dd3d38b50005513e7cbafd9.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=24316166 cache_size_total:110665301
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 2935k  100 2935k    0     0  5093k      0 --:--:-- --:--:-- --:--:-- 5093k
-
-2017-04-14 14:10:43
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.203/appstore.cdn.pandora.xiaomi.com/mitv/10004/3/611ce2a73662f52e147230cf930f9379/app-selfrelease.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=3006271 cache_size_total:113671572
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 2304k  100 2304k    0     0  5410k      0 --:--:-- --:--:-- --:--:-- 5410k
-
-2017-04-14 14:10:44
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.203/package.cdn.box.xiaomi.com/mitv/10009/3/9940c337219aa32de894ddf00d399f61.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=2360083 cache_size_total:116031655
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  363k  100  363k    0     0  2347k      0 --:--:-- --:--:-- --:--:-- 2347k
-
-2017-04-14 14:10:45
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.202/package.cdn.box.xiaomi.com/mitv/10009/3/753275ed4c9551b5553afd6eca3a7c0d.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=372020 cache_size_total:116403675
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1859k  100 1859k    0     0  6237k      0 --:--:-- --:--:-- --:--:-- 6237k
-
-2017-04-14 14:10:45
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.202/package.cdn.box.xiaomi.com/mitv/10009/3/04601d53d526d7d6636bdb11d09b0d89.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=1904411 cache_size_total:118308086
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 77 2082k   77 1604k    0     0  7676k      0 --:--:-- --:--:-- --:--:-- 7676k100 2082k  100 2082k    0     0  8238k      0 --:--:-- --:--:-- --:--:-- 10.8M
-
-2017-04-14 14:11:14
-curl --connect-timeout 3 -m 8 -o test666 -L "http://117.144.234.233/youku/656E04CF9941825CF734E5136/030002010058EC5048ADDD07D2AC49E01D52CC-5AAE-E544-37FB-5C6A13B28BBA.flv?sid=04919704366781203966f&ctype=12&ccode=0401&duration=46&expire=18000&psid=6d763780c67e897dab3c9e47669001bc&ups_client_netip=112.16.69.44&ups_ts=1491970436&ups_userid=&utid=undefined&vid=XMjcwMTE1MDIzMg%3D%3D&vkey=A0345682e997b92370171c88d9b8398ec"  --user-agent "iphone"
-class=videocache category=1 cache_size=2132249 cache_size_total:2132249
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 84 6801k   84 5778k    0     0  7770k      0 --:--:-- --:--:-- --:--:-- 7770k100 6801k  100 6801k    0     0  8162k      0 --:--:-- --:--:-- --:--:-- 11.2M
-
-2017-04-14 14:11:14
-curl --connect-timeout 3 -m 8 -o test666 -L "http://61.160.204.42/youku/65762C847A33B825DD047754CE/03000201004CEE266BA22304B88896880022D1-1587-5D34-B0CB-51C81393D132.flv?sid=0491894826630129cdd22&ctype=12&ccode=0401&duration=235&expire=18000&psid=85c8ebb95148391ed45ecc96b86963c9&ups_client_netip=125.119.1.67&ups_ts=1491894826&ups_userid=&utid=5zxyEX+N9h0CAX13AUOpXMBi&vid=XMjA4MzM4Nzg0&vkey=Ac758465df7bb1e673f88dcdd06d1227a"  --user-agent "iphone"
-class=videocache category=1 cache_size=6965042 cache_size_total:9097291
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 17 2150k   17  369k    0     0   618k      0  0:00:03 --:--:--  0:00:03  618k100 2150k  100 2150k    0     0  2280k      0 --:--:-- --:--:-- --:--:-- 5147k
-
-2017-04-14 14:11:16
-curl --connect-timeout 3 -m 8 -o test666 -L "http://223.111.208.74/youku/69621787CD3381712DA512203/030002010058EB48EF02A007D2AC49EB7AC24F-2888-2E22-041C-43D1E16831C4.flv?sid=0491883627199103635c9_00&sign=b49a0927870bd0f7193b3ffcf8b1d4fd&ctype=10"  --user-agent "iphone"
-class=videocache category=1 cache_size=2201831 cache_size_total:11299122
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1823k  100 1823k    0     0  6024k      0 --:--:-- --:--:-- --:--:-- 6024k
-
-2017-04-14 14:11:17
-curl --connect-timeout 3 -m 8 -o test666 -L "http://58.216.104.80/youku/67774BC2EE54D8421F8C9A2EA9/03000201004D42DE24D6B20258FD6705DB7A5F-0C14-5456-62FE-2D43F3CCED4A.flv?sid=0491886713818122e1a6f&ctype=12&ccode=0401&duration=66&expire=18000&psid=d2ba49de07c9912fc16e926f1da9fd29&ups_client_netip=125.119.1.67&ups_ts=1491886713&ups_userid=&utid=5zxyEX%2BN9h0CAX13AUOpXMBi&vid=XMTE5NTU2NTc2&vkey=A3ec555da8a688e9fc26f98227eca042d"  --user-agent "iphone"
-class=videocache category=1 cache_size=1866955 cache_size_total:13166077
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 2677k  100 2677k    0     0  4521k      0 --:--:-- --:--:-- --:--:-- 4521k
-
-2017-04-14 14:11:17
-curl --connect-timeout 3 -m 8 -o test666 -L "http://122.246.0.47/youku/6566D38C114E84BE4F5CC296F/030008010058DE3143FADC003E88035C31D9EF-02F8-705C-1A4C-AEAC23BB1854.mp4?sid=049188641357215726188_00&sign=530f664e994c533fc179cd5d5b4bcf03&ctype=50"  --user-agent "iphone"
-class=videocache category=1 cache_size=2741606 cache_size_total:15907683
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0115   345  115   345    0     0  18508      0 --:--:-- --:--:-- --:--:-- 43125
-
-2017-04-14 14:11:18
-curl --connect-timeout 3 -m 8 -o test666 -L "http://111.1.56.171/youku/657217009D448721794EF3C1C/030008010058DD65B7BC252CF9A9F5D7CA2DE9-55C8-6C21-850B-A157667C9C74.mp4?sid=8491550949000512432a0_01&sign=e95ec047d18a8f399559589f36a5bce2&ctype=51"  --user-agent "iphone"
-class=videocache category=1 cache_size=2907739 cache_size_total:18815422
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0115   345  115   345    0     0  20886      0 --:--:-- --:--:-- --:--:-- 38333
-
-2017-04-14 14:11:19
-curl --connect-timeout 3 -m 8 -o test666 -L "http://112.17.4.43/youku/6971DC9DFF03574BD674C2857/030002030158D63FCC7761087AC09217E8CB16-CF54-428B-34AD-39CF7FA98352.flv?sid=0490697930624127c37a1&ctype=12&ccode=0401&duration=205&expire=18000&psid=b717554b21f8ddc901627906cda1ab6f&ups_client_netip=112.16.69.44&ups_ts=1490697930&ups_userid=&utid=pyphEaWYJ0YCAXAQRSz2zAbQ&vid=XMjY2MjA3MzU2OA%3D%3D&vkey=A20328ada17363e6a532bc1ddca6d53f9"  --user-agent "iphone"
-class=videocache category=1 cache_size=7782529 cache_size_total:26597951
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 94 1603k   94 1509k    0     0  6360k      0 --:--:-- --:--:-- --:--:-- 6360k100 1603k  100 1603k    0     0  6505k      0 --:--:-- --:--:-- --:--:-- 10.2M
-
-2017-04-14 14:11:19
-curl --connect-timeout 3 -m 8 -o test666 -L "http://111.1.56.178/youku/6572AC506323C71BCDA286BE5/030008010058D39F1141EE003E88030C033FC0-ECCC-BB82-AA9C-5B0BE20FC3D9.mp4?sid=049069535428512854367_00&sign=de90ad723e6d9dbb602e17339b4c569d&ctype=50"  --user-agent "iphone"
-class=videocache category=1 cache_size=1642398 cache_size_total:28240349
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1578k  100 1578k    0     0  6347k      0 --:--:-- --:--:-- --:--:-- 6347k
-
-2017-04-14 14:11:19
-curl --connect-timeout 3 -m 8 -o test666 -L "http://218.205.72.80/youku/67731CEC7B13B82FF0D9B72C47/030008010058C20F7E6D0D003E8803444C8F80-635D-6A22-831A-F03E78B4224D.mp4?sid=049069596288618861032_00&sign=a4cad6e1133a1f0f6258072ed6362063&ctype=50"  --user-agent "iphone"
-class=videocache category=1 cache_size=1616301 cache_size_total:29856650
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1608k  100 1608k    0     0  6662k      0 --:--:-- --:--:-- --:--:-- 6662k
-
-2017-04-14 14:11:20
-curl --connect-timeout 3 -m 8 -o test666 -L "http://112.17.4.16/youku/657349D84D53474A60C346EBB/030008010058CB4D4F9E52003E88033A9D298D-FC74-FCF4-D167-A8C797CC070A.mp4?sid=049069685315311539843_00&sign=c8e184cfd5227f015b1a73091b4ecfae&ctype=50"  --user-agent "iphone"
-class=videocache category=1 cache_size=1646877 cache_size_total:31503527
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 19 11.1M   19 2226k    0     0  4897k      0  0:00:02 --:--:--  0:00:02 4897k 84 11.1M   84 9598k    0     0  6601k      0  0:00:01  0:00:01 --:--:-- 7371k100 11.1M  100 11.1M    0     0  6482k      0  0:00:01  0:00:01 --:--:-- 7035k
-
-2017-04-14 14:13:29
-curl --connect-timeout 3 -m 8 -o test666 -L "http://wscont.apps.microsoft.com.edgesuite.net/winstore/OSUpgradeNotification/gwx/prod/ProdContent1f583ef9-07272016.cab"  --user-agent "windows"
-class=httpcache category=1 cache_size=11695948 cache_size_total:11695948
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 96 4171k   96 4007k    0     0  8524k      0 --:--:-- --:--:-- --:--:-- 8524k100 4171k  100 4171k    0     0  8560k      0 --:--:-- --:--:-- --:--:-- 9667k
-
-2017-04-14 14:13:31
-curl --connect-timeout 3 -m 8 -o test666 -L "http://122.228.214.22/dl.softmgr.qq.com/original/Development/fiddlersetup_4.6.20171.9220.exe?mkey=58e62b9a6e26e386&f=ad08&c=0&p=.exe"  --user-agent "windows"
-class=httpcache category=1 cache_size=4271928 cache_size_total:15967876
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  769k  100  769k    0     0  2944k      0 --:--:-- --:--:-- --:--:-- 2944k
-
-2017-04-14 14:13:31
-curl --connect-timeout 3 -m 8 -o test666 -L "http://liveupdate2.drivergenius.com/ftp_exe/file/intel_101277_64_314.exe"  --user-agent "windows"
-class=httpcache category=1 cache_size=788424 cache_size_total:16756300
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  526k  100  526k    0     0  3004k      0 --:--:-- --:--:-- --:--:-- 3004k
-
-2017-04-14 14:13:32
-curl --connect-timeout 3 -m 8 -o test666 -L "http://liveupdate2.drivergenius.com/ftp_exe/file/intel_mei_1015_10_64_1017.exe"  --user-agent "windows"
-class=httpcache category=1 cache_size=539472 cache_size_total:17295772
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 2390k  100 2390k    0     0  6775k      0 --:--:-- --:--:-- --:--:-- 6775k
-
-2017-04-14 14:13:32
-curl --connect-timeout 3 -m 8 -o test666 -L "http://wscont.apps.microsoft.com.edgesuite.net/winstore/OSUpgradeNotification/appraiser/2017_04_05_20_05_x64.cab"  --user-agent "windows"
-class=httpcache category=1 cache_size=2447785 cache_size_total:19743557
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  639k  100  639k    0     0  2266k      0 --:--:-- --:--:-- --:--:-- 2266k
-
-2017-04-14 14:13:33
-curl --connect-timeout 3 -m 8 -o test666 -L "http://dl.360safe.com/360speedldexexe_839890038cdd08394620e204887be20e_1.0.0.1030.cab"  --user-agent "windows"
-class=httpcache category=1 cache_size=654336 cache_size_total:20397893
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1179k  100 1179k    0     0  4813k      0 --:--:-- --:--:-- --:--:-- 4813k
-
-2017-04-14 14:13:33
-curl --connect-timeout 3 -m 8 -o test666 -L "http://dl.360safe.com/360speedldexe_bbfd8ff56d20a6baa94b3439a7e82123_3.1.2.1870.cab"  --user-agent "windows"
-class=httpcache category=1 cache_size=1207813 cache_size_total:21605706
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 73 6262k   73 4580k    0     0  8880k      0 --:--:-- --:--:-- --:--:-- 8880k100 6262k  100 6262k    0     0  9429k      0 --:--:-- --:--:-- --:--:-- 11.0M
-
-2017-04-14 14:13:34
-curl --connect-timeout 3 -m 8 -o test666 -L "http://tc.dlservice.microsoft.com/download/2/A/B/2ABD85CF-3E1E-41C2-9F11-B38397ABB527/Windows6.1-KB3167679-x64.msu"  --user-agent "windows"
-class=httpcache category=1 cache_size=6412594 cache_size_total:28018300
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1421k  100 1421k    0     0  5263k      0 --:--:-- --:--:-- --:--:-- 5263k
-
-2017-04-14 14:13:35
-curl --connect-timeout 3 -m 8 -o test666 -L "http://dl.360safe.com/sev3/sesafedll_0d58fef26dd79669e757fda8b28375ae_1.3.0.310.cab"  --user-agent "windows"
-class=httpcache category=1 cache_size=1455822 cache_size_total:29474122
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 55 1084k   55  602k    0     0  2657k      0 --:--:-- --:--:-- --:--:-- 2657k100 1084k  100 1084k    0     0  3973k      0 --:--:-- --:--:-- --:--:-- 10.2M
-
-2017-04-14 14:13:35
-curl --connect-timeout 3 -m 8 -o test666 -L "http://sw.bos.baidu.com/sw-search-sp/software/7124b290ad2d8/7z_16.4.0.0.exe"  --user-agent "windows"
-class=httpcache category=1 cache_size=1110564 cache_size_total:30584686
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 76 5564k   76 4233k    0     0  7916k      0 --:--:-- --:--:-- --:--:-- 7916k100 5564k  100 5564k    0     0  8499k      0 --:--:-- --:--:-- --:--:-- 10.9M
-
-2017-04-14 14:13:46
-curl --connect-timeout 3 -m 8 -o test666 -L "http://wsqncdn.miaopai.com/stream/dszoakUUT8bWl1r7FfaBaA__.mp4?ssig=77584bbc09c3a65ed6c62a2a8322fe67&time_stamp=1491912027934"  --user-agent "windows"
-class=videocache category=2 cache_size=5698559 cache_size_total:5698559
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 75 8306k   75 6263k    0     0  8922k      0 --:--:-- --:--:-- --:--:-- 8922k100 8306k  100 8306k    0     0  9353k      0 --:--:-- --:--:-- --:--:-- 10.7M
-
-2017-04-14 14:13:47
-curl --connect-timeout 3 -m 8 -o test666 -L "http://bsyqncdn.miaopai.com/stream/ykzTmvOQqRE9xRVwQNEEUg__.mp4?ssig=a953d093199e2a753dd6e5fbee1757df&time_stamp=1491911987294"  --user-agent "windows"
-class=videocache category=2 cache_size=8505537 cache_size_total:14204096
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1819k  100 1819k    0     0  5807k      0 --:--:-- --:--:-- --:--:-- 5807k
-
-2017-04-14 14:13:48
-curl --connect-timeout 3 -m 8 -o test666 -L "http://lxdqncdn.miaopai.com/stream/-A9LKs6s6Yjf9rvmBAHtK3Iy28CBf5Rv.mp4?ssig=65464c31dd8f6fcd792f57e4f3495c10&time_stamp=1491911962786"  --user-agent "windows"
-class=videocache category=2 cache_size=1863145 cache_size_total:16067241
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  3 5591k    3  181k    0     0  1120k      0  0:00:04 --:--:--  0:00:04 1120k100 5591k  100 5591k    0     0  7085k      0 --:--:-- --:--:-- --:--:-- 8629k
-
-2017-04-14 14:13:48
-curl --connect-timeout 3 -m 8 -o test666 -L "http://gslb.miaopai.com/stream/5X1y30sp83CG6XZY2PeQ4ZoUBNympY4E.mp4?ssig=6e8e12f8b5cc05d044848c957515223d&time_stamp=1491905380787&cookie_id=&vend=1&os=3&partner=1&platform=2&cookie_id=&refer=miaopai&scid=5X1y30sp83CG6XZY2PeQ4ZoUBNympY4E"  --user-agent "windows"
-class=videocache category=2 cache_size=5726190 cache_size_total:21793431
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  5 4617k    5  275k    0     0  1311k      0  0:00:03 --:--:--  0:00:03 1311k100 4617k  100 4617k    0     0  7519k      0 --:--:-- --:--:-- --:--:-- 10.5M
-
-2017-04-14 14:13:49
-curl --connect-timeout 3 -m 8 -o test666 -L "http://dlqncdn.miaopai.com/stream/MFMQCV-O8MnwjepC48itaK7U6DESa91w.mp4?ssig=fe948a6e8986ba98d5665b0c5114eb1a&time_stamp=1491564224832"  --user-agent "windows"
-class=videocache category=2 cache_size=4728130 cache_size_total:26521561
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 36 9261k   36 3379k    0     0  8121k      0  0:00:01 --:--:--  0:00:01 8121k100 9261k  100 9261k    0     0  9777k      0 --:--:-- --:--:-- --:--:-- 10.8M
-
-2017-04-14 14:13:50
-curl --connect-timeout 3 -m 8 -o test666 -L "http://bsyqncdn.miaopai.com/stream/aQiXkhNIzTf9~t8bTWDN~RW5-jZoUzCr.mp4?ssig=80cad0da5e9e7c2c4ab7703d8380f064&time_stamp=1491564069605"  --user-agent "windows"
-class=videocache category=2 cache_size=9483856 cache_size_total:36005417
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 21 9676k   21 2056k    0     0  6998k      0  0:00:01 --:--:--  0:00:01 6998k100 9676k  100 9676k    0     0  9979k      0 --:--:-- --:--:-- --:--:-- 11.0M
-
-2017-04-14 14:13:51
-curl --connect-timeout 3 -m 8 -o test666 -L "http://sjycdn.miaopai.com/stream/cGJUZjqIr41CQf1NHxz0Px3KP7KClReE.mp4?ssig=e4e0a71769104a6bea0c5a9fa1e2b09d&time_stamp=1491564268056"  --user-agent "windows"
-class=videocache category=2 cache_size=9909116 cache_size_total:45914533
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0 3365k    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 3365k  100 3365k    0     0  5383k      0 --:--:-- --:--:-- --:--:-- 7069k
-
-2017-04-14 14:13:52
-curl --connect-timeout 3 -m 8 -o test666 -L "http://wsqncdn.miaopai.com/stream/xKAMnd2CWJ4wbFJE-5qrf5GL07-bt0qK.mp4?ssig=95f8377f0fec16444e9af384526fee8c&time_stamp=1491561576515"  --user-agent "windows"
-class=videocache category=2 cache_size=3446065 cache_size_total:49360598
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 12 2394k   12  304k    0     0   966k      0  0:00:02 --:--:--  0:00:02  966k100 2394k  100 2394k    0     0  3850k      0 --:--:-- --:--:-- --:--:-- 6829k
-
-2017-04-14 14:13:53
-curl --connect-timeout 3 -m 8 -o test666 -L "http://gslb.miaopai.com/stream/ATfGEYIpzHdd8sJYYXgQbCnHE52Hd-~J.mp4?ssig=56c762749926f9a7c1c992d541a09a8a&time_stamp=1491033493904&cookie_id=58da06750f6ca&vend=1&os=3&partner=1&platform=2&cookie_id=&refer=miaopai&scid=ATfGEYIpzHdd8sJYYXgQbCnHE52Hd-%7EJ"  --user-agent "windows"
-class=videocache category=2 cache_size=2451706 cache_size_total:51812304
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  8 3695k    8  298k    0     0  1446k      0  0:00:02 --:--:--  0:00:02 1446k100 3695k  100 3695k    0     0  6205k      0 --:--:-- --:--:-- --:--:-- 8732k
-
-2017-04-14 14:14:06
-curl --connect-timeout 3 -m 8 -o test666 -L "http://us.sinaimg.cn/000u9RoIjx079VRagfXG01040100fSqN0k01.mp4?KID=unistore"  --user-agent "iphone"
-class=videocache category=14 cache_size=3784157 cache_size_total:3784157
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1877k  100 1877k    0     0  6207k      0 --:--:-- --:--:-- --:--:-- 6207k
-
-2017-04-14 14:14:07
-curl --connect-timeout 3 -m 8 -o test666 -L "http://us.sinaimg.cn/000u0ZZVjx079VHVNP6T0104010084490k01.mp4?KID=unistore"  --user-agent "iphone"
-class=videocache category=14 cache_size=1922257 cache_size_total:5706414
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 5882k  100 5882k    0     0  8706k      0 --:--:-- --:--:-- --:--:-- 8706k
-
-2017-04-14 14:14:07
-curl --connect-timeout 3 -m 8 -o test666 -L "http://edge.ivideo.sina.com.cn/141877554.hlv?KID=sina"  --user-agent "iphone"
-class=videocache category=14 cache_size=6023653 cache_size_total:11730067
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 5728k  100 5728k    0     0  7822k      0 --:--:-- --:--:-- --:--:-- 7822k
-
-2017-04-14 14:15:15
-curl --connect-timeout 3 -m 8 -o test666 -L "http://mirrors.aliyun.com/ubuntu/dists/trusty/universe/binary-i386/Packages.bz2"  --user-agent "windows"
-class=httpcache category=2 cache_size=5865806 cache_size_total:5865806
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 25 3993k   25 1020k    0     0  1000k      0  0:00:03  0:00:01  0:00:02 1065k 52 3993k   52 2112k    0     0   986k      0  0:00:04  0:00:02  0:00:02 1016k 78 3993k   78 3123k    0     0  1037k      0  0:00:03  0:00:03 --:--:-- 1059k100 3993k  100 3993k    0     0  1026k      0  0:00:03  0:00:03 --:--:-- 1043k
-
-2017-04-14 14:15:16
-curl --connect-timeout 3 -m 8 -o test666 -L "http://mirrors.aliyun.com/ubuntu/dists/trusty/universe/i18n/Translation-en.bz2"  --user-agent "windows"
-class=httpcache category=2 cache_size=4089144 cache_size_total:9954950
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 6249k  100 6249k    0     0  8731k      0 --:--:-- --:--:-- --:--:-- 8731k
-
-2017-04-14 14:15:20
-curl --connect-timeout 3 -m 8 -o test666 -L "http://mirrors.aliyun.com/ubuntu/dists/trusty/universe/source/Sources.bz2"  --user-agent "windows"
-class=httpcache category=2 cache_size=6398981 cache_size_total:16353931
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 7411k  100 7411k    0     0  9263k      0 --:--:-- --:--:-- --:--:-- 9263k
-
-2017-04-14 14:15:21
-curl --connect-timeout 3 -m 8 -o test666 -L "http://mirrors.aliyun.com/ubuntu/dists/trusty/universe/binary-amd64/Packages.gz"  --user-agent "windows"
-class=httpcache category=2 cache_size=7588885 cache_size_total:23942816
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0 1318k    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1318k  100 1318k    0     0  2316k      0 --:--:-- --:--:-- --:--:-- 6868k
-
-2017-04-14 14:15:22
-curl --connect-timeout 3 -m 8 -o test666 -L "http://mirrors.aliyun.com/ubuntu/dists/trusty/main/binary-amd64/Packages.bz2"  --user-agent "windows"
-class=httpcache category=2 cache_size=1350329 cache_size_total:25293145
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 42 5721k   42 2453k    0     0  6864k      0 --:--:-- --:--:-- --:--:-- 6864k100 5721k  100 5721k    0     0  8877k      0 --:--:-- --:--:-- --:--:-- 11.1M
-
-2017-04-14 14:15:23
-curl --connect-timeout 3 -m 8 -o test666 -L "http://mirrors.aliyun.com/ubuntu/dists/trusty/universe/binary-amd64/Packages.bz2"  --user-agent "windows"
-class=httpcache category=2 cache_size=5858915 cache_size_total:31152060
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1318k  100 1318k    0     0  5812k      0 --:--:-- --:--:-- --:--:-- 5812k
-
-2017-04-14 14:15:24
-curl --connect-timeout 3 -m 8 -o test666 -L "http://mirrors.163.com/ubuntu/dists/trusty/main/binary-amd64/Packages.bz2"  --user-agent "windows"
-class=httpcache category=2 cache_size=1350329 cache_size_total:32502389
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1316k  100 1316k    0     0  7291k      0 --:--:-- --:--:-- --:--:-- 7291k
-
-2017-04-14 14:15:24
-curl --connect-timeout 3 -m 8 -o test666 -L "http://mirrors.aliyun.com/ubuntu/dists/trusty/main/binary-i386/Packages.bz2"  --user-agent "windows"
-class=httpcache category=2 cache_size=1347897 cache_size_total:33850286
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 54 7739k   54 4188k    0     0  6443k      0  0:00:01 --:--:--  0:00:01 6443k100 7739k  100 7739k    0     0  8007k      0 --:--:-- --:--:-- --:--:-- 10.9M
-
-2017-04-14 14:15:25
-curl --connect-timeout 3 -m 8 -o test666 -L "http://mirrors.aliyun.com/ubuntu/dists/trusty/universe/source/Sources.gz"  --user-agent "windows"
-class=httpcache category=2 cache_size=7925687 cache_size_total:41775973
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  744k  100  744k    0     0  3790k      0 --:--:-- --:--:-- --:--:-- 3790k
-
-2017-04-14 14:15:26
-curl --connect-timeout 3 -m 8 -o test666 -L "http://mirrors.aliyun.com/ubuntu/dists/trusty/main/i18n/Translation-en.bz2"  --user-agent "windows"
-class=httpcache category=2 cache_size=762361 cache_size_total:42538334
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 10 35.8M   10 3874k    0     0  5638k      0  0:00:06 --:--:--  0:00:06 5638k 41 35.8M   41 14.7M    0     0  8936k      0  0:00:04  0:00:01  0:00:03 10.9M 72 35.8M   72 25.8M    0     0  9850k      0  0:00:03  0:00:02  0:00:01 11.0M100 35.8M  100 35.8M    0     0   9.9M      0  0:00:03  0:00:03 --:--:-- 11.0M
-
-2017-04-14 14:15:46
-curl --connect-timeout 3 -m 8 -o test666 -L "http://101.96.10.45/iosapps.itunes.apple.com/apple-assets-us-std-000001/Purple122/v4/5a/c0/2f/5ac02f7c-f748-cb8f-7981-015b16a37ce4/mzps.6122787777022921986.ipa?accessKey=1490776788_2224818939363484469_c8HaEp1STlhMjWlMxiIi8N3CRB8QhFje%2B6Pz0V%2BVUidwfxXXsJOi3CBa%2FXOFQ%2FLW9E55bcH%2BMGoBigNZmoVDWRZmRyVnpNw%2BiU3OA8dEu4lHC4stnaTqg5B%2BITkGIxNdfpdjH0gJxFthuS%2BPaHfIqDpEHGIK2m5UyXLUeaBafQoMBgiEy3db1Oog7iN6npTRTiuvNDD0fR5rrq%2B%2FvcOxIA%3D%3D"  --user-agent "windows"
-class=mobilecache category=1 cache_size=37597740 cache_size_total:37597740
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 10 42.2M   10 4459k    0     0  4823k      0  0:00:08 --:--:--  0:00:08 4823k 22 42.2M   22 9686k    0     0  5034k      0  0:00:08  0:00:01  0:00:07 5226k 33 42.2M   33 14.0M    0     0  4921k      0  0:00:08  0:00:02  0:00:06 4967k 42 42.2M   42 17.8M    0     0  4648k      0  0:00:09  0:00:03  0:00:06 4594k 50 42.2M   50 21.3M    0     0  4448k      0  0:00:09  0:00:04  0:00:05 4361k 58 42.2M   58 24.6M    0     0  4268k      0  0:00:10  0:00:05  0:00:05 4166k 67 42.2M   67 28.6M    0     0  4233k      0  0:00:10  0:00:06  0:00:04 3925k 76 42.2M   76 32.2M    0     0  4163k      0  0:00:10  0:00:07  0:00:03 3718k 77 42.2M   77 32.5M    0     0  4114k      0  0:00:10  0:00:08  0:00:02 3613k
-curl: (28) Operation timed out after 8000 milliseconds with 34130191 out of 44310992 bytes received
-
-2017-04-14 14:15:49
-curl --connect-timeout 3 -m 8 -o test666 -L "http://iosapps.itunes.apple.com/apple-assets-us-std-000001/Purple111/v4/bc/6d/47/bc6d4746-5918-3e7e-bf6d-aa49e91f5e90/mzps.2242344138408188097.ipa?accessKey=1492066105_7881074398953030348_Cc8if7eE0bABru7arq7iRZ39uuPrIRxN6cGd5fE8c92KR%2BNjgf0PF8ngZQPU6EqwiNw9%2Fff0Urkqz0SI3RtqVC0VBjK8uQR8pQoP3cUWy10eNJCwc3PclVy7aEkt84zBxnXQdSvQ2djGddE77%2FUhYhZT9T785xPBl5YAil%2Fe8MDzaQBvS%2FKKyF33fBpaB4anPvEiiGT5Da8sinfTeBgxiQ%3D%3D"  --user-agent "windows"
-class=mobilecache category=1 cache_size=44310992 cache_size_total:81908732
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 11 45.1M   11 5325k    0     0  9626k      0  0:00:04 --:--:--  0:00:04 9626k 36 45.1M   36 16.3M    0     0  10.5M      0  0:00:04  0:00:01  0:00:03 11.1M 60 45.1M   60 27.3M    0     0  10.7M      0  0:00:04  0:00:02  0:00:02 11.0M 85 45.1M   85 38.3M    0     0  10.7M      0  0:00:04  0:00:03  0:00:01 11.0M100 45.1M  100 45.1M    0     0  10.8M      0  0:00:04  0:00:04 --:--:-- 11.0M
-
-2017-04-14 14:15:58
-curl --connect-timeout 3 -m 8 -o test666 -L "http://112.17.2.226/iosapps.itunes.apple.com/apple-assets-us-std-000001/Purple122/v4/f3/6d/fe/f36dfeb0-ebaa-b305-1742-b7261497ab7e/mzps.3854438317151372999.ipa?accessKey=1492060495_912994917931165768_AWjH6%2Fycvf4ue6kR6yx4MM2uH3rAQH1PYF6dtYP%2FFvi5iJaBG9nVpwck7gxjjC%2Bb8xDqCUcNxI%2BTgKQz7elgCh74FtVBu2IPZW2IF%2F0HyYfRUlQmqDOU4FCphb1sMfklNJ5QRh284Voq%2FBeQomp7%2FdS0GT7j2mxmTM5TzYx5QA9YtTwGUFWyitqK611RCQoE&wsiphost=local"  --user-agent "windows"
-class=mobilecache category=1 cache_size=47290884 cache_size_total:129199616
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  4 23.5M    4  985k    0     0  5603k      0  0:00:04 --:--:--  0:00:04 5603k 49 23.5M   49 11.7M    0     0  10.0M      0  0:00:02  0:00:01  0:00:01 10.8M 97 23.5M   97 22.8M    0     0  10.5M      0  0:00:02  0:00:02 --:--:-- 10.9M100 23.5M  100 23.5M    0     0  10.5M      0  0:00:02  0:00:02 --:--:-- 10.9M
-
-2017-04-14 14:16:02
-curl --connect-timeout 3 -m 8 -o test666 -L "http://117.148.163.228/iosapps.itunes.apple.com/apple-assets-us-std-000001/Purple111/v4/91/c3/4c/91c34c02-14bd-70f6-894a-e37ae9fa353e/mzps.2393787387058038798.ipa?accessKey=1491991680_4303692362846330029_D9YZQHPkj3Z45ss49K84CuSksCfc0iQzZDcFaZQX9NA4emnBGnQc3CygUR%2BCMn83SW7AM%2BUte2lCMynU%2Fc982N7rkKFX%2FBzrFwLDcWEpCuuERCsBUhPsMd%2B0QKyvkjflvZstzaCtI1KU1U3MmF1f3EXmRlU3FLdPFuRGOY80x0msukt9f6GeOTNPOUJcLcAL1PIvXn2Du3v7TKWJ5KbCNw%3D%3D&wsiphost=ipdb"  --user-agent "windows"
-class=mobilecache category=1 cache_size=24672808 cache_size_total:153872424
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 11 48.4M   11 5723k    0     0  8277k      0  0:00:05 --:--:--  0:00:05 8277k 34 48.4M   34 16.7M    0     0   9.8M      0  0:00:04  0:00:01  0:00:03 11.1M 55 48.4M   55 27.1M    0     0  10.0M      0  0:00:04  0:00:02  0:00:02 10.7M 75 48.4M   75 36.3M    0     0   9.8M      0  0:00:04  0:00:03  0:00:01 10.2M 93 48.4M   93 45.1M    0     0  9861k      0  0:00:05  0:00:04  0:00:01  9.8M100 48.4M  100 48.4M    0     0  9891k      0  0:00:05  0:00:05 --:--:--  9.9M
-
-2017-04-14 14:16:04
-curl --connect-timeout 3 -m 8 -o test666 -L "http://iosapps.itunes.apple.com/apple-assets-us-std-000001/Purple111/v4/cc/1c/ad/cc1cad5e-83cb-d4e2-b0cb-ca0bd25d20e0/pre-thinned1045667172924523433.thinned.signed.dpkg.ipa?accessKey=1491755166_1577325739394282867_iG%2FyAmTQy46WJF9tDy3Rh3%2FlKhAPacbJNcp3GhpgsEbAb%2BBsYdean2ETBbHSdfLlO%2Bu58lHfj6bIjBM9%2FAm82UMHP7GVAxj0NJKd7580b%2BFxMMhKCA6aVy5vzCo0eNTidOi2vOtG7%2B8%2F%2BT6Kuy819H0k%2BMpEjzNE5udGbYVbufKplMfxbH3RResXR75rfAc0WcXDh%2BETFZJoaB59jl9IkDyZBOi%2BRLHGSUDSh1%2FdPPM%3D"  --user-agent "windows"
-class=mobilecache category=1 cache_size=50855362 cache_size_total:204727786
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  4 34.6M    4 1622k    0     0  3754k      0  0:00:09 --:--:--  0:00:09 3754k 19 34.6M   19 6814k    0     0  4778k      0  0:00:07  0:00:01  0:00:06 5218k 42 34.6M   42 14.6M    0     0  6193k      0  0:00:05  0:00:02  0:00:03 6719k 74 34.6M   74 25.6M    0     0  7677k      0  0:00:04  0:00:03  0:00:01 8242k100 34.6M  100 34.6M    0     0  8294k      0  0:00:04  0:00:04 --:--:-- 8804k
-
-2017-04-14 14:16:10
-curl --connect-timeout 3 -m 8 -o test666 -L "http://iosapps.itunes.apple.com/apple-assets-us-std-000001/Purple122/v4/74/5c/33/745c33d7-72b1-5e54-0111-917d27283fbc/mzps.6614098850762170637.ipa?accessKey=1491755188_500448026691342380_%2Bonedq4pz8Ze5ehraM%2F2%2BCiWvOt6XRpgbI8zbV3eXKVhCl6u8IH2g8fWSkB54JOp3n5CQ7NkeT%2BADchf50HQoPnITbpToyjHcML4ujkpASz%2FUPLtYfvHG780wwudh2reTjoR5gNkqhRc%2BEeSPuz%2BoLPbG6aCf3zI4Nj%2FD975ZaXVSDAleHpJ6sbrHISLYDB3"  --user-agent "windows"
-class=mobilecache category=1 cache_size=36364148 cache_size_total:241091934
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 15 40.5M   15 6361k    0     0  6959k      0  0:00:05 --:--:--  0:00:05 6959k 37 40.5M   37 15.0M    0     0  8068k      0  0:00:05  0:00:01  0:00:04 9081k 61 40.5M   61 24.9M    0     0  8765k      0  0:00:04  0:00:02  0:00:02 9591k 87 40.5M   87 35.5M    0     0  9316k      0  0:00:04  0:00:03  0:00:01  9.7M100 40.5M  100 40.5M    0     0  9493k      0  0:00:04  0:00:04 --:--:--  9.9M
-
-2017-04-14 14:16:14
-curl --connect-timeout 3 -m 8 -o test666 -L "http://iosapps.itunes.apple.com/apple-assets-us-std-000001/Purple122/v4/d2/9e/69/d29e69b0-7e6e-96c2-3132-49e30b294edf/pre-thinned7113400507223039498.thinned.signed.dpkg.ipa?accessKey=1491569196_772564713005993939_Ca1Nivpqsy458DBfGkPpu0PuSJazCLDiVZ9MwRox6HDaAj9VlGMKi4zUccwuolcoFPC30a3w4VxPIUG2MyCFoBRMuS61IKhkc8Es4BJijWtXsWcwT1ED5IyyYYrQVPjVcMSoN8XQGeoBnQ8se5oDY%2FRLmFTpE4cY91B2KdiVr%2BjMrIgENFzThb%2FpY6DfffFho%2F7bejXOv4AT2ckI0uuYpe0t65crKbdMpIOBfNDeMW8%3D"  --user-agent "windows"
-class=mobilecache category=1 cache_size=42495460 cache_size_total:283587394
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 35 5298k   35 1857k    0     0  5062k      0  0:00:01 --:--:--  0:00:01 5062k100 5298k  100 5298k    0     0  6338k      0 --:--:-- --:--:-- --:--:-- 7336k
-
-2017-04-14 14:16:19
-curl --connect-timeout 3 -m 8 -o test666 -L "http://iosapps.itunes.apple.com/apple-assets-us-std-000001/Purple111/v4/e1/46/0d/e1460de1-e33d-1e02-40ea-56c4e5404bf6/pre-thinned7205808538800367409.thinned.signed.dpkg.ipa?accessKey=1491572343_5230196163075141291_SrvLDE1Lc49x6jwqiTJtY5Lex052wxhZPBCMKzKy6lAdcanl0BP6HGU8n4%2FFjmCWDuCRklAtRYgxR7wd9OjzncAmEDlJWxFolHx9zjCna2sHOR7gE0vkPiieE0dlp18ZcY%2B%2Fc166e%2Bb8Xz7or7HIxnj0vB%2FCoZXjGsKvIqBPxiUZMpgUp27c3GH2JewAs6XoBgUIWS%2Fhs5naYbDNmuzikmk99CH1SqmApnLHnspi2ck%3D"  --user-agent "windows"
-class=mobilecache category=1 cache_size=5426142 cache_size_total:289013536
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  3 21.4M    3  745k    0     0  2277k      0  0:00:09 --:--:--  0:00:09 2277k 51 21.4M   51 10.9M    0     0  8486k      0  0:00:02  0:00:01  0:00:01 10.2M100 21.4M  100 21.4M    0     0  9679k      0  0:00:02  0:00:02 --:--:-- 10.6M
-
-2017-04-14 14:16:20
-curl --connect-timeout 3 -m 8 -o test666 -L "http://iosapps.itunes.apple.com/apple-assets-us-std-000001/Purple122/v4/65/fd/31/65fd313b-dd45-f539-d78c-a09e91d8f9ad/mzps.3519250905567074132.ipa?accessKey=1491704825_5545202176541911640_t4fTRtvkypwCPYc073Yiu%2FTOCo3cy67yo0Q8brx6pSTY%2F74m448B7bkqtcq7wEHiwlLzzI7au3zcfPNudKcW1heQo6%2FZ%2B70Ljwq1fHTose6vuIoaPtMZRcRNOiZXMAPhyzaR8cakqkGrFnODXlKdw%2B1bo%2B43HGEOqkdHFSZOegpIkiEpobdWcZdik9V5gqjiqcpWMDg6n88zdHgRjg0ANg%3D%3D"  --user-agent "windows"
-class=mobilecache category=1 cache_size=22530035 cache_size_total:311543571
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 30 24.3M   30 7709k    0     0  9190k      0  0:00:02 --:--:--  0:00:02 9190k 76 24.3M   76 18.6M    0     0  10.1M      0  0:00:02  0:00:01  0:00:01 11.0M100 24.3M  100 24.3M    0     0  10.2M      0  0:00:02  0:00:02 --:--:-- 10.9M
-
-2017-04-14 14:16:27
-curl --connect-timeout 3 -m 8 -o test666 -L "http://iosapps.itunes.apple.com/apple-assets-us-std-000001/Purple122/v4/58/71/4e/58714eaa-cb77-1a0f-355f-481007f4dff0/mzps.1443961476455193963.ipa?accessKey=1491704827_7957768391306397560_x%2B8ORyLJoJb0Lbl2rlRHPh8Gj2B6iuBB5G13N4fCUARp%2FYC3GK28C%2BwG%2Fyk5QxQ3LJ9aQGdMI%2F1f2wDFo4O3yBQ8h%2BECNSMKN44tw%2F9e5TNybq6b7RvwBrVKiZ6nbMR2iAJUV53E9ymJkSgvQjEpjhrXaiJaoFpRLA8xA6uboy2p%2Bpm%2B9wO%2FDjV63d3DHJCWZOFmWVoT5l5TzaGZIkIWcQ%3D%3D"  --user-agent "windows"
-class=mobilecache category=1 cache_size=25522073 cache_size_total:337065644
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 6360k  100 6360k    0     0  7265k      0 --:--:-- --:--:-- --:--:-- 7265k
-
-2017-04-14 14:16:48
-curl --connect-timeout 3 -m 8 -o test666 -L "http://61.155.167.15/data4/video09/2016/09/06/376035-102-009-210408.mp4?gid=MpicgVq18owp"  --user-agent "iphone"
-class=videocache category=4 cache_size=6513257 cache_size_total:6513257
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 3052k  100 3052k    0     0  6734k      0 --:--:-- --:--:-- --:--:-- 6734k
-
-2017-04-14 14:16:49
-curl --connect-timeout 3 -m 8 -o test666 -L "http://111.1.50.68/mp4files/4045000006DDE37B/112.25.55.75/data5/video09/2017/02/28/2297107-102-008-091055.mp4"  --user-agent "iphone"
-class=videocache category=4 cache_size=3125405 cache_size_total:9638662
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 15 10.4M   15 1657k    0     0  5652k      0  0:00:01 --:--:--  0:00:01 5652k100 10.4M  100 10.4M    0     0  9491k      0  0:00:01  0:00:01 --:--:-- 10.5M
-
-2017-04-14 14:16:50
-curl --connect-timeout 3 -m 8 -o test666 -L "http://61.155.167.19/data2/video09/2017/01/09/4473745-102-078-2057.mp4"  --user-agent "iphone"
-class=videocache category=4 cache_size=11001137 cache_size_total:20639799
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 76 9951k   76 7623k    0     0  7783k      0  0:00:01 --:--:--  0:00:01 7783k100 9951k  100 9951k    0     0  8396k      0  0:00:01  0:00:01 --:--:-- 11.0M
-
-2017-04-14 14:16:51
-curl --connect-timeout 3 -m 8 -o test666 -L "http://61.155.167.17/data1/video09/2016/12/12/4409505-102-008-0920.mp4?gid=X7Av4VseOJMb"  --user-agent "iphone"
-class=videocache category=4 cache_size=10189913 cache_size_total:30829712
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0  9.8M    0  2896    0     0  17414      0  0:09:53 --:--:--  0:09:53 17414 77  9.8M   77 7789k    0     0  6644k      0  0:00:01  0:00:01 --:--:-- 7740k100  9.8M  100  9.8M    0     0  7322k      0  0:00:01  0:00:01 --:--:-- 8324k
-
-2017-04-14 14:18:58
-curl --connect-timeout 3 -m 8 -o test666 -L "http://mov.bn.netease.com/open-movie/nos/flv/2017/01/06/SC95PEHD3_hd.flv"  --user-agent "windows"
-class=videocache category=5 cache_size=10334898 cache_size_total:10334898
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1435k  100 1435k    0     0  3601k      0 --:--:-- --:--:-- --:--:-- 3601k
-
-2017-04-14 14:19:00
-curl --connect-timeout 3 -m 8 -o test666 -L "http://overwatch.nos.netease.com/1/assets/video/Embers.mp4"  --user-agent "windows"
-class=videocache category=5 cache_size=1470251 cache_size_total:11805149
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 53 3028k   53 1633k    0     0  3105k      0 --:--:-- --:--:-- --:--:-- 3105k100 3028k  100 3028k    0     0  4585k      0 --:--:-- --:--:-- --:--:-- 10.1M
-
-2017-04-14 14:19:09
-curl --connect-timeout 3 -m 8 -o test666 -L "http://7xjbs3.com2.z0.glb.qiniucdn.com/QuantativeTradingStrategies.pdf"  --user-agent "iphone"
-class=httpcache category=3 cache_size=3100976 cache_size_total:3100976
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  781k  100  781k    0     0  4123k      0 --:--:-- --:--:-- --:--:-- 4123k
-
-2017-04-14 14:19:10
-curl --connect-timeout 3 -m 8 -o test666 -L "http://docs.linuxtone.org/ebooks/CDN/taobao_cdn.pdf"  --user-agent "iphone"
-class=httpcache category=3 cache_size=800419 cache_size_total:3901395
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  774k  100  774k    0     0  3989k      0 --:--:-- --:--:-- --:--:-- 3989k
-
-2017-04-14 14:19:10
-curl --connect-timeout 3 -m 8 -o test666 -L "http://neirong.funshion.com/download//fairyland/files/tk/12092/194125/Mermaid.dll"  --user-agent "iphone"
-class=httpcache category=3 cache_size=792864 cache_size_total:4694259
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  839k  100  839k    0     0  3028k      0 --:--:-- --:--:-- --:--:-- 3028k
-
-2017-04-14 14:19:10
-curl --connect-timeout 3 -m 8 -o test666 -L "http://neirong.funshion.com/download//fairyland/files/tk/11972/189859/Dolphin.dll"  --user-agent "iphone"
-class=httpcache category=3 cache_size=859424 cache_size_total:5553683
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  617k  100  617k    0     0  3383k      0 --:--:-- --:--:-- --:--:-- 3383k
-
-2017-04-14 14:19:11
-curl --connect-timeout 3 -m 8 -o test666 -L "http://neirong.funshion.com/download//fairyland/files/tk/12092/194116/FunWorks64.dll"  --user-agent "iphone"
-class=httpcache category=3 cache_size=632640 cache_size_total:6186323
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0  692k    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  692k  100  692k    0     0  3477k      0 --:--:-- --:--:-- --:--:-- 6719k
-
-2017-04-14 14:19:11
-curl --connect-timeout 3 -m 8 -o test666 -L "http://112.25.58.180/dlied6.qq.com/invc/xfspeed/qqpcmgr/module_update/fid1490002079_QMTrojanPlugin.dll.zip?mkey=58eb33c52c453685&f=5c12&c=0&p=.zip"  --user-agent "iphone"
-class=httpcache category=3 cache_size=708733 cache_size_total:6895056
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  692k  100  692k    0     0  4252k      0 --:--:-- --:--:-- --:--:-- 4252k
-
-2017-04-14 14:19:12
-curl --connect-timeout 3 -m 8 -o test666 -L "http://112.25.58.180/dlied6.qq.com/invc/xfspeed/qqpcmgr/module_update/fid1490002079_QMTrojanPlugin.dll.zip?mkey=58e756372c453685&f=ad0b&c=0&p=.zip"  --user-agent "iphone"
-class=httpcache category=3 cache_size=708733 cache_size_total:7603789
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0  691k    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  691k  100  691k    0     0  1336k      0 --:--:-- --:--:-- --:--:-- 4321k
-
-2017-04-14 14:19:12
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.198.236.15/dlied6.qq.com/invc/xfspeed/qqpcmgr/module_update/fid1489558795_QMTrojanPlugin.dll.zip"  --user-agent "iphone"
-class=httpcache category=3 cache_size=707972 cache_size_total:8311761
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1160k  100 1160k    0     0  3448k      0 --:--:-- --:--:-- --:--:-- 3448k
-
-2017-04-14 14:19:13
-curl --connect-timeout 3 -m 8 -o test666 -L "http://zj.offcn.com/dl/2017/0301/20170301114518510.xls"  --user-agent "iphone"
-class=httpcache category=3 cache_size=1187840 cache_size_total:9499601
-----------------------------------------------------------------------------------
-
-
-curl: (28) connect() timed out!
-
-2017-04-14 14:19:27
-curl --connect-timeout 3 -m 8 -o test666 -L "http://111.1.55.138/videos/other/20170330/7e/74/bd7d7ed0477f1d7b0cd377679d69702b.f4v?dis_k=010042f1de239377ccfef9bb87e19362d&dis_t=1491540807&dis_dz=CMNET-ZheJiang&dis_st=46&uuid=7010452c-58e71b47-f2&z=zhejiang_cmnet&src=iqiyi.com"  --user-agent "windows"
-class=videocache category=15 cache_size=1005082 cache_size_total:1005082
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1483k  100 1483k    0     0  4755k      0 --:--:-- --:--:-- --:--:-- 4755k
-
-2017-04-14 14:19:31
-curl --connect-timeout 3 -m 8 -o test666 -L "http://183.136.235.135/videos/other/20170323/69/e5/2ff41465cca6e5aa697597fc1d89eb0d.f4v?dis_k=0e50b56902bd7775734dd27a1d18aaa2b&dis_t=1491463432&dis_dz=CT-ZheJiang_HangZhou&dis_st=46&uuid=73c5266e-58e5ed08-b5&z=quzhou2_ct&src=iqiyi.com"  --user-agent "windows"
-class=videocache category=15 cache_size=1519613 cache_size_total:2524695
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  1 2071k    1 21900    0     0   145k      0  0:00:14 --:--:--  0:00:14  145k100 2071k  100 2071k    0     0  2725k      0 --:--:-- --:--:-- --:--:-- 3349k
-
-2017-04-14 14:19:31
-curl --connect-timeout 3 -m 8 -o test666 -L "http://183.134.64.18/videos/other/20170405/e1/69/29c5fc061b372ace534ff14341d5b641.f4v"  --user-agent "windows"
-class=videocache category=15 cache_size=2120794 cache_size_total:4645489
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1691k  100 1691k    0     0  8051k      0 --:--:-- --:--:-- --:--:-- 8051k
-
-2017-04-14 14:19:32
-curl --connect-timeout 3 -m 8 -o test666 -L "http://183.134.64.18/videos/other/20170406/3a/7a/9ac419943728fdc721681cb3f5d95304.f4v"  --user-agent "windows"
-class=videocache category=15 cache_size=1732502 cache_size_total:6377991
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1723k  100 1723k    0     0  3554k      0 --:--:-- --:--:-- --:--:-- 3787k
-
-2017-04-14 14:19:32
-curl --connect-timeout 3 -m 8 -o test666 -L "http://112.17.6.14/videos/other/20170317/9f/68/1e717b1d12dc0d3fde2c333f5b170e19.f4v?dis_k=0eb0f1eafad8b767008a0b4cb9bd67f42&dis_t=1491812061&dis_dz=CMNET-ZheJiang&dis_st=46&uuid=7010452c-58eb3edd-f4&z=hangzhou_cmnet&src=iqiyi.com"  --user-agent "windows"
-class=videocache category=15 cache_size=1764771 cache_size_total:8142762
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 45 2477k   45 1115k    0     0  6854k      0 --:--:-- --:--:-- --:--:-- 6854k100 2477k  100 2477k    0     0  8723k      0 --:--:-- --:--:-- --:--:-- 10.9M
-
-2017-04-14 14:19:33
-curl --connect-timeout 3 -m 8 -o test666 -L "http://218.205.82.138/videos/other/20170401/ae/e3/03d27c051928ac2e7150f68df7554d76.f4v"  --user-agent "windows"
-class=videocache category=15 cache_size=2537468 cache_size_total:10680230
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1994k  100 1994k    0     0  8338k      0 --:--:-- --:--:-- --:--:-- 8338k
-
-2017-04-14 14:19:34
-curl --connect-timeout 3 -m 8 -o test666 -L "http://218.205.82.138/videos/other/20170327/77/74/541ae878b06692d9567d48df7adec2ed.f4v"  --user-agent "windows"
-class=videocache category=15 cache_size=2042087 cache_size_total:12722317
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  1 1488k    1 30075    0     0  1056k      0  0:00:01 --:--:--  0:00:01 1545k 89 1488k   89 1333k    0     0  1297k      0  0:00:01  0:00:01 --:--:-- 1308k100 1488k  100 1488k    0     0  1366k      0  0:00:01  0:00:01 --:--:-- 1377k
-
-2017-04-14 14:19:34
-curl --connect-timeout 3 -m 8 -o test666 -L "http://218.205.82.138/videos/other/20170401/23/f5/40b854527bcabe9823e98bbbf251745c.f4v"  --user-agent "windows"
-class=videocache category=15 cache_size=1523731 cache_size_total:14246048
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1824k  100 1824k    0     0  9231k      0 --:--:-- --:--:-- --:--:-- 9231k
-
-2017-04-14 14:19:35
-curl --connect-timeout 3 -m 8 -o test666 -L "http://218.205.82.138/videos/other/20170317/5a/18/9a5926fc8f5e1e1b45b9e941135e3450.f4v"  --user-agent "windows"
-class=videocache category=15 cache_size=1868517 cache_size_total:16114565
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 2048k  100 2048k    0     0  7396k      0 --:--:-- --:--:-- --:--:-- 7396k
-
-2017-04-14 14:19:36
-curl --connect-timeout 3 -m 8 -o test666 -L "http://218.205.82.138/videos/other/20170329/9e/df/ecb4a9d1dccaf874305239e435b0e207.f4v"  --user-agent "windows"
-class=videocache category=15 cache_size=2097322 cache_size_total:18211887
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 38 26.7M   38 10.3M    0     0   9.9M      0  0:00:02  0:00:01  0:00:01  9.9M 79 26.7M   79 21.3M    0     0  10.4M      0  0:00:02  0:00:02 --:--:-- 11.0M100 26.7M  100 26.7M    0     0  10.5M      0  0:00:02  0:00:02 --:--:-- 11.0M
-
-2017-04-14 14:20:15
-curl --connect-timeout 3 -m 8 -o test666 -L "http://221.180.251.22/cdn/qiyiapp/20170329/143551/ap/qiyi81.apk?dis_k=0fa5dab167bd46c875953f3e75aa50330&dis_t=1492108833&dis_dz=CMNET-ZheJiang&dis_st=36"  --user-agent "windows"
-class=mobilecache category=0 cache_size=28095629 cache_size_total:28095629
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 11 19.8M   11 2427k    0     0  7729k      0  0:00:02 --:--:--  0:00:02 7729k 67 19.8M   67 13.3M    0     0  10.1M      0  0:00:01  0:00:01 --:--:-- 10.9M100 19.8M  100 19.8M    0     0  10.4M      0  0:00:01  0:00:01 --:--:-- 10.9M
-
-2017-04-14 14:20:18
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.202/package.box.xiaomi.com/mfsv2/download/fdsc3/p01ndUiMOtA4/l4mX5KbIG4dDK4.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=20783545 cache_size_total:48879174
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  5 10.5M    5  543k    0     0  2798k      0  0:00:03 --:--:--  0:00:03 3005k 33 10.5M   33 3587k    0     0  2990k      0  0:00:03  0:00:01  0:00:02 3022k 48 10.5M   48 5208k    0     0  2372k      0  0:00:04  0:00:02  0:00:02 2387k 57 10.5M   57 6214k    0     0  1944k      0  0:00:05  0:00:03  0:00:02 1952k 69 10.5M   69 7455k    0     0  1777k      0  0:00:06  0:00:04  0:00:02 1782k 76 10.5M   76 8307k    0     0  1599k      0  0:00:06  0:00:05  0:00:01 1552k 88 10.5M   88 9524k    0     0  1537k      0  0:00:07  0:00:06  0:00:01 1188k100 10.5M  100 10.5M    0     0  1562k      0  0:00:06  0:00:06 --:--:-- 1185k
-
-2017-04-14 14:20:20
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.203/package.box.xiaomi.com/mfsv2/file/fdsc3/p01HzVduGzUM/K9e5IpPUwDBR6t/master_2b2272eb.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=11056484 cache_size_total:59935658
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  2 12.0M    2  360k    0     0  3602k      0  0:00:03 --:--:--  0:00:03 3602k 62 12.0M   62 7795k    0     0  7120k      0  0:00:01  0:00:01 --:--:-- 7472k100 12.0M  100 12.0M    0     0  8248k      0  0:00:01  0:00:01 --:--:-- 8583k
-
-2017-04-14 14:20:27
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.202/package.cdn.box.xiaomi.com/mitv/10009/3/2749d27c25d69f764c65a7f2679fff21.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=12683319 cache_size_total:72618977
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 31 13.0M   31 4178k    0     0   9.8M      0  0:00:01 --:--:--  0:00:01  9.8M100 13.0M  100 13.0M    0     0  10.6M      0  0:00:01  0:00:01 --:--:-- 11.0M
-
-2017-04-14 14:20:29
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.203/package.cdn.box.xiaomi.com/mitv/10009/3/5bc8a8bcf2bdf12291dc1ba8ae4cf41e.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=13730158 cache_size_total:86349135
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 38 23.1M   38 9175k    0     0  10.3M      0  0:00:02 --:--:--  0:00:02 10.3M 85 23.1M   85 19.7M    0     0  10.6M      0  0:00:02  0:00:01  0:00:01 10.8M100 23.1M  100 23.1M    0     0  10.6M      0  0:00:02  0:00:02 --:--:-- 10.8M
-
-2017-04-14 14:20:30
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.203/package.cdn.box.xiaomi.com/mitv/10009/3/ad7c335c5dd3d38b50005513e7cbafd9.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=24316166 cache_size_total:110665301
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 2935k  100 2935k    0     0  7904k      0 --:--:-- --:--:-- --:--:-- 7904k
-
-2017-04-14 14:20:33
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.203/appstore.cdn.pandora.xiaomi.com/mitv/10004/3/611ce2a73662f52e147230cf930f9379/app-selfrelease.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=3006271 cache_size_total:113671572
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 2304k  100 2304k    0     0  2629k      0 --:--:-- --:--:-- --:--:-- 2661k
-
-2017-04-14 14:20:33
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.203/package.cdn.box.xiaomi.com/mitv/10009/3/9940c337219aa32de894ddf00d399f61.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=2360083 cache_size_total:116031655
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  363k  100  363k    0     0  2631k      0 --:--:-- --:--:-- --:--:-- 2631k
-
-2017-04-14 14:20:34
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.202/package.cdn.box.xiaomi.com/mitv/10009/3/753275ed4c9551b5553afd6eca3a7c0d.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=372020 cache_size_total:116403675
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1859k  100 1859k    0     0  5106k      0 --:--:-- --:--:-- --:--:-- 5106k
-
-2017-04-14 14:20:35
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.202/package.cdn.box.xiaomi.com/mitv/10009/3/04601d53d526d7d6636bdb11d09b0d89.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=1904411 cache_size_total:118308086
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 3043k  100 3043k    0     0  7138k      0 --:--:-- --:--:-- --:--:-- 7138k
-
-2017-04-14 14:20:53
-curl --connect-timeout 3 -m 8 -o test666 -L "http://static.flv.uuzuonline.com/usr/uploads/201605/20160526110512_60842.flv"  --user-agent "iphone"
-class=videocache category=6 cache_size=3116284 cache_size_total:3116284
-----------------------------------------------------------------------------------
-
-
-curl: (6) name lookup timed out
-
-2017-04-14 14:20:54
-curl --connect-timeout 3 -m 8 -o test666 -L "http://static.flv.uuzuonline.com/usr/uploads/201612/20161229171236_57556.flv"  --user-agent "iphone"
-class=videocache category=6 cache_size=3221547 cache_size_total:6337831
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 2473k  100 2473k    0     0  4188k      0 --:--:-- --:--:-- --:--:-- 4188k
-
-2017-04-14 14:20:57
-curl --connect-timeout 3 -m 8 -o test666 -L "http://static.flv.uuzuonline.com/usr/uploads/201610/20161019161044_24557.flv"  --user-agent "iphone"
-class=videocache category=6 cache_size=2532624 cache_size_total:8870455
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 23 1733k   23  398k    0     0  1532k      0  0:00:01 --:--:--  0:00:01 1532k100 1733k  100 1733k    0     0  4526k      0 --:--:-- --:--:-- --:--:-- 10.6M
-
-2017-04-14 14:20:58
-curl --connect-timeout 3 -m 8 -o test666 -L "http://static.flv.uuzuonline.com/usr/uploads/201604/20160429110406_83863.flv"  --user-agent "iphone"
-class=videocache category=6 cache_size=1774803 cache_size_total:10645258
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 2227k  100 2227k    0     0  7023k      0 --:--:-- --:--:-- --:--:-- 7023k
-
-2017-04-14 14:20:59
-curl --connect-timeout 3 -m 8 -o test666 -L "http://static.flv.uuzuonline.com/usr/uploads/201604/20160426120456_81881.flv"  --user-agent "iphone"
-class=videocache category=6 cache_size=2281413 cache_size_total:12926671
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 28 2032k   28  588k    0     0  3128k      0 --:--:-- --:--:-- --:--:-- 3128k100 2032k  100 2032k    0     0  5895k      0 --:--:-- --:--:-- --:--:-- 9258k
-
-2017-04-14 14:20:59
-curl --connect-timeout 3 -m 8 -o test666 -L "http://static.flv.uuzuonline.com/usr/uploads/201609/20160912090946_11762.flv"  --user-agent "iphone"
-class=videocache category=6 cache_size=2081335 cache_size_total:15008006
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 2133k  100 2133k    0     0  7523k      0 --:--:-- --:--:-- --:--:-- 7523k
-
-2017-04-14 14:21:00
-curl --connect-timeout 3 -m 8 -o test666 -L "http://static.flv.uuzuonline.com/usr/uploads/201702/20170214100223_58140.flv"  --user-agent "iphone"
-class=videocache category=6 cache_size=2184819 cache_size_total:17192825
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0 2129k    0 15731    0     0   222k      0  0:00:09 --:--:--  0:00:09 1097k100 2129k  100 2129k    0     0  4985k      0 --:--:-- --:--:-- --:--:-- 5724k
-
-2017-04-14 14:21:00
-curl --connect-timeout 3 -m 8 -o test666 -L "http://static.flv.uuzuonline.com/usr/uploads/201611/20161118181114_56814.flv"  --user-agent "iphone"
-class=videocache category=6 cache_size=2180738 cache_size_total:19373563
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1891k  100 1891k    0     0  7085k      0 --:--:-- --:--:-- --:--:-- 7085k
-
-2017-04-14 14:21:01
-curl --connect-timeout 3 -m 8 -o test666 -L "http://static.flv.uuzuonline.com/usr/uploads/201610/20161014171050_49128.flv"  --user-agent "iphone"
-class=videocache category=6 cache_size=1937309 cache_size_total:21310872
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 2153k  100 2153k    0     0  6682k      0 --:--:-- --:--:-- --:--:-- 6682k
-
-2017-04-14 14:21:01
-curl --connect-timeout 3 -m 8 -o test666 -L "http://static.flv.uuzuonline.com/usr/uploads/201606/20160628130610_97324.flv"  --user-agent "iphone"
-class=videocache category=6 cache_size=2205036 cache_size_total:23515908
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  859k  100  859k    0     0  3669k      0 --:--:-- --:--:-- --:--:-- 3669k
-
-2017-04-14 14:21:16
-curl --connect-timeout 3 -m 8 -o test666 -L "http://ssl.picyoung.com/about/log_3.png"  --user-agent "windows"
-class=httpcache category=4 cache_size=880407 cache_size_total:880407
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  629k  100  629k    0     0  1924k      0 --:--:-- --:--:-- --:--:-- 1924k
-
-2017-04-14 14:21:17
-curl --connect-timeout 3 -m 8 -o test666 -L "http://www.ccdi.gov.cn/images/bg.png"  --user-agent "windows"
-class=httpcache category=4 cache_size=644097 cache_size_total:1524504
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  665k  100  665k    0     0  1770k      0 --:--:-- --:--:-- --:--:-- 1770k
-
-2017-04-14 14:21:17
-curl --connect-timeout 3 -m 8 -o test666 -L "http://i5.hexun.com/2017-04-10/188788225.jpg"  --user-agent "windows"
-class=httpcache category=4 cache_size=681692 cache_size_total:2206196
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 12 4375k   12  527k    0     0  1533k      0  0:00:02 --:--:--  0:00:02 1533k100 4375k  100 4375k    0     0  4860k      0 --:--:-- --:--:-- --:--:-- 6932k
-
-2017-04-14 14:21:18
-curl --connect-timeout 3 -m 8 -o test666 -L "http://qnam.smzdm.com/201703/29/58db7c6b909d01215.jpg"  --user-agent "windows"
-class=httpcache category=4 cache_size=4480336 cache_size_total:6686532
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 27 2958k   27  825k    0     0  3019k      0 --:--:-- --:--:-- --:--:-- 3019k100 2958k  100 2958k    0     0  5132k      0 --:--:-- --:--:-- --:--:-- 7041k
-
-2017-04-14 14:21:19
-curl --connect-timeout 3 -m 8 -o test666 -L "http://qnam.smzdm.com/201703/30/58dc71f39910f1177.jpg"  --user-agent "windows"
-class=httpcache category=4 cache_size=3029793 cache_size_total:9716325
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1295k  100 1295k    0     0  3749k      0 --:--:-- --:--:-- --:--:-- 3749k
-
-2017-04-14 14:21:20
-curl --connect-timeout 3 -m 8 -o test666 -L "http://qnam.smzdm.com/201704/06/58e630995f98620.jpg"  --user-agent "windows"
-class=httpcache category=4 cache_size=1326526 cache_size_total:11042851
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1472k  100 1472k    0     0  3336k      0 --:--:-- --:--:-- --:--:-- 3336k
-
-2017-04-14 14:21:20
-curl --connect-timeout 3 -m 8 -o test666 -L "http://qnam.smzdm.com/201703/29/58dbb185222099014.jpg"  --user-agent "windows"
-class=httpcache category=4 cache_size=1507934 cache_size_total:12550785
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0 2014k    0  1448    0     0  10047      0  0:03:25 --:--:--  0:03:25 10047100 2014k  100 2014k    0     0  4051k      0 --:--:-- --:--:-- --:--:-- 5703k
-
-2017-04-14 14:21:21
-curl --connect-timeout 3 -m 8 -o test666 -L "http://qnam.smzdm.com/201703/27/58d8b01c1944b9775.jpg"  --user-agent "windows"
-class=httpcache category=4 cache_size=2063231 cache_size_total:14614016
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 37 2326k   37  883k    0     0  2486k      0 --:--:-- --:--:-- --:--:-- 2486k100 2326k  100 2326k    0     0  4458k      0 --:--:-- --:--:-- --:--:-- 8691k
-
-2017-04-14 14:21:22
-curl --connect-timeout 3 -m 8 -o test666 -L "http://a.zdmimg.com/201704/07/58e740f6de3627664.gif_c350.jpg"  --user-agent "windows"
-class=httpcache category=4 cache_size=2382479 cache_size_total:16996495
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1298k  100 1298k    0     0  3210k      0 --:--:-- --:--:-- --:--:-- 3210k
-
-2017-04-14 14:21:23
-curl --connect-timeout 3 -m 8 -o test666 -L "http://qnam.smzdm.com/201704/01/58df392831d444726.jpg"  --user-agent "windows"
-class=httpcache category=4 cache_size=1330119 cache_size_total:18326614
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0 4910k    0  1186    0     0   8053      0  0:10:24 --:--:--  0:10:24  8053100 4910k  100 4910k    0     0  6914k      0 --:--:-- --:--:-- --:--:-- 8735k
-
-2017-04-14 14:23:36
-curl --connect-timeout 3 -m 8 -o test666 -L "111.1.62.53/1/0/0/0ca8507c1d024dca5ece3c4ad766c75d.mp4?fpp.ver=1.3.0.21&key=205601c06403e9e5d67669e45c9da2ca&k=6994863ded5ef72425cc118f08fc2038-7499-1488443443%26bppcataid%3D38&type=web.fpp&vvid=47ac0bd0-aa34-6570-1b63-8d48c0c39414"  --user-agent "windows"
-class=videocache category=8 cache_size=5028082 cache_size_total:5028082
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  6 8919k    6  556k    0     0  3707k      0  0:00:02 --:--:--  0:00:02 3707k100 8919k  100 8919k    0     0  9428k      0 --:--:-- --:--:-- --:--:-- 10.2M
-
-2017-04-14 14:23:37
-curl --connect-timeout 3 -m 8 -o test666 -L "111.1.62.56/1/0/0/8ef1e78db5eb10dbdeade40ba54a8509.mp4?fpp.ver=1.3.0.21&key=193f6ff897c02b8d9dc5d0655e00739a&k=9f878d25b4d0fb1fc6df49f8e6d19dfd-5c38-1488443087%26bppcataid%3D38&type=web.fpp&vvid=03606ce8-cdd2-b5a4-7cb7-8d435267346e"  --user-agent "windows"
-class=videocache category=8 cache_size=9133072 cache_size_total:14161154
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 25 9240k   25 2334k    0     0  3768k      0  0:00:02 --:--:--  0:00:02 3768k100 9240k  100 9240k    0     0  7516k      0  0:00:01  0:00:01 --:--:-- 11.0M
-
-2017-04-14 14:23:41
-curl --connect-timeout 3 -m 8 -o test666 -L "http://d7.ixdzs.com/74/74334/74334.epub"  --user-agent "windows"
-class=httpcache category=0 cache_size=9462085 cache_size_total:9462085
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 85 3014k   85 2570k    0     0  8699k      0 --:--:-- --:--:-- --:--:-- 8699k100 3014k  100 3014k    0     0  8971k      0 --:--:-- --:--:-- --:--:-- 10.8M
-
-2017-04-14 14:23:43
-curl --connect-timeout 3 -m 8 -o test666 -L "http://218.205.83.144:8080/252/8/112/letv-uts/14/ver_00_22-1096117777-avc-1503165-aac-96000-294400-59309403-d31c05df143491645bac13993003a49c-1491949199366_mp4/ver_00_22_18_74_5_3086396_58001948_0.ts?crypt=90aa7f2e1318&b=1611&nlh=4096&nlt=60&bf=65&p2p=1&video_type=mp4&termid=1&tss=ios&platid=1&splatid=101&its=0&qos=2&fcheck=0&amltag=100&mltag=100&proxy=1862352322"  --user-agent "windows"
-class=videocache category=16 cache_size=3086396 cache_size_total:3086396
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0169   169  169   169    0     0   5341      0 --:--:-- --:--:-- --:--:-- 13000
-
-2017-04-14 14:23:43
-curl --connect-timeout 3 -m 8 -o test666 -L "http://218.205.83.148:8080/233/4/16/letv-uts/14/ver_00_22-1089958126-avc-1494988-aac-96000-291120-58351825-aa6877a900dfeb478143e9730f2e9a57-1489620883006_mp4/ver_00_22_2_2_1_631304_1276708_0.ts?crypt=9aa7f2e1293&b=1603&nlh=4096&nlt=60&bf=65&p2p=1&video_type=mp4&termid=1&tss=ios&platid=1&splatid=101&its=0&qos=2&fcheck=0&amltag=100&mltag=100&proxy=1862352331"  --user-agent "windows"
-class=videocache category=16 cache_size=631304 cache_size_total:3717700
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 3792k  100 3792k    0     0  6968k      0 --:--:-- --:--:-- --:--:-- 6968k
-
-2017-04-14 14:23:44
-curl --connect-timeout 3 -m 8 -o test666 -L "http://218.205.83.144:8080/252/8/112/letv-uts/14/ver_00_22-1096117777-avc-1503165-aac-96000-294400-59309403-d31c05df143491645bac13993003a49c-1491949199366_mp4/ver_00_22_7_21_4_3883704_15265600_0.ts?crypt=90aa7f2e1318&b=1611&nlh=4096&nlt=60&bf=65&p2p=1&video_type=mp4&termid=1&tss=ios&platid=1&splatid=101&its=0&qos=2&fcheck=0&amltag=100&mltag=100&proxy=1862352322"  --user-agent "windows"
-class=videocache category=16 cache_size=3883704 cache_size_total:7601404
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 3066k  100 3066k    0     0  5759k      0 --:--:-- --:--:-- --:--:-- 5759k
-
-2017-04-14 14:23:44
-curl --connect-timeout 3 -m 8 -o test666 -L "http://218.205.83.144:8080/252/8/112/letv-uts/14/ver_00_22-1096117777-avc-1503165-aac-96000-294400-59309403-d31c05df143491645bac13993003a49c-1491949199366_mp4/ver_00_22_17_70_4_3139976_54861972_0.ts?crypt=90aa7f2e1318&b=1611&nlh=4096&nlt=60&bf=65&p2p=1&video_type=mp4&termid=1&tss=ios&platid=1&splatid=101&its=0&qos=2&fcheck=0&amltag=100&mltag=100&proxy=1862352322"  --user-agent "windows"
-class=videocache category=16 cache_size=3139976 cache_size_total:10741380
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0169   169  169   169    0     0   7415      0 --:--:-- --:--:-- --:--:-- 21125
-
-2017-04-14 14:23:45
-curl --connect-timeout 3 -m 8 -o test666 -L "http://218.205.83.144:8080/252/8/112/letv-uts/14/ver_00_22-1096117777-avc-1503165-aac-96000-294400-59309403-d31c05df143491645bac13993003a49c-1491949199366_mp4/ver_00_22_9_29_5_4012484_22794436_0.ts?crypt=90aa7f2e1318&b=1611&nlh=4096&nlt=60&bf=65&p2p=1&video_type=mp4&termid=1&tss=ios&platid=1&splatid=101&its=0&qos=2&fcheck=0&amltag=100&mltag=100&proxy=1862352322"  --user-agent "windows"
-class=videocache category=16 cache_size=4012484 cache_size_total:14753864
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0169   169  169   169    0     0   5076      0 --:--:-- --:--:-- --:--:-- 24142
-
-2017-04-14 14:23:45
-curl --connect-timeout 3 -m 8 -o test666 -L "http://218.205.83.148:8080/233/4/16/letv-uts/14/ver_00_22-1089958126-avc-1494988-aac-96000-291120-58351825-aa6877a900dfeb478143e9730f2e9a57-1489620883006_mp4/ver_00_22_1_1_1_932480_344228_0.ts?crypt=9aa7f2e1293&b=1603&nlh=4096&nlt=60&bf=65&p2p=1&video_type=mp4&termid=1&tss=ios&platid=1&splatid=101&its=0&qos=2&fcheck=0&amltag=100&mltag=100&proxy=1862352331"  --user-agent "windows"
-class=videocache category=16 cache_size=932480 cache_size_total:15686344
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0169   169  169   169    0     0   6458      0 --:--:-- --:--:-- --:--:-- 18777
-
-2017-04-14 14:23:46
-curl --connect-timeout 3 -m 8 -o test666 -L "http://218.205.83.148:8080/233/4/16/letv-uts/14/ver_00_22-1089958126-avc-1494988-aac-96000-291120-58351825-aa6877a900dfeb478143e9730f2e9a57-1489620883006_mp4/ver_00_22_0_0_1_344228_0_0.ts?crypt=9aa7f2e1293&b=1603&nlh=4096&nlt=60&bf=65&p2p=1&video_type=mp4&termid=1&tss=ios&platid=1&splatid=101&its=0&qos=2&fcheck=0&amltag=100&mltag=100&proxy=1862352331"  --user-agent "windows"
-class=videocache category=16 cache_size=344228 cache_size_total:16030572
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 62 1071k   62  674k    0     0  2905k      0 --:--:-- --:--:-- --:--:-- 2905k100 1071k  100 1071k    0     0  3668k      0 --:--:-- --:--:-- --:--:-- 6727k
-
-2017-04-14 14:23:46
-curl --connect-timeout 3 -m 8 -o test666 -L "http://218.205.83.144:8080/252/8/112/letv-uts/14/ver_00_22-1096117777-avc-1503165-aac-96000-294400-59309403-d31c05df143491645bac13993003a49c-1491949199366_mp4/ver_00_22_19_79_3_1097168_61088344_0.ts?crypt=90aa7f2e1318&b=1611&nlh=4096&nlt=60&bf=65&p2p=1&video_type=mp4&termid=1&tss=ios&platid=1&splatid=101&its=0&qos=2&fcheck=0&amltag=100&mltag=100&proxy=1862352322"  --user-agent "windows"
-class=videocache category=16 cache_size=1097168 cache_size_total:17127740
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0169   169  169   169    0     0   5990      0 --:--:-- --:--:-- --:--:-- 14083
-
-2017-04-14 14:23:47
-curl --connect-timeout 3 -m 8 -o test666 -L "http://218.205.83.144:8080/252/8/112/letv-uts/14/ver_00_22-1096117777-avc-1503165-aac-96000-294400-59309403-d31c05df143491645bac13993003a49c-1491949199366_mp4/ver_00_22_15_62_4_4587200_46106248_0.ts?crypt=90aa7f2e1318&b=1611&nlh=4096&nlt=60&bf=65&p2p=1&video_type=mp4&termid=1&tss=ios&platid=1&splatid=101&its=0&qos=2&fcheck=0&amltag=100&mltag=100&proxy=1862352322"  --user-agent "windows"
-class=videocache category=16 cache_size=4587200 cache_size_total:21714940
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0169   169  169   169    0     0  10776      0 --:--:-- --:--:-- --:--:-- 21125
-
-2017-04-14 14:23:52
-curl --connect-timeout 3 -m 8 -o test666 -L "http://218.205.83.144:8080/252/8/112/letv-uts/14/ver_00_22-1096117777-avc-1503165-aac-96000-294400-59309403-d31c05df143491645bac13993003a49c-1491949199366_mp4/ver_00_22_10_34_5_5135220_26806920_0.ts?crypt=90aa7f2e1318&b=1611&nlh=4096&nlt=60&bf=65&p2p=1&video_type=mp4&termid=1&tss=ios&platid=1&splatid=101&its=0&qos=2&fcheck=0&amltag=100&mltag=100&proxy=1862352322"  --user-agent "windows"
-class=videocache category=16 cache_size=5135220 cache_size_total:26850160
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 31 11.1M   31 3610k    0     0  8460k      0  0:00:01 --:--:--  0:00:01 8460k100 11.1M  100 11.1M    0     0   9.9M      0  0:00:01  0:00:01 --:--:-- 11.0M
-
-2017-04-14 14:25:15
-curl --connect-timeout 3 -m 8 -o test666 -L "http://wscont.apps.microsoft.com.edgesuite.net/winstore/OSUpgradeNotification/gwx/prod/ProdContent1f583ef9-07272016.cab"  --user-agent "windows"
-class=httpcache category=1 cache_size=11695948 cache_size_total:11695948
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 19 4171k   19  820k    0     0  5520k      0 --:--:-- --:--:-- --:--:-- 5520k100 4171k  100 4171k    0     0  9341k      0 --:--:-- --:--:-- --:--:-- 10.9M
-
-2017-04-14 14:25:16
-curl --connect-timeout 3 -m 8 -o test666 -L "http://122.228.214.22/dl.softmgr.qq.com/original/Development/fiddlersetup_4.6.20171.9220.exe?mkey=58e62b9a6e26e386&f=ad08&c=0&p=.exe"  --user-agent "windows"
-class=httpcache category=1 cache_size=4271928 cache_size_total:15967876
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  769k  100  769k    0     0  3469k      0 --:--:-- --:--:-- --:--:-- 3469k
-
-2017-04-14 14:25:17
-curl --connect-timeout 3 -m 8 -o test666 -L "http://liveupdate2.drivergenius.com/ftp_exe/file/intel_101277_64_314.exe"  --user-agent "windows"
-class=httpcache category=1 cache_size=788424 cache_size_total:16756300
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  8  526k    8 44888    0     0   356k      0  0:00:01 --:--:--  0:00:01  356k100  526k  100  526k    0     0  2759k      0 --:--:-- --:--:-- --:--:-- 7208k
-
-2017-04-14 14:25:17
-curl --connect-timeout 3 -m 8 -o test666 -L "http://liveupdate2.drivergenius.com/ftp_exe/file/intel_mei_1015_10_64_1017.exe"  --user-agent "windows"
-class=httpcache category=1 cache_size=539472 cache_size_total:17295772
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 2390k  100 2390k    0     0  6474k      0 --:--:-- --:--:-- --:--:-- 6474k
-
-2017-04-14 14:25:17
-curl --connect-timeout 3 -m 8 -o test666 -L "http://wscont.apps.microsoft.com.edgesuite.net/winstore/OSUpgradeNotification/appraiser/2017_04_05_20_05_x64.cab"  --user-agent "windows"
-class=httpcache category=1 cache_size=2447785 cache_size_total:19743557
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  639k  100  639k    0     0  3271k      0 --:--:-- --:--:-- --:--:-- 3271k
-
-2017-04-14 14:25:18
-curl --connect-timeout 3 -m 8 -o test666 -L "http://dl.360safe.com/360speedldexexe_839890038cdd08394620e204887be20e_1.0.0.1030.cab"  --user-agent "windows"
-class=httpcache category=1 cache_size=654336 cache_size_total:20397893
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1179k  100 1179k    0     0  4881k      0 --:--:-- --:--:-- --:--:-- 4881k
-
-2017-04-14 14:25:18
-curl --connect-timeout 3 -m 8 -o test666 -L "http://dl.360safe.com/360speedldexe_bbfd8ff56d20a6baa94b3439a7e82123_3.1.2.1870.cab"  --user-agent "windows"
-class=httpcache category=1 cache_size=1207813 cache_size_total:21605706
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 12 6262k   12  755k    0     0  1845k      0  0:00:03 --:--:--  0:00:03 1845k 77 6262k   77 4831k    0     0  3428k      0  0:00:01  0:00:01 --:--:-- 4076k100 6262k  100 6262k    0     0  3667k      0  0:00:01  0:00:01 --:--:-- 4242k
-
-2017-04-14 14:25:19
-curl --connect-timeout 3 -m 8 -o test666 -L "http://tc.dlservice.microsoft.com/download/2/A/B/2ABD85CF-3E1E-41C2-9F11-B38397ABB527/Windows6.1-KB3167679-x64.msu"  --user-agent "windows"
-class=httpcache category=1 cache_size=6412594 cache_size_total:28018300
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1421k  100 1421k    0     0  5236k      0 --:--:-- --:--:-- --:--:-- 5236k
-
-2017-04-14 14:25:21
-curl --connect-timeout 3 -m 8 -o test666 -L "http://dl.360safe.com/sev3/sesafedll_0d58fef26dd79669e757fda8b28375ae_1.3.0.310.cab"  --user-agent "windows"
-class=httpcache category=1 cache_size=1455822 cache_size_total:29474122
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1084k  100 1084k    0     0  4193k      0 --:--:-- --:--:-- --:--:-- 4193k
-
-2017-04-14 14:25:21
-curl --connect-timeout 3 -m 8 -o test666 -L "http://sw.bos.baidu.com/sw-search-sp/software/7124b290ad2d8/7z_16.4.0.0.exe"  --user-agent "windows"
-class=httpcache category=1 cache_size=1110564 cache_size_total:30584686
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 18 35.8M   18 6636k    0     0  7405k      0  0:00:04 --:--:--  0:00:04 7405k 47 35.8M   47 17.0M    0     0  9228k      0  0:00:03  0:00:01  0:00:02 10.6M 77 35.8M   77 27.7M    0     0  9801k      0  0:00:03  0:00:02  0:00:01 10.6M100 35.8M  100 35.8M    0     0  9830k      0  0:00:03  0:00:03 --:--:-- 10.3M
-
-2017-04-14 14:25:44
-curl --connect-timeout 3 -m 8 -o test666 -L "http://101.96.10.45/iosapps.itunes.apple.com/apple-assets-us-std-000001/Purple122/v4/5a/c0/2f/5ac02f7c-f748-cb8f-7981-015b16a37ce4/mzps.6122787777022921986.ipa?accessKey=1490776788_2224818939363484469_c8HaEp1STlhMjWlMxiIi8N3CRB8QhFje%2B6Pz0V%2BVUidwfxXXsJOi3CBa%2FXOFQ%2FLW9E55bcH%2BMGoBigNZmoVDWRZmRyVnpNw%2BiU3OA8dEu4lHC4stnaTqg5B%2BITkGIxNdfpdjH0gJxFthuS%2BPaHfIqDpEHGIK2m5UyXLUeaBafQoMBgiEy3db1Oog7iN6npTRTiuvNDD0fR5rrq%2B%2FvcOxIA%3D%3D"  --user-agent "windows"
-class=mobilecache category=1 cache_size=37597740 cache_size_total:37597740
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 17 42.2M   17 7613k    0     0  8161k      0  0:00:05 --:--:--  0:00:05 8161k 41 42.2M   41 17.6M    0     0  9372k      0  0:00:04  0:00:01  0:00:03 10.2M 65 42.2M   65 27.7M    0     0  9693k      0  0:00:04  0:00:02  0:00:02 10.1M 91 42.2M   91 38.6M    0     0   9.8M      0  0:00:04  0:00:03  0:00:01 10.4M100 42.2M  100 42.2M    0     0   9.9M      0  0:00:04  0:00:04 --:--:-- 10.4M
-
-2017-04-14 14:25:48
-curl --connect-timeout 3 -m 8 -o test666 -L "http://iosapps.itunes.apple.com/apple-assets-us-std-000001/Purple111/v4/bc/6d/47/bc6d4746-5918-3e7e-bf6d-aa49e91f5e90/mzps.2242344138408188097.ipa?accessKey=1492066105_7881074398953030348_Cc8if7eE0bABru7arq7iRZ39uuPrIRxN6cGd5fE8c92KR%2BNjgf0PF8ngZQPU6EqwiNw9%2Fff0Urkqz0SI3RtqVC0VBjK8uQR8pQoP3cUWy10eNJCwc3PclVy7aEkt84zBxnXQdSvQ2djGddE77%2FUhYhZT9T785xPBl5YAil%2Fe8MDzaQBvS%2FKKyF33fBpaB4anPvEiiGT5Da8sinfTeBgxiQ%3D%3D"  --user-agent "windows"
-class=mobilecache category=1 cache_size=44310992 cache_size_total:81908732
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   704  100   704    0     0  11511      0 --:--:-- --:--:-- --:--:-- 14080
-
-2017-04-14 14:25:58
-curl --connect-timeout 3 -m 8 -o test666 -L "http://112.17.2.226/iosapps.itunes.apple.com/apple-assets-us-std-000001/Purple122/v4/f3/6d/fe/f36dfeb0-ebaa-b305-1742-b7261497ab7e/mzps.3854438317151372999.ipa?accessKey=1492060495_912994917931165768_AWjH6%2Fycvf4ue6kR6yx4MM2uH3rAQH1PYF6dtYP%2FFvi5iJaBG9nVpwck7gxjjC%2Bb8xDqCUcNxI%2BTgKQz7elgCh74FtVBu2IPZW2IF%2F0HyYfRUlQmqDOU4FCphb1sMfklNJ5QRh284Voq%2FBeQomp7%2FdS0GT7j2mxmTM5TzYx5QA9YtTwGUFWyitqK611RCQoE&wsiphost=local"  --user-agent "windows"
-class=mobilecache category=1 cache_size=47290884 cache_size_total:129199616
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   705  100   705    0     0  12965      0 --:--:-- --:--:-- --:--:-- 12965
-
-2017-04-14 14:25:58
-curl --connect-timeout 3 -m 8 -o test666 -L "http://117.148.163.228/iosapps.itunes.apple.com/apple-assets-us-std-000001/Purple111/v4/91/c3/4c/91c34c02-14bd-70f6-894a-e37ae9fa353e/mzps.2393787387058038798.ipa?accessKey=1491991680_4303692362846330029_D9YZQHPkj3Z45ss49K84CuSksCfc0iQzZDcFaZQX9NA4emnBGnQc3CygUR%2BCMn83SW7AM%2BUte2lCMynU%2Fc982N7rkKFX%2FBzrFwLDcWEpCuuERCsBUhPsMd%2B0QKyvkjflvZstzaCtI1KU1U3MmF1f3EXmRlU3FLdPFuRGOY80x0msukt9f6GeOTNPOUJcLcAL1PIvXn2Du3v7TKWJ5KbCNw%3D%3D&wsiphost=ipdb"  --user-agent "windows"
-class=mobilecache category=1 cache_size=24672808 cache_size_total:153872424
-----------------------------------------------------------------------------------
-
-
-curl: (6) name lookup timed out
-
-2017-04-14 14:25:58
-curl --connect-timeout 3 -m 8 -o test666 -L "http://iosapps.itunes.apple.com/apple-assets-us-std-000001/Purple111/v4/cc/1c/ad/cc1cad5e-83cb-d4e2-b0cb-ca0bd25d20e0/pre-thinned1045667172924523433.thinned.signed.dpkg.ipa?accessKey=1491755166_1577325739394282867_iG%2FyAmTQy46WJF9tDy3Rh3%2FlKhAPacbJNcp3GhpgsEbAb%2BBsYdean2ETBbHSdfLlO%2Bu58lHfj6bIjBM9%2FAm82UMHP7GVAxj0NJKd7580b%2BFxMMhKCA6aVy5vzCo0eNTidOi2vOtG7%2B8%2F%2BT6Kuy819H0k%2BMpEjzNE5udGbYVbufKplMfxbH3RResXR75rfAc0WcXDh%2BETFZJoaB59jl9IkDyZBOi%2BRLHGSUDSh1%2FdPPM%3D"  --user-agent "windows"
-class=mobilecache category=1 cache_size=50855362 cache_size_total:204727786
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 19 34.6M   19 6989k    0     0  8757k      0  0:00:04 --:--:--  0:00:04 8757k 50 34.6M   50 17.3M    0     0  9901k      0  0:00:03  0:00:01  0:00:02 10.5M 80 34.6M   80 27.9M    0     0   9.9M      0  0:00:03  0:00:02  0:00:01 10.5M100 34.6M  100 34.6M    0     0  10.1M      0  0:00:03  0:00:03 --:--:-- 10.5M
-
-2017-04-14 14:26:01
-curl --connect-timeout 3 -m 8 -o test666 -L "http://iosapps.itunes.apple.com/apple-assets-us-std-000001/Purple122/v4/74/5c/33/745c33d7-72b1-5e54-0111-917d27283fbc/mzps.6614098850762170637.ipa?accessKey=1491755188_500448026691342380_%2Bonedq4pz8Ze5ehraM%2F2%2BCiWvOt6XRpgbI8zbV3eXKVhCl6u8IH2g8fWSkB54JOp3n5CQ7NkeT%2BADchf50HQoPnITbpToyjHcML4ujkpASz%2FUPLtYfvHG780wwudh2reTjoR5gNkqhRc%2BEeSPuz%2BoLPbG6aCf3zI4Nj%2FD975ZaXVSDAleHpJ6sbrHISLYDB3"  --user-agent "windows"
-class=mobilecache category=1 cache_size=36364148 cache_size_total:241091934
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 25 40.5M   25 10.1M    0     0  9792k      0  0:00:04  0:00:01  0:00:03 9792k 50 40.5M   50 20.4M    0     0   9.9M      0  0:00:04  0:00:02  0:00:02 10.2M 75 40.5M   75 30.7M    0     0  10.0M      0  0:00:04  0:00:03  0:00:01 10.3M 99 40.5M   99 40.1M    0     0   9.8M      0  0:00:04  0:00:04 --:--:-- 10.0M100 40.5M  100 40.5M    0     0   9.8M      0  0:00:04  0:00:04 --:--:-- 10.0M
-
-2017-04-14 14:26:05
-curl --connect-timeout 3 -m 8 -o test666 -L "http://iosapps.itunes.apple.com/apple-assets-us-std-000001/Purple122/v4/d2/9e/69/d29e69b0-7e6e-96c2-3132-49e30b294edf/pre-thinned7113400507223039498.thinned.signed.dpkg.ipa?accessKey=1491569196_772564713005993939_Ca1Nivpqsy458DBfGkPpu0PuSJazCLDiVZ9MwRox6HDaAj9VlGMKi4zUccwuolcoFPC30a3w4VxPIUG2MyCFoBRMuS61IKhkc8Es4BJijWtXsWcwT1ED5IyyYYrQVPjVcMSoN8XQGeoBnQ8se5oDY%2FRLmFTpE4cY91B2KdiVr%2BjMrIgENFzThb%2FpY6DfffFho%2F7bejXOv4AT2ckI0uuYpe0t65crKbdMpIOBfNDeMW8%3D"  --user-agent "windows"
-class=mobilecache category=1 cache_size=42495460 cache_size_total:283587394
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 85 5298k   85 4539k    0     0  6027k      0 --:--:-- --:--:-- --:--:-- 6027k100 5298k  100 5298k    0     0  6432k      0 --:--:-- --:--:-- --:--:-- 10.6M
-
-2017-04-14 14:26:09
-curl --connect-timeout 3 -m 8 -o test666 -L "http://iosapps.itunes.apple.com/apple-assets-us-std-000001/Purple111/v4/e1/46/0d/e1460de1-e33d-1e02-40ea-56c4e5404bf6/pre-thinned7205808538800367409.thinned.signed.dpkg.ipa?accessKey=1491572343_5230196163075141291_SrvLDE1Lc49x6jwqiTJtY5Lex052wxhZPBCMKzKy6lAdcanl0BP6HGU8n4%2FFjmCWDuCRklAtRYgxR7wd9OjzncAmEDlJWxFolHx9zjCna2sHOR7gE0vkPiieE0dlp18ZcY%2B%2Fc166e%2Bb8Xz7or7HIxnj0vB%2FCoZXjGsKvIqBPxiUZMpgUp27c3GH2JewAs6XoBgUIWS%2Fhs5naYbDNmuzikmk99CH1SqmApnLHnspi2ck%3D"  --user-agent "windows"
-class=mobilecache category=1 cache_size=5426142 cache_size_total:289013536
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 14 21.4M   14 3200k    0     0  4441k      0  0:00:04 --:--:--  0:00:04 4441k 61 21.4M   61 13.3M    0     0  7757k      0  0:00:02  0:00:01  0:00:01  9.8M100 21.4M  100 21.4M    0     0  8805k      0  0:00:02  0:00:02 --:--:-- 10.3M
-
-2017-04-14 14:26:10
-curl --connect-timeout 3 -m 8 -o test666 -L "http://iosapps.itunes.apple.com/apple-assets-us-std-000001/Purple122/v4/65/fd/31/65fd313b-dd45-f539-d78c-a09e91d8f9ad/mzps.3519250905567074132.ipa?accessKey=1491704825_5545202176541911640_t4fTRtvkypwCPYc073Yiu%2FTOCo3cy67yo0Q8brx6pSTY%2F74m448B7bkqtcq7wEHiwlLzzI7au3zcfPNudKcW1heQo6%2FZ%2B70Ljwq1fHTose6vuIoaPtMZRcRNOiZXMAPhyzaR8cakqkGrFnODXlKdw%2B1bo%2B43HGEOqkdHFSZOegpIkiEpobdWcZdik9V5gqjiqcpWMDg6n88zdHgRjg0ANg%3D%3D"  --user-agent "windows"
-class=mobilecache category=1 cache_size=22530035 cache_size_total:311543571
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 26 24.3M   26 6572k    0     0  8468k      0  0:00:02 --:--:--  0:00:02 8468k 70 24.3M   70 17.2M    0     0  9955k      0  0:00:02  0:00:01  0:00:01 10.8M100 24.3M  100 24.3M    0     0  9931k      0  0:00:02  0:00:02 --:--:-- 10.3M
-
-2017-04-14 14:26:13
-curl --connect-timeout 3 -m 8 -o test666 -L "http://iosapps.itunes.apple.com/apple-assets-us-std-000001/Purple122/v4/58/71/4e/58714eaa-cb77-1a0f-355f-481007f4dff0/mzps.1443961476455193963.ipa?accessKey=1491704827_7957768391306397560_x%2B8ORyLJoJb0Lbl2rlRHPh8Gj2B6iuBB5G13N4fCUARp%2FYC3GK28C%2BwG%2Fyk5QxQ3LJ9aQGdMI%2F1f2wDFo4O3yBQ8h%2BECNSMKN44tw%2F9e5TNybq6b7RvwBrVKiZ6nbMR2iAJUV53E9ymJkSgvQjEpjhrXaiJaoFpRLA8xA6uboy2p%2Bpm%2B9wO%2FDjV63d3DHJCWZOFmWVoT5l5TzaGZIkIWcQ%3D%3D"  --user-agent "windows"
-class=mobilecache category=1 cache_size=25522073 cache_size_total:337065644
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 37 9272k   37 3474k    0     0  7166k      0  0:00:01 --:--:--  0:00:01 7166k100 9272k  100 9272k    0     0  9272k      0 --:--:-- --:--:-- --:--:-- 10.9M
-
-2017-04-14 14:28:40
-curl --connect-timeout 3 -m 8 -o test666 -L "http://v.stu.126.net/mooc-video/nos/mp4/2016/03/30/1004249062_714692090ab7478a9b3bfaea94932667_sd.mp4?ak=99ed7479ee303d1b1361b0ee5a4abcee7d329e9c49ca853fa23e92fdba6772304a6cd449140831d15d14253d18c781cd6002709cf65ec405b3d4af61af67d7c90015e48ffc49c659b128bfe612dda086d65894b8ef217f1626539e3c9eb40879c29b730d22bdcadb1b4f67996129275fa4c38c6336120510aea1ae1790819de86e0fa3e09eeabea1b068b3d9b9b6597acf0c219eb000a69c12ce9d568813365b3e099fcdb77c69ca7cd6141d92c122af"  --user-agent "windows"
-class=videocache category=11 cache_size=9494782 cache_size_total:9494782
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 10 9653k   10  971k    0     0  4787k      0  0:00:02 --:--:--  0:00:02 4787k100 9653k  100 9653k    0     0  9921k      0 --:--:-- --:--:-- --:--:-- 11.0M
-
-2017-04-14 14:28:41
-curl --connect-timeout 3 -m 8 -o test666 -L "http://v.stu.126.net/mooc-video/nos/mp4/2014/09/12/676001_sd.mp4?ak=99ed7479ee303d1b1361b0ee5a4abceebd1d5d054791e1ba9df2f88030cf8ae483e32545baa1b8e3d94f5f4d0ab7639be976764c4313bd3bbad6327e6ad584369b46b9855d0675c5a10feed45ecb1b08e570cb013ee6bee3bd53b5f0f4fb4e5b07170b06bfbe5442a18d44011e73c7855a01f38ccf0c565cdbfe5253f27cdaa540e23b55d9d3423ee3c83cfaa6477cdbba65555b4389e0502aaf0f357cd5c654da4e9c73bda29d9db6ca663c389ed848"  --user-agent "windows"
-class=videocache category=11 cache_size=9885685 cache_size_total:19380467
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 7205k  100 7205k    0     0  7500k      0 --:--:-- --:--:-- --:--:-- 7500k
-
-2017-04-14 14:28:42
-curl --connect-timeout 3 -m 8 -o test666 -L "http://v.stu.126.net/mooc-video/nos/mp4/2016/09/13/1004948048_9c27ebab961e490ab235e06146304b27_sd.mp4?ak=99ed7479ee303d1b1361b0ee5a4abcee8cf011e79ac80275b90a81c7c3ddba84b47f5395774f4785fcd0299f73eebb88070e97e74daa714b726bda40838eb46b0015e48ffc49c659b128bfe612dda086d65894b8ef217f1626539e3c9eb40879c29b730d22bdcadb1b4f67996129275fa4c38c6336120510aea1ae1790819de86e0fa3e09eeabea1b068b3d9b9b6597acf0c219eb000a69c12ce9d568813365b3e099fcdb77c69ca7cd6141d92c122af"  --user-agent "windows"
-class=videocache category=11 cache_size=7378724 cache_size_total:26759191
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 71 11.4M   71 8344k    0     0  9336k      0  0:00:01 --:--:--  0:00:01 9336k100 11.4M  100 11.4M    0     0  9820k      0  0:00:01  0:00:01 --:--:-- 11.0M
-
-2017-04-14 14:28:43
-curl --connect-timeout 3 -m 8 -o test666 -L "http://v.stu.126.net/mooc-video/nos/mp4/2015/03/27/1322039_sd.mp4?ak=99ed7479ee303d1b1361b0ee5a4abcee95d6c4cf77bd7eeac1e8a89641d43dcd06ee968bcec1b2f450fde9b3fc79068cd9f4d31d7ce98d2c12bc713355b1f8c840a6759a00e64c107587394a0b73bfaa90b601143824cf18b58a69ea00438816e2c4caba0e116581c14e4824cb46dc107feb6d0bf73a0d052df948b3525aefb09eed6bb2ffe8530b0f8655d97b53dc6197cbdc8f6a5d1563323094d2340ba3cf2919f5e4aded4ea11a82dd96c04efc1a"  --user-agent "windows"
-class=videocache category=11 cache_size=11973266 cache_size_total:38732457
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 33 5728k   33 1908k    0     0  6169k      0 --:--:-- --:--:-- --:--:-- 6169k100 5728k  100 5728k    0     0  8856k      0 --:--:-- --:--:-- --:--:-- 11.0M
-
-2017-04-14 14:28:52
-curl --connect-timeout 3 -m 8 -o test666 -L "http://mirrors.aliyun.com/ubuntu/dists/trusty/universe/binary-i386/Packages.bz2"  --user-agent "windows"
-class=httpcache category=2 cache_size=5865806 cache_size_total:5865806
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 48 3993k   48 1942k    0     0  4042k      0 --:--:-- --:--:-- --:--:-- 4042k100 3993k  100 3993k    0     0  5910k      0 --:--:-- --:--:-- --:--:-- 10.3M
-
-2017-04-14 14:28:53
-curl --connect-timeout 3 -m 8 -o test666 -L "http://mirrors.aliyun.com/ubuntu/dists/trusty/universe/i18n/Translation-en.bz2"  --user-agent "windows"
-class=httpcache category=2 cache_size=4089144 cache_size_total:9954950
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 92 6249k   92 5765k    0     0  9437k      0 --:--:-- --:--:-- --:--:-- 9437k100 6249k  100 6249k    0     0  9547k      0 --:--:-- --:--:-- --:--:-- 10.9M
-
-2017-04-14 14:28:54
-curl --connect-timeout 3 -m 8 -o test666 -L "http://mirrors.aliyun.com/ubuntu/dists/trusty/universe/source/Sources.bz2"  --user-agent "windows"
-class=httpcache category=2 cache_size=6398981 cache_size_total:16353931
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 75 7411k   75 5577k    0     0  7254k      0  0:00:01 --:--:--  0:00:01 7254k100 7411k  100 7411k    0     0  7951k      0 --:--:-- --:--:-- --:--:-- 10.9M
-
-2017-04-14 14:28:54
-curl --connect-timeout 3 -m 8 -o test666 -L "http://mirrors.aliyun.com/ubuntu/dists/trusty/universe/binary-amd64/Packages.gz"  --user-agent "windows"
-class=httpcache category=2 cache_size=7588885 cache_size_total:23942816
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1318k  100 1318k    0     0  5720k      0 --:--:-- --:--:-- --:--:-- 5720k
-
-2017-04-14 14:28:56
-curl --connect-timeout 3 -m 8 -o test666 -L "http://mirrors.aliyun.com/ubuntu/dists/trusty/main/binary-amd64/Packages.bz2"  --user-agent "windows"
-class=httpcache category=2 cache_size=1350329 cache_size_total:25293145
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 36 5721k   36 2097k    0     0  7539k      0 --:--:-- --:--:-- --:--:-- 7539k100 5721k  100 5721k    0     0  9499k      0 --:--:-- --:--:-- --:--:-- 10.9M
-
-2017-04-14 14:28:56
-curl --connect-timeout 3 -m 8 -o test666 -L "http://mirrors.aliyun.com/ubuntu/dists/trusty/universe/binary-amd64/Packages.bz2"  --user-agent "windows"
-class=httpcache category=2 cache_size=5858915 cache_size_total:31152060
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1318k  100 1318k    0     0  5130k      0 --:--:-- --:--:-- --:--:-- 5130k
-
-2017-04-14 14:28:57
-curl --connect-timeout 3 -m 8 -o test666 -L "http://mirrors.163.com/ubuntu/dists/trusty/main/binary-amd64/Packages.bz2"  --user-agent "windows"
-class=httpcache category=2 cache_size=1350329 cache_size_total:32502389
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0 1316k    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1316k  100 1316k    0     0  5571k      0 --:--:-- --:--:-- --:--:-- 7564k
-
-2017-04-14 14:28:57
-curl --connect-timeout 3 -m 8 -o test666 -L "http://mirrors.aliyun.com/ubuntu/dists/trusty/main/binary-i386/Packages.bz2"  --user-agent "windows"
-class=httpcache category=2 cache_size=1347897 cache_size_total:33850286
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 73 7739k   73 5668k    0     0  9141k      0 --:--:-- --:--:-- --:--:-- 9141k100 7739k  100 7739k    0     0  9592k      0 --:--:-- --:--:-- --:--:-- 10.8M
-
-2017-04-14 14:28:58
-curl --connect-timeout 3 -m 8 -o test666 -L "http://mirrors.aliyun.com/ubuntu/dists/trusty/universe/source/Sources.gz"  --user-agent "windows"
-class=httpcache category=2 cache_size=7925687 cache_size_total:41775973
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  744k  100  744k    0     0  2204k      0 --:--:-- --:--:-- --:--:-- 2204k
-
-2017-04-14 14:28:59
-curl --connect-timeout 3 -m 8 -o test666 -L "http://mirrors.aliyun.com/ubuntu/dists/trusty/main/i18n/Translation-en.bz2"  --user-agent "windows"
-class=httpcache category=2 cache_size=762361 cache_size_total:42538334
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 15  622k   15   98k    0     0   465k      0  0:00:01 --:--:--  0:00:01  697k100  622k  100  622k    0     0  1358k      0 --:--:-- --:--:-- --:--:-- 1608k
-
-2017-04-14 14:29:27
-curl --connect-timeout 3 -m 8 -o test666 -L "http://pcvideoyd.titan.mgtv.com/mp4/2014/dianying/dbqb4_4773/200A779F1939AA9D6048A591F631F78D_20140825_1_1_714.mp4/230000_240000_v01_mp4.ts?pm=JE2UI_rqDdlAIKY~_VZKC5ShTUz9DzcZgPBol5yQpp9wl3SLKyCS1HyP~kP3zq1tCFlAfivCvceNuhC_ZwpbN5Ixeyd54LoW9Di~79jn6kYTeNAf6Bb9PxGL~s3XIsuy3nzpDZaoH5cz_DoEgoow_fedevFMtb~qVLLURX864cNXPYCF2kNxOr1pBZMfR65rwO~FSSirUIsE2Y5jVGYwdCTBPP90hH1P9_ihCgxu4MdAco8LZEGDOrviaAnUxedqAlp1BC3A4HZ2qf8dnf688VgTC5FYf7B2HvcgLLubN0DkAlbHhwMpso97huA4YN_NtOUSk3hu1YlSdnq9aWZ7Q22va4L8E6dG8No0ccOU4m5NKu98eZxHfQG7fb8kqoTCN1J9y3Jiifd5jRXP&arange=0&yfmode=1"  --user-agent "windows"
-class=videocache category=19 cache_size=637320 cache_size_total:637320
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 95  986k   95  946k    0     0  1689k      0 --:--:-- --:--:-- --:--:-- 1991k100  986k  100  986k    0     0  1744k      0 --:--:-- --:--:-- --:--:-- 2054k
-
-2017-04-14 14:29:28
-curl --connect-timeout 3 -m 8 -o test666 -L "http://pcvideoyd.titan.mgtv.com/mp4/2014/dianying/dbqb4_4773/200A779F1939AA9D6048A591F631F78D_20140825_1_1_714.mp4/30000_40000_v01_mp4.ts?pm=JE2UI_rqDdlAIKY~_VZKC5ShTUz9DzcZgPBol5yQpp9wl3SLKyCS1HyP~kP3zq1tCFlAfivCvceNuhC_ZwpbN5Ixeyd54LoW9Di~79jn6kYTeNAf6Bb9PxGL~s3XIsuy3nzpDZaoH5cz_DoEgoow_fedevFMtb~qVLLURX864cNXPYCF2kNxOr1pBZMfR65rwO~FSSirUIsE2Y5jVGYwdCTBPP90hH1P9_ihCgxu4MdAco8LZEGDOrviaAnUxedqAlp1BC3A4HZ2qf8dnf688VgTC5FYf7B2HvcgLLubN0DkAlbHhwMpso97huA4YN_NtOUSk3hu1YlSdnq9aWZ7Q22va4L8E6dG8No0ccOU4m5NKu98eZxHfQG7fb8kqoTCN1J9y3Jiifd5jRXP&arange=0&yfmode=1"  --user-agent "windows"
-class=videocache category=19 cache_size=1009936 cache_size_total:1647256
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  872k  100  872k    0     0  1688k      0 --:--:-- --:--:-- --:--:-- 1997k
-
-2017-04-14 14:29:29
-curl --connect-timeout 3 -m 8 -o test666 -L "http://pcvideoyd.titan.mgtv.com/mp4/2014/dianying/dbqb4_4773/200A779F1939AA9D6048A591F631F78D_20140825_1_1_714.mp4/20000_30000_v01_mp4.ts?pm=JE2UI_rqDdlAIKY~_VZKC5ShTUz9DzcZgPBol5yQpp9wl3SLKyCS1HyP~kP3zq1tCFlAfivCvceNuhC_ZwpbN5Ixeyd54LoW9Di~79jn6kYTeNAf6Bb9PxGL~s3XIsuy3nzpDZaoH5cz_DoEgoow_fedevFMtb~qVLLURX864cNXPYCF2kNxOr1pBZMfR65rwO~FSSirUIsE2Y5jVGYwdCTBPP90hH1P9_ihCgxu4MdAco8LZEGDOrviaAnUxedqAlp1BC3A4HZ2qf8dnf688VgTC5FYf7B2HvcgLLubN0DkAlbHhwMpso97huA4YN_NtOUSk3hu1YlSdnq9aWZ7Q22va4L8E6dG8No0ccOU4m5NKu98eZxHfQG7fb8kqoTCN1J9y3Jiifd5jRXP&arange=0&yfmode=1"  --user-agent "windows"
-class=videocache category=19 cache_size=893752 cache_size_total:2541008
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  783k  100  783k    0     0  1442k      0 --:--:-- --:--:-- --:--:-- 1707k
-
-2017-04-14 14:29:29
-curl --connect-timeout 3 -m 8 -o test666 -L "http://pcvideoyd.titan.mgtv.com/mp4/2014/dianying/dbqb4_4773/200A779F1939AA9D6048A591F631F78D_20140825_1_1_714.mp4/0_10000_v01_mp4.ts?pm=JE2UI_rqDdlAIKY~_VZKC5ShTUz9DzcZgPBol5yQpp9wl3SLKyCS1HyP~kP3zq1tCFlAfivCvceNuhC_ZwpbN5Ixeyd54LoW9Di~79jn6kYTeNAf6Bb9PxGL~s3XIsuy3nzpDZaoH5cz_DoEgoow_fedevFMtb~qVLLURX864cNXPYCF2kNxOr1pBZMfR65rwO~FSSirUIsE2Y5jVGYwdCTBPP90hH1P9_ihCgxu4MdAco8LZEGDOrviaAnUxedqAlp1BC3A4HZ2qf8dnf688VgTC5FYf7B2HvcgLLubN0DkAlbHhwMpso97huA4YN_NtOUSk3hu1YlSdnq9aWZ7Q22va4L8E6dG8No0ccOU4m5NKu98eZxHfQG7fb8kqoTCN1J9y3Jiifd5jRXP&arange=0&yfmode=1"  --user-agent "windows"
-class=videocache category=19 cache_size=802572 cache_size_total:3343580
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 17  693k   17  123k    0     0   395k      0  0:00:01 --:--:--  0:00:01  566k100  693k  100  693k    0     0   881k      0 --:--:-- --:--:-- --:--:-- 1000k
-
-2017-04-14 14:29:30
-curl --connect-timeout 3 -m 8 -o test666 -L "http://pcvideoyd.titan.mgtv.com/mp4/2014/dianying/dbqb4_4773/200A779F1939AA9D6048A591F631F78D_20140825_1_1_714.mp4/10000_20000_v01_mp4.ts?pm=JE2UI_rqDdlAIKY~_VZKC5ShTUz9DzcZgPBol5yQpp9wl3SLKyCS1HyP~kP3zq1tCFlAfivCvceNuhC_ZwpbN5Ixeyd54LoW9Di~79jn6kYTeNAf6Bb9PxGL~s3XIsuy3nzpDZaoH5cz_DoEgoow_fedevFMtb~qVLLURX864cNXPYCF2kNxOr1pBZMfR65rwO~FSSirUIsE2Y5jVGYwdCTBPP90hH1P9_ihCgxu4MdAco8LZEGDOrviaAnUxedqAlp1BC3A4HZ2qf8dnf688VgTC5FYf7B2HvcgLLubN0DkAlbHhwMpso97huA4YN_NtOUSk3hu1YlSdnq9aWZ7Q22va4L8E6dG8No0ccOU4m5NKu98eZxHfQG7fb8kqoTCN1J9y3Jiifd5jRXP&arange=0&yfmode=1"  --user-agent "windows"
-class=videocache category=19 cache_size=710264 cache_size_total:4053844
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 90 9272k   90 8406k    0     0  9872k      0 --:--:-- --:--:-- --:--:-- 9872k100 9272k  100 9272k    0     0  9983k      0 --:--:-- --:--:-- --:--:-- 10.9M
-
-2017-04-14 14:30:15
-curl --connect-timeout 3 -m 8 -o test666 -L "http://v.stu.126.net/mooc-video/nos/mp4/2016/03/30/1004249062_714692090ab7478a9b3bfaea94932667_sd.mp4?ak=99ed7479ee303d1b1361b0ee5a4abcee7d329e9c49ca853fa23e92fdba6772304a6cd449140831d15d14253d18c781cd6002709cf65ec405b3d4af61af67d7c90015e48ffc49c659b128bfe612dda086d65894b8ef217f1626539e3c9eb40879c29b730d22bdcadb1b4f67996129275fa4c38c6336120510aea1ae1790819de86e0fa3e09eeabea1b068b3d9b9b6597acf0c219eb000a69c12ce9d568813365b3e099fcdb77c69ca7cd6141d92c122af"  --user-agent "iphone"
-class=videocache category=11 cache_size=9494782 cache_size_total:9494782
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 77 9653k   77 7453k    0     0  9956k      0 --:--:-- --:--:-- --:--:-- 9956k100 9653k  100 9653k    0     0  10.0M      0 --:--:-- --:--:-- --:--:-- 11.0M
-
-2017-04-14 14:30:16
-curl --connect-timeout 3 -m 8 -o test666 -L "http://v.stu.126.net/mooc-video/nos/mp4/2014/09/12/676001_sd.mp4?ak=99ed7479ee303d1b1361b0ee5a4abceebd1d5d054791e1ba9df2f88030cf8ae483e32545baa1b8e3d94f5f4d0ab7639be976764c4313bd3bbad6327e6ad584369b46b9855d0675c5a10feed45ecb1b08e570cb013ee6bee3bd53b5f0f4fb4e5b07170b06bfbe5442a18d44011e73c7855a01f38ccf0c565cdbfe5253f27cdaa540e23b55d9d3423ee3c83cfaa6477cdbba65555b4389e0502aaf0f357cd5c654da4e9c73bda29d9db6ca663c389ed848"  --user-agent "iphone"
-class=videocache category=11 cache_size=9885685 cache_size_total:19380467
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 74 7205k   74 5358k    0     0  8524k      0 --:--:-- --:--:-- --:--:-- 8524k100 7205k  100 7205k    0     0  9090k      0 --:--:-- --:--:-- --:--:-- 11.0M
-
-2017-04-14 14:30:18
-curl --connect-timeout 3 -m 8 -o test666 -L "http://v.stu.126.net/mooc-video/nos/mp4/2016/09/13/1004948048_9c27ebab961e490ab235e06146304b27_sd.mp4?ak=99ed7479ee303d1b1361b0ee5a4abcee8cf011e79ac80275b90a81c7c3ddba84b47f5395774f4785fcd0299f73eebb88070e97e74daa714b726bda40838eb46b0015e48ffc49c659b128bfe612dda086d65894b8ef217f1626539e3c9eb40879c29b730d22bdcadb1b4f67996129275fa4c38c6336120510aea1ae1790819de86e0fa3e09eeabea1b068b3d9b9b6597acf0c219eb000a69c12ce9d568813365b3e099fcdb77c69ca7cd6141d92c122af"  --user-agent "iphone"
-class=videocache category=11 cache_size=7378724 cache_size_total:26759191
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 51 11.4M   51 6033k    0     0  9343k      0  0:00:01 --:--:--  0:00:01 9343k100 11.4M  100 11.4M    0     0   9.9M      0  0:00:01  0:00:01 --:--:-- 11.0M
-
-2017-04-14 14:30:19
-curl --connect-timeout 3 -m 8 -o test666 -L "http://v.stu.126.net/mooc-video/nos/mp4/2015/03/27/1322039_sd.mp4?ak=99ed7479ee303d1b1361b0ee5a4abcee95d6c4cf77bd7eeac1e8a89641d43dcd06ee968bcec1b2f450fde9b3fc79068cd9f4d31d7ce98d2c12bc713355b1f8c840a6759a00e64c107587394a0b73bfaa90b601143824cf18b58a69ea00438816e2c4caba0e116581c14e4824cb46dc107feb6d0bf73a0d052df948b3525aefb09eed6bb2ffe8530b0f8655d97b53dc6197cbdc8f6a5d1563323094d2340ba3cf2919f5e4aded4ea11a82dd96c04efc1a"  --user-agent "iphone"
-class=videocache category=11 cache_size=11973266 cache_size_total:38732457
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0 26.7M    0  2896    0     0  29386      0  0:15:56 --:--:--  0:15:56 29386 38 26.7M   38 10.3M    0     0  9938k      0  0:00:02  0:00:01  0:00:01 10.6M 79 26.7M   79 21.3M    0     0  10.3M      0  0:00:02  0:00:02 --:--:-- 10.8M100 26.7M  100 26.7M    0     0  10.3M      0  0:00:02  0:00:02 --:--:-- 10.7M
-
-2017-04-14 14:30:31
-curl --connect-timeout 3 -m 8 -o test666 -L "http://221.180.251.22/cdn/qiyiapp/20170329/143551/ap/qiyi81.apk?dis_k=0fa5dab167bd46c875953f3e75aa50330&dis_t=1492108833&dis_dz=CMNET-ZheJiang&dis_st=36"  --user-agent "windows"
-class=mobilecache category=0 cache_size=28095629 cache_size_total:28095629
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  6 19.8M    6 1360k    0     0  8382k      0  0:00:02 --:--:--  0:00:02 8382k 56 19.8M   56 11.1M    0     0  9844k      0  0:00:02  0:00:01  0:00:01  9.8M100 19.8M  100 19.8M    0     0   9.9M      0  0:00:01  0:00:01 --:--:-- 10.0M
-
-2017-04-14 14:30:34
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.202/package.box.xiaomi.com/mfsv2/download/fdsc3/p01ndUiMOtA4/l4mX5KbIG4dDK4.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=20783545 cache_size_total:48879174
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 80 10.5M   80 8638k    0     0  9447k      0  0:00:01 --:--:--  0:00:01 9447k100 10.5M  100 10.5M    0     0  9620k      0  0:00:01  0:00:01 --:--:-- 10.1M
-
-2017-04-14 14:30:36
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.203/package.box.xiaomi.com/mfsv2/file/fdsc3/p01HzVduGzUM/K9e5IpPUwDBR6t/master_2b2272eb.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=11056484 cache_size_total:59935658
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 46 12.0M   46 5728k    0     0  9240k      0  0:00:01 --:--:--  0:00:01 9240k100 12.0M  100 12.0M    0     0  9160k      0  0:00:01  0:00:01 --:--:-- 9095k
-
-2017-04-14 14:30:38
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.202/package.cdn.box.xiaomi.com/mitv/10009/3/2749d27c25d69f764c65a7f2679fff21.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=12683319 cache_size_total:72618977
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  2 13.0M    2  364k    0     0  5105k      0  0:00:02 --:--:--  0:00:02 5105k 86 13.0M   86 11.3M    0     0  10.5M      0  0:00:01  0:00:01 --:--:-- 10.9M100 13.0M  100 13.0M    0     0  10.6M      0  0:00:01  0:00:01 --:--:-- 10.9M
-
-2017-04-14 14:30:39
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.203/package.cdn.box.xiaomi.com/mitv/10009/3/5bc8a8bcf2bdf12291dc1ba8ae4cf41e.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=13730158 cache_size_total:86349135
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 24 23.1M   24 5869k    0     0  8958k      0  0:00:02 --:--:--  0:00:02 8958k 71 23.1M   71 16.4M    0     0   9.9M      0  0:00:02  0:00:01  0:00:01 10.7M100 23.1M  100 23.1M    0     0  10.1M      0  0:00:02  0:00:02 --:--:-- 10.7M
-
-2017-04-14 14:30:41
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.203/package.cdn.box.xiaomi.com/mitv/10009/3/ad7c335c5dd3d38b50005513e7cbafd9.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=24316166 cache_size_total:110665301
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 34 2935k   34 1011k    0     0  6356k      0 --:--:-- --:--:-- --:--:-- 6356k100 2935k  100 2935k    0     0  8847k      0 --:--:-- --:--:-- --:--:-- 10.9M
-
-2017-04-14 14:30:43
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.203/appstore.cdn.pandora.xiaomi.com/mitv/10004/3/611ce2a73662f52e147230cf930f9379/app-selfrelease.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=3006271 cache_size_total:113671572
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 2304k  100 2304k    0     0  8418k      0 --:--:-- --:--:-- --:--:-- 8418k
-
-2017-04-14 14:30:44
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.203/package.cdn.box.xiaomi.com/mitv/10009/3/9940c337219aa32de894ddf00d399f61.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=2360083 cache_size_total:116031655
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  363k  100  363k    0     0  3781k      0 --:--:-- --:--:-- --:--:-- 3781k
-
-2017-04-14 14:30:44
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.202/package.cdn.box.xiaomi.com/mitv/10009/3/753275ed4c9551b5553afd6eca3a7c0d.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=372020 cache_size_total:116403675
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1859k  100 1859k    0     0  8261k      0 --:--:-- --:--:-- --:--:-- 8261k
-
-2017-04-14 14:30:44
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.199.80.202/package.cdn.box.xiaomi.com/mitv/10009/3/04601d53d526d7d6636bdb11d09b0d89.apk"  --user-agent "windows"
-class=mobilecache category=0 cache_size=1904411 cache_size_total:118308086
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 73 3028k   73 2215k    0     0  5895k      0 --:--:-- --:--:-- --:--:-- 5895k100 3028k  100 3028k    0     0  6394k      0 --:--:-- --:--:-- --:--:-- 8374k
-
-2017-04-14 14:30:59
-curl --connect-timeout 3 -m 8 -o test666 -L "http://7xjbs3.com2.z0.glb.qiniucdn.com/QuantativeTradingStrategies.pdf"  --user-agent "windows"
-class=httpcache category=3 cache_size=3100976 cache_size_total:3100976
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  781k  100  781k    0     0  3391k      0 --:--:-- --:--:-- --:--:-- 3391k
-
-2017-04-14 14:30:59
-curl --connect-timeout 3 -m 8 -o test666 -L "http://docs.linuxtone.org/ebooks/CDN/taobao_cdn.pdf"  --user-agent "windows"
-class=httpcache category=3 cache_size=800419 cache_size_total:3901395
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  774k  100  774k    0     0  3719k      0 --:--:-- --:--:-- --:--:-- 3719k
-
-2017-04-14 14:31:00
-curl --connect-timeout 3 -m 8 -o test666 -L "http://neirong.funshion.com/download//fairyland/files/tk/12092/194125/Mermaid.dll"  --user-agent "windows"
-class=httpcache category=3 cache_size=792864 cache_size_total:4694259
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  839k  100  839k    0     0  4076k      0 --:--:-- --:--:-- --:--:-- 4076k
-
-2017-04-14 14:31:00
-curl --connect-timeout 3 -m 8 -o test666 -L "http://neirong.funshion.com/download//fairyland/files/tk/11972/189859/Dolphin.dll"  --user-agent "windows"
-class=httpcache category=3 cache_size=859424 cache_size_total:5553683
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  617k  100  617k    0     0  3690k      0 --:--:-- --:--:-- --:--:-- 3690k
-
-2017-04-14 14:31:01
-curl --connect-timeout 3 -m 8 -o test666 -L "http://neirong.funshion.com/download//fairyland/files/tk/12092/194116/FunWorks64.dll"  --user-agent "windows"
-class=httpcache category=3 cache_size=632640 cache_size_total:6186323
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  692k  100  692k    0     0  5766k      0 --:--:-- --:--:-- --:--:-- 5766k
-
-2017-04-14 14:31:01
-curl --connect-timeout 3 -m 8 -o test666 -L "http://112.25.58.180/dlied6.qq.com/invc/xfspeed/qqpcmgr/module_update/fid1490002079_QMTrojanPlugin.dll.zip?mkey=58eb33c52c453685&f=5c12&c=0&p=.zip"  --user-agent "windows"
-class=httpcache category=3 cache_size=708733 cache_size_total:6895056
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  692k  100  692k    0     0  6381k      0 --:--:-- --:--:-- --:--:-- 6381k
-
-2017-04-14 14:31:01
-curl --connect-timeout 3 -m 8 -o test666 -L "http://112.25.58.180/dlied6.qq.com/invc/xfspeed/qqpcmgr/module_update/fid1490002079_QMTrojanPlugin.dll.zip?mkey=58e756372c453685&f=ad0b&c=0&p=.zip"  --user-agent "windows"
-class=httpcache category=3 cache_size=708733 cache_size_total:7603789
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  691k  100  691k    0     0  3712k      0 --:--:-- --:--:-- --:--:-- 3712k
-
-2017-04-14 14:31:02
-curl --connect-timeout 3 -m 8 -o test666 -L "http://120.198.236.15/dlied6.qq.com/invc/xfspeed/qqpcmgr/module_update/fid1489558795_QMTrojanPlugin.dll.zip"  --user-agent "windows"
-class=httpcache category=3 cache_size=707972 cache_size_total:8311761
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1160k  100 1160k    0     0  5250k      0 --:--:-- --:--:-- --:--:-- 5250k
-
-2017-04-14 14:31:02
-curl --connect-timeout 3 -m 8 -o test666 -L "http://zj.offcn.com/dl/2017/0301/20170301114518510.xls"  --user-agent "windows"
-class=httpcache category=3 cache_size=1187840 cache_size_total:9499601
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 60 2204k   60 1324k    0     0  7019k      0 --:--:-- --:--:-- --:--:-- 7019k100 2204k  100 2204k    0     0  8034k      0 --:--:-- --:--:-- --:--:-- 10.1M
-
-2017-04-14 14:33:09
-curl --connect-timeout 3 -m 8 -o test666 -L "http://112.17.0.148/vmind.qqvideo.tc.qq.com/v0200aht8sg.p202.1.mp4?vkey=7D79677240053B0E8A9ADFBE57BCD97FF7AA80F7E084D4100DEDC3347B4A7295A93D6E9E1D96D31AB4374A2D47878FA8CEB151323614DEA1726C6BE388A1F13BBA2FA362A85D004B1BE842472E463473C40D36AC64D9C161&platform=&sdtfrom=&fmt=hd&level=0"  --user-agent "windows"
-class=videocache category=13 cache_size=2257872 cache_size_total:2257872
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1036k  100 1036k    0     0  7683k      0 --:--:-- --:--:-- --:--:-- 7683k
-
-2017-04-14 14:33:09
-curl --connect-timeout 3 -m 8 -o test666 -L "http://112.17.0.144/vmind.qqvideo.tc.qq.com/j0200mrbub6.p202.1.mp4?vkey=1DCB98971AA51C6014A3F47550F967F95900FC5504C40D9F2996C8009CC775375315BC925835A01F07D1E0317FC62BE5C96B749138FFF763FAD4DFA30C80F0DE4D39EB3F007A76AF7A1A68010022AD6E9CE40BA95BFDF699&platform=&sdtfrom=&fmt=hd&level=0"  --user-agent "windows"
-class=videocache category=13 cache_size=1061602 cache_size_total:3319474
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-
-2017-04-14 14:33:10
-curl --connect-timeout 3 -m 8 -o test666 -L "http://112.17.5.23/vmind.qqvideo.tc.qq.com/d02003a2lap.p202.1.mp4?vkey=62BBFDD93C57CFD51721F021FCB47FC350016A8668570D63D6543844150F4BBE61199B6AADEBFF0A5E5968201DD42FC8F603B0D3C79DFA556F3055EFDC8E1335BC755772C8AFB011D6E13F0A1F6F30A9ADDDBEF498E00106&platform=&sdtfrom=&fmt=hd&level=0"  --user-agent "windows"
-class=videocache category=13 cache_size=1129519 cache_size_total:4448993
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1133k  100 1133k    0     0  7299k      0 --:--:-- --:--:-- --:--:-- 7299k
-
-2017-04-14 14:33:10
-curl --connect-timeout 3 -m 8 -o test666 -L "http://183.131.60.15/vmind.qqvideo.tc.qq.com/b0200q36867.p202.1.mp4?vkey=7325815117C26D7DF980A5CDB2D2A5E2C4A5E47159799140478C9FC388CA10B5EA8F912B1A6A2CE6EF34DB3B74B152B36A8052DC5E9466AA1BB0CE199A3AACA15430B8A463839395911844C4B9E1CED9480684E8D54813C3&platform=&sdtfrom=&fmt=hd&level=0"  --user-agent "windows"
-class=videocache category=13 cache_size=1160218 cache_size_total:5609211
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  333k  100  333k    0     0  3871k      0 --:--:-- --:--:-- --:--:-- 3871k
-
-2017-04-14 14:33:10
-curl --connect-timeout 3 -m 8 -o test666 -L "http://122.228.238.144/vmind.qqvideo.tc.qq.com/m02006ax8f8.p202.1.mp4?vkey=F356E18647B1A14B59E5EE83E8B59DBE0DB571543E163986B386761C5F73A72EE8D30E4C3D3F2BBCA06FB7D81978F00A92B2F28974142CFFC1B0E58663C5BD5E3C1C1176D73AD45E0515749BACBBB51A19BEA4F270BCD548&platform=&sdtfrom=&fmt=hd&level=0"  --user-agent "windows"
-class=videocache category=13 cache_size=341015 cache_size_total:5950226
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1099k  100 1099k    0     0  7607k      0 --:--:-- --:--:-- --:--:-- 7607k
-
-2017-04-14 14:33:11
-curl --connect-timeout 3 -m 8 -o test666 -L "http://112.17.14.110/cache/183.131.60.22/vmind.qqvideo.tc.qq.com/w0200blsnce.p202.1.mp4?vkey=33214A889F71A4085FB3BF4BE8A3D1A4892AB1A74600571112EB021FFAD1EB978D6A9AA495F6865BE29325E8B5229E29AF435DEE44DE8375EE6D832E6792FBFFCFF646BE11FA713A04ABE40DD708F41EDA859CB543232413&platform=&sdtfrom=&fmt=hd&level=0&ich_args2=404-11191006050289_6cf5b7d0c23490276960956c864795e4_10004421_9c886d2ddec3f8d1943b518939a83798_8942ff9b5b4b36fd72c3ce08d0ece2a7"  --user-agent "windows"
-class=videocache category=13 cache_size=1125979 cache_size_total:7076205
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1055k  100 1055k    0     0  7335k      0 --:--:-- --:--:-- --:--:-- 7335k
-
-2017-04-14 14:33:11
-curl --connect-timeout 3 -m 8 -o test666 -L "http://112.17.14.100/cache/115.231.152.49/vmind.qqvideo.tc.qq.com/a02009vaxfw.p202.1.mp4?vkey=BDF84E230582C20EEE9A3B187BA46A187CFA605F5AEA17DBCBA089BFC0CEA039372562B533FF8B0430DDF5AD338C3CE3FF69F47046824F4642AA128CA0441CAB9E3E998B112A176311BC7E990D0DDB3F999A96C7B3AB12F5&platform=&sdtfrom=&fmt=hd&level=0&ich_args2=404-11191013050026_377839e9cb860ce9544c8359396a0f6d_10004421_9c886d2ddec3f8d19532518939a83798_1bc149cb437f2a39cb18c2ba397027b6"  --user-agent "windows"
-class=videocache category=13 cache_size=1080452 cache_size_total:8156657
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1096k  100 1096k    0     0  8381k      0 --:--:-- --:--:-- --:--:-- 8381k
-
-2017-04-14 14:33:11
-curl --connect-timeout 3 -m 8 -o test666 -L "http://112.17.14.53/cache/183.131.60.21/vmind.qqvideo.tc.qq.com/g0200ve46pm.p202.1.mp4?vkey=0BABF7CC9C72B53BC588F0B418BC706767EE20AFBA91F32736EAD308E474CD4D8DBB18CBE83E6437D09ECB2EB1E9E4D351962A7952CCA568E63EEBF8EA16D81D5556F02AA95AD4C2E32C588D390224A7BE784D3943D363D4&platform=&sdtfrom=&fmt=hd&level=0&ich_args2=404-11191001038762_2c823ed982ad2a3e36f8e0f1ea091a05_10004421_9c886d2ddec3f8d1973a518939a83798_e4e6eeb63853a8270f2aab34f373dea7"  --user-agent "windows"
-class=videocache category=13 cache_size=1122590 cache_size_total:9279247
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1097k  100 1097k    0     0  7445k      0 --:--:-- --:--:-- --:--:-- 7445k
-
-2017-04-14 14:33:12
-curl --connect-timeout 3 -m 8 -o test666 -L "http://111.1.50.59/cloud/111.1.14.195/files/2090000005C13D10//112.29.151.19/vmind.qqvideo.tc.qq.com/y0200nil8so.p202.1.mp4"  --user-agent "windows"
-class=videocache category=13 cache_size=1124045 cache_size_total:10403292
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 19 10.3M   19 2122k    0     0  7200k      0  0:00:01 --:--:--  0:00:01 7200k100 10.3M  100 10.3M    0     0   9.8M      0  0:00:01  0:00:01 --:--:-- 11.0M
-
-2017-04-14 14:33:12
-curl --connect-timeout 3 -m 8 -o test666 -L "http://vhotlx.video.qq.com/flv/150/161/f0023wtwxbz.p412.1.mp4?cdncode=/18907E7BE0798990/&vkey=15E446D2938B9D77FF89001A90065C4F62A1AB797A7911E9C3D785F1B817400C678C51AFCBC7382E2E1F1ECC13925CC492EC90A05CFE55CD193C20F526DC04AAD45E0AB3DE448EFCA4C67F4472C96318C570A22518B0613F&platform=940303&fmt=hd&br=69&sdtfrom=v5032&guid=419b6edb99c6ff5c&keyid=1"  --user-agent "windows"
-class=videocache category=13 cache_size=10895700 cache_size_total:21298992
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  859k  100  859k    0     0  3892k      0 --:--:-- --:--:-- --:--:-- 3892k
-
-2017-04-14 14:33:28
-curl --connect-timeout 3 -m 8 -o test666 -L "http://ssl.picyoung.com/about/log_3.png"  --user-agent "windows"
-class=httpcache category=4 cache_size=880407 cache_size_total:880407
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  629k  100  629k    0     0  3248k      0 --:--:-- --:--:-- --:--:-- 3248k
-
-2017-04-14 14:33:28
-curl --connect-timeout 3 -m 8 -o test666 -L "http://www.ccdi.gov.cn/images/bg.png"  --user-agent "windows"
-class=httpcache category=4 cache_size=644097 cache_size_total:1524504
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  665k  100  665k    0     0  3576k      0 --:--:-- --:--:-- --:--:-- 3576k
-
-2017-04-14 14:33:28
-curl --connect-timeout 3 -m 8 -o test666 -L "http://i5.hexun.com/2017-04-10/188788225.jpg"  --user-agent "windows"
-class=httpcache category=4 cache_size=681692 cache_size_total:2206196
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 77 4375k   77 3388k    0     0  7911k      0 --:--:-- --:--:-- --:--:-- 7911k100 4375k  100 4375k    0     0  8447k      0 --:--:-- --:--:-- --:--:-- 10.8M
-
-2017-04-14 14:33:29
-curl --connect-timeout 3 -m 8 -o test666 -L "http://qnam.smzdm.com/201703/29/58db7c6b909d01215.jpg"  --user-agent "windows"
-class=httpcache category=4 cache_size=4480336 cache_size_total:6686532
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 2958k  100 2958k    0     0  8183k      0 --:--:-- --:--:-- --:--:-- 8183k
-
-2017-04-14 14:33:29
-curl --connect-timeout 3 -m 8 -o test666 -L "http://qnam.smzdm.com/201703/30/58dc71f39910f1177.jpg"  --user-agent "windows"
-class=httpcache category=4 cache_size=3029793 cache_size_total:9716325
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 53 1295k   53  691k    0     0  3722k      0 --:--:-- --:--:-- --:--:-- 3722k100 1295k  100 1295k    0     0  5174k      0 --:--:-- --:--:-- --:--:-- 9436k
-
-2017-04-14 14:33:30
-curl --connect-timeout 3 -m 8 -o test666 -L "http://qnam.smzdm.com/201704/06/58e630995f98620.jpg"  --user-agent "windows"
-class=httpcache category=4 cache_size=1326526 cache_size_total:11042851
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1472k  100 1472k    0     0  6239k      0 --:--:-- --:--:-- --:--:-- 6239k
-
-2017-04-14 14:33:30
-curl --connect-timeout 3 -m 8 -o test666 -L "http://qnam.smzdm.com/201703/29/58dbb185222099014.jpg"  --user-agent "windows"
-class=httpcache category=4 cache_size=1507934 cache_size_total:12550785
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 28 2014k   28  582k    0     0  2468k      0 --:--:-- --:--:-- --:--:-- 2468k100 2014k  100 2014k    0     0  5167k      0 --:--:-- --:--:-- --:--:-- 9361k
-
-2017-04-14 14:33:31
-curl --connect-timeout 3 -m 8 -o test666 -L "http://qnam.smzdm.com/201703/27/58d8b01c1944b9775.jpg"  --user-agent "windows"
-class=httpcache category=4 cache_size=2063231 cache_size_total:14614016
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 2326k  100 2326k    0     0  6029k      0 --:--:-- --:--:-- --:--:-- 6029k
-
-2017-04-14 14:33:32
-curl --connect-timeout 3 -m 8 -o test666 -L "http://a.zdmimg.com/201704/07/58e740f6de3627664.gif_c350.jpg"  --user-agent "windows"
-class=httpcache category=4 cache_size=2382479 cache_size_total:16996495
-----------------------------------------------------------------------------------
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0 1298k    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1298k  100 1298k    0     0  5868k      0 --:--:-- --:--:-- --:--:-- 9481k
-
-2017-04-14 14:33:32
-curl --connect-timeout 3 -m 8 -o test666 -L "http://qnam.smzdm.com/201704/01/58df392831d444726.jpg"  --user-agent "windows"
-class=httpcache category=4 cache_size=1330119 cache_size_total:18326614
-----------------------------------------------------------------------------------
-server(cloud) count: 1
-sysinfo: cpu8
-match_db_count: 45 log_en: 0|0
-http thread: 0
-mobile thread: 0
-video thread: 0
-upcache thread: http|mobile: 0|0
-mysql connect: 0
-sys_run_time: 100690s (27h58m)
-down_enable: http|video|mobile: 1|1|1
-down_info: sucess|fault|redown: 12|26|1
-handle packets for vlan|pppoe|ip6|ip4: 12539|0|0|12541
-cache avoid for delay|limit: 2,63,4,0|6,0,0,0
-user online|hit: 1|1
---------
-capture uri: 12541
-drop uri: 0
-check threshold task: 74
-drop threshold task: 0
-add cache task: 216
-drop cache task: 0
-log match: 0
-drop matchlog: 0
-log opt: 167
-drop optlog: 0
-location uri: 6648
-drop location: 0
-avg location time: 2.95ms
-max location time: 124.17ms
-location time > 10ms: 653
---------
-diskmask: 0xfffffffe
-count_kind1:2
-count_kind2:2
-count_kind3:2
-count_kind4:2
-count_kind5:2
