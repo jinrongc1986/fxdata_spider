@@ -29,6 +29,12 @@ from curl_simulate.tools.mysql_db import execute_mysql
 reload(sys)
 sys.setdefaultencoding('utf-8')
 log = my_log()
+f = open('./http/config_linux_to_curl', 'r')
+information_file = f.read().split()
+host = information_file[3]
+user = information_file[5]
+database_pwd = information_file[4]
+pwd = information_file[2]
 
 
 def get_resource_list_by_time(time_stamp):
@@ -48,8 +54,8 @@ def get_resource_list_by_time(time_stamp):
     length = len(information) - 1
     log.info(u'分割后的信息大小为：' + str(len(information) - 1))
     for i in range(0, length):
-        if "timed out"in information[i]:
-            log.info(u'超时信息采集结果如下:'+information[i])
+        if "timed out" in information[i]:
+            log.info(u'超时信息采集结果如下:' + information[i])
             line = information[i]
             url = (line.split()[-7])  # 如果修改了curl指令请记得修改这里
             log.info(u'提取到的url信息为：' + unicode(url))
@@ -96,14 +102,14 @@ def get_resource_size(url):
     command3 = '%"'
     command = command1 + kind1 + command2 + url + command3
     log.info(u'输入uri获取他的cache_size和category:' + command)
-    res = execute_mysql(command)
+    res = execute_mysql(command, host, user, database_pwd)
     log.info(u"执行的筛选数据res为：" + unicode(res))
     if res is None:
         command = command1 + kind2 + command2 + url + command3
-        res = execute_mysql(command)
+        res = execute_mysql(command, host, user, database_pwd)
         if res is None:
             command = command1 + kind3 + command2 + url + command3
-            res = execute_mysql(command)
+            res = execute_mysql(command, host, user, database_pwd)
             info.append("videocache")
             info.append(res[1])
             info.append(res[0])

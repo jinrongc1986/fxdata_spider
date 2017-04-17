@@ -116,7 +116,7 @@ def get_all_cache(current_time, limit):
     :return:
     """
 
-    if host == '192.168.0.163':
+    if host == '192.168.0.163' or '20.20.20.2':
         connect_linux('service iptables stop', host, user, '123')  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
     else:
         connect_linux('service iptables stop', host, user, pwd)  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）

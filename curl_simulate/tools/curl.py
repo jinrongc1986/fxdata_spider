@@ -35,6 +35,12 @@ from curl_simulate.tools.log.operation_log import my_log
 reload(sys)
 sys.setdefaultencoding('utf-8')
 log = my_log()
+f = open('./http/config_linux_to_curl', 'r')
+log.info(u"在./http/config_linux_to_curl下读取链接linux设备的操作")
+linux_config = f.readline().split()
+ip_add = linux_config[3]
+user = linux_config[1]
+pwd = linux_config[2]
 
 
 def do_curl(time_stamp, command, system="windows", really_do=True):
@@ -66,12 +72,6 @@ def do_curl(time_stamp, command, system="windows", really_do=True):
         x1 = open(curl_log, 'a+')
         x1.write(current_time + '\n' + command + '\n')
         # 在此增加读取linux配置的语句
-        f = open('./http/config_linux_to_curl', 'r')
-        log.info(u"在./http/config_linux_to_curl下读取链接linux设备的操作")
-        linux_config = f.readline().split()
-        ip_add = linux_config[0]
-        user = linux_config[1]
-        pwd = linux_config[2]
         log.info(u"linux的信息如下所示：ip address:" + ip_add + ' user:' + user + " password:" + pwd)
         if really_do is True:
             info = connect_linux(command, ip_add, user, pwd)

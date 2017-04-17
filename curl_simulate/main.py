@@ -41,8 +41,8 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 
-def main(start_time, end_time, host='192.168.0.59', user='root', pwd='FxData!Cds@2016_', limit=10, kind_timeline=120,
-         cds_ip='192.168.1.106', database_user='root', database_pwd='0rd1230ac'):
+def main(start_time, end_time, host='192.168.1.109', user='root', pwd='123', limit=5, kind_timeline=120,
+         cds_ip='20.20.20.2', database_user='root', database_pwd='0rd1230ac'):
     """
     
     :param database_pwd: 
@@ -74,7 +74,7 @@ def main(start_time, end_time, host='192.168.0.59', user='root', pwd='FxData!Cds
             time.sleep(60)
     log.info(u'全场关键字 timestamp为：' + timestamp)
     log.info(u'获取全部资源放入到指定的文件夹中')
-    get_all_cache(timestamp,100)  # 获取全部资源放入到指定的文件夹中
+    get_all_cache(timestamp, 100)  # 获取全部资源放入到指定的文件夹中
     log.info(u"现在的时间戳节点为：" + timestamp)
     i = 1
     log.info(u'开始准备工作，计算每种kind的资源和大小')
@@ -84,8 +84,9 @@ def main(start_time, end_time, host='192.168.0.59', user='root', pwd='FxData!Cds
     log.info(u'准备工作就绪，现在可以开始进行真正的curl操作')
     log.info(u'执行time_customize前的当前的时间为' + unicode(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
     timer_customize(timestamp, str(start_time), end_time, limit, kind_timeline)
-    get_all_hot_list(timestamp)
-    wrong_statistics_log(timestamp)
+    log.info(u'执行完成time_customize函数，开始统计函数的执行')
+    # get_all_hot_list(timestamp)
+    # wrong_statistics_log(timestamp)
     log.info(u"执行完成")
 
 
@@ -168,4 +169,7 @@ def get_info_from_163(host='192.168.0.163', user='root', passwd='0rd1230ac', lim
 
 if __name__ == '__main__':
     del_all_log()
-    main('2017-04-14 18:15:00', '2017-04-15 00:30:00', kind_timeline=120)
+    # main('2017-04-15 16:55:00', '2017-04-15 22:30:00', kind_timeline=60)
+    main('2017-04-17 00:45:00', '2017-04-17 09:00:00', host='192.168.1.109', user='root', pwd='123', limit=5,
+         kind_timeline=60,
+         cds_ip='20.20.20.2', database_user='root', database_pwd='0rd1230ac')
