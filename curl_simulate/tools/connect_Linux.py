@@ -44,6 +44,7 @@ def connect_linux(command, ip, user, pwd):
     log.info(u'链接' + ip + u'，开始操作')
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    log.info(u'IP User Pwd 信息' + ip + '\t' + user + '\t' + pwd)
     ssh.connect(ip, 22, user, pwd)
     stdin, stdout, stderr = ssh.exec_command(command)
     log.info(u'链接' + ip + u'，开始操作' + unicode(command))
@@ -56,9 +57,10 @@ def connect_linux(command, ip, user, pwd):
     return info
 
 
-def modify_linux_config(host, user, pwd, cds_ip, database_pwd, database_user):
+def modify_linux_config(host, user, pwd, cds_ip, database_pwd, database_user, cds_pwd):
     """
     修改config-linux_to_curl里的配置文件
+    :param cds_pwd: 
     :param database_user: 
     :param database_pwd: 
     :param cds_ip: 
@@ -68,5 +70,5 @@ def modify_linux_config(host, user, pwd, cds_ip, database_pwd, database_user):
     :return: 
     """
     f = open('./http/config_linux_to_curl', 'w+')
-    message = host + ' ' + user + ' ' + pwd + ' ' + cds_ip + ' ' + database_pwd + ' ' + database_user
+    message = host + ' ' + user + ' ' + pwd + ' ' + cds_ip + ' ' + database_pwd + ' ' + database_user + ' ' + cds_pwd
     f.write(message)

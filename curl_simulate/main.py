@@ -41,10 +41,10 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 
-def main(start_time, end_time, host='192.168.1.109', user='root', pwd='123', limit=5, kind_timeline=120,
-         cds_ip='20.20.20.2', database_user='root', database_pwd='0rd1230ac'):
+def main(start_time, end_time, host, user, src_pwd, limit, kind_timeline,
+         cds_ip, database_user, database_pwd, cds_pwd):
     """
-    
+    :param cds_pwd: 
     :param database_pwd: 
     :param database_user: 
     :param cds_ip: 
@@ -52,12 +52,12 @@ def main(start_time, end_time, host='192.168.1.109', user='root', pwd='123', lim
     :param end_time: 结束时间
     :param host: 执行curl动作的ip
     :param user: 上述ip的帐号
-    :param pwd: 上述ip的密码
+    :param src_pwd: 上述ip的密码
     :param limit: curl每种资源的个数
     :param kind_timeline: 每个kind中上下部分的时间差
     :return: 
     """
-    modify_linux_config(host, user, pwd, cds_ip, database_pwd, database_user)
+    modify_linux_config(host, user, src_pwd, cds_ip, database_pwd, database_user, cds_pwd)
     start_time = datetime.datetime.strptime(start_time, '%Y-%m-%d %H:%M:%S')
     timestamp = str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M'))
     filepath = './operation_log/' + timestamp
@@ -169,7 +169,10 @@ def get_info_from_163(host='192.168.0.163', user='root', passwd='0rd1230ac', lim
 
 if __name__ == '__main__':
     del_all_log()
-    # main('2017-04-15 16:55:00', '2017-04-15 22:30:00', kind_timeline=60)
-    main('2017-04-17 00:45:00', '2017-04-17 09:00:00', host='192.168.1.109', user='root', pwd='123', limit=5,
-         kind_timeline=60,
-         cds_ip='20.20.20.2', database_user='root', database_pwd='0rd1230ac')
+    # main('2017-04-17 14:13:00', '2017-04-17 15:00:00', host='192.168.0.59', user='root', src_pwd='FxData!Cds@2016_',
+    #      limit=10,
+    #      kind_timeline=60,
+    #      cds_ip='192.168.1.106', database_user='root', database_pwd='0rd1230ac', cds_pwd="FxData!Cds@2016_ ")
+    # main('2017-04-17 14:17:00', '2017-04-17 14:55:00', host='192.168.1.109', user='root', src_pwd='FxData!Cds@2016_', limit=5,
+    #      kind_timeline=60,
+    #      cds_ip='20.20.20.2', database_user='root', database_pwd='0rd1230ac', cds_pwd="123")

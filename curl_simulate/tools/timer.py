@@ -35,9 +35,9 @@ log = my_log()
 f = open('./http/config_linux_to_curl', 'r')
 information = f.read().split()
 cds_host = information[3]
-user = information[5]
-database_pwd = information[4]
-cds_pwd = information[2]
+cds_database_user = information[5]
+cds_database_pwd = information[4]
+cds_pwd = information[6]
 
 
 def timer_customize(timestamp, expect_start_time='2017-03-21 17:04:00', expect_end_time='2017-03-21 17:20:00',
@@ -74,7 +74,7 @@ def timer_customize(timestamp, expect_start_time='2017-03-21 17:04:00', expect_e
     f = open(curl_log, 'w+')
     f.close()
     init_debug_info = connect_linux(
-        ' /home/icache/icached debug', cds_host, user, cds_pwd)
+        ' /home/icache/icached debug', cds_host, cds_database_user, cds_pwd)
     log.info(u'debug信息如下所示：' + '\n' + init_debug_info)
     f = open(curl_log, 'a')
     f.write(init_debug_info)
@@ -152,7 +152,7 @@ def timer_customize(timestamp, expect_start_time='2017-03-21 17:04:00', expect_e
         node += 1
         if node == 6:
             node = 1
-    end_debug_info = connect_linux('/home/icache/icached debug', cds_host, user, cds_pwd)
+    end_debug_info = connect_linux('/home/icache/icached debug', cds_host, cds_database_user, cds_pwd)
     log.info(u'结束所有的curl操作，debug_info如下所示：' + end_debug_info)
     f.write(end_debug_info)
     log.info(u'kind执行的次数写入到curl_log文件中')

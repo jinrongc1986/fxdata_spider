@@ -35,9 +35,9 @@ log = my_log()
 f = open('./http/config_linux_to_curl', 'r')
 information = f.read().split()
 host = information[3]
-user = information[5]
+database_user = information[5]
 database_pwd = information[4]
-pwd = information[2]
+device_pwd = information[6]
 
 
 def get_http_cache(category="1", limit='10', filepath='./http/cache/httpcache'):
@@ -55,7 +55,7 @@ def get_http_cache(category="1", limit='10', filepath='./http/cache/httpcache'):
     current_time = str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     command = str1 + category + str1_5 + current_time + str1_6 + str2 + limit
     filepath += 'httpcache'
-    res = execute_mysql_get_cache_info(command, filepath, category, host, user, database_pwd)
+    res = execute_mysql_get_cache_info(command, filepath, category, host, database_user, database_pwd)
     log.info(u'采集到的放入/http/cache_info的http信息为' + str(res))
     return res
 
@@ -63,9 +63,6 @@ def get_http_cache(category="1", limit='10', filepath='./http/cache/httpcache'):
 def get_video_cache(category='1', limit='10', filepath='./http/cache/videocache'):
     """
     在videocache这个表里根据category和limit选择uri
-    :param passwd:
-    :param user:
-    :param host:
     :param category:
     :param limit:
     :param filepath:
@@ -76,7 +73,7 @@ def get_video_cache(category='1', limit='10', filepath='./http/cache/videocache'
     execute = str1 + category + str2 + limit
     # print execute
     filepath += 'videocache'
-    res = execute_mysql_get_cache_info(execute, filepath, category, host, user, database_pwd)
+    res = execute_mysql_get_cache_info(execute, filepath, category, host, database_user, database_pwd)
     log.info(u'采集到的放入/http/cache_info的video信息为' + str(res))
     return res
 
@@ -84,9 +81,6 @@ def get_video_cache(category='1', limit='10', filepath='./http/cache/videocache'
 def get_mobile_cache(category='0', limit='10', filepath='./http/cache/mobilecache'):
     """
     在mobilecache这个表里根据category和limit选择uri
-    :param passwd:
-    :param user:
-    :param host:
     :param category:
     :param limit:
     :param filepath:
@@ -100,7 +94,7 @@ def get_mobile_cache(category='0', limit='10', filepath='./http/cache/mobilecach
     execute = str1 + category + str1_5 + current_time + str1_6 + str2 + limit
     # print execute
     filepath += 'mobilecache'
-    res = execute_mysql_get_cache_info(execute, filepath, category, host, user, database_pwd)
+    res = execute_mysql_get_cache_info(execute, filepath, category, host, database_user, database_pwd)
     log.info(u'采集到的放入/http/cache_info的mobile信息为' + str(res))
     return res
 
@@ -115,11 +109,13 @@ def get_all_cache(current_time, limit):
     :param limit:
     :return:
     """
-
+    log.info(u"host为："+host)
+    log.info(u"user为：" + database_user)
+    log.info(u"pwd为：" + device_pwd)
     if host == '192.168.0.163' or '20.20.20.2':
-        connect_linux('service iptables stop', host, user, '123')  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
+        connect_linux('service iptables stop', host, database_user, device_pwd)  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
     else:
-        connect_linux('service iptables stop', host, user, pwd)  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
+        connect_linux('service iptables stop', host, database_user, device_pwd)  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
     log.info(u'连接到数据库成功')
     is_http_cache_exist = os.path.exists('./http/cache_info')
     if is_http_cache_exist is True:

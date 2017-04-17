@@ -37,7 +37,7 @@ information = f.read().split()
 cds_host = information[3]
 cds_user = information[5]
 database_pwd = information[4]
-cds_pwd = information[2]
+cds_pwd = information[6]
 
 
 def init_db(host, user, passwd):
@@ -112,6 +112,7 @@ def get_location_log(url):
     :param url:
     :return:
     """
+    log.info(u"此处的linux链接信息如下所示："+cds_host+' '+cds_user+' '+cds_pwd)
     connect_linux('service iptables stop', cds_host, cds_user, cds_pwd)  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
     cmd1 = 'SELECT class,category,cache_size,create_time FROM location_log WHERE req_uri = "'
     cmd2 = '" ORDER BY create_time DESC'

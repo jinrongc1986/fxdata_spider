@@ -38,12 +38,13 @@ log = my_log()
 f = open('./http/config_linux_to_curl', 'r')
 log.info(u"在./http/config_linux_to_curl下读取链接linux设备的操作")
 linux_config = f.readline().split()
-ip_add = linux_config[3]
+src_ip = linux_config[0]
 user = linux_config[1]
 pwd = linux_config[2]
 
 
-def do_curl(time_stamp, command, system="windows", really_do=True):
+
+def do_curl(time_stamp, command, system, really_do):
     """
     执行curl命令，目前只支持windows系统和linux系统
     :param really_do: 默认是真的要执行curl操作
@@ -72,9 +73,9 @@ def do_curl(time_stamp, command, system="windows", really_do=True):
         x1 = open(curl_log, 'a+')
         x1.write(current_time + '\n' + command + '\n')
         # 在此增加读取linux配置的语句
-        log.info(u"linux的信息如下所示：ip address:" + ip_add + ' user:' + user + " password:" + pwd)
+        log.info(u"linux的信息如下所示：ip address:" + src_ip + ' user:' + user + " password:" + pwd)
         if really_do is True:
-            info = connect_linux(command, ip_add, user, pwd)
+            info = connect_linux(command, src_ip, user, pwd)
             log.info(u"执行的命令为" + unicode(command) + u'并且写入到curl_log中')
             with open(curl_log, "a") as f:
                 f.write('\n')
@@ -83,8 +84,8 @@ def do_curl(time_stamp, command, system="windows", really_do=True):
                 f.flush()
 
 
-def curl_resource_verbose(timestamp, classes=0, category=0, limit=5, system='windows', ua='iphone', need_assert=True,
-                          really_do=True):
+def curl_resource_verbose(timestamp, classes, category, limit, system, ua, need_assert,
+                          really_do):
     """
     根据class（就是上面的kind，因为class是自带的关键字，故换成kind）和category，还有limit来执行curl动作
     :param really_do: 
@@ -173,7 +174,7 @@ def curl_resource_verbose(timestamp, classes=0, category=0, limit=5, system='win
         os.remove('test666')
 
 
-def curl_resource_class(time_stamp, kind=0, limit=10, system='windows', ua='iphone', need_assert=True):
+def curl_resource_class(time_stamp, kind, limit, system, ua, need_assert):
     """
     根据class的种类来curl所有的这个class下的cache资源（存放于文件中）
     :param need_assert: 
