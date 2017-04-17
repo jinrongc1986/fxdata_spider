@@ -118,6 +118,7 @@ def get_location_log(url):
     cmd2 = '" ORDER BY create_time DESC'
     cmd = cmd1 + url + cmd2
     log.info(u"执行的获取重定向日志信息的cmd为:" + unicode(cmd))
+    log.info(u'cds_host cds_user database_pwd信息 分别为：'+cds_host+' '+cds_user+' '+database_pwd+' ')
     return execute_mysql(cmd, cds_host, cds_user, database_pwd)
 
 

@@ -43,7 +43,6 @@ user = linux_config[1]
 pwd = linux_config[2]
 
 
-
 def do_curl(time_stamp, command, system, really_do):
     """
     执行curl命令，目前只支持windows系统和linux系统
@@ -167,6 +166,8 @@ def curl_resource_verbose(timestamp, classes, category, limit, system, ua, need_
             cache_size_each = cache_size_list[i]
             url = cache_url_list[i]
             md5_each = md5_list[i]
+            log.info(
+                u'开始执行判断校验程序cache_size_each  url  md5分别为' + str(cache_size_each) + ' ' + str(url) + ' ' + str(md5_each))
             assert_location_log(classes, category, url, cache_size_each, timestamp)
             assert_service_log(classes, category, cache_size_each, cache_size_each, md5_each, timestamp)
             i += 1

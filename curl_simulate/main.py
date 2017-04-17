@@ -85,8 +85,8 @@ def main(start_time, end_time, host, user, src_pwd, limit, kind_timeline,
     log.info(u'执行time_customize前的当前的时间为' + unicode(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
     timer_customize(timestamp, str(start_time), end_time, limit, kind_timeline)
     log.info(u'执行完成time_customize函数，开始统计函数的执行')
-    # get_all_hot_list(timestamp)
-    # wrong_statistics_log(timestamp)
+    get_all_hot_list(timestamp)
+    wrong_statistics_log(timestamp)
     log.info(u"执行完成")
 
 
@@ -173,6 +173,7 @@ if __name__ == '__main__':
     #      limit=10,
     #      kind_timeline=60,
     #      cds_ip='192.168.1.106', database_user='root', database_pwd='0rd1230ac', cds_pwd="FxData!Cds@2016_ ")
-    # main('2017-04-17 14:17:00', '2017-04-17 14:55:00', host='192.168.1.109', user='root', src_pwd='FxData!Cds@2016_', limit=5,
+    # main('2017-04-17 18:52:00', '2017-04-18 08:00:00', host='192.168.1.109', user='root', src_pwd='FxData!Cds@2016_',
+    #      limit=5,
     #      kind_timeline=60,
     #      cds_ip='20.20.20.2', database_user='root', database_pwd='0rd1230ac', cds_pwd="123")
