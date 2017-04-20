@@ -55,17 +55,18 @@ def do_curl(time_stamp, command, system, really_do):
     current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     log.info(u'当前时间为：' + unicode(current_time))
     if system == 'windows':
-        log.info(u'选择的是windows设备执行curl操作')
+        log.info(u'选择的是windows设备执行curl操作'+str(command))
         p = os.popen(command)
-        info = p.readlines()  # 读取命令行的输出到一个list
-        x1 = open("windows_curl_log", "a")
+        info = p.read()  # 读取命令行的输出到一个list
+        log.info(u'windows上执行的命令返回值为：' + str(info))
+        curl_log = "./curl_log/curl_log_" + time_stamp
+        x1 = open(curl_log, 'a+')
         x1.write(current_time + '\n' + command + '\n')
-        for line in info:  # 按行遍历
-            with open("windows_curl_log", "a") as f:
-                line = line.strip('\r\n')
-                json.dump(line, f, ensure_ascii=False)
-                f.write('\n')
-                f.flush()
+        with open(curl_log, "a") as f:
+            f.write('\n')
+            f.write("" + info)
+            f.write('\n')
+            f.flush()
     else:  # 此处编写linux下的命令
         log.info(u'选择的是linux设备执行curl操作')
         curl_log = "./curl_log/curl_log_" + time_stamp
@@ -172,7 +173,8 @@ def curl_resource_verbose(timestamp, classes, category, limit, system, ua, need_
             assert_service_log(classes, category, cache_size_each, cache_size_each, md5_each, timestamp)
             i += 1
     if system == 'windows':
-        os.remove('test666')
+        pass
+        # os.remove('test666')
 
 
 def curl_resource_class(time_stamp, kind, limit, system, ua, need_assert):

@@ -37,10 +37,10 @@ information = f.read().split()
 host = information[3]
 database_user = information[5]
 database_pwd = information[4]
-device_pwd = information[6]
 
 
-def get_http_cache(category="1", limit='10', filepath='./http/cache/httpcache'):
+
+def get_http_cache(category, limit, filepath='./http/cache/httpcache'):
     """
     在httpcache这个表里根据category和limit选择uri
     :param filepath:
@@ -99,23 +99,24 @@ def get_mobile_cache(category='0', limit='10', filepath='./http/cache/mobilecach
     return res
 
 
-def get_all_cache(current_time, limit):
+def get_all_cache(current_time, limit, resource_ip, resource_user, resource_pwd,device_password):
     """
     获取全部种类的资源
     class=0 时 category有0--4
     class=1 时 category有0--2
     class=2 时 category有0--19
+    :param device_password: 
+    :param resource_pwd: 
+    :param resource_user: 
+    :param resource_ip: 
     :param current_time:
     :param limit:
     :return:
     """
-    log.info(u"host为："+host)
-    log.info(u"user为：" + database_user)
-    log.info(u"pwd为：" + device_pwd)
-    if host == '192.168.0.163' or '20.20.20.2':
-        connect_linux('service iptables stop', host, database_user, device_pwd)  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
-    else:
-        connect_linux('service iptables stop', host, database_user, device_pwd)  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
+    log.info(u"host为：" + resource_ip)
+    log.info(u"user为：" + resource_user)
+    log.info(u"pwd为：" + resource_pwd)
+    connect_linux('service iptables stop', host, database_user, device_password)  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
     log.info(u'连接到数据库成功')
     is_http_cache_exist = os.path.exists('./http/cache_info')
     if is_http_cache_exist is True:
