@@ -55,7 +55,7 @@ def do_curl(time_stamp, command, system, really_do):
     current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     log.info(u'当前时间为：' + unicode(current_time))
     if system == 'windows':
-        log.info(u'选择的是windows设备执行curl操作'+str(command))
+        log.info(u'选择的是windows设备执行curl操作' + str(command))
         p = os.popen(command)
         info = p.read()  # 读取命令行的输出到一个list
         log.info(u'windows上执行的命令返回值为：' + str(info))
@@ -98,6 +98,7 @@ def curl_resource_verbose(timestamp, classes, category, limit, system, ua, need_
     :param limit:最近的n个资源
     :return:
     """
+    log.info(u"curl_resource_verbose函数 开始执行！！！")
     global x
     if classes == 0:
         kind_ = 'httpcache'
@@ -177,59 +178,39 @@ def curl_resource_verbose(timestamp, classes, category, limit, system, ua, need_
         # os.remove('test666')
 
 
-def curl_resource_class(time_stamp, kind, limit, system, ua, need_assert):
+def curl_resource_class(timestamp, classes, limit, system, ua, need_assert,
+                        really_do):
     """
     根据class的种类来curl所有的这个class下的cache资源（存放于文件中）
+    :param really_do: 
     :param need_assert: 
-    :param time_stamp:
+    :param timestamp:
     :param system:
     :param ua:
     :param limit:
-    :param kind:
+    :param classes:
     :return:
     """
-    if kind == 0:
-        category = 0
-        while category < 5:
-            filepath1 = './http/cache_info/' + time_stamp + '/httpcache' + str(category)
-            f = open(filepath1)
-            is_unempty = any(f)
-            if is_unempty:  # 如果不为空 则执行读取和curl操作
-                curl_resource_verbose(time_stamp, int(kind), category, limit, system, ua, need_assert)
-            else:  # 如果为空则跳过
-                pass
-            category += 1
-    elif kind == 1:
-        category = 0
-        while category < 3:
-            filepath1 = './http/cache_info/' + time_stamp + '/mobilecache' + str(category)
-            f = open(filepath1)
-            is_unempty = any(f)
-            if is_unempty:  # 如果不为空 则执行读取和curl操作
-                curl_resource_verbose(time_stamp, int(kind), category, limit, system, ua, need_assert)
-            else:  # 如果为空则跳过
-                pass
-            category += 1
-    elif kind == 2:
-        category = 0
-        while category < 20:
-            filepath1 = './http/cache_info/' + time_stamp + '/videocache' + str(category)
-            f = open(filepath1)
-            is_unempty = any(f)
-            # print is_unempty
-            if is_unempty:  # 如果不为空 则执行读取和curl操作
-                curl_resource_verbose(time_stamp, int(kind), category, limit, system, ua, need_assert)
-            else:  # 如果为空则跳过
-                pass
-            category += 1
+    if classes == 0:
+        for i in range(0, 5):
+            curl_resource_verbose(timestamp, 0, i, limit, system, ua, need_assert, really_do)
+    elif classes == 1:
+        for i in range(0, 3):
+            curl_resource_verbose(timestamp, 1, i, limit, system, ua, need_assert, really_do)
+    elif classes == 2:
+        for i in range(0, 20):
+            curl_resource_verbose(timestamp, 2, i, limit, system, ua, need_assert, really_do)
 
 
-def curl_all(time_stamp):
+def curl_all(time_stamp, limit, need_assert, really_do):
     """
     curl所有的资源
+    :param really_do: 
+    :param need_assert: 
+    :param limit: 
     :param time_stamp: 
     :return: 
     """
-    curl_resource_class(time_stamp, 0, 100, "linux", "iphone", False)
-    curl_resource_class(time_stamp, 1, 100, "linux", "windows", False)
-    curl_resource_class(time_stamp, 2, 100, "linux", "iphone", False)
+    curl_resource_class(time_stamp, 0, limit, "linux", "iphone", need_assert, really_do)
+    curl_resource_class(time_stamp, 1, limit, "linux", "windows", need_assert, really_do)
+    curl_resource_class(time_stamp, 2, limit, "linux", "iphone", need_assert, really_do)

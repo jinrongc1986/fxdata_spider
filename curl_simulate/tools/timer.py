@@ -41,7 +41,7 @@ cds_pwd = information[6]
 
 
 def timer_customize(timestamp, expect_start_time, expect_end_time,
-                    limit, kind_timeline):
+                    limit, kind_timeline, do_all=False):
     """
     输入期望开始的时间随后每隔五分钟会调用一次
     :param kind_timeline: 
@@ -84,6 +84,7 @@ def timer_customize(timestamp, expect_start_time, expect_end_time,
     count_kind3 = 1
     count_kind4 = 1
     count_kind5 = 1
+    count_kind0 = 1
     log.info(u'开始执行循环操作')
     while True:
         del_operation_log(timestamp)
@@ -121,31 +122,37 @@ def timer_customize(timestamp, expect_start_time, expect_end_time,
         seconds_to_wait = hours * 3600 + minute * 60 + seconds
         log.info(u"等待时间为" + str(seconds_to_wait) + u'秒后开始执行')
         time.sleep(seconds_to_wait)
-        if node == 1:
-            log.info(u'开始执行kind1的实际curl操作')
-            kind1(timestamp, limit=limit, time_line=kind_timeline)
-            log.info(u'kind1执行了' + str(count_kind1) + u"次")
-            count_kind1 += 1
-        elif node == 2:
-            log.info(u'开始执行kind2的实际curl操作')
-            kind2(timestamp, limit=limit, time_line=kind_timeline)
-            log.info(u'kind2执行了' + str(count_kind2) + u"次")
-            count_kind2 += 1
-        elif node == 3:
-            log.info(u'开始执行kind3的实际curl操作')
-            kind3(timestamp, limit=limit, time_line=kind_timeline)
-            log.info(u'kind3执行了' + str(count_kind3) + u"次")
-            count_kind3 += 1
-        elif node == 4:
-            log.info(u'开始执行kind4的实际curl操作')
-            kind4(timestamp, limit=limit, time_line=kind_timeline)
-            log.info(u'kind4执行了' + str(count_kind4) + u"次")
-            count_kind4 += 1
-        elif node == 5:
-            log.info(u'开始执行kind5的实际curl操作')
-            kind5(timestamp, limit=limit, time_line=kind_timeline)
-            log.info(u'kind5执行了' + str(count_kind5) + u"次")
-            count_kind5 += 1
+        if do_all == False:
+            if node == 1:
+                log.info(u'开始执行kind1的实际curl操作')
+                kind1(timestamp, limit=limit, time_line=kind_timeline)
+                log.info(u'kind1执行了' + str(count_kind1) + u"次")
+                count_kind1 += 1
+            elif node == 2:
+                log.info(u'开始执行kind2的实际curl操作')
+                kind2(timestamp, limit=limit, time_line=kind_timeline)
+                log.info(u'kind2执行了' + str(count_kind2) + u"次")
+                count_kind2 += 1
+            elif node == 3:
+                log.info(u'开始执行kind3的实际curl操作')
+                kind3(timestamp, limit=limit, time_line=kind_timeline)
+                log.info(u'kind3执行了' + str(count_kind3) + u"次")
+                count_kind3 += 1
+            elif node == 4:
+                log.info(u'开始执行kind4的实际curl操作')
+                kind4(timestamp, limit=limit, time_line=kind_timeline)
+                log.info(u'kind4执行了' + str(count_kind4) + u"次")
+                count_kind4 += 1
+            elif node == 5:
+                log.info(u'开始执行kind5的实际curl操作')
+                kind5(timestamp, limit=limit, time_line=kind_timeline)
+                log.info(u'kind5执行了' + str(count_kind5) + u"次")
+                count_kind5 += 1
+        else:
+            log.info(u'开始执行kind0的实际curl操作')
+            kind0(timestamp, limit=limit, time_line=kind_timeline)
+            log.info(u'kind0执行了' + str(count_kind5) + u"次")
+            count_kind0 += 1
         time_line = datetime.timedelta(minutes=5)  # 两个kind之间每次curl间隔的时间，要求为5分钟
         expect_start_time = expect_start_time + time_line
         log.info(u'下一次的curl_kind操作开始时间为：' + unicode(expect_start_time))

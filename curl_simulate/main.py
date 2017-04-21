@@ -28,6 +28,7 @@ from curl_simulate.http.kind_info import calculate_kind
 from curl_simulate.http.get_cache import get_all_cache, get_mobile_cache, get_http_cache
 from curl_simulate.tools.connect_Linux import connect_linux, modify_linux_config
 from curl_simulate.tools.curl import curl_resource_verbose, curl_all
+from curl_simulate.tools.curl_kind import kind0
 from curl_simulate.tools.del_log import del_all_log
 from curl_simulate.tools.log.operation_log import my_log, modify_my_log_file_path
 from curl_simulate.tools.resource_list import get_all_hot_list, get_resource_verbose
@@ -88,7 +89,8 @@ sys.setdefaultencoding('utf-8')
 
 
 def main(start_time, end_time, host, user, src_pwd, limit, kind_timeline,
-         cds_ip, database_user, database_pwd, cds_pwd, src_system='linux', resource_ip='empty', resource_user='empty',
+         cds_ip, database_user, database_pwd, cds_pwd, do_all, src_system='linux', resource_ip='empty',
+         resource_user='empty',
          resource_pwd='empty', resource_device_pwd='empty'):
     """
     :param resource_device_pwd: 
@@ -137,14 +139,14 @@ def main(start_time, end_time, host, user, src_pwd, limit, kind_timeline,
     get_all_cache(timestamp, 100, resource_ip, resource_user, resource_pwd, resource_device_pwd)  # 获取全部资源放入到指定的文件夹中
     log.info(u"现在的时间戳节点为：" + timestamp)
     log.info(u'开始准备工作，计算每种kind的资源和大小')
-    calculate_kind(timestamp, 0, limit)
-    # i = 1
-    # while i < 6:
-    #     calculate_kind(timestamp, i, limit)  # 目前一共五钟kind，把每个kind的cache文件信息存放在kind_info中
-    #     i += 1
+    # calculate_kind(timestamp, 0, limit)
+    i = 0
+    while i < 6:
+        calculate_kind(timestamp, i, limit)  # 目前一共五钟kind，把每个kind的cache文件信息存放在kind_info中
+        i += 1
     log.info(u'准备工作就绪，现在可以开始进行真正的curl操作')
     log.info(u'执行time_customize前的当前的时间为' + unicode(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
-    timer_customize(timestamp, str(start_time), end_time, limit, kind_timeline)
+    timer_customize(timestamp, str(start_time), end_time, limit, kind_timeline, do_all)
     log.info(u'执行完成time_customize函数，开始统计函数的执行')
     get_all_hot_list(timestamp)
     wrong_statistics_log(timestamp)
@@ -234,9 +236,9 @@ def get_info_from_163(resource_ip='192.168.0.163', resource_user='root', resourc
 
 if __name__ == '__main__':
     del_all_log()
-    main(start_time='2017-04-20 15:39:00', end_time='2017-04-20 18:00:00', host='192.168.0.59', user='root',
-         src_pwd='123', limit=5, kind_timeline=60, cds_ip='192.168.1.106', database_user='root',
-         database_pwd='0rd1230ac', cds_pwd='123')  # 106为59提供服务，在59上执行curl动作，资源获取来自106上的数据库
+    main(start_time='2017-04-21 16:50:00', end_time='2017-04-21 22:00:00', host='192.168.0.59', user='root',
+         src_pwd='123', limit=10, kind_timeline=60, cds_ip='192.168.1.106', database_user='root',
+         database_pwd='0rd1230ac', cds_pwd='123', do_all=True)  # 106为59提供服务，在59上执行curl动作，资源获取来自106上的数据库
     # main('2017-04-20 15:25:00', '2017-04-20 18:00:00', host='192.168.0.56', user='root', src_pwd='FxData!Cds@2016_',
     #      limit=10,
     #      kind_timeline=120,
