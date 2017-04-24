@@ -113,7 +113,7 @@ def get_location_log(url):
     :return:
     """
     log.info(u"此处的linux链接信息如下所示："+cds_host+' '+cds_user+' '+cds_pwd)
-    connect_linux('service iptables stop', cds_host, cds_user, cds_pwd)  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
+    # connect_linux('service iptables stop', cds_host, cds_user, cds_pwd)  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
     cmd1 = 'SELECT class,category,cache_size,create_time FROM location_log WHERE req_uri = "'
     cmd2 = '" ORDER BY create_time DESC'
     cmd = cmd1 + url + cmd2
@@ -123,7 +123,7 @@ def get_location_log(url):
 
 
 def get_service_log(classes, md5):
-    connect_linux('service iptables stop', cds_host, cds_user, cds_pwd)  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
+    # connect_linux('service iptables stop', cds_host, cds_user, cds_pwd)  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
     if int(classes) == 0:
         classes = "http_service_log"
     elif int(classes) == 1:

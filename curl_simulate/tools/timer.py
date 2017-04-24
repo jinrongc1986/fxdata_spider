@@ -44,6 +44,7 @@ def timer_customize(timestamp, expect_start_time, expect_end_time,
                     limit, kind_timeline, do_all=False):
     """
     输入期望开始的时间随后每隔五分钟会调用一次
+    :param do_all: 
     :param kind_timeline: 
     :param limit: 
     :param timestamp:
@@ -122,7 +123,7 @@ def timer_customize(timestamp, expect_start_time, expect_end_time,
         seconds_to_wait = hours * 3600 + minute * 60 + seconds
         log.info(u"等待时间为" + str(seconds_to_wait) + u'秒后开始执行')
         time.sleep(seconds_to_wait)
-        if do_all == False:
+        if not do_all:
             if node == 1:
                 log.info(u'开始执行kind1的实际curl操作')
                 kind1(timestamp, limit=limit, time_line=kind_timeline)

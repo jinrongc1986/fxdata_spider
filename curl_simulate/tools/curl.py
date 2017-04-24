@@ -36,7 +36,6 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 log = my_log()
 f = open('./http/config_linux_to_curl', 'r')
-log.info(u"在./http/config_linux_to_curl下读取链接linux设备的操作")
 linux_config = f.readline().split()
 src_ip = linux_config[0]
 user = linux_config[1]
@@ -137,7 +136,7 @@ def curl_resource_verbose(timestamp, classes, category, limit, system, ua, need_
         limit = count
     i = 0
     while i < limit:
-        command1 = 'curl --connect-timeout 3 -m 8 -o test666 -L "'  # 连接超时时间用 --connect-timeout 参数来指定，数据传输的最大允许时间用 -m 参数来指定。
+        command1 = 'curl --connect-timeout 5 -m 10 -o test666 -L "'  # 连接超时时间用 --connect-timeout 参数来指定，数据传输的最大允许时间用 -m 参数来指定。
         command2 = '" '
         command3 = ' --user-agent "' + ua + '"'
         url = cache_url_list[i]

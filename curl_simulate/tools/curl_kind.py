@@ -338,6 +338,7 @@ def kind5(time_stamp, limit, time_line, is_sleep=True):
 
 def kind0(time_stamp, limit, time_line, is_sleep=True):
     if is_sleep:
+        # curl_resource_verbose(time_stamp, 0, 1, limit, src_system, 'iphone', True, True)
         threadpool = []
         for t in range(0, 1):  # 如果此处改为2的话 会存现问题
             for i in range(5):

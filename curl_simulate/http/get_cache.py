@@ -116,7 +116,7 @@ def get_all_cache(current_time, limit, resource_ip, resource_user, resource_pwd,
     log.info(u"host为：" + resource_ip)
     log.info(u"user为：" + resource_user)
     log.info(u"pwd为：" + resource_pwd)
-    connect_linux('service iptables stop', host, database_user, device_password)  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
+    # connect_linux('service iptables stop', resource_ip, resource_user, device_password)  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
     log.info(u'连接到数据库成功')
     is_http_cache_exist = os.path.exists('./http/cache_info')
     if is_http_cache_exist is True:
