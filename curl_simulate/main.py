@@ -156,59 +156,7 @@ def main(start_time, end_time, host, user, src_pwd, limit, kind_timeline,
     log.info(u"执行完成")
 
 
-def curl_verbose(times, time_interval):
-    """
-    循环执行curl某个class的某个category
-    :param time_interval: 时间间隔
-    :param times: 次数
-    :return: 
-    """
-    timestamp = str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M'))
-    filepath = './operation_log/' + timestamp
-    modify_my_log_file_path(filepath)
-    log = my_log()
-    log.info(u"开始测试")
-    log.info(u'全场关键字 timestamp为：' + timestamp)
-    log.info(u'获取全部资源放入到指定的文件夹中')
-    get_all_cache(timestamp)  # 获取全部资源放入到指定的文件夹中
-
-    log.info(u'执行time_customize前的当前的时间为' + unicode(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
-
-    curl_log = "./curl_log/curl_log_" + timestamp
-
-    i = 1
-    log.info(u'开始准备工作，计算每种kind的资源和大小')
-    while i < 6:
-        calculate_kind(timestamp, i)  # 目前一共五钟kind，把每个kind的cache文件信息存放在kind_info中
-        i += 1
-    time.sleep(30)
-    log.info(u'准备工作就绪，现在可以开始进行真正的curl操作')
-    log.info(u'执行time_customize前的当前的时间为' + unicode(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
-    init_debug_info = connect_linux(
-        ' /home/icache/icached debug', '192.168.1.106')
-    f = open(curl_log, 'w')
-    log.info(u'debug信息如下所示：' + '\n' + init_debug_info)
-    f.write(init_debug_info)
-    f.flush()
-    f.close()
-    for i in range(0, times):
-        log.info(u"开始执行第" + str(i) + u'次')
-        curl_resource_verbose(timestamp, 1, 0, 10, 'linux', 'windows')
-        log.info(u"请再等待" + str(time_interval) + u'秒')
-        if i == times:
-            pass
-        else:
-            time.sleep(time_interval)
-    end_debug_info = connect_linux('/home/icache/icached debug', '192.168.1.106')
-    log.info(u'结束所有的curl操作，debug_info如下所示：' + end_debug_info)
-    f = open(curl_log, 'a')
-    f.write(end_debug_info)
-    get_all_hot_list(timestamp)
-    wrong_statistics_log(timestamp)
-    log.info(u"执行完成")
-
-
-def get_info_from_163(resource_ip='192.168.0.163', resource_user='root', resource_pwd='0rd1230ac',
+def get_info_from_163(resource_ip, resource_user, resource_pwd,
                       resource_device_pwd='123', limit=100):
     """
     从163中获取资源并且执行curl操作，无需进行校验
@@ -232,23 +180,17 @@ def get_info_from_163(resource_ip='192.168.0.163', resource_user='root', resourc
         os.mkdir('./curl_log')
     f = open(curl_log, 'w')
     f.close()
-    curl_all(timestamp)
+    kind0(time_stamp=timestamp, is_sleep=False, limit=limit, time_line=0)
 
 
 if __name__ == '__main__':
     del_all_log()
-    main(start_time='2017-04-24 15:29:00', end_time='2017-04-24 23:00:00', host='192.168.0.59', user='root',
+    # get_info_from_163()
+    main(start_time='2017-04-24 19:20:00', end_time='2017-04-25 08:00:00', host='192.168.0.59', user='root',
          src_pwd='123', limit=10, kind_timeline=60, cds_ip='192.168.1.106', database_user='root',
-         database_pwd='0rd1230ac', cds_pwd='123', do_all=True,
-         # resource_ip='192.168.0.163', resource_user='root',
-         # resource_pwd='0rd1230ac', resource_device_pwd='123'
+         database_pwd='0rd1230ac', cds_pwd='123', do_all=True
          )  # 106为59提供服务，在59上执行curl动作，资源获取来自106上的数据库
-    # main('2017-04-20 15:25:00', '2017-04-20 18:00:00', host='192.168.0.56', user='root', src_pwd='FxData!Cds@2016_',
+    # main('2017-04-25 12:01:00', '2017-04-25 20:00:00', host='192.168.1.109', user='root', src_pwd='FxData!Cds@2016_',
     #      limit=10,
-    #      kind_timeline=120,
-    #      cds_ip='192.168.0.59', database_user='root', database_pwd='0rd1230ac', cds_pwd="123",
-    #      src_system='windows')
-    # main('2017-04-17 18:52:00', '2017-04-18 08:00:00', host='192.168.1.109', user='root', src_pwd='FxData!Cds@2016_',
-    #      limit=5,
     #      kind_timeline=60,
-    #      cds_ip='20.20.20.2', database_user='root', database_pwd='0rd1230ac', cds_pwd="123")
+    #      cds_ip='20.20.20.2', database_user='root', database_pwd='0rd1230ac', cds_pwd="123", do_all=True)

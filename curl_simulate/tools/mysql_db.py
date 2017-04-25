@@ -71,6 +71,7 @@ def execute_mysql_get_cache_info(command, filepath, category, host, user, passwd
     """
     conn = init_db(host, user, passwd)
     cur = conn.cursor()
+    log.info(u"链接的数据库的IP帐号密码为：" + str(host)+'\t'+str(user)+'\t'+str(passwd))
     log.info(u"执行的查询数据库的所有信息的cmd为：" + str(command))
     cur.execute(command)
     results = cur.fetchall()

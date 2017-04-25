@@ -27,7 +27,7 @@ import sys
 import threading
 import time
 
-from curl_simulate.tools.curl import curl_resource_verbose, curl_all, curl_resource_class
+from curl_simulate.tools.curl import curl_resource_verbose, curl_all, curl_resource_class, do_curl
 from curl_simulate.tools.log.operation_log import my_log
 
 reload(sys)
@@ -359,8 +359,22 @@ def kind0(time_stamp, limit, time_line, is_sleep=True):
             for ths in threadpool:
                 log.info(u" ths.join()所join的线程为：" + str(ths))
                 threading.Thread.join(ths)
-            log.info(u'等待两分钟后继续执行')
+            log.info(u'等待'+str(time_line)+u'秒后开始执行')
             time.sleep(time_line)
+            threadpool_vpe = []
+            for q in range(20):
+                th = threading.Thread(target=do_curl,
+                                      args=(time_stamp,
+                                            'curl --connect-timeout 5 -m 10 -o test666 -L "http://avideo.ifengcdn.com/mappa/2017/02/21/561cdb51bc6ee1d3804a9fc7f0fc5d1b.mp4"  --user-agent "windows"',
+                                            "linux", True))
+                threadpool_vpe.append(th)
+            for ths in threadpool_vpe:
+                log.info(u" threadpool_vpe.start()所执行的线程为：" + str(ths))
+                ths.start()
+            for ths in threadpool_vpe:
+                log.info(u" threadpool_vpe.start()所执行的线程为：" + str(ths))
+                threading.Thread.join(ths)
+
     else:
         for i in range(0, 5):
             curl_resource_verbose(time_stamp, 0, i, limit, 'linux', 'windows', False, False)
