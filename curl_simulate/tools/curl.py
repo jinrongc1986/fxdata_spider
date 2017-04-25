@@ -40,6 +40,9 @@ linux_config = f.readline().split()
 src_ip = linux_config[0]
 user = linux_config[1]
 pwd = linux_config[2]
+log.info(u'curl.py的ip为：' + str(src_ip))
+log.info(u'curl.py的user为：' + str(user))
+log.info(u'curl.py的pwd为：' + str(pwd))
 
 
 def do_curl(time_stamp, command, system, really_do):

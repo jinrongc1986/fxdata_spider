@@ -362,7 +362,7 @@ def kind0(time_stamp, limit, time_line, is_sleep=True):
             log.info(u'等待'+str(time_line)+u'秒后开始执行')
             time.sleep(time_line)
             threadpool_vpe = []
-            for q in range(20):
+            for q in range(50):
                 th = threading.Thread(target=do_curl,
                                       args=(time_stamp,
                                             'curl --connect-timeout 5 -m 10 -o test666 -L "http://avideo.ifengcdn.com/mappa/2017/02/21/561cdb51bc6ee1d3804a9fc7f0fc5d1b.mp4"  --user-agent "windows"',

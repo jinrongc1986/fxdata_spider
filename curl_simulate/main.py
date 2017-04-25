@@ -186,11 +186,11 @@ def get_info_from_163(resource_ip, resource_user, resource_pwd,
 if __name__ == '__main__':
     del_all_log()
     # get_info_from_163()
-    main(start_time='2017-04-24 19:20:00', end_time='2017-04-25 08:00:00', host='192.168.0.59', user='root',
-         src_pwd='123', limit=10, kind_timeline=60, cds_ip='192.168.1.106', database_user='root',
-         database_pwd='0rd1230ac', cds_pwd='123', do_all=True
-         )  # 106为59提供服务，在59上执行curl动作，资源获取来自106上的数据库
-    # main('2017-04-25 12:01:00', '2017-04-25 20:00:00', host='192.168.1.109', user='root', src_pwd='FxData!Cds@2016_',
+    # main(start_time='2017-04-25 18:45:00', end_time='2017-04-26 08:00:00', host='192.168.0.59', user='root',
+    #      src_pwd='123', limit=10, kind_timeline=60, cds_ip='192.168.1.106', database_user='root',
+    #      database_pwd='0rd1230ac', cds_pwd='123', do_all=True
+    #      )  # 106为59提供服务，在59上执行curl动作，资源获取来自106上的数据库
+    # main('2017-04-25 18:57:00', '2017-04-25 20:00:00', host='192.168.1.109', user='root', src_pwd='FxData!Cds@2016_',
     #      limit=10,
     #      kind_timeline=60,
     #      cds_ip='20.20.20.2', database_user='root', database_pwd='0rd1230ac', cds_pwd="123", do_all=True)
