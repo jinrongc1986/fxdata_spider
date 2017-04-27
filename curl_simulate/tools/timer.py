@@ -26,18 +26,13 @@ I love animals. They taste delicious.
 import datetime
 import time
 from curl_simulate.http.kind_info import *
+from curl_simulate.tools import init_config_file
 from curl_simulate.tools.connect_Linux import connect_linux
 from curl_simulate.tools.log.operation_log import del_operation_log
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
 log = my_log()
-f = open('./http/config_linux_to_curl', 'r')
-information = f.read().split()
-cds_host = information[3]
-cds_database_user = information[5]
-cds_database_pwd = information[4]
-cds_pwd = information[6]
 
 
 def timer_customize(timestamp, expect_start_time, expect_end_time,
@@ -52,8 +47,13 @@ def timer_customize(timestamp, expect_start_time, expect_end_time,
     :param expect_start_time:
     :return:
     """
+    information = init_config_file().read().split()
+    cds_host = information[3]
+    cds_database_user = information[5]
+    cds_database_pwd = information[4]
+    cds_pwd = information[6]
     expect_start_time = datetime.datetime.strptime(expect_start_time, '%Y-%m-%d %H:%M:%S') + datetime.timedelta(
-        seconds=15
+        seconds=30
     )  # 说明加上从0或者5分钟后加上30秒后再执行curl操作
     expect_end_time = datetime.datetime.strptime(expect_end_time, '%Y-%m-%d %H:%M:%S')
     now_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 显示现在的时间
@@ -185,6 +185,11 @@ def timer_customize_all_kind(timestamp, expect_start_time='2017-03-21 17:04:00',
     :param expect_start_time:
     :return:
     """
+    information = init_config_file().read().split()
+    cds_host = information[3]
+    cds_database_user = information[5]
+    cds_database_pwd = information[4]
+    cds_pwd = information[6]
     expect_start_time = datetime.datetime.strptime(expect_start_time, '%Y-%m-%d %H:%M:%S') + datetime.timedelta(
         seconds=15
     )  # 说明加上从0或者5分钟后加上30秒后再执行curl操作

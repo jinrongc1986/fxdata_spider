@@ -25,23 +25,23 @@ I love animals. They taste delicious.
 import datetime
 import sys
 import threading
-import time
 
+from curl_simulate.tools import init_config_file
 from curl_simulate.tools.curl import curl_resource_verbose, curl_all, curl_resource_class, do_curl
 from curl_simulate.tools.log.operation_log import my_log
+import time
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
 log = my_log()
-f = open('./http/config_linux_to_curl', 'r')
-information = f.read().split()
-src_system = information[7]
 
 
 def kind1(time_stamp, limit, time_line, is_sleep=True):
     """
     :return:
     """
+    information = init_config_file().read().split()
+    src_system = information[7]
     if is_sleep:
         # log.info(u"开始执行kind1的操作")
         # curl_resource_verbose(time_stamp, 0, 0, limit, src_system, 'windows', True, True)
@@ -100,6 +100,8 @@ def kind1(time_stamp, limit, time_line, is_sleep=True):
 
 
 def kind2(time_stamp, limit, time_line, is_sleep=True):
+    information = init_config_file().read().split()
+    src_system = information[7]
     if is_sleep:
         # log.info(u"开始执行kind2的操作")
         # curl_resource_verbose(time_stamp, 0, 2, limit, src_system, 'windows', True, True)
@@ -161,6 +163,8 @@ def kind2(time_stamp, limit, time_line, is_sleep=True):
 
 
 def kind3(time_stamp, limit, time_line, is_sleep=True):
+    information = init_config_file().read().split()
+    src_system = information[7]
     if is_sleep:
         # log.info(u"开始执行kind3的操作")
         # curl_resource_verbose(time_stamp, 1, 0, limit, src_system, 'windows', True, True)
@@ -222,6 +226,8 @@ def kind3(time_stamp, limit, time_line, is_sleep=True):
 
 
 def kind4(time_stamp, limit, time_line, is_sleep=True):
+    information = init_config_file().read().split()
+    src_system = information[7]
     if is_sleep:
         # log.info(u"开始执行kind4的操作")
         # curl_resource_verbose(time_stamp, 0, 1, limit, src_system, 'windows', True, True)
@@ -283,6 +289,8 @@ def kind4(time_stamp, limit, time_line, is_sleep=True):
 
 
 def kind5(time_stamp, limit, time_line, is_sleep=True):
+    information = init_config_file().read().split()
+    src_system = information[7]
     if is_sleep:
         # log.info(u"开始执行kind5的操作")
         # curl_resource_verbose(time_stamp, 2, 11, limit, src_system, 'iphone', True, True)
@@ -337,6 +345,8 @@ def kind5(time_stamp, limit, time_line, is_sleep=True):
 
 
 def kind0(time_stamp, limit, time_line, is_sleep=True):
+    information = init_config_file().read().split()
+    src_system = information[7]
     if is_sleep:
         # curl_resource_verbose(time_stamp, 0, 1, limit, src_system, 'iphone', True, True)
         threadpool = []
@@ -359,21 +369,12 @@ def kind0(time_stamp, limit, time_line, is_sleep=True):
             for ths in threadpool:
                 log.info(u" ths.join()所join的线程为：" + str(ths))
                 threading.Thread.join(ths)
-            log.info(u'等待'+str(time_line)+u'秒后开始执行')
+            log.info(u'等待' + str(time_line) + u'秒后开始执行')
             time.sleep(time_line)
-            threadpool_vpe = []
-            for q in range(50):
-                th = threading.Thread(target=do_curl,
-                                      args=(time_stamp,
-                                            'curl --connect-timeout 5 -m 10 -o test666 -L "http://avideo.ifengcdn.com/mappa/2017/02/21/561cdb51bc6ee1d3804a9fc7f0fc5d1b.mp4"  --user-agent "windows"',
-                                            "linux", True))
-                threadpool_vpe.append(th)
-            for ths in threadpool_vpe:
-                log.info(u" threadpool_vpe.start()所执行的线程为：" + str(ths))
-                ths.start()
-            for ths in threadpool_vpe:
-                log.info(u" threadpool_vpe.start()所执行的线程为：" + str(ths))
-                threading.Thread.join(ths)
+            # 以下代码是用来制造vpe服务流量的
+            do_curl(time_stamp,
+                    'curl --connect-timeout 5 -m 10 -o test666 -L "http://avideo.ifengcdn.com/mappa/2017/02/21/561cdb51bc6ee1d3804a9fc7f0fc5d1b.mp4"  --user-agent "windows"',
+                    "linux", True)
 
     else:
         for i in range(0, 5):

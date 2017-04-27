@@ -28,21 +28,16 @@ import os
 import sys
 from datetime import datetime
 import time
+
+from curl_simulate.tools import init_config_file
 from curl_simulate.tools.connect_Linux import connect_linux
 from curl_simulate.tools.judge import assert_location_log, assert_service_log
 from curl_simulate.tools.log.operation_log import my_log
+import time
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
 log = my_log()
-f = open('./http/config_linux_to_curl', 'r')
-linux_config = f.readline().split()
-src_ip = linux_config[0]
-user = linux_config[1]
-pwd = linux_config[2]
-log.info(u'curl.py的ip为：' + str(src_ip))
-log.info(u'curl.py的user为：' + str(user))
-log.info(u'curl.py的pwd为：' + str(pwd))
 
 
 def do_curl(time_stamp, command, system, really_do):
@@ -54,6 +49,10 @@ def do_curl(time_stamp, command, system, really_do):
     :param system:linux or windows
     :return:
     """
+    linux_config = init_config_file().readline().split()
+    src_ip = linux_config[0]
+    user = linux_config[1]
+    pwd = linux_config[2]
     current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     log.info(u'当前时间为：' + unicode(current_time))
     if system == 'windows':

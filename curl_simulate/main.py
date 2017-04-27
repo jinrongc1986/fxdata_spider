@@ -27,7 +27,7 @@ import sys
 from curl_simulate.http.kind_info import calculate_kind
 from curl_simulate.http.get_cache import get_all_cache, get_mobile_cache, get_http_cache
 from curl_simulate.tools.connect_Linux import connect_linux, modify_linux_config
-from curl_simulate.tools.curl import curl_resource_verbose, curl_all
+from curl_simulate.tools.curl import curl_resource_verbose, curl_all, do_curl
 from curl_simulate.tools.curl_kind import kind0
 from curl_simulate.tools.del_log import del_all_log
 from curl_simulate.tools.log.operation_log import my_log, modify_my_log_file_path
@@ -88,31 +88,31 @@ sys.setdefaultencoding('utf-8')
 #     log.info(u"执行完成")
 
 
-def main(start_time, end_time, host, user, src_pwd, limit, kind_timeline,
+def main(start_time, end_time, host, host_user, host_pwd, limit, kind_timeline,
          cds_ip, database_user, database_pwd, cds_pwd, do_all, src_system='linux', resource_ip='empty',
          resource_user='empty',
          resource_pwd='empty', resource_device_pwd='empty'):
     """
-    :param do_all: 
-    :param resource_device_pwd: 
-    :param resource_pwd: 
-    :param resource_user: 
-    :param resource_ip: 
-    :param src_system: 
-    :param cds_pwd: 
-    :param database_pwd: 
-    :param database_user: 
-    :param cds_ip: 
+    :param do_all: 布尔类型 true or false true为在五分钟内执行所有的资源
+    :param resource_device_pwd: 获取资源的设备的密码
+    :param resource_pwd: 获取资源的设备的数据库密码
+    :param resource_user: 获取资源的设备的帐号
+    :param resource_ip: 获取资源的设备的ip（默认是cds的ip）
+    :param src_system: 所执行curl的设备是属于linux 或者 windows 
+    :param cds_pwd: cds设备的密码
+    :param database_pwd: cds 数据库的密码
+    :param database_user: cds数据库的帐号
+    :param cds_ip: cds的ip地址 字符串
     :param start_time: 开始时间
     :param end_time: 结束时间
     :param host: 执行curl动作的ip
-    :param user: 上述ip的帐号
-    :param src_pwd: 上述ip的密码
+    :param host_user: 执行curl动作的设备的帐号
+    :param host_pwd: 执行curl动作的设备的密码
     :param limit: curl每种资源的个数
     :param kind_timeline: 每个kind中上下部分的时间差
     :return: 
     """
-    modify_linux_config(host, user, src_pwd, cds_ip, database_pwd, database_user, cds_pwd, src_system)
+    modify_linux_config(host, host_user, host_pwd, cds_ip, database_pwd, database_user, cds_pwd, src_system)
     start_time = datetime.datetime.strptime(start_time, '%Y-%m-%d %H:%M:%S')
     timestamp = str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M'))
     filepath = './operation_log/' + timestamp
@@ -149,15 +149,15 @@ def main(start_time, end_time, host, user, src_pwd, limit, kind_timeline,
     log.info(u'执行time_customize前的当前的时间为' + unicode(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
     timer_customize(timestamp, str(start_time), end_time, limit, kind_timeline, do_all)
     log.info(u'执行完成time_customize函数，开始统计函数的执行')
-    get_all_hot_list(timestamp)
-    wrong_statistics_log(timestamp)
+    # get_all_hot_list(timestamp)
+    # wrong_statistics_log(timestamp)
     if src_system == 'windows':
         os.remove('test666')
     log.info(u"执行完成")
 
 
 def get_info_from_163(resource_ip, resource_user, resource_pwd,
-                      resource_device_pwd='123', limit=100):
+                      resource_device_pwd, limit=100):
     """
     从163中获取资源并且执行curl操作，无需进行校验
     :param resource_ip: 
@@ -180,17 +180,19 @@ def get_info_from_163(resource_ip, resource_user, resource_pwd,
         os.mkdir('./curl_log')
     f = open(curl_log, 'w')
     f.close()
+    log.info(u"下面开始执行kind的操作 以上只是获取信息")
     kind0(time_stamp=timestamp, is_sleep=False, limit=limit, time_line=0)
 
 
 if __name__ == '__main__':
     del_all_log()
-    # get_info_from_163()
-    # main(start_time='2017-04-25 18:45:00', end_time='2017-04-26 08:00:00', host='192.168.0.59', user='root',
-    #      src_pwd='123', limit=10, kind_timeline=60, cds_ip='192.168.1.106', database_user='root',
-    #      database_pwd='0rd1230ac', cds_pwd='123', do_all=True
-    #      )  # 106为59提供服务，在59上执行curl动作，资源获取来自106上的数据库
-    # main('2017-04-25 18:57:00', '2017-04-25 20:00:00', host='192.168.1.109', user='root', src_pwd='FxData!Cds@2016_',
+    # get_info_from_163(resource_ip='192.168.0.163', resource_user='root', resource_device_pwd='123',
+    #                   resource_pwd='0rd1230ac')
+    main(start_time='2017-04-26 23:20:00', end_time='2017-04-27 09:00:00', host='192.168.0.59', host_user='root',
+         host_pwd='123', limit=10, kind_timeline=60, cds_ip='192.168.1.106', database_user='root',
+         database_pwd='0rd1230ac', cds_pwd='123', do_all=True
+         )  # 106为59提供服务，在59上执行curl动作，资源获取来自106上的数据库
+    # main('2017-04-26 10:07:00', '2017-04-26 09:00:00', host='192.168.1.109', user='root', src_pwd='FxData!Cds@2016_',
     #      limit=10,
     #      kind_timeline=60,
-    #      cds_ip='20.20.20.2', database_user='root', database_pwd='0rd1230ac', cds_pwd="123", do_all=True)
+    #      cds_ip='20.20.20.2', database_user='root', database_pwd='0rd1230ac', cds_pwd="123", do_all=True) # 20.20.20.2为109提供服务，在109上执行curl动作，资源取自20.20.20.2

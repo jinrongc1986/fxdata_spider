@@ -25,19 +25,15 @@ I love animals. They taste delicious.
 import sys
 import json
 import MySQLdb
+import time
 
+from curl_simulate.tools import init_config_file
 from curl_simulate.tools.connect_Linux import connect_linux
 from curl_simulate.tools.log.operation_log import my_log
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
 log = my_log()
-f = open('./http/config_linux_to_curl', 'r')
-information = f.read().split()
-cds_host = information[3]
-cds_user = information[5]
-database_pwd = information[4]
-cds_pwd = information[6]
 
 
 def init_db(host, user, passwd):
@@ -71,7 +67,7 @@ def execute_mysql_get_cache_info(command, filepath, category, host, user, passwd
     """
     conn = init_db(host, user, passwd)
     cur = conn.cursor()
-    log.info(u"链接的数据库的IP帐号密码为：" + str(host)+'\t'+str(user)+'\t'+str(passwd))
+    log.info(u"链接的数据库的IP帐号密码为：" + str(host) + '\t' + str(user) + '\t' + str(passwd))
     log.info(u"执行的查询数据库的所有信息的cmd为：" + str(command))
     cur.execute(command)
     results = cur.fetchall()
@@ -113,18 +109,27 @@ def get_location_log(url):
     :param url:
     :return:
     """
-    log.info(u"此处的linux链接信息如下所示："+cds_host+' '+cds_user+' '+cds_pwd)
+    information = init_config_file().read().split()
+    cds_host = information[3]
+    cds_user = information[5]
+    database_pwd = information[4]
+    cds_pwd = information[6]
+    log.info(u"此处的linux链接信息如下所示：" + cds_host + ' ' + cds_user + ' ' + cds_pwd)
     # connect_linux('service iptables stop', cds_host, cds_user, cds_pwd)  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
     cmd1 = 'SELECT class,category,cache_size,create_time FROM location_log WHERE req_uri = "'
     cmd2 = '" ORDER BY create_time DESC'
     cmd = cmd1 + url + cmd2
     log.info(u"执行的获取重定向日志信息的cmd为:" + unicode(cmd))
-    log.info(u'cds_host cds_user database_pwd信息 分别为：'+cds_host+' '+cds_user+' '+database_pwd+' ')
+    log.info(u'cds_host cds_user database_pwd信息 分别为：' + cds_host + ' ' + cds_user + ' ' + database_pwd + ' ')
     return execute_mysql(cmd, cds_host, cds_user, database_pwd)
 
 
 def get_service_log(classes, md5):
     # connect_linux('service iptables stop', cds_host, cds_user, cds_pwd)  # 初始化 免得数据库无法连上（执行关闭防火墙的操作）
+    information = init_config_file().read().split()
+    cds_host = information[3]
+    cds_user = information[5]
+    database_pwd = information[4]
     if int(classes) == 0:
         classes = "http_service_log"
     elif int(classes) == 1:
@@ -145,6 +150,10 @@ def get_uri_by_md5(md5):
     :param md5: 
     :return: 
     """
+    information = init_config_file().read().split()
+    cds_host = information[3]
+    cds_user = information[5]
+    database_pwd = information[4]
     cmd1 = 'SELECT uri FROM '
     cmd2 = ' WHERE md5="'
     cmd3 = '"'

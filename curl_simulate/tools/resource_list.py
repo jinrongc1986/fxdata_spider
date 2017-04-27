@@ -23,18 +23,16 @@ I love animals. They taste delicious.
 ┗┻┛  ┗┻┛
 """
 import sys
+
+import time
+
+from curl_simulate.tools import init_config_file
 from curl_simulate.tools.log.operation_log import my_log
 from curl_simulate.tools.mysql_db import execute_mysql
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
 log = my_log()
-f = open('./http/config_linux_to_curl', 'r')
-information_file = f.read().split()
-host = information_file[3]
-user = information_file[5]
-database_pwd = information_file[4]
-pwd = information_file[2]
 
 
 def get_resource_list_by_time(time_stamp):
@@ -93,6 +91,11 @@ def get_resource_size(url):
     :param url:
     :return:class category size组成的列表
     """
+    information_file = init_config_file().read().split()
+    host = information_file[3]
+    user = information_file[5]
+    database_pwd = information_file[4]
+    pwd = information_file[2]
     info = []
     command1 = 'SELECT cache_size,category FROM '
     kind1 = 'http_cache'

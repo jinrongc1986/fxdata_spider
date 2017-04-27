@@ -26,3 +26,7 @@ import sys
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
+
+
+def init_config_file():
+    return open('./http/config_linux_to_curl', 'r')

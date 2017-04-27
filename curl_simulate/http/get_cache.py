@@ -24,20 +24,22 @@ I love animals. They taste delicious.
 """
 import sys
 import os
+
+from curl_simulate.tools import init_config_file
 from curl_simulate.tools.connect_Linux import connect_linux
 from curl_simulate.tools.log.operation_log import my_log
 from curl_simulate.tools.mysql_db import execute_mysql_get_cache_info
 import datetime
+import time
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
 log = my_log()
-f = open('./http/config_linux_to_curl', 'r')
-information = f.read().split()
+
+information = init_config_file().read().split()
 host = information[3]
 database_user = information[5]
 database_pwd = information[4]
-
 
 
 def get_http_cache(category, limit, filepath='./http/cache/httpcache'):
@@ -99,7 +101,7 @@ def get_mobile_cache(category='0', limit='10', filepath='./http/cache/mobilecach
     return res
 
 
-def get_all_cache(current_time, limit, resource_ip, resource_user, resource_pwd,device_password):
+def get_all_cache(current_time, limit, resource_ip, resource_user, resource_pwd, device_password):
     """
     获取全部种类的资源
     class=0 时 category有0--4
