@@ -28,7 +28,7 @@ from curl_simulate.http.kind_info import calculate_kind
 from curl_simulate.http.get_cache import get_all_cache, get_mobile_cache, get_http_cache
 from curl_simulate.tools.connect_Linux import connect_linux, modify_linux_config
 from curl_simulate.tools.curl import curl_resource_verbose, curl_all, do_curl
-from curl_simulate.tools.curl_kind import kind0
+from curl_simulate.tools.curl_kind import kind0, kind100
 from curl_simulate.tools.del_log import del_all_log
 from curl_simulate.tools.log.operation_log import my_log, modify_my_log_file_path
 from curl_simulate.tools.resource_list import get_all_hot_list, get_resource_verbose
@@ -86,6 +86,28 @@ sys.setdefaultencoding('utf-8')
 #     get_all_hot_list(timestamp)
 #     wrong_statistics_log(timestamp)
 #     log.info(u"执行完成")
+def curl_class(host, host_user, host_pwd, limit,
+               cds_ip, database_user, database_pwd, cds_pwd, src_system='linux', ):
+    """
+    单线程顺序执行curl动作，从class=0 category=0开始 
+    :return: 
+    """
+    modify_linux_config(host, host_user, host_pwd, cds_ip, database_pwd, database_user, cds_pwd, src_system)
+    timestamp = str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M'))
+    curl_log = "./curl_log/curl_log_" + timestamp
+    if not os.path.exists('./curl_log'):
+        os.mkdir('./curl_log')
+    f = open(curl_log, 'w')
+    f.close()
+    filepath = './operation_log/' + timestamp
+    modify_my_log_file_path(filepath)
+    get_all_cache(timestamp, 100, cds_ip, database_user, database_pwd, cds_pwd)
+    for i in range(5):  # 执行curl的动作，从class=0，category=0 到category=4
+        curl_resource_verbose(timestamp, 0, i, limit, src_system, 'iphone', True, True)
+    for i in range(3):  # 执行curl的动作，从class=1，category=0 到category=2
+        curl_resource_verbose(timestamp, 1, i, limit, src_system, 'iphone', True, True)
+    for i in range(20):  # 执行curl的动作，从class=2，category=0 到category=19
+        curl_resource_verbose(timestamp, 2, i, limit, src_system, 'iphone', True, True)
 
 
 def main(start_time, end_time, host, host_user, host_pwd, limit, kind_timeline,
@@ -93,6 +115,7 @@ def main(start_time, end_time, host, host_user, host_pwd, limit, kind_timeline,
          resource_user='empty',
          resource_pwd='empty', resource_device_pwd='empty'):
     """
+    如果src_system为windows 则输入的host_user host_pwd等没有意义，可以不用修改
     :param do_all: 布尔类型 true or false true为在五分钟内执行所有的资源
     :param resource_device_pwd: 获取资源的设备的密码
     :param resource_pwd: 获取资源的设备的数据库密码
@@ -156,10 +179,14 @@ def main(start_time, end_time, host, host_user, host_pwd, limit, kind_timeline,
     log.info(u"执行完成")
 
 
-def get_info_from_163(resource_ip, resource_user, resource_pwd,
-                      resource_device_pwd, limit=100):
+def get_info_from_other_cds(resource_ip, resource_user, resource_pwd,
+                            resource_device_pwd, host, host_user, host_pwd, src_system='linux', limit=100):
     """
-    从163中获取资源并且执行curl操作，无需进行校验
+    从163中获取资源并且执行curl操作，无需进行校验,直接进行curl操作
+    :param host_pwd: 
+    :param host: 
+    :param host_user: 
+    :param src_system: 
     :param resource_ip: 
     :param resource_user: 
     :param resource_pwd: 
@@ -173,7 +200,7 @@ def get_info_from_163(resource_ip, resource_user, resource_pwd,
     log = my_log()
     log.info(u'全场关键字 timestamp为：' + timestamp)
     log.info(u'获取全部资源放入到指定的文件夹中')
-    get_all_cache(timestamp, limit, resource_ip, resource_user, resource_pwd, resource_device_pwd)  # 获取全部资源放入到指定的文件夹中
+    get_all_cache(timestamp, 1000, resource_ip, resource_user, resource_pwd, resource_device_pwd)  # 获取全部资源放入到指定的文件夹中
     log.info(u'获取全部资源操作完成')
     curl_log = "./curl_log/curl_log_" + timestamp
     if not os.path.exists('./curl_log'):
@@ -181,18 +208,23 @@ def get_info_from_163(resource_ip, resource_user, resource_pwd,
     f = open(curl_log, 'w')
     f.close()
     log.info(u"下面开始执行kind的操作 以上只是获取信息")
-    kind0(time_stamp=timestamp, is_sleep=False, limit=limit, time_line=0)
+    modify_linux_config(host, host_user, host_pwd, '1', '1', '1', '1',
+                        src_system)  # 我们只需要在一台设备上执行curl动作而不需要校验等其他动作，因此这里可以随意输入cds信息
+    kind100(time_stamp=timestamp, limit=limit, src_system=src_system)
 
 
 if __name__ == '__main__':
     del_all_log()
-    # get_info_from_163(resource_ip='192.168.0.163', resource_user='root', resource_device_pwd='123',
-    #                   resource_pwd='0rd1230ac')
-    main(start_time='2017-04-26 23:20:00', end_time='2017-04-27 09:00:00', host='192.168.0.59', host_user='root',
-         host_pwd='123', limit=10, kind_timeline=60, cds_ip='192.168.1.106', database_user='root',
-         database_pwd='0rd1230ac', cds_pwd='123', do_all=True
-         )  # 106为59提供服务，在59上执行curl动作，资源获取来自106上的数据库
+    # get_info_from_other_cds(resource_ip='192.168.1.163', resource_user='root', resource_device_pwd='123',
+    #                         resource_pwd='0rd1230ac', host='192.168.0.56', host_user='root', host_pwd='123',src_system='windows')
+    # main(start_time='2017-04-28 10:05:00', end_time='2017-04-28 20:00:00', host='192.168.0.59', host_user='root',
+    #      host_pwd='123', limit=10, kind_timeline=60, cds_ip='192.168.1.106', database_user='root',
+    #      database_pwd='0rd1230ac', cds_pwd='123', do_all=True, src_system='linux'
+    #      )  # 106为59提供服务，在59上执行curl动作，资源获取来自106上的数据库
     # main('2017-04-26 10:07:00', '2017-04-26 09:00:00', host='192.168.1.109', user='root', src_pwd='FxData!Cds@2016_',
     #      limit=10,
     #      kind_timeline=60,
     #      cds_ip='20.20.20.2', database_user='root', database_pwd='0rd1230ac', cds_pwd="123", do_all=True) # 20.20.20.2为109提供服务，在109上执行curl动作，资源取自20.20.20.2
+    # while True:
+    #     curl_class(host='192.168.0.56', host_pwd='123', host_user='root', limit=100, cds_ip='192.168.1.106',
+    #                database_user='root', database_pwd='0rd1230ac', cds_pwd='123', src_system='windows')

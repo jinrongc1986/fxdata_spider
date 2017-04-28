@@ -348,33 +348,38 @@ def kind0(time_stamp, limit, time_line, is_sleep=True):
     information = init_config_file().read().split()
     src_system = information[7]
     if is_sleep:
-        # curl_resource_verbose(time_stamp, 0, 1, limit, src_system, 'iphone', True, True)
+        for i in range(5):
+            curl_resource_verbose(time_stamp, 0, i, limit, src_system, 'iphone', True, True)
+        for i in range(3):
+            curl_resource_verbose(time_stamp, 1, i, limit, src_system, 'iphone', True, True)
+        # for i in range(20):
+        #     curl_resource_verbose(time_stamp, 2, i, limit, src_system, 'iphone', True, True)
         threadpool = []
-        for t in range(0, 1):  # 如果此处改为2的话 会存现问题
-            for i in range(5):
-                th = threading.Thread(target=curl_resource_verbose,
-                                      args=(time_stamp, 0, i, limit, src_system, 'windows', True, True))
-                threadpool.append(th)
-            for x in range(3):
-                th = threading.Thread(target=curl_resource_verbose,
-                                      args=(time_stamp, 1, x, limit, src_system, 'windows', True, True))
-                threadpool.append(th)
-            for z in range(20):
-                th = threading.Thread(target=curl_resource_verbose,
-                                      args=(time_stamp, 2, z, limit, src_system, 'windows', True, True))
-                threadpool.append(th)
-            for ths in threadpool:
-                log.info(u" ths.start()所执行的线程为：" + str(ths))
-                ths.start()
-            for ths in threadpool:
-                log.info(u" ths.join()所join的线程为：" + str(ths))
-                threading.Thread.join(ths)
-            log.info(u'等待' + str(time_line) + u'秒后开始执行')
-            time.sleep(time_line)
-            # 以下代码是用来制造vpe服务流量的
-            do_curl(time_stamp,
-                    'curl --connect-timeout 5 -m 10 -o test666 -L "http://avideo.ifengcdn.com/mappa/2017/02/21/561cdb51bc6ee1d3804a9fc7f0fc5d1b.mp4"  --user-agent "windows"',
-                    "linux", True)
+        # for t in range(0, 1):  # 如果此处改为2的话 会存现问题
+        #     for i in range(5):
+        #         th = threading.Thread(target=curl_resource_verbose,
+        #                               args=(time_stamp, 0, i, limit, src_system, 'windows', True, True))
+        #         threadpool.append(th)
+        #     for x in range(3):
+        #         th = threading.Thread(target=curl_resource_verbose,
+        #                               args=(time_stamp, 1, x, limit, src_system, 'windows', True, True))
+        #         threadpool.append(th)
+        #     for z in range(20):
+        #         th = threading.Thread(target=curl_resource_verbose,
+        #                               args=(time_stamp, 2, z, limit, src_system, 'windows', True, True))
+        #         threadpool.append(th)
+        #     for ths in threadpool:
+        #         log.info(u" ths.start()所执行的线程为：" + str(ths))
+        #         ths.start()
+        #     for ths in threadpool:
+        #         log.info(u" ths.join()所join的线程为：" + str(ths))
+        #         threading.Thread.join(ths)
+        #     log.info(u'等待' + str(time_line) + u'秒后开始执行')
+        #     time.sleep(time_line)
+        #     # 以下代码是用来制造vpe服务流量的
+        #     do_curl(time_stamp,
+        #             'curl --connect-timeout 5 -m 10 -o test666 -L "http://avideo.ifengcdn.com/mappa/2017/02/21/561cdb51bc6ee1d3804a9fc7f0fc5d1b.mp4"  --user-agent "windows"',
+        #             system=src_system, really_do=True)
 
     else:
         for i in range(0, 5):
@@ -383,3 +388,19 @@ def kind0(time_stamp, limit, time_line, is_sleep=True):
             curl_resource_verbose(time_stamp, 1, y, limit, 'linux', 'windows', False, False)
         for x in range(0, 20):
             curl_resource_verbose(time_stamp, 2, x, limit, 'linux', 'windows', False, False)
+
+
+def kind100(time_stamp, limit, src_system):
+    """
+    获取资源用的，无需校验，单线程执行，可用于curl163的资源
+    :param time_stamp: 
+    :param limit: 
+    :param src_system: 
+    :return: 
+    """
+    for i in range(0, 5):
+        curl_resource_verbose(time_stamp, 0, i, limit, src_system, 'windows', False, True)
+    for y in (0, 2):
+        curl_resource_verbose(time_stamp, 1, y, limit, src_system, 'windows', False, True)
+    for x in range(0, 20):
+        curl_resource_verbose(time_stamp, 2, x, limit, src_system, 'windows', False, True)

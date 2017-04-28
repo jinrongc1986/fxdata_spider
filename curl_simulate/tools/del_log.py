@@ -28,6 +28,7 @@ import sys
 
 from curl_simulate.tools.log.operation_log import my_log
 import logging
+
 log = my_log()
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -55,5 +56,5 @@ def del_all_log():
     del_dir('./http/cache_info')
     del_dir('./curl_log')
     del_dir('./judge')
-    logging.shutdown()
+    logging.shutdown()  # 关闭日志文件，否则无法删除下面的日志文件夹
     del_dir('./operation_log')

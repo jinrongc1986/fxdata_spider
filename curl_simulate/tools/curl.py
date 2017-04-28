@@ -78,6 +78,7 @@ def do_curl(time_stamp, command, system, really_do):
         if really_do is True:
             info = connect_linux(command, src_ip, user, pwd)
             log.info(u"执行的命令为" + unicode(command) + u'并且写入到curl_log中')
+            log.info(u"获取到的info信息为" + unicode(info) + u'并且写入到curl_log中')
             with open(curl_log, "a") as f:
                 f.write('\n')
                 f.write("" + info)
