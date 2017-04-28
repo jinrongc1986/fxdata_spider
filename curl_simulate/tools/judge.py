@@ -27,7 +27,7 @@ import sys
 from datetime import datetime
 
 from curl_simulate.tools.log.operation_log import my_log
-from curl_simulate.tools.mysql_db import get_location_log, get_service_log
+from curl_simulate.tools.mysql_db import get_location_log, get_service_log, get_uri_by_md5
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -72,8 +72,10 @@ def assert_location_log(classes, category, url, cache_size, timestamp):
         log_create_time = info[3]
         current_time = datetime.now()
         time_lag = abs(current_time - log_create_time)  # 校验时间差，理论上执行完curl之后 会马上生成一个数据 随后时间差不会超过3秒
-        time_lag_float = float(str(time_lag).split(':')[2])
-        if classes != log_classes or category != log_category or cache_size != log_cache_size or time_lag_float > 60:
+        time_lag_float_hour = float(str(time_lag).split(':')[0])
+        time_lag_float_minute = float(str(time_lag).split(':')[1])
+        time_lag_float_sec = float(str(time_lag).split(':')[2])
+        if classes != log_classes or category != log_category or cache_size != log_cache_size or time_lag_float_sec > 60 or time_lag_float_minute != 0 or time_lag_float_hour != 0:
             log.warn(unicode(url) + u"重定向日志存在问题")
             f = open('./judge/location_log/' + timestamp, 'a')
             current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
@@ -84,8 +86,8 @@ def assert_location_log(classes, category, url, cache_size, timestamp):
                 log_cache_size) + '\t' + str(log_create_time) + ':\n')
             f.write(
                 str(u'实际curl到的资源：') + '\t' + str(log_classes) + '\t' + str(log_category) + '\t' + str(
-                    cache_size) + '\t' + str(time_lag) + ':\n')
-            # print '*****************************************'
+                    cache_size) + '\t' + u'当前的时间为:' + str(current_time) + '\t' + u'时间差为' + str(
+                    time_lag) + ':\n')
             if classes != log_classes:
                 log.info(u'class与预期不符')
                 f.write("cache_size was wrong" + '\n')
@@ -95,7 +97,7 @@ def assert_location_log(classes, category, url, cache_size, timestamp):
             elif cache_size != log_cache_size:
                 log.info(u'cache_size与预期不符')
                 f.write("cache_size was wrong" + '\n')
-            elif time_lag_float > 10:
+            elif time_lag_float_sec > 60 or time_lag_float_minute != 0 or time_lag_float_hour != 0:
                 log.info(u'create_time与预期不符')
                 f.write("create_time was wrong" + '\n')
             f.write('***************************************\n')
@@ -105,6 +107,7 @@ def assert_location_log(classes, category, url, cache_size, timestamp):
 
 def assert_service_log(classes, category, cache_size, service_size, md5, timestamp):
     info = get_service_log(classes, md5)
+    log.info(u'assert_service_log采集到的info为：' + str(info))
     is_judge_exist = os.path.exists('./judge')
     if is_judge_exist is True:
         pass
@@ -130,21 +133,26 @@ def assert_service_log(classes, category, cache_size, service_size, md5, timesta
         log_service_size = info[2]
         log_create_time = info[3]
         current_time = datetime.now()
-        time_lag = abs(current_time - log_create_time)  # 校验时间差，理论上执行完curl之后 会马上生成一个数据 随后时间差不会超过3秒
-        time_lag_float = float(str(time_lag).split(':')[2])
-        if cache_size != log_cache_size or category != log_category or service_size != log_service_size or time_lag_float > 60:
+        time_lag = abs(current_time - log_create_time)  # 校验时间差，理论上执行完curl之后 会马上生成一个数据 随后时间差不会超过60秒
+        log.info(u'time_lag时间差的值为：' + str(time_lag))
+        time_lag_float_hour = float(str(time_lag).split(':')[0])
+        time_lag_float_minute = float(str(time_lag).split(':')[1])
+        time_lag_float_sec = float(str(time_lag).split(':')[2])
+        if cache_size != log_cache_size or category != log_category or service_size != log_service_size or time_lag_float_sec > 60 or time_lag_float_hour != 0 or time_lag_float_minute != 0:
             log.warn(unicode(md5) + u"服务日志有问题")
             f = open('./judge/service_log/' + timestamp, 'a')
             current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             f.write(current_time + ':\n')
             f.write(md5 + '\n')
+            fail_uri = list(get_uri_by_md5(md5))[0]
+            f.write(fail_uri + '\n')
             f.write(str(u'从数据库中读到的资源：') + '\t' + u'classes:' + str(classes) + '\t' + u"category::" + str(
                 log_category) + '\t' + str(
                 log_cache_size) + '\t' + str(
                 log_service_size) + '\t' + str(log_create_time) + ':\n')
             f.write(
                 str(u'实际curl到的资源：') + '\t' + str(category) + '\t' + str(cache_size) + '\t' + str(
-                    service_size) + '\t' + str(
+                    service_size) + '\t' + u'当前的时间为:' + str(current_time) + '\t' + u'时间差为' + str(
                     time_lag) + ':\n')
             if cache_size != log_cache_size:
                 log.info(u'cache_size与预期不符')
@@ -154,8 +162,8 @@ def assert_service_log(classes, category, cache_size, service_size, md5, timesta
                 f.write("category was wrong" + '\n')
             elif service_size != log_service_size:
                 log.info(u'service_size与预期不符')
-                f.write("service_size was wrong" + '\n')
-            elif time_lag_float > 10:
+                f.write("service_size与预期不符 " + '\n')
+            elif time_lag_float_sec > 60 or time_lag_float_hour != 0 or time_lag_float_minute != 0:
                 log.info(u'create_time与预期不符')
                 f.write("create_time was wrong" + '\n')
             f.write('***************************************\n')

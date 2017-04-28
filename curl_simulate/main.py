@@ -135,7 +135,8 @@ def main(start_time, end_time, host, host_user, host_pwd, limit, kind_timeline,
     :param kind_timeline: 每个kind中上下部分的时间差
     :return: 
     """
-    modify_linux_config(host, host_user, host_pwd, cds_ip, database_pwd, database_user, cds_pwd, src_system)
+    modify_linux_config(host, host_user, host_pwd, cds_ip, database_pwd, database_user, cds_pwd,
+                        src_system)  # 把所用到的信息写入到配置文件中
     start_time = datetime.datetime.strptime(start_time, '%Y-%m-%d %H:%M:%S')
     timestamp = str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M'))
     filepath = './operation_log/' + timestamp
@@ -210,18 +211,18 @@ def get_info_from_other_cds(resource_ip, resource_user, resource_pwd,
     f = open(curl_log, 'w')
     f.close()
     log.info(u"下面开始执行kind的操作 以上只是获取信息")
-    kind100(time_stamp=timestamp, limit=limit, src_system=src_system)
+    # kind100(time_stamp=timestamp, limit=limit, src_system=src_system)
 
 
 if __name__ == '__main__':
     del_all_log()
-    # get_info_from_other_cds(resource_ip='192.168.0.59', resource_user='root', resource_device_pwd='123',
+    # get_info_from_other_cds(resource_ip='20.20.20.2', resource_user='root', resource_device_pwd='123',
     #                         resource_pwd='0rd1230ac', host='192.168.0.56', host_user='root', host_pwd='123',
     #                         src_system='windows')
-    # main(start_time='2017-04-28 10:05:00', end_time='2017-04-28 20:00:00', host='192.168.0.59', host_user='root',
-    #      host_pwd='123', limit=10, kind_timeline=60, cds_ip='192.168.1.106', database_user='root',
-    #      database_pwd='0rd1230ac', cds_pwd='123', do_all=True, src_system='linux'
-    #      )  # 106为59提供服务，在59上执行curl动作，资源获取来自106上的数据库
+    main(start_time='2017-04-28 17:07:00', end_time='2017-04-28 20:00:00', host='192.168.0.56', host_user='root',
+         host_pwd='123', limit=10, kind_timeline=60, cds_ip='192.168.1.106', database_user='root',
+         database_pwd='0rd1230ac', cds_pwd='123', do_all=True, src_system='windows'
+         )  # 106为59提供服务，在59上执行curl动作，资源获取来自106上的数据库
     # main('2017-04-26 10:07:00', '2017-04-26 09:00:00', host='192.168.1.109', user='root', src_pwd='FxData!Cds@2016_',
     #      limit=10,
     #      kind_timeline=60,

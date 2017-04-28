@@ -60,13 +60,15 @@ def connect_linux(command, ip, user, pwd):
 def modify_linux_config(host, user, pwd, cds_ip, database_pwd, database_user, cds_pwd, src_system):
     """
     修改config-linux_to_curl里的配置文件
-    :param cds_pwd: 
-    :param database_user: 
-    :param database_pwd: 
-    :param cds_ip: 
-    :param host: 
-    :param user: 
-    :param pwd: 
+    我们以 在106上读取数据库资源，59上执行curl动作为例子 对下面的参数进行说明
+    :param src_system: 59上的系统，此处输入linux，如果是56（本人的pc）则此处请输入windows
+    :param cds_pwd: 106的root帐号的密码，不是123就是FxData!Cds@2016_ 
+    :param database_user: 106的数据库的帐号 一般是root
+    :param database_pwd: 106的数据库的密码，一般是0rd1230ac
+    :param cds_ip: 106的ip地址
+    :param host: 执行curl动作的ip 此处是59
+    :param user: 如果host是linux系统的话，则此处需要输入的是这台设备ssh的帐号，一般是root
+    :param pwd: 如果host是linux系统的话，则此处需要输入的是这台设备ssh的密码，一般不是123就是FxData!Cds@2016_ 
     :return: 
     """
     f = open('./http/config_linux_to_curl', 'w+')

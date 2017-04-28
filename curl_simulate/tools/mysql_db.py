@@ -166,3 +166,4 @@ def get_uri_by_md5(md5):
             cmd = cmd1 + 'mobile_cache' + cmd2 + md5 + cmd3
             res = execute_mysql(cmd, cds_host, cds_user, database_pwd)
     return res
+
