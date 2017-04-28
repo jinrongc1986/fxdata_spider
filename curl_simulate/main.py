@@ -194,6 +194,8 @@ def get_info_from_other_cds(resource_ip, resource_user, resource_pwd,
     :param limit: 
     :return: 
     """
+    modify_linux_config(host, host_user, host_pwd, resource_ip, resource_pwd, resource_user, '1',
+                        src_system)  # 我们只需要在一台设备上执行curl动作而不需要校验等其他动作，因此这里cds_pwd可以随意输入cds信息
     timestamp = str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M'))
     filepath = './operation_log/' + timestamp
     modify_my_log_file_path(filepath)
@@ -208,15 +210,14 @@ def get_info_from_other_cds(resource_ip, resource_user, resource_pwd,
     f = open(curl_log, 'w')
     f.close()
     log.info(u"下面开始执行kind的操作 以上只是获取信息")
-    modify_linux_config(host, host_user, host_pwd, '1', '1', '1', '1',
-                        src_system)  # 我们只需要在一台设备上执行curl动作而不需要校验等其他动作，因此这里可以随意输入cds信息
     kind100(time_stamp=timestamp, limit=limit, src_system=src_system)
 
 
 if __name__ == '__main__':
     del_all_log()
-    # get_info_from_other_cds(resource_ip='192.168.1.163', resource_user='root', resource_device_pwd='123',
-    #                         resource_pwd='0rd1230ac', host='192.168.0.56', host_user='root', host_pwd='123',src_system='windows')
+    # get_info_from_other_cds(resource_ip='192.168.0.59', resource_user='root', resource_device_pwd='123',
+    #                         resource_pwd='0rd1230ac', host='192.168.0.56', host_user='root', host_pwd='123',
+    #                         src_system='windows')
     # main(start_time='2017-04-28 10:05:00', end_time='2017-04-28 20:00:00', host='192.168.0.59', host_user='root',
     #      host_pwd='123', limit=10, kind_timeline=60, cds_ip='192.168.1.106', database_user='root',
     #      database_pwd='0rd1230ac', cds_pwd='123', do_all=True, src_system='linux'

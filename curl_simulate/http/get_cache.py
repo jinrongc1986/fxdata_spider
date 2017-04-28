@@ -36,11 +36,6 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 log = my_log()
 
-information = init_config_file().read().split()
-host = information[3]
-database_user = information[5]
-database_pwd = information[4]
-
 
 def get_http_cache(category, limit, filepath='./http/cache/httpcache'):
     """
@@ -50,6 +45,10 @@ def get_http_cache(category, limit, filepath='./http/cache/httpcache'):
     :param limit:限定条数，从根据createtime来排序，取最新的limit条数
     :return:
     """
+    information = init_config_file().read().split()
+    host = information[3]
+    database_user = information[5]
+    database_pwd = information[4]
     str1 = "SELECT uri,cache_size,md5 FROM http_cache WHERE cache_size < 12428800  AND category="
     str2 = " ORDER BY create_time DESC LIMIT "
     str1_5 = " and expires> '"
@@ -57,6 +56,7 @@ def get_http_cache(category, limit, filepath='./http/cache/httpcache'):
     current_time = str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     command = str1 + category + str1_5 + current_time + str1_6 + str2 + limit
     filepath += 'httpcache'
+    log.info(u'host:'+str(host)+u'database_user:'+database_user+u'database_pwd'+database_pwd)
     res = execute_mysql_get_cache_info(command, filepath, category, host, database_user, database_pwd)
     log.info(u'采集到的放入/http/cache_info的http信息为' + str(res))
     return res
@@ -70,6 +70,10 @@ def get_video_cache(category='1', limit='10', filepath='./http/cache/videocache'
     :param filepath:
     :return:
     """
+    information = init_config_file().read().split()
+    host = information[3]
+    database_user = information[5]
+    database_pwd = information[4]
     str1 = "SELECT uri,cache_size,md5 FROM video_cache WHERE cache_size < 12428800 AND category="
     str2 = " ORDER BY create_time DESC LIMIT "
     execute = str1 + category + str2 + limit
@@ -88,6 +92,10 @@ def get_mobile_cache(category='0', limit='10', filepath='./http/cache/mobilecach
     :param filepath:
     :return:
     """
+    information = init_config_file().read().split()
+    host = information[3]
+    database_user = information[5]
+    database_pwd = information[4]
     str1 = "SELECT uri,cache_size, md5  FROM mobile_cache WHERE cache_size < 52428800  AND category="
     str1_5 = " and expires> '"
     str1_6 = "'"
