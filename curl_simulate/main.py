@@ -219,7 +219,7 @@ if __name__ == '__main__':
     # get_info_from_other_cds(resource_ip='20.20.20.2', resource_user='root', resource_device_pwd='123',
     #                         resource_pwd='0rd1230ac', host='192.168.0.56', host_user='root', host_pwd='123',
     #                         src_system='windows')
-    main(start_time='2017-04-28 17:07:00', end_time='2017-04-28 20:00:00', host='192.168.0.56', host_user='root',
+    main(start_time='2017-05-02 17:45:00', end_time='2017-05-02 20:00:00', host='192.168.0.56', host_user='root',
          host_pwd='123', limit=10, kind_timeline=60, cds_ip='192.168.1.106', database_user='root',
          database_pwd='0rd1230ac', cds_pwd='123', do_all=True, src_system='windows'
          )  # 106为59提供服务，在59上执行curl动作，资源获取来自106上的数据库

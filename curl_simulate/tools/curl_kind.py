@@ -348,38 +348,40 @@ def kind0(time_stamp, limit, time_line, is_sleep=True):
     information = init_config_file().read().split()
     src_system = information[7]
     if is_sleep:
-        for i in range(5):
-            curl_resource_verbose(time_stamp, 0, i, limit, src_system, 'iphone', True, True)
-        for i in range(3):
-            curl_resource_verbose(time_stamp, 1, i, limit, src_system, 'iphone', True, True)
+        # for i in range(5):
+        #     curl_resource_verbose(time_stamp, 0, i, limit, src_system, 'iphone', True, True)
+        # for i in range(3):
+        #     curl_resource_verbose(time_stamp, 1, i, limit, src_system, 'iphone', True, True)
         # for i in range(20):
         #     curl_resource_verbose(time_stamp, 2, i, limit, src_system, 'iphone', True, True)
+        # 上面三行的作用是单线程执行全部的资源
+        log.info(u'开始多线程的kind0的操作')
         threadpool = []
-        # for t in range(0, 1):  # 如果此处改为2的话 会存现问题
-        #     for i in range(5):
-        #         th = threading.Thread(target=curl_resource_verbose,
-        #                               args=(time_stamp, 0, i, limit, src_system, 'windows', True, True))
-        #         threadpool.append(th)
-        #     for x in range(3):
-        #         th = threading.Thread(target=curl_resource_verbose,
-        #                               args=(time_stamp, 1, x, limit, src_system, 'windows', True, True))
-        #         threadpool.append(th)
-        #     for z in range(20):
-        #         th = threading.Thread(target=curl_resource_verbose,
-        #                               args=(time_stamp, 2, z, limit, src_system, 'windows', True, True))
-        #         threadpool.append(th)
-        #     for ths in threadpool:
-        #         log.info(u" ths.start()所执行的线程为：" + str(ths))
-        #         ths.start()
-        #     for ths in threadpool:
-        #         log.info(u" ths.join()所join的线程为：" + str(ths))
-        #         threading.Thread.join(ths)
-        #     log.info(u'等待' + str(time_line) + u'秒后开始执行')
-        #     time.sleep(time_line)
-        #     # 以下代码是用来制造vpe服务流量的
-        #     do_curl(time_stamp,
-        #             'curl --connect-timeout 5 -m 10 -o test666 -L "http://avideo.ifengcdn.com/mappa/2017/02/21/561cdb51bc6ee1d3804a9fc7f0fc5d1b.mp4"  --user-agent "windows"',
-        #             system=src_system, really_do=True)
+        for t in range(0, 1):  # 如果此处改为2的话 会存现问题
+            for i in range(5):
+                th = threading.Thread(target=curl_resource_verbose,
+                                      args=(time_stamp, 0, i, limit, src_system, 'windows', True, True))
+                threadpool.append(th)
+            for i in range(2):
+                th = threading.Thread(target=curl_resource_verbose,
+                                      args=(time_stamp, 1, i, limit, src_system, 'windows', True, True))
+                threadpool.append(th)
+            for i in range(20):
+                th = threading.Thread(target=curl_resource_verbose,
+                                      args=(time_stamp, 2, i, limit, src_system, 'windows', True, True))
+                threadpool.append(th)
+            for ths in threadpool:
+                log.info(u" ths.start()所执行的线程为：" + str(ths))
+                ths.start()
+            for ths in threadpool:
+                log.info(u" ths.join()所join的线程为：" + str(ths))
+                threading.Thread.join(ths)
+            log.info(u'等待' + str(time_line) + u'秒后开始执行')
+            time.sleep(time_line)
+            #     # 以下代码是用来制造vpe服务流量的
+            #     do_curl(time_stamp,
+            #             'curl --connect-timeout 5 -m 10 -o test666 -L "http://avideo.ifengcdn.com/mappa/2017/02/21/561cdb51bc6ee1d3804a9fc7f0fc5d1b.mp4"  --user-agent "windows"',
+            #             system=src_system, really_do=True)
 
     else:
         for i in range(0, 5):

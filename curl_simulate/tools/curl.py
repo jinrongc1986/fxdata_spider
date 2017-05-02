@@ -23,7 +23,7 @@ I love animals. They taste delicious.
 ┗┻┛  ┗┻┛
 """
 import datetime
-import json
+import subprocess
 import os
 import sys
 from datetime import datetime
@@ -57,8 +57,11 @@ def do_curl(time_stamp, command, system, really_do):
     log.info(u'当前时间为：' + unicode(current_time))
     if system == 'windows':
         log.info(u'选择的是windows设备执行curl操作' + str(command))
-        p = os.popen(command)
-        info = p.read()  # 读取命令行的输出到一个list
+        # p = os.popen(command)
+        # info = p.read()  # 读取命令行的输出到一个list
+        p = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        p.wait()
+        info = p.stdout.read()
         log.info(u'windows上执行的命令返回值为：' + str(info))
         curl_log = "./curl_log/curl_log_" + time_stamp
         x1 = open(curl_log, 'a+')
@@ -100,7 +103,7 @@ def curl_resource_verbose(timestamp, classes, category, limit, system, ua, need_
     :param limit:最近的n个资源
     :return:
     """
-    log.info(u"curl_resource_verbose函数 开始执行！！！")
+    log.info(u"curl_resource_verbose函数 开始执行！！！，此时class与category分别为：" + str(classes) + ' ' + str(category))
     global x
     if classes == 0:
         kind_ = 'httpcache'
@@ -131,7 +134,8 @@ def curl_resource_verbose(timestamp, classes, category, limit, system, ua, need_
         cache_url_list.append(line)
         md5_list.append(md5)
         count += 1
-    log.info(u"从" + unicode(filepath) + u"中，读取md5，资源的缓存大小，url 都放入到数组中")
+    log.info(u"从" + unicode(filepath) + u"中，读取md5，资源的缓存大小，url 都放入到数组中" +
+             u'其中class和category分别为：' + str(classes) + " " + str(category))
     log.info(u"得到的md5数组：" + unicode(md5_list) + u" url数组：" + unicode(cache_url_list) + u" 缓存大小数组：" + unicode(
         cache_size_list) + u" 资源总数为：" + unicode(count))
     if count <= limit:  # 如果出现limit为5而实际只存在两个或三个数据的时候
@@ -144,9 +148,10 @@ def curl_resource_verbose(timestamp, classes, category, limit, system, ua, need_
         command3 = ' --user-agent "' + ua + '"'
         url = cache_url_list[i]
         command = command1 + url + command2 + command3
-        log.info(u'执行的操作指令为：' + unicode(command))
         try:
             now1 = datetime.now()
+            log.info(
+                u'执行的操作指令为：' + unicode(command) + u" 以及class代码为：" + str(classes) + u' category代码为：' + str(category))
             do_curl(timestamp, command, system, really_do)  # 执行curl 操作
             now2 = datetime.now()
             log.info(u'执行这个curl操作花费的时间为：' + str(now2 - now1))
