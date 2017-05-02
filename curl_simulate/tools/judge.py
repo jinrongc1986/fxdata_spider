@@ -89,17 +89,17 @@ def assert_location_log(classes, category, url, cache_size, timestamp):
                     cache_size) + '\t' + u'当前的时间为:' + str(current_time) + '\t' + u'时间差为' + str(
                     time_lag) + ':\n')
             if classes != log_classes:
-                log.info(u'class与预期不符')
-                f.write("cache_size was wrong" + '\n')
+                log.info(u'class与预期不符'+'class='+classes+'category='+category)
+                f.write("cache_size was wrong" + '\n'+'class='+classes+'category='+category)
             elif category != log_category:
-                log.info(u'category与预期不符')
-                f.write("category was wrong" + '\n')
+                log.info(u'category与预期不符'+'class='+classes+'category='+category)
+                f.write("category was wrong" + '\n'+'class='+classes+'category='+category)
             elif cache_size != log_cache_size:
-                log.info(u'cache_size与预期不符')
-                f.write("cache_size was wrong" + '\n')
+                log.info(u'cache_size与预期不符'+'class='+classes+'category='+category)
+                f.write("cache_size was wrong" + '\n'+'class='+classes+'category='+category)
             elif time_lag_float_sec > 60 or time_lag_float_minute != 0 or time_lag_float_hour != 0:
-                log.info(u'create_time与预期不符')
-                f.write("create_time was wrong" + '\n')
+                log.info(u'create_time与预期不符'+'class='+classes+'category='+category)
+                f.write("create_time was wrong" + '\n'+'class='+classes+'category='+category)
             f.write('***************************************\n')
         else:
             log.info(unicode(url) + u"重定向日志没有问题")
