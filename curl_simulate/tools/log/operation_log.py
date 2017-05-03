@@ -25,6 +25,7 @@ I love animals. They taste delicious.
 import logging
 import logging.config
 import os
+from curl_simulate import total_base_dir
 
 
 def my_log():
@@ -32,12 +33,12 @@ def my_log():
     初始化函数操作
     :return: 
     """
-    is_dir_exist = os.path.exists('./operation_log')
-    if is_dir_exist is True:
-        pass
-    else:
-        os.mkdir('./operation_log')
-    logging.config.fileConfig("./tools/log/logging.conf")
+    operation_log_path = os.path.join(total_base_dir, 'operation_log')
+    conf_log = os.path.join(total_base_dir, 'tools', 'log', 'logging.conf')
+    if not os.path.exists(operation_log_path):
+        os.mkdir(operation_log_path)
+
+    logging.config.fileConfig(conf_log)
     logger_name = "example01"
     logger_ = logging.getLogger(logger_name)
     return logger_
@@ -49,25 +50,24 @@ def modify_my_log_file_path(filepath):
     :param filepath: 
     :return: 
     """
-    is_dir_exist = os.path.exists('./operation_log')
-    if is_dir_exist is True:
-        pass
-    else:
-        os.mkdir('./operation_log')
-
+    operation_log_path = os.path.join(total_base_dir, 'operation_log')
+    conf_log = os.path.join(total_base_dir, 'tools', 'log', 'logging.conf')
+    is_dir_exist = os.path.exists(operation_log_path)
+    if not is_dir_exist:
+        os.mkdir(operation_log_path)
     global src
-    f = open("./tools/log/logging.conf", 'a+')
+    f = open(conf_log, 'a+')
     lines = f.readlines()
     for line in lines:
         if 'args=(' in line:
             if 'args=(sys.stderr,)' not in line:
                 src = line
                 f.close()
-    f = open("./tools/log/logging.conf", 'a+')
+    f = open(conf_log, 'a+')
     x = f.read()
     des = x.replace(src, "args=('" + filepath + "', 'a')\n")
     f.close()
-    f = open("./tools/log/logging.conf.", 'w+')
+    f = open(conf_log, 'w+')
     f.write(des)
 
 
@@ -84,5 +84,3 @@ def del_operation_log(timestamp):
     else:
         log = my_log()
         log.info(u'目前文件大小为：' + unicode(file_size) + u'，请放心使用')
-
-

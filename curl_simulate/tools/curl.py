@@ -55,7 +55,7 @@ def do_curl(time_stamp, command, system, really_do):
     pwd = linux_config[2]
     current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     log.info(u'当前时间为：' + unicode(current_time))
-    if system == 'windows':
+    if system == 'windows'or 'linux_self':
         log.info(u'选择的是windows设备执行curl操作' + str(command))
         p = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         p.wait()

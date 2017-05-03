@@ -23,6 +23,8 @@ I love animals. They taste delicious.
 ┗┻┛  ┗┻┛
 """
 import sys
+import os
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
+total_base_dir = os.path.dirname(__file__)  # 解决路径问题 可以放在linux上
