@@ -67,7 +67,7 @@ def do_curl(time_stamp, command, system, really_do):
             f.write(
                 current_time + '\n' + command + '\n' + "" + info + now_over_time + '\n' + '------------------------------' + '\n')
             f.flush()
-    else:  # 此处编写linux下的命令
+    elif system == 'linux':  # 此处编写linux下的命令
         log.info(u'选择的是linux设备执行curl操作')
         curl_log = "./curl_log/curl_log_" + time_stamp
         # 在此增加读取linux配置的语句

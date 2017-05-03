@@ -50,7 +50,6 @@ def timer_customize(timestamp, expect_start_time, expect_end_time,
     information = init_config_file().read().split()
     cds_host = information[3]
     cds_database_user = information[5]
-    cds_database_pwd = information[4]
     cds_pwd = information[6]
     expect_start_time = datetime.datetime.strptime(expect_start_time, '%Y-%m-%d %H:%M:%S') + datetime.timedelta(
         seconds=30
@@ -162,7 +161,7 @@ def timer_customize(timestamp, expect_start_time, expect_end_time,
             node = 1
     end_debug_info = connect_linux('/home/icache/icached debug', cds_host, cds_database_user, cds_pwd)
     log.info(u'结束所有的curl操作，debug_info如下所示：' + end_debug_info)
-    f.write(end_debug_info+'\n'+u'kind0一共执行了'+count_kind0+u'次')
+    f.write(end_debug_info+'\n'+u'kind0一共执行了'+str(count_kind0)+u'次')
     log.info(u'kind执行的次数写入到curl_log文件中')
     f.write('count_kind1:' + str(count_kind1) + '\n')
     f.write('count_kind2:' + str(count_kind2) + '\n')

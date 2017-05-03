@@ -22,8 +22,13 @@ I love animals. They taste delicious.
 ┃┫┫  ┃┫┫
 ┗┻┛  ┗┻┛
 """
+
 import datetime
 import sys
+import os
+
+basedir = os.path.dirname(os.getcwd())
+sys.path.append(basedir)  # 添加路径，方便在linux下使用
 from curl_simulate.http.kind_info import calculate_kind
 from curl_simulate.http.get_cache import get_all_cache, get_mobile_cache, get_http_cache
 from curl_simulate.tools.connect_Linux import connect_linux, modify_linux_config
@@ -36,7 +41,6 @@ from curl_simulate.tools.timer import timer_customize, timer_customize_all_kind
 from curl_simulate.tools.wrong_statistics_by_judge import wrong_statistics_log, statics_location_log, \
     statics_service_log
 import time
-import os
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -216,11 +220,10 @@ def get_info_from_other_cds(resource_ip, resource_user, resource_pwd,
 
 if __name__ == '__main__':
     del_all_log()
-
     # get_info_from_other_cds(resource_ip='20.20.20.2', resource_user='root', resource_device_pwd='123',
     #                         resource_pwd='0rd1230ac', host='192.168.0.56', host_user='root', host_pwd='123',
     #                         src_system='windows')
-    main(start_time='2017-05-03 12:10:00', end_time='2017-05-03 13:40:00', host='192.168.0.56', host_user='root',
+    main(start_time='2017-05-03 17:02:00', end_time='2017-05-03 20:30:00', host='192.168.0.56', host_user='root',
          host_pwd='123', limit=10, kind_timeline=60, cds_ip='192.168.1.106', database_user='root',
          database_pwd='0rd1230ac', cds_pwd='123', do_all=True, src_system='windows'
          )  # 106为59提供服务，在59上执行curl动作，资源获取来自106上的数据库
