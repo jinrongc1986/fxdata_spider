@@ -57,25 +57,19 @@ def do_curl(time_stamp, command, system, really_do):
     log.info(u'当前时间为：' + unicode(current_time))
     if system == 'windows':
         log.info(u'选择的是windows设备执行curl操作' + str(command))
-        # p = os.popen(command)
-        # info = p.read()  # 读取命令行的输出到一个list
         p = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         p.wait()
         info = p.stdout.read()
         log.info(u'windows上执行的命令返回值为：' + str(info))
         curl_log = "./curl_log/curl_log_" + time_stamp
-        x1 = open(curl_log, 'a+')
-        x1.write(current_time + '\n' + command + '\n')
         with open(curl_log, "a") as f:
-            f.write('\n')
-            f.write("" + info)
-            f.write('\n')
+            now_over_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            f.write(
+                current_time + '\n' + command + '\n' + "" + info + now_over_time + '\n' + '------------------------------' + '\n')
             f.flush()
     else:  # 此处编写linux下的命令
         log.info(u'选择的是linux设备执行curl操作')
         curl_log = "./curl_log/curl_log_" + time_stamp
-        x1 = open(curl_log, 'a+')
-        x1.write(current_time + '\n' + command + '\n')
         # 在此增加读取linux配置的语句
         log.info(u"linux的信息如下所示：ip address:" + src_ip + ' user:' + user + " password:" + pwd)
         if really_do is True:
@@ -83,10 +77,13 @@ def do_curl(time_stamp, command, system, really_do):
             log.info(u"执行的命令为" + unicode(command) + u'并且写入到curl_log中')
             log.info(u"获取到的info信息为" + unicode(info) + u'并且写入到curl_log中')
             with open(curl_log, "a") as f:
-                f.write('\n')
-                f.write("" + info)
-                f.write('\n')
+                now_over_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                f.write(
+                    current_time + '\n' + command + '\n' + "" + info + now_over_time + '\n' + '------------------------------' + '\n')
                 f.flush()
+        else:
+            x1 = open(curl_log, 'a+')
+            x1.write(current_time + '\n' + command + '\n')
 
 
 def curl_resource_verbose(timestamp, classes, category, limit, system, ua, need_assert,
@@ -162,11 +159,12 @@ def curl_resource_verbose(timestamp, classes, category, limit, system, ua, need_
         log.info(
             unicode(kind_) + ' ' + unicode(category) + u'的执行了curl的资源大小总和为：' + str(cache_size_total) + u'并且写入curl_log中 ')
         curl_log = './curl_log/curl_log_' + timestamp
-        x = open(curl_log, 'a')
-        x.write('class=' + str(kind_) + ' category=' + str(
-            category) + ' cache_size=' + str(cache_size_list[i]) + ' cache_size_total:' + str(
-            cache_size_total) + '\n' + '----------------------------------------------------------------------------------' + '\n')  # 在curl_log中，——————————这个线就是一条curl_log信息的分割线
-        x.flush()
+        if not really_do:
+            x = open(curl_log, 'a')
+            x.write('class=' + str(kind_) + ' category=' + str(
+                category) + ' cache_size=' + str(cache_size_list[i]) + ' cache_size_total:' + str(
+                cache_size_total) + '\n' + '----------------------------------------------------------------------------------' + '\n')  # 在curl_log中，——————————这个线就是一条curl_log信息的分割线
+            x.flush()
         i += 1
     i = 0
     if need_assert is True:

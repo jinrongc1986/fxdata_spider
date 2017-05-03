@@ -377,7 +377,7 @@ def kind0(time_stamp, limit, time_line, is_sleep=True):
                 log.info(u" ths.join()所join的线程为：" + str(ths))
                 threading.Thread.join(ths)
             log.info(u'等待' + str(time_line) + u'秒后开始执行')
-            time.sleep(time_line)
+            # time.sleep(time_line)
             #     # 以下代码是用来制造vpe服务流量的
             #     do_curl(time_stamp,
             #             'curl --connect-timeout 5 -m 10 -o test666 -L "http://avideo.ifengcdn.com/mappa/2017/02/21/561cdb51bc6ee1d3804a9fc7f0fc5d1b.mp4"  --user-agent "windows"',
