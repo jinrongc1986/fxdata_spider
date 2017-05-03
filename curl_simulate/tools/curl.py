@@ -176,8 +176,18 @@ def curl_resource_verbose(timestamp, classes, category, limit, system, ua, need_
             log.info(
                 u'开始执行判断校验程序cache_size_each  url  md5分别为' + str(cache_size_each) + ' ' + str(url) + ' ' + str(md5_each))
             time.sleep(3)
+            current_time_start = datetime.now()
             assert_location_log(classes, category, url, cache_size_each, timestamp)
+            current_time_end = datetime.now()
+            log.info(u'location_log+url+md5分别为 以及开始结束的时间分别为：' + str(current_time_start) + '\t' + str(url) + ' ' + str(
+                md5_each) + '\t' + str(current_time_end) + u'执行该判断函数花费了：' + str(current_time_end - current_time_start))
+            current_time_start = datetime.now()
             assert_service_log(classes, category, cache_size_each, cache_size_each, md5_each, timestamp)
+            current_time_end = datetime.now()
+            # current_time_end = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            log.info(u'service_log+url+md5分别为 以及开始结束的时间分别为：' + str(current_time_start) + '\t' + str(url) + ' ' + str(
+                md5_each) + '\t' + str(current_time_end) + '\t' + u'执行该判断函数花费了：' + str(
+                current_time_end - current_time_start))
             i += 1
     if system == 'windows':
         pass
