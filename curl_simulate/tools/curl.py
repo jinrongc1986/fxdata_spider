@@ -41,7 +41,7 @@ sys.setdefaultencoding('utf-8')
 log = my_log()
 
 
-def do_curl(time_stamp, command, system, really_do):
+def do_curl(time_stamp, command, system, really_do, classes, category, i):
     """
     执行curl命令，目前只支持windows系统和linux系统
     :param really_do: 默认是真的要执行curl操作
@@ -68,7 +68,8 @@ def do_curl(time_stamp, command, system, really_do):
             with open(curl_log, "a") as f:
                 now_over_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 f.write(
-                    current_time + '\n' + command + '\n' + "" + info + now_over_time + '\n' + '------------------------------' + '\n')
+                    current_time + ':\t' + str(classes) + '\t' + str(category) + '\t' + str(
+                        i) + '\n' + command + '\n' + "" + info + now_over_time + '\n' + '------------------------------' + '\n')
                 f.flush()
         else:
             x1 = open(curl_log, 'a+')
@@ -158,7 +159,7 @@ def curl_resource_verbose(timestamp, classes, category, limit, system, ua, need_
             now1 = datetime.now()
             log.info(
                 u'执行的操作指令为：' + unicode(command) + u" 以及class代码为：" + str(classes) + u' category代码为：' + str(category))
-            do_curl(timestamp, command, system, really_do)  # 执行curl 操作
+            do_curl(timestamp, command, system, really_do, classes, category, i)  # 执行curl 操作
             now2 = datetime.now()
             log.info(u'执行这个curl操作花费的时间为：' + str(now2 - now1))
         except BaseException as e:
