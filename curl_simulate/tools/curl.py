@@ -29,6 +29,7 @@ import sys
 from datetime import datetime
 import time
 
+from curl_simulate import total_base_dir
 from curl_simulate.tools import init_config_file
 from curl_simulate.tools.connect_Linux import connect_linux
 from curl_simulate.tools.judge import assert_location_log, assert_service_log
@@ -55,18 +56,23 @@ def do_curl(time_stamp, command, system, really_do):
     pwd = linux_config[2]
     current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     log.info(u'当前时间为：' + unicode(current_time))
-    if system == 'windows'or 'linux_self':
+    if system == 'windows' or 'linux_self':
         log.info(u'选择的是windows设备执行curl操作' + str(command))
-        p = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-        p.wait()
-        info = p.stdout.read()
-        log.info(u'windows上执行的命令返回值为：' + str(info))
         curl_log = "./curl_log/curl_log_" + time_stamp
-        with open(curl_log, "a") as f:
-            now_over_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            f.write(
-                current_time + '\n' + command + '\n' + "" + info + now_over_time + '\n' + '------------------------------' + '\n')
-            f.flush()
+        if really_do:
+            p = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+            p.wait()
+            info = p.stdout.read()
+            log.info(u'windows上执行的命令返回值为：' + str(info))
+            curl_log = "./curl_log/curl_log_" + time_stamp
+            with open(curl_log, "a") as f:
+                now_over_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                f.write(
+                    current_time + '\n' + command + '\n' + "" + info + now_over_time + '\n' + '------------------------------' + '\n')
+                f.flush()
+        else:
+            x1 = open(curl_log, 'a+')
+            x1.write(current_time + '\n' + command + '\n')
     elif system == 'linux':  # 此处编写linux下的命令
         log.info(u'选择的是linux设备执行curl操作')
         curl_log = "./curl_log/curl_log_" + time_stamp
@@ -100,6 +106,8 @@ def curl_resource_verbose(timestamp, classes, category, limit, system, ua, need_
     :param limit:最近的n个资源
     :return:
     """
+
+    curl_verbose_start_time = datetime.now()
     log.info(u"curl_resource_verbose函数 开始执行！！！，此时class与category分别为：" + str(classes) + ' ' + str(category))
     global x
     if classes == 0:
@@ -140,6 +148,7 @@ def curl_resource_verbose(timestamp, classes, category, limit, system, ua, need_
         limit = count
     i = 0
     while i < limit:
+        curl_one_start_time = datetime.now()
         command1 = 'curl --connect-timeout 5 -m 10 -o test666 -L "'  # 连接超时时间用 --connect-timeout 参数来指定，数据传输的最大允许时间用 -m 参数来指定。
         command2 = '" '
         command3 = ' --user-agent "' + ua + '"'
@@ -165,33 +174,56 @@ def curl_resource_verbose(timestamp, classes, category, limit, system, ua, need_
                 category) + ' cache_size=' + str(cache_size_list[i]) + ' cache_size_total:' + str(
                 cache_size_total) + '\n' + '----------------------------------------------------------------------------------' + '\n')  # 在curl_log中，——————————这个线就是一条curl_log信息的分割线
             x.flush()
+        curl_one_end_time = datetime.now()
+        curl_one_use_time = curl_one_end_time - curl_one_start_time
+        if really_do:
+            message = u'执行一个curl所话费的时间如下：执行的class为' + '\n' + str(classes) + u'category为：' + str(
+                category) + u'第几个资源：' + str(
+                i) + '\n' + u'url:' + url + '\t' + u'开始时间' + str(curl_one_start_time) + '\t' + u'结束时间为：' + str(
+                curl_one_end_time) + '\t' + u'所花费的时间为：' + str(
+                curl_one_use_time)
+            log.info(message)
+            curl_class_use_time_log = os.path.join(total_base_dir, 'operation_log', timestamp + 'curl_one_use_time')
+            with open(curl_class_use_time_log, 'a')as f:
+                f.write(message + '\n' + '-----------------------------------------' + '\n')
         i += 1
-    i = 0
-    if need_assert is True:
+    z = 0
+    if need_assert is True:  # 执行完curl 一个class+category后进行校验工作
         log.info(u"开始校验核对服务日志和重定向日志")
-        while i < limit:
-            cache_size_each = cache_size_list[i]
-            url = cache_url_list[i]
-            md5_each = md5_list[i]
+        while z < limit:
+            cache_size_each = cache_size_list[z]
+            url = cache_url_list[z]
+            md5_each = md5_list[z]
             log.info(
-                u'开始执行判断校验程序cache_size_each  url  md5分别为' + str(cache_size_each) + ' ' + str(url) + ' ' + str(md5_each))
-            time.sleep(3)
+                u'开始执行判断校验程序cache_size_each  url  md5分别为' + str(cache_size_each) + ' ' + str(url) + ' ' + str(
+                    md5_each))
+            time.sleep(5)
             current_time_start = datetime.now()
             assert_location_log(classes, category, url, cache_size_each, timestamp)
             current_time_end = datetime.now()
-            log.info(u'location_log+url+md5分别为 以及开始结束的时间分别为：' + str(current_time_start) + '\t' + str(url) + ' ' + str(
-                md5_each) + '\t' + str(current_time_end) + u'执行该判断函数花费了：' + str(current_time_end - current_time_start))
+            log.info(
+                u'location_log+url+md5分别为 以及开始结束的时间分别为：' + str(current_time_start) + '\t' + str(url) + ' ' + str(
+                    md5_each) + '\t' + str(current_time_end) + u'执行该判断函数花费了：' + str(
+                    current_time_end - current_time_start))
             current_time_start = datetime.now()
             assert_service_log(classes, category, cache_size_each, cache_size_each, md5_each, timestamp)
             current_time_end = datetime.now()
-            # current_time_end = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            log.info(u'service_log+url+md5分别为 以及开始结束的时间分别为：' + str(current_time_start) + '\t' + str(url) + ' ' + str(
-                md5_each) + '\t' + str(current_time_end) + '\t' + u'执行该判断函数花费了：' + str(
-                current_time_end - current_time_start))
-            i += 1
-    if system == 'windows':
-        pass
-        # os.remove('test666')
+            log.info(
+                u'service_log+url+md5分别为 以及开始结束的时间分别为：' + str(current_time_start) + '\t' + str(url) + ' ' + str(
+                    md5_each) + '\t' + str(current_time_end) + '\t' + u'执行该判断函数花费了：' + str(
+                    current_time_end - current_time_start))
+            z += 1
+    if really_do:
+        curl_verbose_end_time = datetime.now()
+        curl_verbose_use_time = curl_verbose_end_time - curl_verbose_start_time
+        message = u'执行这个curl_resource_verbose class category 和用时分别为：' + '\n' + str(classes) + ' ' + str(
+            category) + '\t' + u'开始时间：' + str(curl_verbose_start_time) + '\t' + u'结束时间为：' + str(
+            curl_verbose_end_time) + '\t' + str(
+            curl_verbose_use_time)
+        log.info(message)
+        curl_class_use_time_log = os.path.join(total_base_dir, 'operation_log', timestamp + 'curl_class_use_time')
+        with open(curl_class_use_time_log, 'a')as f:
+            f.write(message + '\n' + '-----------------------------------------' + '\n')
 
 
 def curl_resource_class(timestamp, classes, limit, system, ua, need_assert,

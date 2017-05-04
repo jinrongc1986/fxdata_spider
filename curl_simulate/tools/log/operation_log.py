@@ -37,7 +37,6 @@ def my_log():
     conf_log = os.path.join(total_base_dir, 'tools', 'log', 'logging.conf')
     if not os.path.exists(operation_log_path):
         os.mkdir(operation_log_path)
-
     logging.config.fileConfig(conf_log)
     logger_name = "example01"
     logger_ = logging.getLogger(logger_name)

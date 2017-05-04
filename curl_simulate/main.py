@@ -26,7 +26,7 @@ I love animals. They taste delicious.
 import datetime
 import sys
 import os
-
+import shutil
 basedir = os.path.dirname(os.getcwd())
 sys.path.append(basedir)  # 添加路径，方便在linux下使用
 from curl_simulate.http.kind_info import calculate_kind
@@ -115,7 +115,7 @@ def curl_class(host, host_user, host_pwd, limit,
 
 
 def main(start_time, end_time, host, host_user, host_pwd, limit, kind_timeline,
-         cds_ip, database_user, database_pwd, cds_pwd, do_all, src_system='linux', resource_ip='empty',
+         cds_ip, database_user, database_pwd, cds_pwd, do_all, need_assert, src_system='linux', resource_ip='empty',
          resource_user='empty',
          resource_pwd='empty', resource_device_pwd='empty'):
     """
@@ -140,7 +140,7 @@ def main(start_time, end_time, host, host_user, host_pwd, limit, kind_timeline,
     :return: 
     """
     modify_linux_config(host, host_user, host_pwd, cds_ip, database_pwd, database_user, cds_pwd,
-                        src_system)  # 把所用到的信息写入到配置文件中
+                        src_system, need_assert)  # 把所用到的信息写入到配置文件中
     start_time = datetime.datetime.strptime(start_time, '%Y-%m-%d %H:%M:%S')
     timestamp = str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M'))
     filepath = './operation_log/' + timestamp
@@ -223,10 +223,10 @@ if __name__ == '__main__':
     # get_info_from_other_cds(resource_ip='20.20.20.2', resource_user='root', resource_device_pwd='123',
     #                         resource_pwd='0rd1230ac', host='192.168.0.56', host_user='root', host_pwd='123',
     #                         src_system='windows')
-    main(start_time='2017-05-03 18:15:00', end_time='2017-05-03 20:30:00', host='192.168.0.56', host_user='root',
+    main(start_time='2017-05-04 15:30:00', end_time='2017-05-04 16:30:00', host='192.168.0.56', host_user='root',
          host_pwd='123', limit=10, kind_timeline=60, cds_ip='192.168.1.106', database_user='root',
-         database_pwd='0rd1230ac', cds_pwd='123', do_all=True, src_system='windows'
-         )  # 106为59提供服务，在59上执行curl动作，资源获取来自106上的数据库
+         database_pwd='0rd1230ac', cds_pwd='123', do_all=True, src_system='windows',
+         need_assert=True)  # 106为59提供服务，在59上执行curl动作，资源获取来自106上的数据库
     # main('2017-04-26 10:07:00', '2017-04-26 09:00:00', host='192.168.1.109', user='root', src_pwd='FxData!Cds@2016_',
     #      limit=10,
     #      kind_timeline=60,

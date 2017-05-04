@@ -46,7 +46,7 @@ def del_dir(*args):
     dir_path = os.path.join(base_dir, *args)
     is_curl_log_exist = os.path.exists(dir_path)
     if is_curl_log_exist is True:
-        shutil.rmtree(dir_path, ignore_errors=True)
+        shutil.rmtree(dir_path, ignore_errors=False)
     else:
         pass
 

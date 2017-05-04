@@ -57,7 +57,7 @@ def connect_linux(command, ip, user, pwd):
     return info
 
 
-def modify_linux_config(host, user, pwd, cds_ip, database_pwd, database_user, cds_pwd, src_system):
+def modify_linux_config(host, user, pwd, cds_ip, database_pwd, database_user, cds_pwd, src_system, need_assert):
     """
     修改config-linux_to_curl里的配置文件
     我们以 在106上读取数据库资源，59上执行curl动作为例子 对下面的参数进行说明
@@ -72,5 +72,6 @@ def modify_linux_config(host, user, pwd, cds_ip, database_pwd, database_user, cd
     :return: 
     """
     f = open('./http/config_linux_to_curl', 'w+')
-    message = host + ' ' + user + ' ' + pwd + ' ' + cds_ip + ' ' + database_pwd + ' ' + database_user + ' ' + cds_pwd + ' ' + src_system
+    message = host + ' ' + user + ' ' + pwd + ' ' + cds_ip + ' ' + database_pwd + ' ' + database_user + ' ' + cds_pwd + ' ' + src_system + ' ' + str(
+        need_assert)
     f.write(message)

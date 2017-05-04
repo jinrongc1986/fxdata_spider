@@ -347,6 +347,9 @@ def kind5(time_stamp, limit, time_line, is_sleep=True):
 def kind0(time_stamp, limit, time_line, is_sleep=True):
     information = init_config_file().read().split()
     src_system = information[7]
+    need_assert = information[8]
+    if need_assert == 'True':
+        need_assert = True
     if is_sleep:
         # for i in range(5):
         #     curl_resource_verbose(time_stamp, 0, i, limit, src_system, 'iphone', True, True)
@@ -360,15 +363,15 @@ def kind0(time_stamp, limit, time_line, is_sleep=True):
         for t in range(0, 1):  # 如果此处改为2的话 会存现问题
             for i in range(5):
                 th = threading.Thread(target=curl_resource_verbose,
-                                      args=(time_stamp, 0, i, limit, src_system, 'windows', True, True))
+                                      args=(time_stamp, 0, i, limit, src_system, 'windows', need_assert, True))
                 threadpool.append(th)
             for i in range(2):
                 th = threading.Thread(target=curl_resource_verbose,
-                                      args=(time_stamp, 1, i, limit, src_system, 'windows', True, True))
+                                      args=(time_stamp, 1, i, limit, src_system, 'windows', need_assert, True))
                 threadpool.append(th)
             for i in range(20):
                 th = threading.Thread(target=curl_resource_verbose,
-                                      args=(time_stamp, 2, i, limit, src_system, 'windows', True, True))
+                                      args=(time_stamp, 2, i, limit, src_system, 'windows', need_assert, True))
                 threadpool.append(th)
             for ths in threadpool:
                 log.info(u" ths.start()所执行的线程为：" + str(ths))
