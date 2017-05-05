@@ -33,12 +33,19 @@ sys.setdefaultencoding('utf-8')
 
 
 def modify_iptables(cds_ip, cds_user, cds_pwd):
+    """
+    修改防火墙配置，因为初始的情况下在防火墙中3306这个端口是不能使用的
+    :param cds_ip: 
+    :param cds_user: 
+    :param cds_pwd: 
+    :return: 
+    """
     iptables = "cat /etc/icache/iptables"
     cmd = "-A INPUT -p tcp -m state --state NEW -m tcp --dport 3306 -j ACCEPT"
     cmd2 = "sed -i '10i -A INPUT -p tcp -m state --state NEW -m tcp --dport 3306 -j ACCEPT' /etc/icache/iptables"
     info = connect_linux(iptables, cds_ip, cds_user, cds_pwd)
     if cmd not in info:
         connect_linux(cmd2, cds_ip, cds_user, cds_pwd)
-    iptable_restart = 'service iptables restart'
-    connect_linux(iptable_restart, cds_ip, cds_user, cds_pwd)
-    time.sleep(5)
+        iptable_restart = 'service iptables restart'
+        connect_linux(iptable_restart, cds_ip, cds_user, cds_pwd)
+        time.sleep(5)

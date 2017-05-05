@@ -98,10 +98,18 @@ def timer_customize(timestamp, expect_start_time, expect_end_time,
             exit()
         wait_to_end = str(wait_to_end)
         log.info(u'离结束的时间还有几分几秒（请自行减去五分钟）：' + str(wait_to_end))  # 离结束还有几分几秒
-        end_hour = int(wait_to_end.split(':')[0])
-        end_minute = int(wait_to_end.split(':')[1])
-        end_second = int(wait_to_end.split(':')[2])
-        seconds_to_wait_end = end_hour * 3600 + end_minute * 60 + end_second  # 离跳出循环还有几秒钟
+        if 'day' not in wait_to_end:
+            end_day = 0
+            end_hour = int(wait_to_end.split(':')[0])
+            end_minute = int(wait_to_end.split(':')[1])
+            end_second = int(wait_to_end.split(':')[2])
+        else:
+            end_day = int(wait_to_end.split()[0])
+            wait_to_end = wait_to_end.split(',')[1]
+            end_hour = int(wait_to_end.split(':')[0])
+            end_minute = int(wait_to_end.split(':')[1])
+            end_second = int(wait_to_end.split(':')[2])
+        seconds_to_wait_end = end_day * 3600 * 24 + end_hour * 3600 + end_minute * 60 + end_second  # 离跳出循环还有几秒钟
         log.info(u'离结束时间还有几秒(seconds_to_wait_end)：' + str(seconds_to_wait_end))
         log.info(u"expect_start_time的值为：" + unicode(expect_start_time))
         log.info(u"now_time的值为：" + unicode(now_time))
@@ -161,7 +169,7 @@ def timer_customize(timestamp, expect_start_time, expect_end_time,
             node = 1
     end_debug_info = connect_linux('/home/icache/icached debug', cds_host, cds_database_user, cds_pwd)
     log.info(u'结束所有的curl操作，debug_info如下所示：' + end_debug_info)
-    f.write(end_debug_info+'\n'+u'kind0一共执行了'+str(count_kind0)+u'次')
+    f.write(end_debug_info + '\n' + u'kind0一共执行了' + str(count_kind0) + u'次')
     log.info(u'kind执行的次数写入到curl_log文件中')
     f.write('count_kind1:' + str(count_kind1) + '\n')
     f.write('count_kind2:' + str(count_kind2) + '\n')
