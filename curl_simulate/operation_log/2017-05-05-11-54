@@ -1,0 +1,84 @@
+2017-05-05 12:13:57,085 D:\GitHub\fxdata_spider\curl_simulate\tools\timer.py timer.py [timer_customize] [line:92] INFO 当前的时间是：2017-05-05 12:13:57
+2017-05-05 12:13:57,085 D:\GitHub\fxdata_spider\curl_simulate\tools\timer.py timer.py [timer_customize] [line:94] INFO 期望结束的时间加上五分钟是：2017-05-05 12:15:00
+2017-05-05 12:13:57,085 D:\GitHub\fxdata_spider\curl_simulate\tools\timer.py timer.py [timer_customize] [line:100] INFO 离结束的时间还有几分几秒（请自行减去五分钟）：0:01:03
+2017-05-05 12:13:57,085 D:\GitHub\fxdata_spider\curl_simulate\tools\timer.py timer.py [timer_customize] [line:105] INFO 离结束时间还有几秒(seconds_to_wait_end)：63
+2017-05-05 12:13:57,085 D:\GitHub\fxdata_spider\curl_simulate\tools\timer.py timer.py [timer_customize] [line:106] INFO expect_start_time的值为：2017-05-05 12:15:30
+2017-05-05 12:13:57,085 D:\GitHub\fxdata_spider\curl_simulate\tools\timer.py timer.py [timer_customize] [line:107] INFO now_time的值为：2017-05-05 12:13:57
+2017-05-05 12:13:57,085 D:\GitHub\fxdata_spider\curl_simulate\tools\timer.py timer.py [timer_customize] [line:109] INFO 马上自动退出程序，请查看基础日志
+2017-05-05 12:13:57,085 D:\GitHub\fxdata_spider\curl_simulate\tools\timer.py timer.py [timer_customize] [line:110] INFO seconds_to_wait_end:63
+2017-05-05 12:13:57,085 D:\GitHub\fxdata_spider\curl_simulate\tools\timer.py timer.py [timer_customize] [line:111] INFO expect_start_time:2017-05-05 12:15:30
+2017-05-05 12:13:57,085 D:\GitHub\fxdata_spider\curl_simulate\tools\timer.py timer.py [timer_customize] [line:112] INFO now_time:2017-05-05 12:13:57
+2017-05-05 12:13:57,085 D:\GitHub\fxdata_spider\curl_simulate\tools\timer.py timer.py [timer_customize] [line:113] INFO 此时执行的是kind5
+2017-05-05 12:13:57,085 D:\GitHub\fxdata_spider\curl_simulate\tools\connect_Linux.py connect_Linux.py [connect_linux] [line:44] INFO 链接192.168.1.106，开始操作
+2017-05-05 12:13:57,085 D:\GitHub\fxdata_spider\curl_simulate\tools\connect_Linux.py connect_Linux.py [connect_linux] [line:47] INFO IP User Pwd 信息192.168.1.106	root	123
+2017-05-05 12:13:57,615 D:\GitHub\fxdata_spider\curl_simulate\tools\connect_Linux.py connect_Linux.py [connect_linux] [line:50] INFO 链接192.168.1.106，开始操作/home/icache/icached debug
+2017-05-05 12:13:58,016 D:\GitHub\fxdata_spider\curl_simulate\tools\connect_Linux.py connect_Linux.py [connect_linux] [line:55] INFO 链接了linux后执行操作的返回值server(cloud) count: 1
+sysinfo: cpu8
+match_db_count: 45 log_en: 0|0
+http thread: 0
+mobile thread: 0
+video thread: 0
+upcache thread: http|mobile: 0|0
+mysql connect: 0
+sys_run_time: 2400s (0h40m)
+down_enable: http|video|mobile: 1|1|1
+down_info: sucess|fault|redown: 0|0|0
+handle packets for vlan|pppoe|ip6|ip4: 3765|0|0|3765
+cache avoid for delay|limit: 0,0,0,0|0,0,0,0
+user online|hit: 2|1
+--------
+capture uri: 3765
+drop uri: 0
+check threshold task: 1
+drop threshold task: 0
+add cache task: 26
+drop cache task: 0
+log match: 0
+drop matchlog: 0
+log opt: 3
+drop optlog: 0
+location uri: 3221
+drop location: 0
+avg location time: 0.54ms
+max location time: 33.06ms
+location time > 10ms: 16
+--------
+diskmask: 0xfffffffe
+
+2017-05-05 12:13:58,019 D:\GitHub\fxdata_spider\curl_simulate\tools\timer.py timer.py [timer_customize] [line:163] INFO 结束所有的curl操作，debug_info如下所示：server(cloud) count: 1
+sysinfo: cpu8
+match_db_count: 45 log_en: 0|0
+http thread: 0
+mobile thread: 0
+video thread: 0
+upcache thread: http|mobile: 0|0
+mysql connect: 0
+sys_run_time: 2400s (0h40m)
+down_enable: http|video|mobile: 1|1|1
+down_info: sucess|fault|redown: 0|0|0
+handle packets for vlan|pppoe|ip6|ip4: 3765|0|0|3765
+cache avoid for delay|limit: 0,0,0,0|0,0,0,0
+user online|hit: 2|1
+--------
+capture uri: 3765
+drop uri: 0
+check threshold task: 1
+drop threshold task: 0
+add cache task: 26
+drop cache task: 0
+log match: 0
+drop matchlog: 0
+log opt: 3
+drop optlog: 0
+location uri: 3221
+drop location: 0
+avg location time: 0.54ms
+max location time: 33.06ms
+location time > 10ms: 16
+--------
+diskmask: 0xfffffffe
+
+2017-05-05 12:13:58,019 D:\GitHub\fxdata_spider\curl_simulate\tools\timer.py timer.py [timer_customize] [line:165] INFO kind执行的次数写入到curl_log文件中
+2017-05-05 12:13:58,019 D:\GitHub\fxdata_spider\curl_simulate\tools\timer.py timer.py [timer_customize] [line:173] INFO 当前的时间为：2017-05-05 12:13:58
+2017-05-05 12:13:58,019 D:/GitHub/fxdata_spider/curl_simulate/main.py main.py [main] [line:184] INFO 执行完成time_customize函数，开始统计函数的执行
+2017-05-05 12:13:58,023 D:/GitHub/fxdata_spider/curl_simulate/main.py main.py [main] [line:189] INFO 执行完成
