@@ -25,6 +25,7 @@ I love animals. They taste delicious.
 import os
 import sys
 
+from curl_simulate import total_base_dir
 from curl_simulate.tools.curl_kind import kind1, kind2, kind3, kind4, kind5, kind0
 from curl_simulate.tools.log.operation_log import my_log
 
@@ -41,9 +42,11 @@ def calculate_kind(timestamp, kind, limit):
     :param kind: 
     :return: 
     """
-    curl_log = "./curl_log/curl_log_" + timestamp
-    if not os.path.exists('./curl_log'):
-        os.mkdir('./curl_log')
+    # curl_log = "./curl_log/curl_log_" + timestamp
+    curl_log = os.path.join(total_base_dir, 'curl_log', 'curl_log_' + timestamp)
+    # if not os.path.exists('./curl_log'):
+    if not os.path.exists(os.path.join(total_base_dir, 'curl_log')):
+        os.mkdir(os.path.join(total_base_dir, 'curl_log'))
     f = open(curl_log, 'w')
     f.close()
     if kind == 1:

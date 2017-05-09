@@ -42,7 +42,7 @@ def modify_iptables(cds_ip, cds_user, cds_pwd):
     """
     iptables = "cat /etc/icache/iptables"
     cmd = "-A INPUT -p tcp -m state --state NEW -m tcp --dport 3306 -j ACCEPT"
-    cmd2 = "sed -i '10i -A INPUT -p tcp -m state --state NEW -m tcp --dport 3306 -j ACCEPT' /etc/icache/iptables"
+    cmd2 = "sed -i '15i -A INPUT -p tcp -m state --state NEW -m tcp --dport 3306 -j ACCEPT' /etc/icache/iptables"
     info = connect_linux(iptables, cds_ip, cds_user, cds_pwd)
     if cmd not in info:
         connect_linux(cmd2, cds_ip, cds_user, cds_pwd)

@@ -226,8 +226,8 @@ if __name__ == '__main__':
     # get_info_from_other_cds(resource_ip='20.20.20.2', resource_user='root', resource_device_pwd='123',
     #                         resource_pwd='0rd1230ac', host='192.168.0.56', host_user='root', host_pwd='123',
     #                         src_system='windows')
-    main(start_time='2017-05-05 15:57:00', end_time='2017-05-08 18:10:00', host='192.168.0.56', host_user='root',
-         host_pwd='123', limit=20, kind_timeline=60, cds_ip='192.168.1.106', database_user='root',
+    main(start_time='2017-05-09 11:10:00', end_time='2017-05-09 15:10:00', host='192.168.0.56', host_user='root',
+         host_pwd='123', limit=20, kind_timeline=60, cds_ip='20.20.20.2', database_user='root',
          database_pwd='0rd1230ac', cds_pwd='123', do_all=True, src_system='windows',
          need_assert=False)  # 106为59提供服务，在59上执行curl动作，资源获取来自106上的数据库
     # main('2017-04-26 10:07:00', '2017-04-26 09:00:00', host='192.168.1.109', user='root', src_pwd='FxData!Cds@2016_',
