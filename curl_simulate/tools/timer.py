@@ -50,11 +50,11 @@ def timer_customize(timestamp, expect_start_time, expect_end_time,
     information = init_config_file().read().split()
     cds_host = information[3]
     cds_database_user = information[5]
-    cds_pwd = information[6]
+    cds_pwd = information[6]  # 从配置文件中读取相关的信息
     expect_start_time = datetime.datetime.strptime(expect_start_time, '%Y-%m-%d %H:%M:%S') + datetime.timedelta(
         seconds=30
     )  # 说明加上从0或者5分钟后加上30秒后再执行curl操作
-    expect_end_time = datetime.datetime.strptime(expect_end_time, '%Y-%m-%d %H:%M:%S')
+    expect_end_time = datetime.datetime.strptime(expect_end_time, '%Y-%m-%d %H:%M:%S')  # 预期结束的时间
     now_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 显示现在的时间
     now_time = datetime.datetime.strptime(now_time, '%Y-%m-%d %H:%M:%S')  # 格式化当前的时间
     log.info(u'判断当前的时间和开始时间结束时间：')
@@ -67,7 +67,7 @@ def timer_customize(timestamp, expect_start_time, expect_end_time,
     if expect_end_time < expect_start_time:
         log.info(u'结束时间不能小于开始时间' + '\n' + u'结束进程')
         sys.exit()
-    expect_end_time = expect_end_time + datetime.timedelta(minutes=5)
+    expect_end_time = expect_end_time + datetime.timedelta(minutes=5)  # 此处填写的是执行两次kind之间的时间间隔
     node = 1
     curl_log = "./curl_log/curl_log_" + timestamp
     log.info(u'清除指定的时间戳的curl_log文件中的内容，之前的内容都是测试kind_info中的信息而产生的')
@@ -130,7 +130,7 @@ def timer_customize(timestamp, expect_start_time, expect_end_time,
         seconds_to_wait = hours * 3600 + minute * 60 + seconds
         log.info(u"等待时间为" + str(seconds_to_wait) + u'秒后开始执行')
         time.sleep(seconds_to_wait)
-        if not do_all:
+        if not do_all:  # 在此处添加自定义的kind
             if node == 1:
                 log.info(u'开始执行kind1的实际curl操作')
                 kind1(timestamp, limit=limit, time_line=kind_timeline)
@@ -165,7 +165,7 @@ def timer_customize(timestamp, expect_start_time, expect_end_time,
         expect_start_time = expect_start_time + time_line
         log.info(u'下一次的curl_kind操作开始时间为：' + unicode(expect_start_time))
         node += 1
-        if node == 6:
+        if node == 6:  # node就是执行的kind数+1
             node = 1
     end_debug_info = connect_linux('/home/icache/icached debug', cds_host, cds_database_user, cds_pwd)
     log.info(u'结束所有的curl操作，debug_info如下所示：' + end_debug_info)
@@ -271,7 +271,7 @@ def timer_customize_all_kind(timestamp, expect_start_time='2017-03-21 17:04:00',
         time_line = datetime.timedelta(minutes=5)  # 两个kind之间每次curl间隔的时间，要求为5分钟
         expect_start_time = expect_start_time + time_line
         log.info(u'下一次的curl_kind操作开始时间为：' + unicode(expect_start_time))
-        node += 1
+        node += 1  # 自加1
         if node == 6:
             node = 1
     end_debug_info = connect_linux('/home/icache/icached debug', cds_host, cds_database_user, cds_pwd)
