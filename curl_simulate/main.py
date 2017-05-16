@@ -222,7 +222,7 @@ def get_info_from_other_cds(resource_ip, resource_user, resource_pwd,
 
 
 if __name__ == '__main__':
-    del_all_log()
+    #del_all_log()
     # get_info_from_other_cds(resource_ip='20.20.20.2', resource_user='root', resource_device_pwd='123',
     #                         resource_pwd='0rd1230ac', host='192.168.0.56', host_user='root', host_pwd='123',
     #                         src_system='windows')
@@ -237,3 +237,4 @@ if __name__ == '__main__':
     # while True:
     #     curl_class(host='192.168.0.56', host_pwd='123', host_user='root', limit=100, cds_ip='192.168.1.106',
     #                database_user='root', database_pwd='0rd1230ac', cds_pwd='123', src_system='windows')
+	#jinrongc
