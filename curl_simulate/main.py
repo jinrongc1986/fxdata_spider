@@ -47,50 +47,6 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 
-# def main_all(start_time, end_time, host, user, src_pwd, limit, kind_timeline,
-#              cds_ip, database_user, database_pwd, cds_pwd):
-#     """
-#     :param cds_pwd:
-#     :param database_pwd:
-#     :param database_user:
-#     :param cds_ip:
-#     :param start_time: 开始时间
-#     :param end_time: 结束时间
-#     :param host: 执行curl动作的ip
-#     :param user: 上述ip的帐号
-#     :param src_pwd: 上述ip的密码
-#     :param limit: curl每种资源的个数
-#     :param kind_timeline: 每个kind中上下部分的时间差
-#     :return:
-#     """
-#     modify_linux_config(host, user, src_pwd, cds_ip, database_pwd, database_user, cds_pwd)
-#     start_time = datetime.datetime.strptime(start_time, '%Y-%m-%d %H:%M:%S')
-#     timestamp = str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M'))
-#     filepath = './operation_log/' + timestamp
-#     modify_my_log_file_path(filepath)
-#     log = my_log()
-#     while True:
-#         now_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 显示现在的时间
-#         now_time = datetime.datetime.strptime(now_time, '%Y-%m-%d %H:%M:%S')  # 格式化当前的时间
-#         if start_time - now_time < datetime.timedelta(minutes=3):
-#             log.info(u'离开始执行的时间只有3分钟，3分钟后准时执行')
-#             break
-#         else:
-#             log.info(u'请耐心等待，离开始的时间还有' + str(start_time - now_time))
-#             time.sleep(60)
-#     log.info(u'全场关键字 timestamp为：' + timestamp)
-#     log.info(u'获取全部资源放入到指定的文件夹中')
-#     get_all_cache(timestamp, 100)  # 获取全部资源放入到指定的文件夹中
-#     log.info(u"现在的时间戳节点为：" + timestamp)
-#     log.info(u'开始准备工作，计算每种kind的资源和大小')
-#     calculate_kind_all(timestamp)
-#     log.info(u'准备工作就绪，现在可以开始进行真正的curl操作')
-#     log.info(u'执行time_customize前的当前的时间为' + unicode(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
-#     timer_customize_all_kind(timestamp, str(start_time), end_time, limit, kind_timeline)
-#     log.info(u'执行完成time_customize函数，开始统计函数的执行')
-#     get_all_hot_list(timestamp)
-#     wrong_statistics_log(timestamp)
-#     log.info(u"执行完成")
 def curl_class(host, host_user, host_pwd, limit,
                cds_ip, database_user, database_pwd, cds_pwd, src_system='linux', ):
     """
@@ -127,7 +83,7 @@ def main(start_time, end_time, host, host_user, host_pwd, limit, kind_timeline,
     :param resource_pwd: 获取资源的设备的数据库密码
     :param resource_user: 获取资源的设备的帐号
     :param resource_ip: 获取资源的设备的ip（默认是cds的ip）
-    :param src_system: 所执行curl的设备是属于linux 或者 windows 
+    :param src_system: 所执行curl的设备是属于linux 或者 windows 只有一种情况是需要输入linux 就是在windows上远程链接linux设备。如果在本地跑（不论是linux或者windows）这里都输入windows
     :param cds_pwd: cds设备的密码
     :param database_pwd: cds 数据库的密码
     :param database_user: cds数据库的帐号
@@ -143,12 +99,12 @@ def main(start_time, end_time, host, host_user, host_pwd, limit, kind_timeline,
     """
     modify_linux_config(host, host_user, host_pwd, cds_ip, database_pwd, database_user, cds_pwd,
                         src_system, need_assert)  # 把所用到的信息写入到配置文件中
-    start_time = datetime.datetime.strptime(start_time, '%Y-%m-%d %H:%M:%S')
+    start_time = datetime.datetime.strptime(start_time, '%Y-%m-%d %H:%M:%S')  # 当前时间
     timestamp = str(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M'))
     filepath = './operation_log/' + timestamp
     modify_my_log_file_path(filepath)
     log = my_log()
-    modify_iptables(cds_ip, database_user, cds_pwd)
+    modify_iptables(cds_ip, database_user, cds_pwd)  # 修改防火墙
     while True:
         now_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 显示现在的时间
         now_time = datetime.datetime.strptime(now_time, '%Y-%m-%d %H:%M:%S')  # 格式化当前的时间
@@ -173,7 +129,7 @@ def main(start_time, end_time, host, host_user, host_pwd, limit, kind_timeline,
     log.info(u'开始准备工作，计算每种kind的资源和大小')
     # calculate_kind(timestamp, 0, limit)
     i = 0
-    while i < 6:
+    while i < 6:  # 计算每种kind的数据 不是真正的执行
         calculate_kind(timestamp, i, limit)  # 目前一共五钟kind，把每个kind的cache文件信息存放在kind_info中
         i += 1
     log.info(u'准备工作就绪，现在可以开始进行真正的curl操作')
@@ -226,8 +182,8 @@ if __name__ == '__main__':
     # get_info_from_other_cds(resource_ip='20.20.20.2', resource_user='root', resource_device_pwd='123',
     #                         resource_pwd='0rd1230ac', host='192.168.0.56', host_user='root', host_pwd='123',
     #                         src_system='windows')
-    main(start_time='2017-05-09 11:10:00', end_time='2017-05-09 15:10:00', host='192.168.0.56', host_user='root',
-         host_pwd='123', limit=20, kind_timeline=60, cds_ip='20.20.20.2', database_user='root',
+    main(start_time='2017-05-15 12:55:00', end_time='2017-05-15 15:10:00', host='192.168.0.56', host_user='root',
+         host_pwd='123', limit=20, kind_timeline=0, cds_ip='20.20.20.2', database_user='root',
          database_pwd='0rd1230ac', cds_pwd='123', do_all=True, src_system='windows',
          need_assert=False)  # 106为59提供服务，在59上执行curl动作，资源获取来自106上的数据库
     # main('2017-04-26 10:07:00', '2017-04-26 09:00:00', host='192.168.1.109', user='root', src_pwd='FxData!Cds@2016_',
@@ -238,3 +194,4 @@ if __name__ == '__main__':
     #     curl_class(host='192.168.0.56', host_pwd='123', host_user='root', limit=100, cds_ip='192.168.1.106',
     #                database_user='root', database_pwd='0rd1230ac', cds_pwd='123', src_system='windows')
 	#jinrongc
+

@@ -56,7 +56,7 @@ def get_http_cache(category, limit, filepath='./http/cache/httpcache'):
     current_time = str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     command = str1 + category + str1_5 + current_time + str1_6 + str2 + limit
     filepath += 'httpcache'
-    log.info(u'host:'+str(host)+u'database_user:'+database_user+u'database_pwd'+database_pwd)
+    log.info(u'host:' + str(host) + u'database_user:' + database_user + u'database_pwd' + database_pwd)
     res = execute_mysql_get_cache_info(command, filepath, category, host, database_user, database_pwd)
     log.info(u'采集到的放入/http/cache_info的http信息为' + str(res))
     return res
@@ -96,7 +96,7 @@ def get_mobile_cache(category='0', limit='10', filepath='./http/cache/mobilecach
     host = information[3]
     database_user = information[5]
     database_pwd = information[4]
-    str1 = "SELECT uri,cache_size, md5  FROM mobile_cache WHERE cache_size < 52428800  AND category="
+    str1 = "SELECT uri,cache_size, md5  FROM mobile_cache WHERE cache_size < 52428800  AND category="  # 修改数据库中的资源大小
     str1_5 = " and expires> '"
     str1_6 = "'"
     current_time = str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))

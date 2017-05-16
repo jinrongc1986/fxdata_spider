@@ -46,6 +46,6 @@ def modify_iptables(cds_ip, cds_user, cds_pwd):
     info = connect_linux(iptables, cds_ip, cds_user, cds_pwd)
     if cmd not in info:
         connect_linux(cmd2, cds_ip, cds_user, cds_pwd)
-        iptable_restart = 'service iptables restart'
+        iptable_restart = '/home/icache/configd config iptables'
         connect_linux(iptable_restart, cds_ip, cds_user, cds_pwd)
         time.sleep(5)

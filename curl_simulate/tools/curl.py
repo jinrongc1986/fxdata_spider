@@ -198,7 +198,7 @@ def curl_resource_verbose(timestamp, classes, category, limit, system, ua, need_
             log.info(
                 u'开始执行判断校验程序cache_size_each  url  md5分别为' + str(cache_size_each) + ' ' + str(url) + ' ' + str(
                     md5_each))
-            time.sleep(5)
+            time.sleep(5)  # 执行完curl动作后，等待的时间（可自定义设置）
             current_time_start = datetime.now()
             assert_location_log(classes, category, url, cache_size_each, timestamp)
             current_time_end = datetime.now()
