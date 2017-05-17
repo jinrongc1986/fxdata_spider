@@ -63,3 +63,5 @@ $RECYCLE.BIN/
 *.lnk
 # log of all
 .*-.*
+# pyc
+*.pyc
